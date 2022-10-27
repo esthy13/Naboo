@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
     </list>
     <list id="22f93525-229e-4387-b480-732a209a3a5b" name="Changes by Gaetano" comment="" />
@@ -41,6 +38,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2DwGzzvrQ5GJBqVjoVC1vV7iMDy" />
   <component name="ProjectViewState">
@@ -267,7 +271,7 @@
       <workItem from="1666867926689" duration="650000" />
       <workItem from="1666868580792" duration="673000" />
       <workItem from="1666869388878" duration="2502000" />
-      <workItem from="1666887089360" duration="429000" />
+      <workItem from="1666887089360" duration="2222000" />
     </task>
     <servers />
   </component>
