@@ -119,7 +119,7 @@ public class DBUtils {
                 while (resultSet.next()){
                     String retrievedPassword = resultSet.getString("password");
                     if (retrievedPassword.equals(password)){
-                        changeScene(event, "prova.fxml", "Welcome!", username);
+                        changeScene(event, "loggedin-view.fxml", "Welcome!", username);
                     }else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

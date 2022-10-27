@@ -3,19 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
+<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
     <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <Button fx:id="btn_logout" layoutX="50.0" layoutY="77.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="117.0" style="-fx-background-color: #0088cc;" text="Logout">
+   <Rectangle arcWidth="5.0" fill="#1f1f1f" height="400.0" stroke="#1f1f1f" strokeType="INSIDE" width="189.0" />
+    <Button fx:id="btn_logout" layoutX="28.0" layoutY="337.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="117.0" style="-fx-background-color: #0088cc;" text="Logout">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Button>
-   <Button layoutX="274.0" layoutY="200.0" mnemonicParsing="false" text="I'm a genius" />
+   <Button layoutX="61.0" layoutY="127.0" mnemonicParsing="false" text="Button" />
 
 </AnchorPane>

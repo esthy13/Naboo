@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b53707a9-49c2-402b-8c4e-4288a5121586" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/prova.fxml" afterDir="false" />
+    <list default="true" id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
     </list>
+    <list id="22f93525-229e-4387-b480-732a209a3a5b" name="Changes by Gaetano" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
+        <option value="Interface" />
+        <option value="Class" />
         <option value="FxmlFile" />
       </list>
     </option>
@@ -27,48 +31,243 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2Gib3WcHLoczOEPgIRvSm8EKTnl" />
+  <component name="ProjectId" id="2DwGzzvrQ5GJBqVjoVC1vV7iMDy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/giuli/OneDrive/Documenti/Esame/ProjectNaboo/ProjectNaboo/src/main/resources/com/project/demo/Scene"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/demo/resources/com/project/demo&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\ProjectNaboo\ProjectNaboo\src\main\resources\com\project\demo\Scene" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\ProjectNaboo\ProjectNaboo\src\main\java\demo" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\ProjectNaboo\ProjectNaboo\src\main\resources" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\ProjectNaboo\ProjectNaboo\src\main\java" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.project.demo.model" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\target\classes\com\project\demo\Scene" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo\Scene" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo.Scene" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\src\main\java\com\example\demo\model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\src\main" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo\Scene" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\ReadMeAttachements" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\images" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.project.demo.model" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.project.demo.Scene" />
+      <recent name="com.project.demo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.HelloApplication" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.Scene.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Main" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.loginproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Main" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.Scene.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.project.demo.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.project.demo.model.LettoreRSS" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.LettoreRSS" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.project.demo.model.Telegram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.Telegram" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.com.project.demo.model.LettoreRSS" />
+      <item itemvalue="Application.com.project.demo.Main" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.com.project.demo.model.Telegram" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.project.demo.Main" />
+        <item itemvalue="Application.com.project.demo.model.Telegram" />
+        <item itemvalue="Application.com.project.demo.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b53707a9-49c2-402b-8c4e-4288a5121586" name="Changes" comment="" />
-      <created>1666874152392</created>
+      <changelist id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="" />
+      <created>1661603008004</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666874152392</updated>
-      <workItem from="1666874153664" duration="10000" />
-      <workItem from="1666874254647" duration="2540000" />
+      <updated>1661603008004</updated>
+      <workItem from="1661603012077" duration="253000" />
+      <workItem from="1661603283825" duration="376000" />
+      <workItem from="1661604119337" duration="1134000" />
+      <workItem from="1661605374083" duration="4930000" />
+      <workItem from="1661691132819" duration="8748000" />
+      <workItem from="1661758281234" duration="1267000" />
+      <workItem from="1661759822059" duration="10183000" />
+      <workItem from="1661784592412" duration="599000" />
+      <workItem from="1661785915347" duration="260000" />
+      <workItem from="1661864817542" duration="6635000" />
+      <workItem from="1661942576801" duration="1426000" />
+      <workItem from="1661964747960" duration="2939000" />
+      <workItem from="1662018688677" duration="9274000" />
+      <workItem from="1662203091259" duration="4342000" />
+      <workItem from="1662366728180" duration="3280000" />
+      <workItem from="1662371261480" duration="7854000" />
+      <workItem from="1662481150079" duration="95000" />
+      <workItem from="1662487551133" duration="7373000" />
+      <workItem from="1662534769981" duration="15598000" />
+      <workItem from="1662581653480" duration="50000" />
+      <workItem from="1662581712340" duration="189000" />
+      <workItem from="1662622042694" duration="5771000" />
+      <workItem from="1662627849943" duration="740000" />
+      <workItem from="1662729694549" duration="261000" />
+      <workItem from="1662729969660" duration="10340000" />
+      <workItem from="1662746402110" duration="4567000" />
+      <workItem from="1662826388316" duration="10204000" />
+      <workItem from="1662913096938" duration="13220000" />
+      <workItem from="1662966412408" duration="18993000" />
+      <workItem from="1663005076523" duration="31971000" />
+      <workItem from="1663101321736" duration="5000" />
+      <workItem from="1663142279451" duration="24249000" />
+      <workItem from="1663223393724" duration="6411000" />
+      <workItem from="1663230405204" duration="469000" />
+      <workItem from="1663231002247" duration="19336000" />
+      <workItem from="1663269127723" duration="7000" />
+      <workItem from="1663350936123" duration="4008000" />
+      <workItem from="1663687654082" duration="3567000" />
+      <workItem from="1663930413865" duration="144000" />
+      <workItem from="1664376267173" duration="5022000" />
+      <workItem from="1664448164103" duration="804000" />
+      <workItem from="1666187218349" duration="5123000" />
+      <workItem from="1666197219783" duration="1419000" />
+      <workItem from="1666198674015" duration="300000" />
+      <workItem from="1666205233903" duration="84000" />
+      <workItem from="1666265254144" duration="1726000" />
+      <workItem from="1666272682809" duration="851000" />
+      <workItem from="1666280065615" duration="1970000" />
+      <workItem from="1666285121489" duration="127000" />
+      <workItem from="1666285263879" duration="2026000" />
+      <workItem from="1666774723086" duration="1719000" />
+      <workItem from="1666776520119" duration="2425000" />
+      <workItem from="1666863494711" duration="2402000" />
+      <workItem from="1666865919812" duration="1881000" />
+      <workItem from="1666867926689" duration="650000" />
+      <workItem from="1666868580792" duration="673000" />
+      <workItem from="1666869388878" duration="2502000" />
+      <workItem from="1666887089360" duration="429000" />
     </task>
     <servers />
   </component>
@@ -85,5 +284,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
