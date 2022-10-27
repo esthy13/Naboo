@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b53707a9-49c2-402b-8c4e-4288a5121586" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/prova.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666874152392</updated>
       <workItem from="1666874153664" duration="10000" />
-      <workItem from="1666874254647" duration="1995000" />
+      <workItem from="1666874254647" duration="2540000" />
     </task>
     <servers />
   </component>
