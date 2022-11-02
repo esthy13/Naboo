@@ -21,7 +21,7 @@
    <Rectangle arcWidth="5.0" fill="#1f1f1f" height="400.0" stroke="#1f1f1f" strokeType="INSIDE" width="189.0" />
    <VBox alignment="TOP_RIGHT" layoutX="-7.0" layoutY="115.0" prefHeight="226.0" prefWidth="196.0" spacing="10.0">
       <children>
-         <Button mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="News" textAlignment="RIGHT" textFill="#fcfcfc">
+         <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="News" textAlignment="RIGHT" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
@@ -29,7 +29,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button mnemonicParsing="false" onAction="#Utenti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Utenti" textAlignment="RIGHT" textFill="WHITE">
+         <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Utenti" textAlignment="RIGHT" textFill="WHITE">
             <font>
                <Font size="18.0" />
             </font>
@@ -37,7 +37,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button mnemonicParsing="false" onAction="#Commenti" prefHeight="35.0" prefWidth="226.0" style="-fx-background-color: #1F1F1F;" text="Commenti" textAlignment="RIGHT" textFill="WHITE">
+         <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="226.0" style="-fx-background-color: #1F1F1F;" text="Commenti" textAlignment="RIGHT" textFill="WHITE">
             <font>
                <Font size="18.0" />
             </font>
@@ -45,7 +45,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button mnemonicParsing="false" onAction="#importaEsporta" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Importa/esporta" textAlignment="RIGHT" textFill="#fcfcfc">
+         <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Importa/esporta" textAlignment="RIGHT" textFill="#fcfcfc">
             <font>
                <Font size="18.0" />
             </font>
@@ -53,7 +53,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-          <Button mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: #1F1F1F;" text="Logout" textAlignment="RIGHT" textFill="WHITE">
+          <Button fx:id="btn_logout" mnemonicParsing="false" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: #1F1F1F;" text="Logout" textAlignment="RIGHT" textFill="WHITE">
               <font>
                   <Font size="18.0" />
               </font>
@@ -115,5 +115,6 @@
          </LinearGradient>
       </fill>
    </Text>
+   <Button layoutX="386.0" layoutY="139.0" mnemonicParsing="false" text="utenti fxml" />
 
 </AnchorPane>

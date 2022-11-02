@@ -28,6 +28,30 @@ public class LoggedInController implements Initializable {
         });
 
     }
+    public void logout(ActionEvent event){
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null);
+    }
+
+    public void News(ActionEvent event) {
+
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        //TODO add getUsername from previous fxml scene
+    }
+
+    public void Utenti(ActionEvent event){
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        //TODO add getUsername from previous fxml scene
+    }
+
+    public void Commenti(ActionEvent event){
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        //TODO add getUsername from previous fxml scene
+    }
+
+    public void importaEsporta(ActionEvent event){
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        //TODO add getUsername from previous fxml scene
+    }
 
     public void setUserInfoForWelcome(String username){
         label_welcome.setText("Welcome " + username +  "!");

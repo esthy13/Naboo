@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Commenti.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Utenti.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/importa-esporta.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/news.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoggedInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoggedInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/LoggedInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/LoggedInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
     </list>
     <list id="22f93525-229e-4387-b480-732a209a3a5b" name="Changes by Gaetano" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,35 +57,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/demo/resources/com/project/demo&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/com/project/demo/Scene",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.scopes"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.project.demo.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\target\classes\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo.Scene" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\src\main\java\com\example\demo\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\src\main" />
@@ -95,48 +102,8 @@
       <recent name="com.project.demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.project.demo.Main">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.HelloApplication" />
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.project.demo.Scene.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Main" />
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.project.demo.Scene.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.project.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.project.demo.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
       <module name="Naboo" />
       <extension name="coverage">
@@ -149,6 +116,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Telegram" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.Telegram" />
+      <module name="Naboo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.project.demo.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
       <module name="demo" />
@@ -162,46 +155,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.project.demo.model.LettoreRSS" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.LettoreRSS" />
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.project.demo.model.Telegram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.Telegram" />
-      <module name="Naboo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.com.project.demo.model.LettoreRSS" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.com.project.demo.Main" />
-      <item itemvalue="Application.HelloApplication" />
-      <item itemvalue="Application.com.project.demo.model.Telegram" />
+      <item itemvalue="Application.Telegram" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.project.demo.Main" />
-        <item itemvalue="Application.com.project.demo.model.Telegram" />
-        <item itemvalue="Application.com.project.demo.Main" />
-        <item itemvalue="Application.com.project.demo.Main" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Telegram" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -274,6 +237,7 @@
       <workItem from="1666944103426" duration="386000" />
       <workItem from="1666979578263" duration="599000" />
       <workItem from="1667051387692" duration="2361000" />
+      <workItem from="1667411205211" duration="1915000" />
     </task>
     <servers />
   </component>
