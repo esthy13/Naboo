@@ -11,6 +11,7 @@ module com.example.demo {
     requires emoji.java;
     requires opencsv;
     requires javafx.media;
+    requires de.jensd.fx.glyphs.commons;
 
 
 
