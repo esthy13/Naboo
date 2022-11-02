@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -28,6 +29,9 @@
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="NEWSPAPER" />
+            </graphic>
          </Button>
          <Button mnemonicParsing="false" onAction="#Utenti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Utenti" textAlignment="RIGHT" textFill="WHITE">
             <font>
@@ -36,6 +40,9 @@
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" />
+            </graphic>
          </Button>
          <Button mnemonicParsing="false" onAction="#Commenti" prefHeight="35.0" prefWidth="226.0" style="-fx-background-color: #1F1F1F;" text="Commenti" textAlignment="RIGHT" textFill="WHITE">
             <font>
