@@ -36,9 +36,7 @@ public class LoggedInController  {
     }
 
     public void News(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        String username = stage.getTitle().;
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", username);
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
         //TODO add getUsername from previous fxml scene
     }
 
