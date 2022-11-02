@@ -13,7 +13,10 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
-    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap');
+   </style>
+   <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
@@ -23,7 +26,7 @@
       <children>
          <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="News" textAlignment="RIGHT" textFill="#fcfcfc">
             <font>
-               <Font size="18.0" />
+               <Font name = "Lobster" size="18.0" />
             </font>
             <cursor>
                <Cursor fx:constant="HAND" />
