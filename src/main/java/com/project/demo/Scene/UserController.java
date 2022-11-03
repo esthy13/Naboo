@@ -22,7 +22,6 @@ public class UserController {
             for(int i = first; i< utenti.size(); i++){
                 grid.add(new Label("" + utenti.get(i).getId()), 1,y);// column=1 row=y
                 grid.add(new Label("@"+ utenti.get(i).getUsername()),2,y);
-                grid.add(new Button())
                 y++;
             }
         }
