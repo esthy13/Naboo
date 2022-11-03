@@ -1,5 +1,5 @@
-# Naboo 
-**New Aggregator and BOt Observer**  
+# Naboo
+**New Aggregator and BOt Observer**
 
 ## Table of content
 ### 1. Che cos'è Naboo?
@@ -11,10 +11,10 @@
 À, Á, È, É, Ì, Ò, Ù: come si scrivono
 
 ### 1. Che cos'è Naboo?
-NABOO è un ambiente per cercare, leggere, votare condividere 
-e commentare notizie on-line. È costituito da due interfacce: 
+NABOO è un ambiente per cercare, leggere, votare condividere
+e commentare notizie on-line. È costituito da due interfacce:
 un'applicazione con cui l'amministratore può gestire le informazioni
-relative a fonti, notizie e utenti caricate sul database, e il bot 
+relative a fonti, notizie e utenti caricate sul database, e il bot
 telegram @GediNabooBot che permette agli utenti di interagire con
 le notizie.
 L'obbiettivo del
@@ -43,6 +43,8 @@ What your application does,
 Why you used the technologies you used,
 Some of the challenges you faced and features you hope to implement in the future.
 5. How to Use the Project screenshots to show examples of the running project
-6. Include Credits 
+6. Include Credits
 # members of the group
 Add a License
+
+ 
