@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoggedInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoggedInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Commenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Commenti.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Utenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Utenti.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/importa-esporta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/importa-esporta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/news.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/news.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/news.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/news.fxml" afterDir="false" />
     </list>
@@ -236,6 +240,7 @@
       <workItem from="1667411205211" duration="1915000" />
       <workItem from="1667413151398" duration="1896000" />
       <workItem from="1667477894165" duration="643000" />
+      <workItem from="1667494226576" duration="1971000" />
     </task>
     <servers />
   </component>

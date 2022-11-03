@@ -22,6 +22,17 @@
    <Rectangle arcWidth="5.0" fill="#1f1f1f" height="400.0" stroke="#1f1f1f" strokeType="INSIDE" width="189.0" />
    <VBox alignment="TOP_RIGHT" layoutX="-7.0" layoutY="115.0" prefHeight="226.0" prefWidth="196.0" spacing="10.0">
       <children>
+         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Home" textAlignment="RIGHT" textFill="#fcfcfc">
+            <font>
+               <Font name="Fasthand" size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
+            </graphic>
+         </Button>
          <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9);" text="News" textAlignment="RIGHT" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
