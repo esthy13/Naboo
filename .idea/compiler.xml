@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ProjectNaboo" />
+        <module name="Naboo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ProjectNaboo" target="17" />
+      <module name="demo" target="17" />
+      <module name="Naboo" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
