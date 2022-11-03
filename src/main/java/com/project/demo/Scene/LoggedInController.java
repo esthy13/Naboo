@@ -1,5 +1,8 @@
 package com.project.demo.Scene;
 
+import com.project.demo.model.DBconnect;
+import com.project.demo.model.DBget;
+import com.project.demo.model.Utente;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LoggedInController  {
@@ -47,6 +51,7 @@ public class LoggedInController  {
     public void Utenti(ActionEvent event){
         DBUtils.changeScene(event, "Utenti.fxml", "Manage user!", null);
         //TODO add getUsername from previous fxml scene
+        //visualizzaUtenti();
     }
 
     public void Commenti(ActionEvent event){
@@ -57,6 +62,33 @@ public class LoggedInController  {
     public void importaEsporta(ActionEvent event){
         DBUtils.changeScene(event, "importa-esporta.fxml", "Manage Import-Export!", null);
         //TODO add getUsername from previous fxml scene
+    }
+
+    public void visualizzaUtenti(Stage stage, int first){ //first = first element to show
+        DBget dBget = new DBget();
+        ArrayList< Utente > utenti = dBget.getUserList();
+        System.out.println(utenti);
+
+        //TODO da adattare alla situazione
+        int y = 1;
+        if(utenti.size()<=10){
+            for(int i = first; i< utenti.size(); i++){
+                //scrivi nel gridpane
+                y++;
+            }
+        }
+        else if((utenti.size()-first)<=10){
+            for(int i = first; i< utenti.size(); i++){
+                //scrivi nel gridpane
+                y++;
+            }
+        }
+        else {
+            for (int i = first; i < (first + 10); i++) {
+                //scrivi nel gridpane
+                y++;
+            }
+        }
     }
 
     public void setUserInfoForWelcome(String username){
