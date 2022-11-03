@@ -29,7 +29,7 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button mnemonicParsing="false" onAction="#Utenti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Utenti" textAlignment="RIGHT" textFill="WHITE">
+         <Button mnemonicParsing="false" onAction="#Utenti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9);" text="Utenti" textAlignment="RIGHT" textFill="WHITE">
             <font>
                <Font size="18.0" />
             </font>
