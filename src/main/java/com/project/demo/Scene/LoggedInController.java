@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -19,11 +20,14 @@ import java.util.ResourceBundle;
 public class LoggedInController  {
     //Implements initializible
 
-    @FXML
+    //@FXML
     //private Button btn_logout;
 
-    //@FXML
+    @FXML
     private Label label_welcome;
+    @FXML
+    private GridPane users;
+
 
    // @Override
     /*public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,33 +66,6 @@ public class LoggedInController  {
     public void importaEsporta(ActionEvent event){
         DBUtils.changeScene(event, "importa-esporta.fxml", "Manage Import-Export!", null);
         //TODO add getUsername from previous fxml scene
-    }
-
-    public void visualizzaUtenti(Stage stage, int first){ //first = first element to show
-        DBget dBget = new DBget();
-        ArrayList< Utente > utenti = dBget.getUserList();
-        System.out.println(utenti);
-
-        //TODO da adattare alla situazione
-        int y = 1;
-        if(utenti.size()<=10){
-            for(int i = first; i< utenti.size(); i++){
-                //scrivi nel gridpane
-                y++;
-            }
-        }
-        else if((utenti.size()-first)<=10){
-            for(int i = first; i< utenti.size(); i++){
-                //scrivi nel gridpane
-                y++;
-            }
-        }
-        else {
-            for (int i = first; i < (first + 10); i++) {
-                //scrivi nel gridpane
-                y++;
-            }
-        }
     }
 
     public void setUserInfoForWelcome(String username){
