@@ -1,21 +1,35 @@
 package com.project.demo.Scene;
 
 import com.project.demo.model.DBget;
+import com.project.demo.model.ObservableList;
 import com.project.demo.model.Utente;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 
 public class UserController {
-    /* TODO tableview, + dentro id primo elemento tabella per aggiungere utente, controllo se l'utente effettivamente esista
-        su telegram?, aggiungi dati a table view (non c'e' limite alla quantita' di dati) collega scrollbar a table view!*/
-    public void visualizzaUtenti(GridPane grid, int first){ //first = first element to show
+    /* TODO tableview, COME SI USA OBSERVABLELIST? + dentro id primo elemento tabella per aggiungere utente,
+        controllo se l'utente effettivamente esista su telegram?, aggiungi dati a table view
+        (non c'e' limite alla quantita' di dati) collega scrollbar a table view!*/
+
+    public static void visualizzaUtenti(TableView<Utente> table){ //first = first element to show
+
         DBget dBget = new DBget();
-        ArrayList<Utente> utenti = dBget.getUserList();
+        ObservableList<Utente> teamMembers =  dBget.getUserList();
+        table = new TableView(teamMembers);
+        //table.setItems(teamMembers);
+
+        TableColumn<Utente,String> id = new TableColumn<Utente,String>("id");
+        id.setCellValueFactory(new PropertyValueFactory("uno"));
+        TableColumn<Utente,String> username = new TableColumn<Utente,String>("username");
+        username.setCellValueFactory(new PropertyValueFactory("due"));
+        TableColumn<Utente,String> ruolo = new TableColumn<Utente,String>("ruolo");
+        ruolo.setCellValueFactory(new PropertyValueFactory("tre"));
+        table.getColumns().setAll(id, username, ruolo);
+
+        /*
         System.out.println(utenti);
         //TODO da adattare alla situazione, non servono tre casi ma un solo ciclo, forse
         int y = 1;
@@ -37,6 +51,6 @@ public class UserController {
                 //scrivi nel gridpane
                 y++;
             }
-        }
+        }*/
     }
 }

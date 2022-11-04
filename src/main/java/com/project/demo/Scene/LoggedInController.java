@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -26,7 +27,7 @@ public class LoggedInController  {
     @FXML
     private Label label_welcome;
     @FXML
-    private GridPane users;
+    private TableView<Utente> users;
 
 
    // @Override
@@ -55,7 +56,7 @@ public class LoggedInController  {
     public void Utenti(ActionEvent event){
         DBUtils.changeScene(event, "Utenti.fxml", "Manage user!", null);
         //TODO add getUsername from previous fxml scene
-        //visualizzaUtenti();
+        UserController.visualizzaUtenti(users);
     }
 
     public void Commenti(ActionEvent event){

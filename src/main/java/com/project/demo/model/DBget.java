@@ -395,8 +395,8 @@ public class DBget  extends DBconnect{
         return Sources;
     }
 
-    public ArrayList<Utente> getUserList() {
-        ArrayList<Utente> Users = new ArrayList<>();
+    public ObservableList<Utente> getUserList() {
+        ObservableList<Utente> users = new ObservableList<>();
         Connection con = getConnection();
         Statement st;
         ResultSet rs;
@@ -407,14 +407,14 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Utente n;
             while (rs.next()) {
-                n = new Utente(Integer.parseInt(rs.getString(1)), rs.getString(2), rs.getString(4));
-                Users.add(n);
+                n = new Utente(rs.getString(1), rs.getString(2), rs.getString(4));
+                users.add(n);
             }
 
         } catch (Exception ex) {
             System.out.println("Error:" + ex);
         }
-        return Users;
+        return users;
     }
 
 
