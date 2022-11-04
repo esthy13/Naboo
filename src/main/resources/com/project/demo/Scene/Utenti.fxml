@@ -137,12 +137,12 @@
        <TableColumn minWidth="50.0" prefWidth="50.0" text="ID" />
        <TableColumn minWidth="100.0" prefWidth="100.0" text="Username" />
        <TableColumn minWidth="100.0" prefWidth="100.0" text="Ruolo" />
-       <TableColumn minWidth="75.0" prefWidth="75.0">
+       <TableColumn minWidth="70.0" prefWidth="70.0">
         <graphic>
            <FontAwesomeIconView fill="#805835" glyphName="PENCIL_SQUARE" glyphSize="25" />
         </graphic>
         </TableColumn>
-       <TableColumn minWidth="75.0" prefWidth="75.0">
+       <TableColumn minWidth="70.0" prefWidth="70.0">
         <graphic>
            <FontAwesomeIconView fill="#ab220d" glyphName="MINUS" glyphSize="25" />
         </graphic>
