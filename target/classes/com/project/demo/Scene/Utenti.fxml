@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
+<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.UserController">
    <Rectangle arcWidth="5.0" fill="#1f1f1f" height="409.0" stroke="#1f1f1f" strokeType="INSIDE" width="189.0" />
    <VBox alignment="TOP_RIGHT" layoutX="-7.0" layoutY="115.0" prefHeight="226.0" prefWidth="196.0" spacing="10.0">
       <children>
@@ -134,9 +134,9 @@
    </Text>
    <TableView fx:id="users" layoutX="194.0" layoutY="91.0" prefHeight="318.0" prefWidth="389.0">
      <columns>
-       <TableColumn minWidth="50.0" prefWidth="50.0" text="ID" />
-       <TableColumn minWidth="100.0" prefWidth="100.0" text="Username" />
-       <TableColumn minWidth="100.0" prefWidth="100.0" text="Ruolo" />
+       <TableColumn fx:id="id" minWidth="50.0" prefWidth="50.0" text="ID" />
+       <TableColumn fx:id="username" minWidth="100.0" prefWidth="100.0" text="Username" />
+       <TableColumn fx:id="ruolo" minWidth="100.0" prefWidth="100.0" text="Ruolo" />
        <TableColumn minWidth="70.0" prefWidth="70.0">
         <graphic>
            <FontAwesomeIconView fill="#805835" glyphName="PENCIL_SQUARE" glyphSize="25" />

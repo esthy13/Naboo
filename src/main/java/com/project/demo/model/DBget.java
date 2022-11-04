@@ -1,5 +1,7 @@
 package com.project.demo.model;
 
+import com.project.demo.Scene.Utente;
+
 import java.sql.*;
 import java.util.ArrayList;
 

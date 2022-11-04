@@ -1,4 +1,4 @@
-package com.project.demo.model;
+package com.project.demo.Scene;
 
 public class Utente {
     String id;
