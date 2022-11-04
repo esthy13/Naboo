@@ -12,7 +12,10 @@ public class Notizia {
     private String link;
     private String image; //link all'immagine
 
-    private String id_notizia;
+    private int id_notizia;
+    private int like;
+    private int dislike;
+    private int report;
 
 
     public Notizia(String titolo, String pubblicazione, String descrizione,
@@ -25,7 +28,7 @@ public class Notizia {
             this.link = link;
             this.image = image;
         }
-    public Notizia(String id_notizia, String titolo, String pubblicazione, String descrizione,
+    public Notizia(int id_notizia, String titolo, String pubblicazione, String descrizione,
                    String autore, String fonte, String link, String image){
         this.titolo = titolo;
         this.pubblicazione =  pubblicazione;
@@ -92,11 +95,11 @@ public class Notizia {
     public String getImage() {
         return image;
     }
-    public String getId_notizia() {
+    public int getId_notizia() {
         return id_notizia;
     }
 
-    public void setId_notizia(String id_notizia) {
+    public void setId_notizia(int id_notizia) {
         this.id_notizia = id_notizia;
     }
 

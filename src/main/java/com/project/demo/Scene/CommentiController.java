@@ -1,7 +1,7 @@
 package com.project.demo.Scene;
 
+import com.project.demo.model.Commento;
 import com.project.demo.model.DBget;
-import com.project.demo.model.Utente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,18 +14,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UserController implements Initializable {
-
+public class CommentiController implements Initializable {
     @FXML
-    private TableView<Utente> users;
+    private TableView<Commento> commenti;
     @FXML
-    private TableColumn<Utente, Integer> id;
+    private TableColumn<Commento, Integer> id_commento;
     @FXML
-    private TableColumn<Utente, String> username;
+    private TableColumn<Commento, Integer> id_notizia;
     @FXML
-    private TableColumn<Utente, String> ruolo;
-    private ObservableList<Utente> list;
-
+    private TableColumn<Commento, String> testo;
+    @FXML
+    private TableColumn<Commento, String> username;
+    private ObservableList<Commento> list;
 
     public void logout(ActionEvent event){
         DBUtils.changeScene(event, "login-view.fxml", "Login", null);
@@ -57,21 +57,22 @@ public class UserController implements Initializable {
     }
 
     //public void setUserInfoForWelcome(String username){
-        //label_welcome.setText("Welcome " + username +  "!");
+    //label_welcome.setText("Welcome " + username +  "!");
     //}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         visualizza();
-        id.setCellValueFactory(new PropertyValueFactory<Utente, Integer>("id"));
-        username.setCellValueFactory(new PropertyValueFactory<Utente, String>("username"));
-        ruolo.setCellValueFactory(new PropertyValueFactory<Utente, String>("ruolo"));
+        id_commento.setCellValueFactory(new PropertyValueFactory<Commento, Integer>("id_commento"));
+        id_notizia.setCellValueFactory(new PropertyValueFactory<Commento, Integer>("id_notizia"));
+        testo.setCellValueFactory(new PropertyValueFactory<Commento, String>("testo"));
+        username.setCellValueFactory(new PropertyValueFactory<Commento, String>("username"));
 
-        this.users.setItems(list);
+        this.commenti.setItems(list);
     }
 
     public void visualizza() {
         DBget dBget = new DBget();
-        this.list = FXCollections.observableArrayList(dBget.getUserList());
+        this.list = FXCollections.observableArrayList(dBget.getComments());
     }
 }

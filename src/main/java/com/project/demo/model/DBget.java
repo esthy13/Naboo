@@ -1,7 +1,5 @@
 package com.project.demo.model;
 
-import com.project.demo.Scene.Utente;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -118,7 +116,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Commento comm;
             while (rs.next()) {
-                comm = new Commento(rs.getString(1),rs.getString(2),rs.getString(3), rs.getString(4));
+                comm = new Commento(Integer.parseInt(rs.getString(1)),Integer.parseInt(rs.getString(2)),rs.getString(3), rs.getString(4));
                 Comments.add(comm);
             }
 
@@ -141,7 +139,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Notizia n;
             while (rs.next()) {
-                n = new Notizia(rs.getString(1), rs.getString(2), rs.getString(3),rs.getString(4),
+                n = new Notizia(Integer.parseInt(rs.getString(1)), rs.getString(2), rs.getString(3),rs.getString(4),
                         rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
                 NewsFonte.add(n);
             }
@@ -165,7 +163,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Notizia n;
             while (rs.next()) {
-                n = new Notizia(rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),
+                n = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3),rs.getString(4),
                         rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
                 NewsData.add(n);
             }
@@ -190,7 +188,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Notizia n;
             while (rs.next()) {
-                n = new Notizia(rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),
+                n = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3),rs.getString(4),
                         rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
                 News.add(n);
             }
@@ -260,7 +258,7 @@ public class DBget  extends DBconnect{
             st = con.createStatement();
             rs = st.executeQuery(query);
             rs.next();
-            news = new Notizia(rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),
+            news = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3),rs.getString(4),
                     rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -322,7 +320,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Notizia n;
             while (rs.next()) {
-                n = new Notizia(rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4),
+                n = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3),rs.getString(4),
                         rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
                 lastNews.add(n);
             }
@@ -397,8 +395,8 @@ public class DBget  extends DBconnect{
         return Sources;
     }
 
-    public ObservableList<Utente> getUserList() {
-        ObservableList<Utente> users = new ObservableList<>();
+    public ArrayList<Utente> getUserList() {
+        ArrayList<Utente> users = new ArrayList<>();
         Connection con = getConnection();
         Statement st;
         ResultSet rs;
@@ -409,7 +407,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Utente n;
             while (rs.next()) {
-                n = new Utente(rs.getString(1), rs.getString(2), rs.getString(4));
+                n = new Utente(Integer.parseInt(rs.getString(1)), rs.getString(2), rs.getString(4));
                 users.add(n);
             }
 
@@ -418,8 +416,56 @@ public class DBget  extends DBconnect{
         }
         return users;
     }
+    public ArrayList<Commento> getComments() {
+        ArrayList<Commento> Comments = new ArrayList<Commento>();
+        Connection con = getConnection();
+        Statement st;
+        ResultSet rs;
+        /*
+        SELECT Possiede.id_notizia, Utenti.username, Commenti.commento
+        FROM Possiede, Commenti, Utenti
+        WHERE Possiede.id_commento = Commenti.id_commento and id_notizia = 48;
+         */
+        try {//
+            String query = "SELECT Possiede.id_notizia, commenti.id_commento, Utenti.username, Commenti.commento " +
+                    "FROM Possiede, Commenti, Utenti " +
+                    "WHERE Possiede.id_commento = Commenti.id_commento and Possiede.id_utente = Utenti.id_utente " +
+                    "and Possiede.id_notizia = id_notizia;";
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            Commento comm;
+            while (rs.next()) {
+                comm = new Commento(Integer.parseInt(rs.getString(1)),Integer.parseInt(rs.getString(2)),rs.getString(3), rs.getString(4));
+                Comments.add(comm);
+            }
 
+        } catch (Exception ex) {
+            System.out.println("Error:" + ex);
+        }
+        return Comments;
+    }
 
+    public ArrayList<Notizia> getAllNews() {
+        ArrayList<Notizia> news = new ArrayList<>();
+        Connection con = getConnection();
+        Statement st;
+        ResultSet rs;
+
+        try {
+            //"SELECT c_shared FROM Notizia where id_notizia = " +"'"+id_notizia+"';"
+            String query = "SELECT * FROM Notizia;";
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            rs.next();
+            Notizia n;
+            n = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3),rs.getString(4),
+                    rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
+            news.add(n);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return news;
+    }
 
 
 }

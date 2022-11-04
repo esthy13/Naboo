@@ -130,9 +130,9 @@ public abstract class Buttons extends KeyboardsAndEmoji{
     public int getNextFirstIndex(CallbackQuery callbackQuery,
                              ArrayList<Notizia> notizie) {
         String[] tokens = callbackQuery.getData().split("-");
-        String id_notizia = tokens[1];
+        int id_notizia = Integer.parseInt(tokens[1]);
         for (int i = 0; i < notizie.size(); i++) {
-            if (notizie.get(i).getId_notizia().equals(id_notizia)) {
+            if (notizie.get(i).getId_notizia()==id_notizia) {
                 return i;
             }
         }
@@ -140,11 +140,11 @@ public abstract class Buttons extends KeyboardsAndEmoji{
     }
     public int getNextFirst(CallbackQuery callbackQuery, ArrayList<Commento> commenti) {
         String[] tokens = callbackQuery.getData().split("-");
-        String id_commento = tokens[1];
+        int id_commento = Integer.parseInt(tokens[1]);
         System.out.println(id_commento);
         for (int i = 0; i < commenti.size(); i++) {
             System.out.println(commenti.get(i).getId_commento());
-            if (commenti.get(i).getId_commento().equals(id_commento)) {
+            if (commenti.get(i).getId_commento() == id_commento ) {
                 return i;
             }
         }

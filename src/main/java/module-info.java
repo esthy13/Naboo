@@ -18,6 +18,8 @@ module com.example.demo {
     opens com.project.demo.Scene to javafx.fxml;
     exports com.project.demo;
     exports com.project.demo.Scene;
+    exports com.project.demo.model;
+    opens com.project.demo.model to javafx.base, javafx.fxml;
 
     //opens com.project.demo.Scene to javafx.fxml;
 }

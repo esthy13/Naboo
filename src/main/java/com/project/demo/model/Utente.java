@@ -1,17 +1,17 @@
-package com.project.demo.Scene;
+package com.project.demo.model;
 
 public class Utente {
-    String id;
+    int id;
     String username;
     String ruolo;
 
-    public Utente(String id, String username, String ruolo){
+    public Utente(int id, String username, String ruolo){
         this.id = id;
         this.username = username;
         this.ruolo = ruolo;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -22,7 +22,7 @@ public class Utente {
     public String getRuolo() {
         return ruolo;
     }
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

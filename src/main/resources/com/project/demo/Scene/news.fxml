@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
+<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.NewsController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -142,5 +137,32 @@
          </LinearGradient>
       </fill>
    </Text>
-
+   <TableView fx:id="news" layoutX="193.0" layoutY="86.0" prefHeight="323.0" prefWidth="404.0">
+      <columns>
+         <TableColumn fx:id="id_notizia" minWidth="40.0" prefWidth="40.0" text="ID" />
+         <TableColumn fx:id="pubblicazione" minWidth="55.0" prefWidth="55.0" text="Data" />
+         <TableColumn fx:id="titolo" minWidth="120.0" prefWidth="120.0" text="Titolo" />
+         <TableColumn fx:id="fonte" minWidth="60.0" prefWidth="60.0" text="Fonte" />
+         <TableColumn fx:id="like" minWidth="30.0" prefWidth="30.0" text="">
+            <graphic>
+               <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_UP" glyphSize="20" />
+            </graphic>
+         </TableColumn>
+         <TableColumn fx:id="dislike" minWidth="30.0" prefWidth="30.0" text="">
+            <graphic>
+               <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_DOWN" glyphSize="20" />
+            </graphic>
+         </TableColumn>
+         <TableColumn fx:id="report" minWidth="30.0" prefWidth="30.0" text="">
+            <graphic>
+               <FontAwesomeIconView fill="#ab220d" glyphName="BAN" glyphSize="20" text="" />
+            </graphic>
+         </TableColumn>
+         <TableColumn minWidth="30.0" prefWidth="30.0">
+            <graphic>
+               <FontAwesomeIconView fill="#ab220d" glyphName="MINUS" glyphSize="25" />
+            </graphic>
+         </TableColumn>
+      </columns>
+   </TableView>
 </AnchorPane>

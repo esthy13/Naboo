@@ -144,7 +144,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
             inline.add(inlineKeyboardButtonList);
         }
         else if((commenti.size()-first) <= 10){
-            String id_prevCommento = commenti.get(first-10).getId_commento();
+            int id_prevCommento = commenti.get(first-10).getId_commento();
             InlineKeyboardButton indietro = new InlineKeyboardButton();
             indietro.setCallbackData(tipo + "Scorri-" + id_prevCommento);
             indietro.setText(back_emoji);
@@ -157,13 +157,13 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         }
         else{
             if((first-10)>= 10){
-                String id_prevCommento = commenti.get(first-10).getId_commento();
+                int id_prevCommento = commenti.get(first-10).getId_commento();
                 InlineKeyboardButton indietro = new InlineKeyboardButton();
                 indietro.setCallbackData(tipo + "Scorri-" + id_prevCommento);
                 indietro.setText(back_emoji);
                 inlineKeyboardButtonList.add(indietro);
             }
-            String id_nextCommento = commenti.get(first+10).getId_commento();
+            int id_nextCommento = commenti.get(first+10).getId_commento();
             InlineKeyboardButton close = new InlineKeyboardButton();
             close.setCallbackData("close-" + id_nextCommento);
             close.setText(close_emoji);
@@ -201,7 +201,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
                 y = addButtonToRow(notizia, inlineKeyboardButtonList, inlineKeyboardButtonList2, y, i);
                 y++;
             }
-            String id_previousNotizia = notizia.get(first-10).getId_notizia();
+            int id_previousNotizia = notizia.get(first-10).getId_notizia();
             InlineKeyboardButton indietro = new InlineKeyboardButton();
             indietro.setCallbackData(tipo + "Scorri-" + id_previousNotizia);
             indietro.setText(back_emoji);
@@ -220,13 +220,13 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
                 y++;
             }
             if((first-10)>= 10){
-                String id_previousNotizia = notizia.get(first-10).getId_notizia();
+                int id_previousNotizia = notizia.get(first-10).getId_notizia();
                 InlineKeyboardButton indietro = new InlineKeyboardButton();
                 indietro.setCallbackData(tipo + "Scorri-" + id_previousNotizia);
                 indietro.setText(back_emoji);
                 inlineKeyboardButtonList3.add(indietro);
             }
-            String id_nextNotizia = notizia.get(first+10).getId_notizia();
+            int id_nextNotizia = notizia.get(first+10).getId_notizia();
             InlineKeyboardButton close = new InlineKeyboardButton();
             close.setCallbackData("close-" + id_nextNotizia);
             close.setText(close_emoji);

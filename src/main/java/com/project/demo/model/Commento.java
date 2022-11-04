@@ -1,23 +1,23 @@
 package com.project.demo.model;
 
 public class Commento {
-    private String id_commento;
-    private String id_notizia;
+    private int id_commento;
+    private int id_notizia;
     private String testo;
     private String username;
 
-    public Commento(String id_notizia, String id_commento, String username,String testo) {
+    public Commento(int id_notizia, int id_commento, String username,String testo) {
         this.id_notizia = id_notizia;
         this.id_commento = id_commento;
         this.testo = testo;
         this.username = username;
     }
 
-    public String getId_notizia() {
+    public int getId_notizia() {
         return id_notizia;
     }
 
-    public void setId_notizia(String id_notizia) {
+    public void setId_notizia(int id_notizia) {
         this.id_notizia = id_notizia;
     }
 
@@ -36,11 +36,11 @@ public class Commento {
     public void setUsername(String username) {
         this.username = username;
     }
-    public String getId_commento() {
+    public int getId_commento() {
         return id_commento;
     }
 
-    public void setId_commento(String id_commento) {
+    public void setId_commento(int id_commento) {
         this.id_commento = id_commento;
     }
 
