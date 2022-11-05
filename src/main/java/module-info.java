@@ -12,6 +12,7 @@ module com.example.demo {
     requires opencsv;
     requires javafx.media;
     requires de.jensd.fx.glyphs.commons;
+    requires transitive de.jensd.fx.glyphs.fontawesome;
 
 
 

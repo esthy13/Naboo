@@ -137,7 +137,7 @@
        <TableColumn fx:id="id" minWidth="50.0" prefWidth="50.0" text="ID" />
        <TableColumn fx:id="username" minWidth="100.0" prefWidth="100.0" text="Username" />
        <TableColumn fx:id="ruolo" minWidth="100.0" prefWidth="100.0" text="Ruolo" />
-       <TableColumn minWidth="70.0" prefWidth="70.0">
+       <TableColumn fx:id="modify" minWidth="70.0" prefWidth="70.0">
         <graphic>
            <FontAwesomeIconView fill="#805835" glyphName="PENCIL_SQUARE" glyphSize="25" />
         </graphic>
