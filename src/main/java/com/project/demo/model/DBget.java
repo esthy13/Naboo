@@ -452,15 +452,16 @@ public class DBget  extends DBconnect{
         ResultSet rs;
 
         try {
-            //"SELECT c_shared FROM Notizia where id_notizia = " +"'"+id_notizia+"';"
             String query = "SELECT * FROM Notizia;";
             st = con.createStatement();
             rs = st.executeQuery(query);
-            rs.next();
             Notizia n;
-            n = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3),rs.getString(4),
-                    rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8));
-            news.add(n);
+            while(rs.next()) {
+                n = new Notizia(rs.getString(2), rs.getString(3), rs.getString(6),
+                        Integer.parseInt(rs.getString(9)), Integer.parseInt(rs.getString(10)), Integer.parseInt(rs.getString(11)));
+                System.out.println(n.stampa());
+                news.add(n);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

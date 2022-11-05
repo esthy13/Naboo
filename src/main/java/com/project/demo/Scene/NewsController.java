@@ -19,19 +19,17 @@ public class NewsController implements Initializable {
     @FXML
     private TableView<Notizia> news;
     @FXML
-    private TableColumn<Notizia, Integer> id;
+    private TableColumn<Notizia, String> titolo;
+    @FXML
+    private TableColumn<Notizia, String> pubblicazione;
+    @FXML
+    private TableColumn<Notizia, String> fonte;
     @FXML
     private TableColumn<Notizia, Integer> like;
     @FXML
     private TableColumn<Notizia, Integer> dislike;
     @FXML
     private TableColumn<Notizia, Integer> report;
-    @FXML
-    private TableColumn<Notizia, String> titolo;
-    @FXML
-    private TableColumn<Notizia, String> pubblicazione;
-    @FXML
-    private TableColumn<Notizia, String> fonte;
     private ObservableList<Notizia> list;
 
 
@@ -70,7 +68,6 @@ public class NewsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         visualizza();
-        id.setCellValueFactory(new PropertyValueFactory<Notizia, Integer>("id_notizia"));
         titolo.setCellValueFactory(new PropertyValueFactory<Notizia, String>("titolo"));
         pubblicazione.setCellValueFactory(new PropertyValueFactory<Notizia, String>("pubblicazione"));
         fonte.setCellValueFactory(new PropertyValueFactory<Notizia, String>("fonte"));

@@ -1,23 +1,31 @@
 package com.project.demo.model;
-
-
-
 public class Notizia {
 
+    private int id_notizia;
     private String titolo;
     private String pubblicazione;
-    private String descrizione;
-    private String autore;
     private String fonte;
-    private String link;
-    private String image; //link all'immagine
-
-    private int id_notizia;
     private int like;
     private int dislike;
     private int report;
+    private String descrizione;
+    private String autore;
+
+    private String link;
+    private String image; //link all'immagine
 
 
+
+
+    public Notizia(String titolo, String pubblicazione,
+                   String fonte, int like, int dislike, int report){
+        this.pubblicazione = pubblicazione;
+        this.titolo = titolo;
+        this.fonte = fonte;
+        this.like = like;
+        this.dislike = dislike;
+        this.report = report;
+    }
     public Notizia(String titolo, String pubblicazione, String descrizione,
                    String autore, String fonte, String link, String image){
             this.titolo = titolo;
@@ -41,6 +49,30 @@ public class Notizia {
     }
 
     public Notizia(){}
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
+
+    public int getDislike() {
+        return dislike;
+    }
+
+    public void setDislike(int dislike) {
+        this.dislike = dislike;
+    }
+
+    public int getReport() {
+        return report;
+    }
+
+    public void setReport(int report) {
+        this.report = report;
+    }
     public void setTitolo(String titolo) {
         this.titolo = titolo;
     }
@@ -110,6 +142,16 @@ public class Notizia {
                 this.autore + "\n" +
                 this.link+ "\n";
 
+    }
+
+    public String stampa(){
+        return  this.id_notizia + "\n" +
+                this.titolo + "\n" +
+                this.pubblicazione + "\n" +
+                this.fonte + "\n" +
+                this.like + "\n" +
+                this.dislike + "\n" +
+                this.report+ "\n";
     }
 
 

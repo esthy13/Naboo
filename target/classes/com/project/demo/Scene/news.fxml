@@ -137,11 +137,10 @@
          </LinearGradient>
       </fill>
    </Text>
-   <TableView fx:id="news" layoutX="193.0" layoutY="86.0" prefHeight="323.0" prefWidth="404.0">
+   <TableView fx:id="news" layoutX="192.0" layoutY="86.0" prefHeight="323.0" prefWidth="405.0">
       <columns>
-         <TableColumn fx:id="id_notizia" minWidth="40.0" prefWidth="40.0" text="ID" />
-         <TableColumn fx:id="pubblicazione" minWidth="55.0" prefWidth="55.0" text="Data" />
-         <TableColumn fx:id="titolo" minWidth="120.0" prefWidth="120.0" text="Titolo" />
+         <TableColumn fx:id="pubblicazione" minWidth="110.0" prefWidth="110.0" text="Data" />
+         <TableColumn fx:id="titolo" minWidth="130.0" prefWidth="130.0" text="Titolo" />
          <TableColumn fx:id="fonte" minWidth="60.0" prefWidth="60.0" text="Fonte" />
          <TableColumn fx:id="like" minWidth="30.0" prefWidth="30.0" text="">
             <graphic>
@@ -156,11 +155,6 @@
          <TableColumn fx:id="report" minWidth="30.0" prefWidth="30.0" text="">
             <graphic>
                <FontAwesomeIconView fill="#ab220d" glyphName="BAN" glyphSize="20" text="" />
-            </graphic>
-         </TableColumn>
-         <TableColumn minWidth="30.0" prefWidth="30.0">
-            <graphic>
-               <FontAwesomeIconView fill="#ab220d" glyphName="MINUS" glyphSize="25" />
             </graphic>
          </TableColumn>
       </columns>

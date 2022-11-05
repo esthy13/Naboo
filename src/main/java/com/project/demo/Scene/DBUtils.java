@@ -1,18 +1,20 @@
 package com.project.demo.Scene;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.sql.*;
 
 public class DBUtils {
     public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName) {
-        Parent root = null;
+        Parent root = new AnchorPane();
 
         if ((userName != null)){
             try {
