@@ -1,17 +1,14 @@
 package com.project.demo.model;
 
-import de.jensd.fx.glyphs.GlyphIcon;
-import de.jensd.fx.glyphs.GlyphIconUtils;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import javafx.scene.text.Font;
-
-import static de.jensd.fx.glyphs.GlyphsStack.create;
+import javafx.scene.layout.Background;
 import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.*;
+import static javafx.scene.paint.Color.*;
 
 public class Utente {
     int id;
@@ -24,9 +21,6 @@ public class Utente {
         this.id = id;
         this.username = username;
         this.ruolo = ruolo;
-        Node modifyIcon = new FontAwesomeIconView(PENCIL_SQUARE);
-        this.modify = new Button();
-        this.modify.setGraphic(modifyIcon);
     }
 
     public int getId() {
@@ -66,5 +60,41 @@ public class Utente {
 
     public void setDelete(Button delete) {
         this.delete = delete;
+    }
+
+    public void setModDelete(){
+        FontAwesomeIconView icon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE_ALT);
+        icon.fillProperty().set(ORANGE);
+        icon.setSize("20");
+        Node modifyIcon = icon;
+        this.modify = new Button();
+        this.modify.setPrefSize(70,20);
+        this.modify.setCenterShape(true);
+        this.modify.backgroundProperty().set(Background.EMPTY);
+        this.modify.setGraphic(modifyIcon);
+        this.modify.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("modifica");
+            }
+        });
+        icon = new FontAwesomeIconView(MINUS);
+        icon.fillProperty().set(RED);
+        icon.setSize("15");
+        Node deleteIcon = icon;
+        this.delete = new Button();
+        this.delete.setPrefSize(70,10);
+        this.delete.setCenterShape(true);
+        this.delete.backgroundProperty().set(Background.EMPTY);
+        this.delete.setGraphic(deleteIcon);
+        this.delete.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("delete");
+                //DBdelate dBdelete = new DBdelate();         //rimozione utente da DB
+                //dBdelete.deleteUser(getUsername());
+                //ricaricare la tabella per aggiornarla ? Cancella elemento da Observable List? O dall'ArrayList?
+            }
+        });
     }
 }

@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +26,8 @@ public class CommentiController implements Initializable {
     private TableColumn<Commento, String> testo;
     @FXML
     private TableColumn<Commento, String> username;
+    @FXML
+    private TableColumn<Commento, Button> delete;
     private ObservableList<Commento> list;
 
     public void logout(ActionEvent event){
@@ -67,6 +70,7 @@ public class CommentiController implements Initializable {
         id_notizia.setCellValueFactory(new PropertyValueFactory<Commento, Integer>("id_notizia"));
         testo.setCellValueFactory(new PropertyValueFactory<Commento, String>("testo"));
         username.setCellValueFactory(new PropertyValueFactory<Commento, String>("username"));
+        delete.setCellValueFactory(new PropertyValueFactory<Commento, Button>("delete"));
 
         this.commenti.setItems(list);
     }

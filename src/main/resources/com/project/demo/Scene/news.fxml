@@ -137,9 +137,9 @@
          </LinearGradient>
       </fill>
    </Text>
-   <TableView fx:id="news" layoutX="192.0" layoutY="86.0" prefHeight="323.0" prefWidth="405.0">
+   <TableView fx:id="news" layoutX="192.0" layoutY="86.0" prefHeight="312.0" prefWidth="406.0">
       <columns>
-         <TableColumn fx:id="pubblicazione" minWidth="110.0" prefWidth="110.0" text="Data" />
+         <TableColumn fx:id="pubblicazione" minWidth="100.0" prefWidth="100.0" text="Data" />
          <TableColumn fx:id="titolo" minWidth="130.0" prefWidth="130.0" text="Titolo" />
          <TableColumn fx:id="fonte" minWidth="60.0" prefWidth="60.0" text="Fonte" />
          <TableColumn fx:id="like" minWidth="30.0" prefWidth="30.0" text="">

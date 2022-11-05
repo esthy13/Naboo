@@ -5,6 +5,7 @@ import com.project.demo.model.Utente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -27,6 +28,8 @@ public class UserController implements Initializable {
     private TableColumn<Utente, String> ruolo;
     @FXML
     private TableColumn<Utente, Button> modify;
+    @FXML
+    private TableColumn<Utente, Button> delete;
     private ObservableList<Utente> list;
 
 
@@ -70,6 +73,7 @@ public class UserController implements Initializable {
         username.setCellValueFactory(new PropertyValueFactory<Utente, String>("username"));
         ruolo.setCellValueFactory(new PropertyValueFactory<Utente, String>("ruolo"));
         modify.setCellValueFactory(new PropertyValueFactory<Utente, Button>("modify"));
+        delete.setCellValueFactory(new PropertyValueFactory<Utente, Button>("delete"));
 
         this.users.setItems(list);
     }

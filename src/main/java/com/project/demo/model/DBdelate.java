@@ -43,6 +43,7 @@ public class DBdelate extends DBconnect{
     }
 
     /*7. Rimuovere profili degli utenti */
+    //TODO NON FUNZIONA!!!!!
     public void deleteUser(String username){
 
         String query = "DELETE FROM Utenti WHERE username = "+" '"+username+"'";

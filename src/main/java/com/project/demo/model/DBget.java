@@ -409,6 +409,7 @@ public class DBget  extends DBconnect{
             while (rs.next()) {
                 n = new Utente(Integer.parseInt(rs.getString(1)), rs.getString(2), rs.getString(4));
                 users.add(n);
+                n.setModDelete();
             }
 
         } catch (Exception ex) {
@@ -436,6 +437,7 @@ public class DBget  extends DBconnect{
             Commento comm;
             while (rs.next()) {
                 comm = new Commento(Integer.parseInt(rs.getString(1)),Integer.parseInt(rs.getString(2)),rs.getString(3), rs.getString(4));
+                comm.setDelete();
                 Comments.add(comm);
             }
 
