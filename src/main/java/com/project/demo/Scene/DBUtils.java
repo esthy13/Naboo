@@ -8,7 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.*;
 
@@ -115,6 +118,8 @@ public class DBUtils {
             if (!resultSet.isBeforeFirst()){
                 System.out.println("User not found in the database!");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initStyle(StageStyle.DECORATED);
+                //alert.setBackground(Background.fill(Paint.valueOf("#FFB3A8")));
                 alert.setContentText("Provided credentials are incorrect!");
                 alert.show();
             }else {

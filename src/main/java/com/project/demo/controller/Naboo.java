@@ -71,8 +71,11 @@ public class Naboo extends MyBot {
         else if(update.hasCallbackQuery()){
             System.out.println(update.getCallbackQuery().getData());
             String callback = update.getCallbackQuery().getData().substring(0,update.getCallbackQuery().getData().indexOf('-'));
-            int id = 5;
-            id = Integer.parseInt(update.getCallbackQuery().getData().substring((update.getCallbackQuery().getData().indexOf('-'))+1));
+            int id = 0;
+            if(isNull(update.getCallbackQuery().getData().substring((update.getCallbackQuery().getData().indexOf('-'))+1))){
+                id = 5;
+            }
+            else id = Integer.parseInt(update.getCallbackQuery().getData().substring((update.getCallbackQuery().getData().indexOf('-'))+1));
 
             AnswerCallbackQuery answerCallbackQuery = new AnswerCallbackQuery();
             answerCallbackQuery.setCallbackQueryId(update.getCallbackQuery().getId());

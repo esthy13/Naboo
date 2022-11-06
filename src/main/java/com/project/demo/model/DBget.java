@@ -299,7 +299,7 @@ public class DBget  extends DBconnect{
             st = con.createStatement();
             rs = st.executeQuery(query);
             rs.next();
-            ruolo = rs.getString(3);
+            ruolo = rs.getString(4);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -461,7 +461,6 @@ public class DBget  extends DBconnect{
             while(rs.next()) {
                 n = new Notizia(rs.getString(2), rs.getString(3), rs.getString(6),
                         Integer.parseInt(rs.getString(9)), Integer.parseInt(rs.getString(10)), Integer.parseInt(rs.getString(11)));
-                System.out.println(n.stampa());
                 news.add(n);
             }
         } catch (SQLException e) {
