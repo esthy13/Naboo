@@ -99,8 +99,8 @@ public class LettoreRSS {
         //DBdelate.deleteUser("daaniel"); //manca l'eliminazione di possiede;
 
         /*Delate Comment*/
-        //DBdelate.deleteComment(757,1); //errore con la chiave: errore inner join;
-        /*Lo esegue dopo il terzo tentativo (perchè?) anche su mysql*/ //OK, FUNZIONAA --> Inner join sistemato.
+        DBdelate.deleteComment(767,1); //errore con la chiave: errore inner join;
+        /*Lo esegue dopo il terzo tentativo (perchè?) anche su mysql*/
 
         /*Delate Notizia*/
         //DBdelate.deleteNotizia(750);  //errore con la chiave: errore inner join;

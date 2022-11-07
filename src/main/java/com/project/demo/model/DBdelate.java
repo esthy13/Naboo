@@ -83,7 +83,7 @@ public class DBdelate extends DBconnect{
     public static void deleteComment(int id_notizia, int id_utente){
 
         String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
-                "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "+"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
+                "WHERE Possiede.id_notizia = "+"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
         /*
        DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti
 WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "757" AND  Possiede.id_utente = "1"
