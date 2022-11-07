@@ -70,8 +70,8 @@ public class DBdelate extends DBconnect{
 
         //Su Mysql funziona.
 
-        String query = " DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti" +
-                        "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = "+" '"+id_utente+"'";
+        String query = " DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti " +
+                        " WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = "+"'"+id_utente+"'";
 
 
         try{
@@ -79,9 +79,9 @@ public class DBdelate extends DBconnect{
             st = con.createStatement();
             //st.executeUpdate(query);
             executeSQLQuery(query,"Cancellazione righe inerente all'utente eseguito");
-            //deleteUserRow(id_utente);
             con.close();
             st.close();
+            deleteUserRow(id_utente);
         }catch(Exception ex){
             System.out.println("Error:"+ex);
             //executeSQLQuery(query,"Inserimento non completato");
@@ -103,6 +103,7 @@ public class DBdelate extends DBconnect{
             //executeSQLQuery(query,"Inserimento non completato");
         }
     }
+
 
     /*9. Rimuove commenti degli utenti*/
     public static void deleteComment(int id_notizia, int id_utente){

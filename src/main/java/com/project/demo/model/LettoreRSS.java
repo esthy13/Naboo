@@ -96,10 +96,10 @@ public class LettoreRSS {
         DBconnect dBconnect = new DBconnect();
         DBdelate dBdelate = new DBdelate();
         /*Delate User*/
-        DBdelate.deleteUser(4); //manca l'eliminazione di possiede;
+        DBdelate.deleteUser(1); //manca l'eliminazione di possiede;
 
         /*Delate Comment IS WORKING 11:37*/
-        //DBdelate.deleteComment(828,2);
+        //DBdelate.deleteComment(48,1);
         /*Errore iniziale: Lo esegue dopo il terzo tentativo (perchè?) anche su mysql --> (problema più valori nella tabella: risolto) */
 
         /*Delate Notizia*/
