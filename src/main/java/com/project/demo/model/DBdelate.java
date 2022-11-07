@@ -68,6 +68,8 @@ public class DBdelate extends DBconnect{
         WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = 1
         */
 
+        //Su Mysql funziona.
+
         String query = " DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti" +
                         "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = "+" '"+id_utente+"'";
 
@@ -77,7 +79,7 @@ public class DBdelate extends DBconnect{
             st = con.createStatement();
             //st.executeUpdate(query);
             executeSQLQuery(query,"Cancellazione righe inerente all'utente eseguito");
-            deleteUserRow(id_utente);
+            //deleteUserRow(id_utente);
             con.close();
             st.close();
         }catch(Exception ex){
@@ -86,10 +88,6 @@ public class DBdelate extends DBconnect{
         }
     }
     public static void deleteUserRow(int id_utente){
-        /*
-        DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti
-        WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = 1
-        */
 
         String query = "DELETE FROM Utenti WHERE id_utente = "+" '"+id_utente+"'";
 

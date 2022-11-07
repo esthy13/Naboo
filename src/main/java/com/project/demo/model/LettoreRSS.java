@@ -96,7 +96,7 @@ public class LettoreRSS {
         DBconnect dBconnect = new DBconnect();
         DBdelate dBdelate = new DBdelate();
         /*Delate User*/
-        DBdelate.deleteUser(2); //manca l'eliminazione di possiede;
+        DBdelate.deleteUser(4); //manca l'eliminazione di possiede;
 
         /*Delate Comment IS WORKING 11:37*/
         //DBdelate.deleteComment(828,2);
