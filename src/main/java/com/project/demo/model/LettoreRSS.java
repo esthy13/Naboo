@@ -96,13 +96,13 @@ public class LettoreRSS {
         DBconnect dBconnect = new DBconnect();
         DBdelate dBdelate = new DBdelate();
         /*Delate User*/
-        //DBdelate.deleteUser("daaniel"); //manca l'eliminazione di possiede;
+        DBdelate.deleteUser(2); //manca l'eliminazione di possiede;
 
-        /*Delate Comment*/
-        DBdelate.deleteComment(767,1); //errore con la chiave: errore inner join;
-        /*Lo esegue dopo il terzo tentativo (perchè?) anche su mysql*/
+        /*Delate Comment IS WORKING 11:37*/
+        //DBdelate.deleteComment(828,2);
+        /*Errore iniziale: Lo esegue dopo il terzo tentativo (perchè?) anche su mysql --> (problema più valori nella tabella: risolto) */
 
         /*Delate Notizia*/
-        //DBdelate.deleteNotizia(750);  //errore con la chiave: errore inner join;
+        //DBdelate.deleteNotizia(777);  //errore con la chiave: errore inner join ;
     }
 }
