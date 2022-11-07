@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 
 public class DBconnect {
-    public Connection con;
-    public Statement st;
+    public static Connection con;
+    public static Statement st;
     public ResultSet rs;
 
     ArrayList<Notizia> Catalogo;
@@ -17,7 +17,7 @@ public class DBconnect {
 
    
 
- public Connection getConnection(){
+ public static Connection getConnection(){
         Connection con;
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
@@ -27,7 +27,7 @@ public class DBconnect {
             return null;
         }
     }
-    public void executeSQLQuery(String query, String message){
+    public static void executeSQLQuery(String query, String message){
         Connection con = getConnection();
         try {
             st = con.createStatement();
@@ -76,5 +76,7 @@ public class DBconnect {
         }
         return pubblicazione;
     }
+
+    public static void deleteInteragiscono(){}
 
 }

@@ -5,17 +5,35 @@ import java.sql.DriverManager;
 
 public class DBdelate extends DBconnect{
     /*5. Rimuove notizie dalla base di dati*/
-    public void deleteNotizia(int id_notizia){
-        deleteFormataNotizia(id_notizia);
+    public static void deleteNotizia(int id_notizia){
+        deleteFormataNotizia(id_notizia); //eseguito
         String query = "DELETE Possiede , Commenti  FROM Commenti  INNER JOIN Possiede " +
-                "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "+"'"+id_notizia+"'"
-                +"DELETE FROM Notizia WHERE id_notizia = "+"'"+id_notizia+"';";
+                "WHERE Possiede.id_notizia = "+"'"+id_notizia+"';";
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Cancellazione Possiede e commento eseguito");
+            deleteNotiziaRow(id_notizia);
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+
+    /*5. Rimuove notizie dalla base di dati*/
+    public static void deleteNotiziaRow(int id_notizia){
+        deleteFormataNotizia(id_notizia);
+
+        String query ="DELETE FROM Notizia WHERE id_notizia = "+"'"+id_notizia+"';";
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             //st.executeUpdate(query);
-            executeSQLQuery(query,"Cancellazione commento eseguito");
+            executeSQLQuery(query,"Cancellazione Riga Notizia eseguita");
             con.close();
             st.close();
         }catch(Exception ex){
@@ -25,7 +43,7 @@ public class DBdelate extends DBconnect{
     }
 
     /*5. Rimuove Interagiscono dalla base di dati*/
-    public void deleteInteragiscono(String id_notizia, String id_utente){
+    public static void deleteInteragiscono(String id_notizia, String id_utente){
 
         String query = "DELETE FROM Interagiscono WHERE id_notizia = "+"'"+id_notizia+"' and id_utente = " + "'" + id_utente + "';";
 
@@ -44,7 +62,7 @@ public class DBdelate extends DBconnect{
 
     /*7. Rimuovere profili degli utenti */
     //TODO NON FUNZIONA!!!!!
-    public void deleteUser(String username){
+    public static void deleteUser(String username){
 
         String query = "DELETE FROM Utenti WHERE username = "+" '"+username+"'";
 
@@ -62,11 +80,20 @@ public class DBdelate extends DBconnect{
     }
 
     /*9. Rimuove commenti degli utenti*/
-    public void deleteComment(int id_notizia, int id_utente){
+    public static void deleteComment(int id_notizia, int id_utente){
 
+        String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
+                "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "+"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
+        /*
+       DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti
+WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "757" AND  Possiede.id_utente = "1"
+        */
+
+
+        /*
         String query = "DELETE Possiede , Commenti  FROM Commenti  INNER JOIN Possiede " +
                 "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "+"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
-
+        */
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
@@ -135,7 +162,7 @@ public class DBdelate extends DBconnect{
     }
 
     /* Rimuovere fonte */
-    public void deleteFormataNotizia(int id_notizia){
+    public static void deleteFormataNotizia(int id_notizia){
 
         String query = "DELETE FROM Formata WHERE id_notizia = "+" '"+id_notizia+"'";
 

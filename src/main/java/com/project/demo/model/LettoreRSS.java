@@ -92,7 +92,17 @@ public class LettoreRSS {
 
 
     public static void main(String args[])throws Exception{
-        LettoreRSS rss = new LettoreRSS();
+        //LettoreRSS rss = new LettoreRSS();
+        DBconnect dBconnect = new DBconnect();
+        DBdelate dBdelate = new DBdelate();
+        /*Delate User*/
+        //DBdelate.deleteUser("daaniel"); //manca l'eliminazione di possiede;
 
+        /*Delate Comment*/
+        //DBdelate.deleteComment(757,1); //errore con la chiave: errore inner join;
+        /*Lo esegue dopo il terzo tentativo (perchè?) anche su mysql*/ //OK, FUNZIONAA --> Inner join sistemato.
+
+        /*Delate Notizia*/
+        //DBdelate.deleteNotizia(750);  //errore con la chiave: errore inner join;
     }
 }
