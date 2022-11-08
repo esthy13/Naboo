@@ -87,7 +87,7 @@ public class LettoreRSS {
 
 
     public static void main(String args[])throws Exception{
-        //LettoreRSS rss = new LettoreRSS();
+        LettoreRSS rss = new LettoreRSS();
         DBconnect dBconnect = new DBconnect();
         DBdelate dBdelate = new DBdelate();
 

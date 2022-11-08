@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBdelate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBdelate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBconnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/DBdelate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/DBdelate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/LettoreRSS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/LettoreRSS.class" afterDir="false" />
     </list>
     <list id="22f93525-229e-4387-b480-732a209a3a5b" name="Changes by Gaetano" comment="" />
@@ -257,8 +257,7 @@
       <workItem from="1667810451723" duration="3289000" />
       <workItem from="1667815098455" duration="305000" />
       <workItem from="1667815455103" duration="3640000" />
-      <workItem from="1667837044440" duration="1887000" />
-      <workItem from="1667917756852" duration="3574000" />
+      <workItem from="1667837044440" duration="2480000" />
     </task>
     <servers />
   </component>
