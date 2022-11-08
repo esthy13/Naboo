@@ -125,7 +125,12 @@ public class DBUtils {
             }else {
                 while (resultSet.next()){
                     String retrievedPassword = resultSet.getString("password");
-                    if (retrievedPassword.equals(password)){
+                    Encryptor En = new Encryptor();
+                    String key = "Bar12345Bar12345"; // 128 bit key
+                    String initVector = "RandomInitVector"; // 16 bytes IV
+                    String decrypt_pass = En.decrypt(key, initVector,retrievedPassword);
+
+                    if (decrypt_pass.equals(password)){
                         changeScene(event, "loggedin-view.fxml", "Welcome!", username);
                     }else {
                         System.out.println("Password did not match!");
