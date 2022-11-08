@@ -101,5 +101,8 @@ public class LettoreRSS {
         /*Delate Notizia IS WORKING */
         //DBdelate.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
         //DBdelate.deleteNotizia(381);  //errore con la chiave: errore inner join ;
+
+        /*Delate Fonte IS WORKING */
+        //DBdelate.deleteFonte("http://xml2.corriereobjects.it/rss/homepage.xml");  //errore con la chiave: errore inner join ;
     }
 }

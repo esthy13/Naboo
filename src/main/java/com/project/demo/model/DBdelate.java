@@ -181,21 +181,15 @@ public class DBdelate extends DBconnect{
     }
 
     /* Rimuovere fonte */
-    public void deleteFonte(String rss){
+    public static void deleteFonte(String rss){
 
-        String query = "DELETE FROM Fonti WHERE rss = "+" '"+rss+"'";
+        String query = "DELETE FROM fonti WHERE rss = "+"'"+rss+"'";
 
         try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
-            st = con.createStatement();
-            //st.executeUpdate(query);
             deleteFormata(rss);
             executeSQLQuery(query,"Cancellazione fonte eseguito");
-            con.close();
-            st.close();
         }catch(Exception ex){
             System.out.println("Error:"+ex);
-            //executeSQLQuery(query,"Inserimento non completato");
         }
     }
 
@@ -217,7 +211,7 @@ public class DBdelate extends DBconnect{
         }
     }
 
-    public void deleteFormata(String rss){
+    public static void deleteFormata(String rss){
 
         String query = "DELETE FROM Formata WHERE rss = "+" '"+rss+"'";
 
@@ -225,7 +219,7 @@ public class DBdelate extends DBconnect{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             //st.executeUpdate(query);
-            executeSQLQuery(query,"Cancellazione fonte eseguito");
+            executeSQLQuery(query,"Cancellazione formata eseguito");
             con.close();
             st.close();
         }catch(Exception ex){
