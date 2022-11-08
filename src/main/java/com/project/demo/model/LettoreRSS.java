@@ -65,11 +65,6 @@ public class LettoreRSS {
 
             }
 
-            //dBinsert.readCSV("C:\\Users\\giuli\\OneDrive\\Documenti\\Esame\\Naboo\\Notizia.csv");
-
-            //Invio di notizia all'utente TELEGRAM
-            //System.out.println(N.toString());
-            //db.getidnotizia
             //messaggio telegram da inviare agli utenti
             /**SendMessage sendMessage = new SendMessage();
              sendMessage.setText(N.toString());
@@ -95,14 +90,16 @@ public class LettoreRSS {
         //LettoreRSS rss = new LettoreRSS();
         DBconnect dBconnect = new DBconnect();
         DBdelate dBdelate = new DBdelate();
-        /*Delate User*/
-        DBdelate.deleteUser(1); //manca l'eliminazione di possiede;
 
-        /*Delate Comment IS WORKING 11:37*/
+        /*Delate User IS WORKING */
+        //DBdelate.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+        //DBdelate.completeDelateUser(1);  //Cancellazione dell'utente
+
+        /*Delate Comment IS WORKING */
         //DBdelate.deleteComment(48,1);
-        /*Errore iniziale: Lo esegue dopo il terzo tentativo (perchè?) anche su mysql --> (problema più valori nella tabella: risolto) */
 
-        /*Delate Notizia*/
-        //DBdelate.deleteNotizia(777);  //errore con la chiave: errore inner join ;
+        /*Delate Notizia IS WORKING */
+        //DBdelate.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+        //DBdelate.deleteNotizia(381);  //errore con la chiave: errore inner join ;
     }
 }

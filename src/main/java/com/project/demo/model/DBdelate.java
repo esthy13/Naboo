@@ -7,8 +7,8 @@ public class DBdelate extends DBconnect{
     /*5. Rimuove notizie dalla base di dati*/
     public static void deleteNotizia(int id_notizia){
         deleteFormataNotizia(id_notizia); //eseguito
-        String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
-                "WHERE Possiede.id_notizia = "+"'"+id_notizia+"';";
+        String query = " DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti " +
+                " WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_notizia = "+"'"+id_notizia+"'";
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
@@ -25,7 +25,6 @@ public class DBdelate extends DBconnect{
 
     /*5. Rimuove notizie dalla base di dati*/
     public static void deleteNotiziaRow(int id_notizia){
-        deleteFormataNotizia(id_notizia);
 
         String query ="DELETE FROM Notizia WHERE id_notizia = "+"'"+id_notizia+"';";
 
@@ -61,18 +60,10 @@ public class DBdelate extends DBconnect{
     }
 
     /*7. Rimuovere profili degli utenti */
-    //TODO NON FUNZIONA!!!!!
     public static void deleteUser(int id_utente){
-        /*
-        DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti
-        WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = 1
-        */
-
-        //Su Mysql funziona.
 
         String query = " DELETE Possiede , Commenti  FROM Possiede,Notizia  INNER JOIN Commenti " +
                         " WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = Notizia.id_notizia and Possiede.id_utente = "+"'"+id_utente+"'";
-
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
@@ -81,12 +72,13 @@ public class DBdelate extends DBconnect{
             executeSQLQuery(query,"Cancellazione righe inerente all'utente eseguito");
             con.close();
             st.close();
-            deleteUserRow(id_utente);
+            //deleteUserRow(id_utente);
         }catch(Exception ex){
             System.out.println("Error:"+ex);
-            //executeSQLQuery(query,"Inserimento non completato");
+
         }
     }
+
     public static void deleteUserRow(int id_utente){
 
         String query = "DELETE FROM Utenti WHERE id_utente = "+" '"+id_utente+"'";
@@ -102,6 +94,28 @@ public class DBdelate extends DBconnect{
             System.out.println("Error:"+ex);
             //executeSQLQuery(query,"Inserimento non completato");
         }
+    }
+    public static void InteragisconoCheck(){
+
+        String query = "TRUNCATE TABLE interagiscono;";
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Cancellazione Interagisono eseguito");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+
+    public static void completeDelateUser(int id_utente){
+        deleteUser(id_utente);
+        //InteragisconoCheck();
+        deleteUserRow(id_utente);
     }
 
 
