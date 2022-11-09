@@ -91,18 +91,18 @@ public class LettoreRSS {
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
 
-        /*Delate User IS WORKING */
-        //DBdelate.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-        //DBdelate.completeDeleteUser(1);  //Cancellazione dell'utente
+        /*Delete User IS WORKING */
+        //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+        //dBdelete.completeDeleteUser(1);  //Cancellazione dell'utente
 
-        /*Delate Comment IS WORKING */
-        //DBdelate.deleteComment(48,1);
+        /*Delete Comment IS WORKING */
+        //dBdelete.deleteComment(48,1);
 
-        /*Delate Notizia IS WORKING */
-        //DBdelate.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-        //DBdelate.deleteNotizia(381);  //errore con la chiave: errore inner join ;
+        /*Delete Notizia IS WORKING */
+        //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+        //dBdelete.deleteNotizia(381);  //errore con la chiave: errore inner join ;
 
-        /*Delate Fonte IS WORKING */
+        /*Delete Fonte IS WORKING */
         //DBdelate.deleteFonte("http://xml2.corriereobjects.it/rss/homepage.xml");  //errore con la chiave: errore inner join ;
     }
 }
