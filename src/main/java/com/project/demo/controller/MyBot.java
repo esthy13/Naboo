@@ -49,7 +49,7 @@ public abstract class MyBot extends Buttons{
         sendMsg(update.getMessage().getChatId().toString(),"Il tuo commento è stato aggiunto correttamente "
                 + festa_emoji, keyboardVizualizza(update,id_notizia,dBget.getNumCommenti(id_notizia)));
         System.out.println(dBget.getNumCommenti(id_notizia));
-        dBdelate.deleteInteragiscono(id_notizia, id_utente);
+        dBdelete.deleteInteragiscono(id_notizia, id_utente);
 
     }
     public void start(Update update){

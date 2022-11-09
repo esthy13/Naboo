@@ -3,7 +3,7 @@ package com.project.demo.model;
 import java.sql.DriverManager;
 
 
-public class DBdelate extends DBconnect{
+public class DBdelete extends DBconnect{
     /*5. Rimuove notizie dalla base di dati*/
     public static void deleteNotizia(int id_notizia){
         deleteFormataNotizia(id_notizia); //eseguito
@@ -112,7 +112,7 @@ public class DBdelate extends DBconnect{
         }
     }
 
-    public static void completeDelateUser(int id_utente){
+    public static void completeDeleteUser(int id_utente){
         deleteUser(id_utente);
         //InteragisconoCheck();
         deleteUserRow(id_utente);

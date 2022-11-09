@@ -85,7 +85,7 @@ public class Naboo extends MyBot {
                     like(update, id);
                     break;
                 case "togliLike":
-                    dBdelate.minusLike(id);
+                    dBdelete.minusLike(id);
                     String callback2 = update.getCallbackQuery().getMessage().getReplyMarkup().getKeyboard().get(0).get(1).getCallbackData();
                     callback2 = callback2.substring(0, callback2.indexOf('-'));
                     EditMessageReplyMarkup togliLike = twoButtons(update, 0, like_emoji, "like", dBget.selectC_liked(id),
@@ -100,7 +100,7 @@ public class Naboo extends MyBot {
                     dislike(update, id);
                     break;
                 case "togliDislike":
-                    dBdelate.minusDislike(id);
+                    dBdelete.minusDislike(id);
                     String callback4 = update.getCallbackQuery().getMessage().getReplyMarkup().getKeyboard().get(0).get(0).getCallbackData();
                     callback4 = callback4.substring(0, callback4.indexOf('-'));
                     EditMessageReplyMarkup togliDislike = twoButtons(update, 0, like_emoji, callback4, dBget.selectC_liked(id),

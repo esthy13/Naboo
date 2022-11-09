@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 
 import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.CLOSE;
-import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.MINUS;
 import static javafx.scene.paint.Color.RED;
 
 public class Commento {
@@ -82,7 +81,7 @@ public class Commento {
         this.delete.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                DBdelate dBdelete = new DBdelate();
+                DBdelete dBdelete = new DBdelete();
                 DBget dBget = new DBget();
                 dBdelete.deleteComment(getId_notizia(),Integer.parseInt(dBget.getId_user(getUsername())));
                 //reload della tabella?

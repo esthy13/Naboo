@@ -39,7 +39,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
     String menu_emoji = EmojiParser.parseToUnicode(":scroll:");
 
     //DBconnect dBconnect = new DBconnect();
-    DBdelate dBdelate = new DBdelate();
+    DBdelete dBdelete = new DBdelete();
     DBget dBget = new DBget();
     DBinsert dBinsert = new DBinsert();
 

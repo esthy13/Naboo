@@ -89,11 +89,11 @@ public class LettoreRSS {
     public static void main(String args[])throws Exception{
         LettoreRSS rss = new LettoreRSS();
         DBconnect dBconnect = new DBconnect();
-        DBdelate dBdelate = new DBdelate();
+        DBdelete dBdelete = new DBdelete();
 
         /*Delate User IS WORKING */
         //DBdelate.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-        //DBdelate.completeDelateUser(1);  //Cancellazione dell'utente
+        //DBdelate.completeDeleteUser(1);  //Cancellazione dell'utente
 
         /*Delate Comment IS WORKING */
         //DBdelate.deleteComment(48,1);

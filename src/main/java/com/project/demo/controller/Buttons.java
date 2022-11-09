@@ -175,7 +175,7 @@ public abstract class Buttons extends KeyboardsAndEmoji{
         if (dislikeButton.equals("togliDislike")) {
             //verifico se tasto dislike e' gia' stato schiacciato (nel caso callbackquery del tasto dislike = like)
             //tolgo dislike
-            dBdelate.minusDislike(id_notizia);
+            dBdelete.minusDislike(id_notizia);
             dBinsert.addLike(id_notizia);
             int dislikeTot = dBget.selectC_disliked(id_notizia);
             int likeTot = dBget.selectC_liked(id_notizia);
@@ -206,7 +206,7 @@ public abstract class Buttons extends KeyboardsAndEmoji{
         if (likeButton.equals("togliLike")) {
             //verifico se tasto like e' gia' stato schiacciato (nel caso callbackquery del tasto like = dislike)
             //tolgo like
-            dBdelate.minusLike(id_notizia);
+            dBdelete.minusLike(id_notizia);
             dBinsert.addDislike(id_notizia);
             //modifica callbackdata del InlineKeyboardButton dislike from like into dislike
             EditMessageReplyMarkup deleteDislike = twoButtons(update, 0, like_emoji, "like", dBget.selectC_liked(id_notizia),
