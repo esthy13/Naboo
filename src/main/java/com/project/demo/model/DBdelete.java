@@ -125,8 +125,6 @@ public class DBdelete extends DBconnect{
         String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
                 "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "+"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
 
-        /*QUERY FUNZIONA SU MYSQL, ANCHE SU  java */
-
         /*
         DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti
         WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "809" AND Possiede.id_utente = "2"
