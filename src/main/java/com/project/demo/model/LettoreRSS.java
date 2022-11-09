@@ -15,6 +15,7 @@ public class LettoreRSS {
     public LettoreRSS()throws Exception{
         //La nostra sorgente Feed
         URL url  = new URL("http://xml2.corriereobjects.it/rss/homepage.xml"); //Link del RSS
+        // l'url dovrà essere scelto dall'amministrazione quindi url cambierà
         XmlReader reader = null;
         try {
             DBinsert dBinsert = new DBinsert();
