@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9b7a016-6526-483f-b301-dc712998bd5f" name="Changes" comment="">
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/LettoreRSS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/LettoreRSS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <list id="22f93525-229e-4387-b480-732a209a3a5b" name="Changes by Gaetano" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -275,7 +271,6 @@
       <workItem from="1667837044440" duration="2480000" />
       <workItem from="1667941302420" duration="831000" />
       <workItem from="1667981607970" duration="1950000" />
-      <workItem from="1668075935951" duration="946000" />
     </task>
     <servers />
   </component>
