@@ -1,11 +1,16 @@
 package com.project.demo.model;
 
+import com.project.demo.Scene.DBUtils;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.Background;
+
+import java.util.Optional;
 
 import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.CLOSE;
 import static javafx.scene.paint.Color.RED;
@@ -81,10 +86,24 @@ public class Commento {
         this.delete.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                DBdelete dBdelete = new DBdelete();
-                DBget dBget = new DBget();
-                dBdelete.deleteComment(getId_notizia(),Integer.parseInt(dBget.getId_user(getUsername())));
-                //reload della tabella?
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Eliminare definitivamente il commento " + getId_commento());
+                Optional<ButtonType> result = alert.showAndWait();
+                if(!result.isPresent()){}
+                // alert is exited, no button has been pressed
+                else if(result.get() == ButtonType.OK){
+                    //ok button is pressed
+                    //System.out.println("ok");
+                    DBdelete dBdelete = new DBdelete();
+                    DBget dBget = new DBget();
+                    dBdelete.deleteComment(getId_commento(), getId_notizia(),Integer.parseInt(dBget.getId_user(getUsername())));  //Cancellazione dell'utente
+                    System.out.println("delete " + getId_commento());
+                    DBUtils.changeScene(actionEvent, "Commenti.fxml", "Manage user!", null);
+                }
+                else if(result.get() == ButtonType.CANCEL) {
+                    // cancel button is pressed
+                    //System.out.println("cancel");
+                }
             }
         });
     }

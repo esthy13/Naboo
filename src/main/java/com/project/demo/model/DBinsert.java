@@ -52,8 +52,6 @@ public class DBinsert extends DBconnect {
         }
     }
 
-<<<<<<< HEAD
-=======
     /*Insert news, no dublicate, default: */
 
     /*
@@ -98,8 +96,6 @@ WHERE NOT EXISTS (
         }
     }
 
-
->>>>>>> parent of 988ed85 (insert)
     /*6. Aggiunge profili degli utenti*/
     public void insertUser(String username, String ruolo){
 

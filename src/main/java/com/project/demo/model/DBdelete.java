@@ -123,7 +123,31 @@ public class DBdelete extends DBconnect{
     public static void deleteComment(int id_notizia, int id_utente){
 
         String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
-                "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "+"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
+                "WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "
+                +"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
+
+        /*
+        DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti
+        WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "809" AND Possiede.id_utente = "2"
+        */
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Cancellazione commento eseguito");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+    public static void deleteComment(int id_commento,int id_notizia, int id_utente){
+
+        String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
+                "WHERE Commenti.id_commento = " + id_commento + " and Possiede.id_notizia = "
+                +"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
 
         /*
         DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti

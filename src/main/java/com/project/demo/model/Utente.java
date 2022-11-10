@@ -1,12 +1,18 @@
 package com.project.demo.model;
 
+import com.project.demo.Scene.DBUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.Background;
+
+import java.util.Optional;
+
 import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.*;
 import static javafx.scene.paint.Color.*;
 
@@ -90,13 +96,24 @@ public class Utente {
         this.delete.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                DBdelete dBdelete = new DBdelete();
-                dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-                dBdelete.completeDeleteUser(1);  //Cancellazione dell'utente
-                System.out.println("delete");
-                //DBdelate dBdelete = new DBdelate();         //rimozione utente da DB
-                //dBdelete.deleteUser(getUsername());
-                //ricaricare la tabella per aggiornarla ? Cancella elemento da Observable List? O dall'ArrayList?
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Eliminare definitivamente l'utente @" + getUsername());
+                Optional<ButtonType> result = alert.showAndWait();
+                if(!result.isPresent()){}
+                // alert is exited, no button has been pressed
+                else if(result.get() == ButtonType.OK){
+                    //ok button is pressed
+                    //System.out.println("ok");
+                    DBdelete dBdelete = new DBdelete();
+                    dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+                    dBdelete.completeDeleteUser(getId());  //Cancellazione dell'utente
+                    System.out.println("delete " + getId());
+                    DBUtils.changeScene(actionEvent, "Utenti.fxml", "Manage user!", null);
+                }
+                else if(result.get() == ButtonType.CANCEL) {
+                    // cancel button is pressed
+                    //System.out.println("cancel");
+                }
             }
         });
     }
