@@ -17,13 +17,13 @@ import java.util.List;
 public class DBinsert extends DBconnect {
     public void insertData(String Titolo, String Pubblicazione, String Descrizione,
                            String Autore, String Fonte, String Link, String Immagine,
-                           int C_liked,int C_disliked,int C_shared,String rss){
+                           int C_liked,int C_disliked,int C_reported,String rss){
 
-        /*INSERT INTO `Notizia`( `titolo`, `pubblicazione`, `descrizione`, `autore`, `fonte`, `link`, `immagine`, `c_liked`, `c_disliked`, `c_shared`)
+        /*INSERT INTO `Notizia`( `titolo`, `pubblicazione`, `descrizione`, `autore`, `fonte`, `link`, `immagine`, `c_liked`, `c_disliked`, `c_reported`)
         VALUES ('[value-2]',CAST('20121128174512' AS DATETIME),'[value-4]','[value-5]','[value-6]','[value-7]','[value-8]',0,0,0)*/
 
         String query = "insert into Notizia"
-                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_shared)"
+                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_reported)"
                 +"values ("
                 +"'"+Titolo+"',"
                 +"'"+Pubblicazione+"',"
@@ -34,7 +34,7 @@ public class DBinsert extends DBconnect {
                 +"'"+Immagine+"',"
                 +"'"+C_liked+"',"
                 +"'"+C_disliked+"',"
-                +"'"+C_shared+"');";
+                +"'"+C_reported+"');";
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");

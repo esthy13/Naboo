@@ -15,6 +15,7 @@ public class LettoreRSS {
     public LettoreRSS()throws Exception{
         //La nostra sorgente Feed
         URL url  = new URL("http://xml2.corriereobjects.it/rss/homepage.xml"); //Link del RSS
+        // l'url dovrà essere scelto dall'amministrazione quindi url cambierà
         XmlReader reader = null;
         try {
             DBinsert dBinsert = new DBinsert();
@@ -65,11 +66,6 @@ public class LettoreRSS {
 
             }
 
-            //dBinsert.readCSV("C:\\Users\\giuli\\OneDrive\\Documenti\\Esame\\Naboo\\Notizia.csv");
-
-            //Invio di notizia all'utente TELEGRAM
-            //System.out.println(N.toString());
-            //db.getidnotizia
             //messaggio telegram da inviare agli utenti
             /**SendMessage sendMessage = new SendMessage();
              sendMessage.setText(N.toString());
@@ -92,17 +88,22 @@ public class LettoreRSS {
 
 
     public static void main(String args[])throws Exception{
-        //LettoreRSS rss = new LettoreRSS();
+        LettoreRSS rss = new LettoreRSS();
         DBconnect dBconnect = new DBconnect();
-        DBdelate dBdelate = new DBdelate();
-        /*Delate User*/
-        DBdelate.deleteUser(1); //manca l'eliminazione di possiede;
+        DBdelete dBdelete = new DBdelete();
 
-        /*Delate Comment IS WORKING 11:37*/
-        //DBdelate.deleteComment(48,1);
-        /*Errore iniziale: Lo esegue dopo il terzo tentativo (perchè?) anche su mysql --> (problema più valori nella tabella: risolto) */
+        /*Delete User IS WORKING */
+        //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+        //dBdelete.completeDeleteUser(1);  //Cancellazione dell'utente
 
-        /*Delate Notizia*/
-        //DBdelate.deleteNotizia(777);  //errore con la chiave: errore inner join ;
+        /*Delete Comment IS WORKING */
+        //dBdelete.deleteComment(48,1);
+
+        /*Delete Notizia IS WORKING */
+        //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+        //dBdelete.deleteNotizia(381);  //errore con la chiave: errore inner join ;
+
+        /*Delete Fonte IS WORKING */
+        //DBdelate.deleteFonte("http://xml2.corriereobjects.it/rss/homepage.xml");  //errore con la chiave: errore inner join ;
     }
 }

@@ -41,9 +41,7 @@ public class DBconnect {
         }
     }
 
-    /*1. Aggiungere una fonte  JAVA FX */
 
-    /*2. Rimuovere una fonte  JAVA FX */
 
     /*3. Aggiorna la base di dati, invocando News Collector per controllare eventuali aggiornamenti dalle fonti JAVA FX */
 
