@@ -90,6 +90,9 @@ public class Utente {
         this.delete.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                DBdelete dBdelete = new DBdelete();
+                dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
+                dBdelete.completeDeleteUser(1);  //Cancellazione dell'utente
                 System.out.println("delete");
                 //DBdelate dBdelete = new DBdelate();         //rimozione utente da DB
                 //dBdelete.deleteUser(getUsername());
