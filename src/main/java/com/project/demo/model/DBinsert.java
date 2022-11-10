@@ -52,6 +52,51 @@ public class DBinsert extends DBconnect {
         }
     }
 
+    /*Insert news, no dublicate, default: */
+
+    /*
+    INSERT INTO table_listnames (name, address, tele)
+SELECT * FROM (SELECT 'Rupert', 'Somewhere', '022') AS tmp
+WHERE NOT EXISTS (
+    SELECT name FROM table_listnames WHERE name = 'Rupert'
+) LIMIT 1;
+    */
+    public void insertDataDefault(String Titolo, String Pubblicazione, String Descrizione,
+                           String Autore, String Fonte, String Link, String Immagine,
+                           int C_liked,int C_disliked,int C_reported,String rss){
+
+        
+        String query = "insert into Notizia"
+                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_reported)"
+                +"values ("
+                +"'"+Titolo+"',"
+                +"'"+Pubblicazione+"',"
+                +"'"+Descrizione+"',"
+                +"'"+Autore+"',"
+                +"'"+Fonte+"',"
+                +"'"+Link+"',"
+                +"'"+Immagine+"',"
+                +"'"+C_liked+"',"
+                +"'"+C_disliked+"',"
+                +"'"+C_reported+"');";
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Inserimento NOTIZIA completato");
+
+            insertFormata(getRss(rss),lastId_notizia());
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+
+
     /*6. Aggiunge profili degli utenti*/
     public void insertUser(String username, String ruolo){
 
