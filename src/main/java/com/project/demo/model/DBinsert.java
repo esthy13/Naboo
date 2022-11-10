@@ -66,9 +66,9 @@ WHERE NOT EXISTS (
                            int C_liked,int C_disliked,int C_reported,String rss){
 
         
-        String query = "insert into Notizia"
+        String query = "INSERT INTO Notizia"
                 +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_reported)"
-                +"values ("
+                +"SELECT * FROM  ( SELECT"
                 +"'"+Titolo+"',"
                 +"'"+Pubblicazione+"',"
                 +"'"+Descrizione+"',"
@@ -78,7 +78,7 @@ WHERE NOT EXISTS (
                 +"'"+Immagine+"',"
                 +"'"+C_liked+"',"
                 +"'"+C_disliked+"',"
-                +"'"+C_reported+"');";
+                +"'"+C_reported+"') AS tmp WHERE NOT EXISTS (SELECT titolo FROM Notizia WHERE titolo = "+"'"+Titolo+"') LIMIT 1;";
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
