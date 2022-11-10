@@ -55,11 +55,9 @@ public class LettoreRSS {
                         break;
                     case "https://www.ansa.it/sito/ansait_rss.xml":
                         /*DA AGGIUNGERE*/
-                        /*N.setTitolo(entry.getTitle().replaceAll("'", " "));
-                        N.setPubblicazione(entry.getPublishedDate().toString());
-                        N.setLink(entry.getLink().replaceAll("'", " "));
-                        N.setAutore(entry.getAuthor().replaceAll("'", " "));
-                        N.setImage(" ");*/
+                        //set fonte ANSA
+                        //set descrizione ANSA
+                        N.setImage(" ");
                         break;
                     default:
                         N.setImage("");
@@ -93,8 +91,6 @@ public class LettoreRSS {
         LettoreRSS rss = new LettoreRSS();
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
-        DBinsert dBinsert = new DBinsert();
-
 
         /*Delete User IS WORKING */
         //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
@@ -105,9 +101,9 @@ public class LettoreRSS {
 
         /*Delete Notizia IS WORKING */
         //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-        //dBdelete.deleteNotizia(381);
+        //dBdelete.deleteNotizia(381);  //errore con la chiave: errore inner join ;
 
         /*Delete Fonte IS WORKING */
-        //DBdelate.deleteFonte("http://xml2.corriereobjects.it/rss/homepage.xml");  
+        //DBdelate.deleteFonte("http://xml2.corriereobjects.it/rss/homepage.xml");  //errore con la chiave: errore inner join ;
     }
 }
