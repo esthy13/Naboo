@@ -1,18 +1,21 @@
 package com.project.demo.Scene;
 
+import com.project.demo.model.DBdelete;
 import com.project.demo.model.DBget;
 import com.project.demo.model.Notizia;
 import com.project.demo.model.Utente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class NewsController implements Initializable {
@@ -76,10 +79,34 @@ public class NewsController implements Initializable {
         report.setCellValueFactory(new PropertyValueFactory<Notizia, Integer>("report"));
 
         this.news.setItems(list);
+        news.setEditable(true);
+        this.news.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.getDialogPane().setHeaderText("Eliminare definitivamente la notizia " + news.getSelectionModel().getSelectedItem().getId_notizia());
+                DialogPane dialog = alert.getDialogPane();
+                dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+                dialog.getStyleClass().add("dialog");
+                Optional<ButtonType> result = alert.showAndWait();
+                if(!result.isPresent()){}
+                else if(result.get() == ButtonType.OK){
+                    DBdelete dBdelete = new DBdelete();
+                    dBdelete.deleteNotizia(news.getSelectionModel().getSelectedItem().getId_notizia());
+                    news.getItems().remove(news.getSelectionModel().getSelectedIndex());
+                }
+                else if(result.get() == ButtonType.CANCEL) {}
+
+            }
+        });
     }
 
     public void visualizza() {
         DBget dBget = new DBget();
         this.list = FXCollections.observableArrayList(dBget.getAllNews());
+    }
+
+    public void delete(ActionEvent event){
+
     }
 }

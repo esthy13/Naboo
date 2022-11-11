@@ -17,7 +17,7 @@ public class Notizia {
 
 
 
-    public Notizia(String titolo, String pubblicazione,
+    public Notizia(int id_notizia, String titolo, String pubblicazione,
                    String fonte, int like, int dislike, int report){
         this.pubblicazione = pubblicazione;
         this.titolo = titolo;
@@ -25,6 +25,7 @@ public class Notizia {
         this.like = like;
         this.dislike = dislike;
         this.report = report;
+        this.id_notizia = id_notizia;
     }
     public Notizia(String titolo, String pubblicazione, String descrizione,
                    String autore, String fonte, String link, String image){

@@ -459,7 +459,7 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             Notizia n;
             while(rs.next()) {
-                n = new Notizia(rs.getString(2), rs.getString(3), rs.getString(6),
+                n = new Notizia(Integer.parseInt(rs.getString(1)),rs.getString(2), rs.getString(3), rs.getString(6),
                         Integer.parseInt(rs.getString(9)), Integer.parseInt(rs.getString(10)), Integer.parseInt(rs.getString(11)));
                 news.add(n);
             }
