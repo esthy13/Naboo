@@ -129,8 +129,9 @@ public class Utente {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.getDialogPane().setHeaderText("Eliminare definitivamente l'utente @" + getUsername());
                 alert.setTitle("Conferma");
-                Button okButton = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
-                okButton.setText("Annulla");
+                Button cancel = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
+                cancel.setText("Annulla");
+                //cancel.setBackground();
                 Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
                 stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                 DialogPane dialog = alert.getDialogPane();
