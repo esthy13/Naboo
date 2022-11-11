@@ -1,15 +1,20 @@
 package com.project.demo.model;
 
+import com.project.demo.Main;
 import com.project.demo.Scene.DBUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.Border;
+import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.stage.Window;
 
 import java.util.Optional;
 
@@ -97,7 +102,10 @@ public class Utente {
             @Override
             public void handle(ActionEvent actionEvent) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Eliminare definitivamente l'utente @" + getUsername());
+                alert.getDialogPane().setHeaderText("Eliminare definitivamente l'utente @" + getUsername());
+                DialogPane dialog = alert.getDialogPane();
+                dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+                dialog.getStyleClass().add("dialog");
                 Optional<ButtonType> result = alert.showAndWait();
                 if(!result.isPresent()){}
                 // alert is exited, no button has been pressed

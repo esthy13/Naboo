@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.layout.Background;
 
 import java.util.Optional;
@@ -87,7 +88,10 @@ public class Commento {
             @Override
             public void handle(ActionEvent actionEvent) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setContentText("Eliminare definitivamente il commento " + getId_commento());
+                alert.getDialogPane().setHeaderText("Eliminare definitivamente il commento" + getId_commento());
+                DialogPane dialog = alert.getDialogPane();
+                dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+                dialog.getStyleClass().add("dialog");
                 Optional<ButtonType> result = alert.showAndWait();
                 if(!result.isPresent()){}
                 // alert is exited, no button has been pressed
