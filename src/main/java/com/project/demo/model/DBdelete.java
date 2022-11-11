@@ -150,8 +150,12 @@ public class DBdelete extends DBconnect{
                 +"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
 
         /*
-        DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti
-        WHERE Commenti.id_commento = Possiede.id_commento and Possiede.id_notizia = "809" AND Possiede.id_utente = "2"
+        DELETE Possiede , Commenti  FROM Possiede,utenti  INNER JOIN Commenti
+WHERE Possiede.id_utente = utenti.id_utente
+and possiede.id_commento = commenti.id_commento
+AND Possiede.id_notizia = "83"
+AND  possiede.id_commento = "11";
+
         */
 
         try{
