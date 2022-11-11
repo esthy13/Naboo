@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/StyleDialogPane.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Notizia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Notizia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/NewsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/NewsController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/NewsController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -282,7 +280,8 @@
       <workItem from="1667981607970" duration="1950000" />
       <workItem from="1668157273158" duration="902000" />
       <workItem from="1668163051894" duration="400000" />
-      <workItem from="1668164374401" duration="14810000" />
+      <workItem from="1668164374401" duration="15515000" />
+      <workItem from="1668184617756" duration="1337000" />
     </task>
     <servers />
   </component>
