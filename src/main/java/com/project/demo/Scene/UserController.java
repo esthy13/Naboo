@@ -1,6 +1,7 @@
 package com.project.demo.Scene;
 
 import com.project.demo.model.DBget;
+import com.project.demo.model.DBinsert;
 import com.project.demo.model.Utente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,9 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -18,6 +17,14 @@ import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
 
+    @FXML
+    private TextField name;
+    @FXML
+    private TextField password;
+    @FXML
+    private ChoiceBox role;
+    @FXML
+    private Button add;
     @FXML
     private TableView<Utente> users;
     @FXML
@@ -68,6 +75,9 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        role.getItems().add("User");
+        role.getItems().add("Amministratore");
+
         visualizza();
         id.setCellValueFactory(new PropertyValueFactory<Utente, Integer>("id"));
         username.setCellValueFactory(new PropertyValueFactory<Utente, String>("username"));
@@ -81,5 +91,19 @@ public class UserController implements Initializable {
     public void visualizza() {
         DBget dBget = new DBget();
         this.list = FXCollections.observableArrayList(dBget.getUserList());
+    }
+
+    public void addUser(ActionEvent actionEvent){
+        DBinsert dBinsert = new DBinsert();
+        System.out.println(name.getText());
+        System.out.println(role.getValue().toString());
+        dBinsert.insertUser(name.getText(), role.getValue().toString());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Utente inserito correttamente");
+        alert.show();
+        DBUtils.changeScene(actionEvent, "Utenti.fxml", "Manage Import-Export!", null);
+        //TODO se i campi sono vuoti non inserire l'utente + alert di errore
+        //TODO se l'utente e' amministratore aggiungere metodo db che prende anche password in input
+        // altrimenti alert di errore
     }
 }
