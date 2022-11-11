@@ -143,11 +143,11 @@ public class DBdelete extends DBconnect{
             //executeSQLQuery(query,"Inserimento non completato");
         }
     }
-    public static void deleteComment(int id_commento,int id_notizia, int id_utente){
+    public static void deleteOneComment(int id_commento,int id_notizia){
 
-        String query = "DELETE Possiede , Commenti  FROM Possiede  INNER JOIN Commenti " +
-                "WHERE Commenti.id_commento = " + id_commento + " and Possiede.id_notizia = "
-                +"'"+id_notizia+"'"+" and Possiede.id_utente = "+"'"+id_utente+"';";
+        String query =  "DELETE Possiede , Commenti  FROM Possiede,utenti  INNER JOIN Commenti " +
+                        "WHERE Possiede.id_utente = utenti.id_utente and possiede.id_commento = commenti.id_commento " +
+                        "AND Possiede.id_notizia = '" +id_notizia+ "' AND  possiede.id_commento = '"+id_commento+"';";
 
         /*
         DELETE Possiede , Commenti  FROM Possiede,utenti  INNER JOIN Commenti

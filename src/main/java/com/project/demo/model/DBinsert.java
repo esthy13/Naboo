@@ -418,6 +418,21 @@ WHERE NOT EXISTS (
         }
         return srss;
     }
+    public void modifyRole(int id_utente, String ruolo){
+        String query = "UPDATE Utenti SET ruolo = '" +ruolo+ "' WHERE id_utente = '" +id_utente+"';";
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"c_shared aggiunto");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
 
 
 

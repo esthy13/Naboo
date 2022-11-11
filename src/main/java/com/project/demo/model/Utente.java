@@ -86,6 +86,31 @@ public class Utente {
         this.modify.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                String ruolo = getRuolo();
+                if(ruolo.equals("User")){ //cambio il valore attuale con quello da inserire nel DB
+                    ruolo = "Amministratore";
+                }
+                else ruolo = "User";
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.getDialogPane().setHeaderText("Rendere l'utente @" + getUsername()+ " " +ruolo);
+                DialogPane dialog = alert.getDialogPane();
+                dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+                dialog.getStyleClass().add("dialog");
+                Optional<ButtonType> result = alert.showAndWait();
+                    if(!result.isPresent()){}
+                    // alert is exited, no button has been pressed
+                    else if(result.get() == ButtonType.OK){
+                        //ok button is pressed
+                        //System.out.println("ok");
+                        DBinsert dBinsert= new DBinsert();
+                        dBinsert.modifyRole(getId(),ruolo);  //Cancellazione dell'utente
+                        System.out.println("delete " + getId());
+                        DBUtils.changeScene(actionEvent, "Utenti.fxml", "Manage user!", null);
+                }
+                    else if(result.get() == ButtonType.CANCEL) {
+                        // cancel button is pressed
+                        //System.out.println("cancel");
+                    }
                 System.out.println("modifica");
             }
         });
