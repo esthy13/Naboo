@@ -104,7 +104,7 @@ public class ImportController{
        File selectedDirectory = chooser.showDialog( Window.getWindows().get(0));
       DBinsert dBinsert = new DBinsert().DatabaseToCSV(selectedDirectory.getAbsolutePath());
        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-       alert.setHeaderText("Notizie caricate correttamente sul database");
+       alert.setHeaderText("Notizie scaricate correttamente dal database");
        alert.show();
    }
 }

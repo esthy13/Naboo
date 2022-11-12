@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -137,7 +138,7 @@
          </LinearGradient>
       </fill>
    </Text>
-   <TableView fx:id="news" layoutX="192.0" layoutY="86.0" prefHeight="312.0" prefWidth="406.0">
+   <TableView fx:id="news" layoutX="194.0" layoutY="43.0" prefHeight="355.0" prefWidth="400.0">
       <columns>
          <TableColumn fx:id="pubblicazione" minWidth="100.0" prefWidth="100.0" text="Data" />
          <TableColumn fx:id="titolo" minWidth="130.0" prefWidth="130.0" text="Titolo" />
@@ -159,4 +160,23 @@
          </TableColumn>
       </columns>
    </TableView>
+   <HBox fillHeight="false" layoutX="191.0" layoutY="4.0" prefHeight="36.0" prefWidth="406.0" spacing="6.5" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-opacity: 0.85; -fx-background-radius: 100; -fx-border-color: grey; -fx-border-radius: 100;">
+      <children>
+         <TextField fx:id="search_txt" prefHeight="27.0" prefWidth="338.0" promptText="Cerca ..." style="-fx-background-color: #f8f6f6; -fx-background-radius: 50; -fx-opacity: 0.65; -fx-border-color: #f8f6f6; -fx-border-radius: 50;">
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor></TextField>
+         <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #e379e1; -fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" text="">
+            <graphic>
+               <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="SEARCH" size="15" strokeLineCap="ROUND" strokeLineJoin="ROUND" textOrigin="CENTER">
+                  <rotationAxis>
+                     <Point3D />
+                  </rotationAxis></FontAwesomeIconView>
+
+            </graphic>
+         </Button>
+      </children>
+      <padding>
+         <Insets left="10.0" top="3.0" />
+      </padding></HBox>
 </AnchorPane>

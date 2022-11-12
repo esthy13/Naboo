@@ -137,12 +137,12 @@
          </LinearGradient>
       </fill>
    </Text>
-   <TextField fx:id="File_Path" layoutX="219.0" layoutY="84.0" prefHeight="26.0" prefWidth="305.0" promptText="Inserisci  File Path" />
+   <TextField fx:id="File_Path" layoutX="219.0" layoutY="84.0" prefHeight="26.0" prefWidth="305.0" promptText="Inserisci rss" />
    <Button fx:id="File_Chooser" layoutX="244.0" layoutY="140.0" mnemonicParsing="false" onAction="#Importa" text="Scegli File" />
    <Button fx:id="Directory_Chooser" layoutX="244.0" layoutY="245.0" mnemonicParsing="false" onAction="#Esporta" text="Scegli Cartella" />
    <Label layoutX="219.0" layoutY="56.0" />
    <Label layoutX="222.0" layoutY="56.0" text="IMPORTA FILE">
-      <textFill>
+      <!--textFill>
          <LinearGradient endX="1.0" endY="1.0">
             <stops>
                <Stop>
@@ -157,7 +157,7 @@
                </Stop>
             </stops>
          </LinearGradient>
-      </textFill></Label>
+      </textFill--></Label>
    <Label layoutX="222.0" layoutY="211.0" text="ESPORTA FILE" />
 
 </AnchorPane>

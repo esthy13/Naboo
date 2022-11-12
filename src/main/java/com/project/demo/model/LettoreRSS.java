@@ -12,9 +12,10 @@ import java.util.Date;
 import java.util.Locale;
 
 public class LettoreRSS {
-    public LettoreRSS()throws Exception{
+    public LettoreRSS(String linkRss)throws Exception{
         //La nostra sorgente Feed
-        URL url  = new URL("http://xml2.corriereobjects.it/rss/homepage.xml"); //Link del RSS
+        //URL url  = new URL("http://xml2.corriereobjects.it/rss/homepage.xml"); //Link del RSS
+        URL url  = new URL(linkRss);
         // l'url dovrà essere scelto dall'amministrazione quindi url cambierà
         XmlReader reader = null;
         try {
@@ -88,7 +89,7 @@ public class LettoreRSS {
 
 
     public static void main(String args[])throws Exception{
-        LettoreRSS rss = new LettoreRSS();
+        LettoreRSS rss = new LettoreRSS("http://xml2.corriereobjects.it/rss/homepage.xml");
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
 
