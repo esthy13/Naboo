@@ -25,8 +25,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        txt_username.setFocusTraversable(false);
-        txt_password.setFocusTraversable(false);
+        txt_username.setFocusTraversable(false);    //true
+        txt_password.setFocusTraversable(false);    //true
 
         btn_login.setOnAction(new EventHandler<ActionEvent>() {
             @Override

@@ -1,5 +1,7 @@
 package com.project.demo.model;
 
+import javafx.event.ActionEvent;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -467,6 +469,28 @@ public class DBget  extends DBconnect{
             throw new RuntimeException(e);
         }
         return news;
+    }
+
+    public Boolean userExists(String username) {
+        Connection con = getConnection();
+        Statement st;
+        ResultSet rs;
+        Boolean result = false;
+
+        try {
+            String query = "SELECT * FROM Utenti WHERE username = '" + username + "' ;";
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            if(rs.isBeforeFirst()){
+                result = true;
+            }
+        }
+        catch (SQLException e) {
+        throw new RuntimeException(e);
+        }
+
+        return result;
+
     }
 
 

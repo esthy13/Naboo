@@ -20,7 +20,7 @@ public class UserController implements Initializable {
     @FXML
     private TextField name;
     @FXML
-    private TextField password;
+    private PasswordField password;
     @FXML
     private ChoiceBox role;
     @FXML
@@ -75,6 +75,10 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        name.setFocusTraversable(false);    //true
+        password.setFocusTraversable(false);
+        role.setFocusTraversable(false);
+
         role.getItems().add("User");
         role.getItems().add("Amministratore");
 
@@ -95,15 +99,53 @@ public class UserController implements Initializable {
 
     public void addUser(ActionEvent actionEvent){
         DBinsert dBinsert = new DBinsert();
-        System.out.println(name.getText());
+        DBget dBget = new DBget();
         System.out.println(role.getValue().toString());
-        dBinsert.insertUser(name.getText(), role.getValue().toString());
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Utente inserito correttamente");
-        alert.show();
-        DBUtils.changeScene(actionEvent, "Utenti.fxml", "Manage Import-Export!", null);
-        //TODO se i campi sono vuoti non inserire l'utente + alert di errore
-        //TODO se l'utente e' amministratore aggiungere metodo db che prende anche password in input
-        // altrimenti alert di errore
+        if (name.getText().trim().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Username necessario");
+            alert.show();
+        }
+        else if(dBget.userExists(name.getText().trim())){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Utente già registrato");
+            alert.show();
+        }
+        else if (role.getValue().toString().trim().equals("Ruolo")) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Ruolo necessario");
+                alert.show();
+        } else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
+                && (!password.getText().trim().isEmpty()) ) {
+            Encryptor En = new Encryptor();
+            String key = "Bar12345Bar12345"; // 128-bit key
+            String initVector = "RandomInitVector"; // 16 bytes IV
+            String encrypt_pass = En.encrypt(key, initVector, password.getText());
+            dBinsert.insertUser(name.getText(), encrypt_pass, role.getValue().toString());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Utente inserito correttamente");
+            alert.show();
+            DBUtils.changeScene(actionEvent, "Utenti.fxml", "Manage Import-Export!", null);
+        }
+        else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
+                && (password.getText().trim().isEmpty()) ) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Password necessaria");
+            alert.show();
+        }
+        else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("User"))
+                && (!password.getText().trim().isEmpty()) ) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Password non richiesta per utente user");
+            alert.show();
+        }
+        else {
+            dBinsert.insertUser(name.getText(), role.getValue().toString());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Utente inserito correttamente");
+            alert.show();
+            DBUtils.changeScene(actionEvent, "Utenti.fxml", "Manage Import-Export!", null);
+
+        }
     }
 }

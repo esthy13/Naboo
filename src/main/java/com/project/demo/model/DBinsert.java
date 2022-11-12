@@ -97,6 +97,23 @@ WHERE NOT EXISTS (
     }
 
     /*6. Aggiunge profili degli utenti*/
+    public void insertUser(String username, String password, String ruolo){
+
+        String query = "INSERT INTO utenti (username, password, ruolo) SELECT "+ "'" + username + "', '" + password + "', '" +
+                ruolo + "'" + " FROM DUAL WHERE NOT EXISTS (SELECT username FROM utenti WHERE username = " + "'" + username +"');";
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Inserimento notizia completato");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
     public void insertUser(String username, String ruolo){
 
         String query = "INSERT INTO utenti (username, ruolo) SELECT "+ "'" + username + "', '" +
