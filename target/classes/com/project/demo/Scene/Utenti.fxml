@@ -9,6 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
+<?import javassist.util.Trigger?>
 <AnchorPane prefHeight="358.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.UserController">
    <Rectangle arcWidth="5.0" fill="#1f1f1f" height="423.0" stroke="#1f1f1f" strokeType="INSIDE" width="189.0" />
    <VBox alignment="TOP_RIGHT" layoutX="-7.0" layoutY="115.0" prefHeight="226.0" prefWidth="196.0" spacing="10.0">
