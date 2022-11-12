@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
+<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.ImportController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -17,7 +17,7 @@
    <Rectangle arcWidth="5.0" fill="#1f1f1f" height="400.0" stroke="#1f1f1f" strokeType="INSIDE" width="189.0" />
    <VBox alignment="TOP_RIGHT" layoutX="-7.0" layoutY="115.0" prefHeight="226.0" prefWidth="196.0" spacing="10.0">
       <children>
-         <Button  alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Home" textAlignment="RIGHT" textFill="#fcfcfc">
+         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Home" textAlignment="RIGHT" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
@@ -99,7 +99,7 @@
                </Stop>
                <Stop offset="0.006711409395973154">
                   <color>
-                     <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
+                     <Color red="0.6035000085830688" green="0.8048083186149597" blue="0.8500000238418579" />
                   </color>
                </Stop>
                <Stop offset="1.0">
@@ -137,9 +137,27 @@
          </LinearGradient>
       </fill>
    </Text>
-   <TextField layoutX="219.0" layoutY="84.0" promptText="Inserisci  File Path" />
-   <TextField layoutX="401.0" layoutY="85.0" promptText="Inserisci  Directory Path" />
-   <Button fx:id ="File_Chooser" layoutX="244.0" layoutY="140.0" mnemonicParsing="false" text="Button" />
-   <Button fx:id ="Directory_Chooser" layoutX="454.0" layoutY="140.0" mnemonicParsing="false" text="Button" />
+   <TextField fx:id="File_Path" layoutX="219.0" layoutY="84.0" prefHeight="26.0" prefWidth="305.0" promptText="Inserisci  File Path" />
+   <Button fx:id="File_Chooser" layoutX="244.0" layoutY="140.0" mnemonicParsing="false" onAction="#Importa" text="Scegli File" />
+   <Button fx:id="Directory_Chooser" layoutX="244.0" layoutY="245.0" mnemonicParsing="false" onAction="#Esporta" text="Scegli Cartella" />
+   <Label layoutX="219.0" layoutY="56.0" />
+   <Label layoutX="222.0" layoutY="56.0" text="IMPORTA FILE">
+      <textFill>
+         <LinearGradient endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </textFill></Label>
+   <Label layoutX="222.0" layoutY="211.0" text="ESPORTA FILE" />
 
 </AnchorPane>

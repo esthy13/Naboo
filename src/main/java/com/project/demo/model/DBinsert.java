@@ -151,9 +151,8 @@ WHERE NOT EXISTS (
     }
 
 
-    public void  DatabaseToCSV() {
-        String filename =
-                "Notizia.csv";
+    public DBinsert DatabaseToCSV(String filepath) {
+        String filename = filepath + "/Notizia.csv";
         try {
             FileWriter fw = new FileWriter(filename);
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -196,10 +195,11 @@ WHERE NOT EXISTS (
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /*10. Importare dati da file*/
-    public void readCSV(String filename,String rss){
+    public DBinsert readCSV(String filename, String rss){
         try {
             /*String Titolo, String Pubblicazione, String Descrizione,
              String Autore, String Fonte, String Link, String Immagine,
@@ -238,6 +238,7 @@ WHERE NOT EXISTS (
         catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /*11. Incrementare numero likes in base alla notizia */
