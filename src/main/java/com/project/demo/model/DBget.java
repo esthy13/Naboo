@@ -377,8 +377,8 @@ public class DBget  extends DBconnect{
     }
 
     /* Restituisce le fonti  */
-    public ArrayList<String> getFonti() {
-        ArrayList<String> Sources = new ArrayList<String>();
+    public ArrayList<Fonte> getFonti() {
+        ArrayList<Fonte> Sources = new ArrayList<Fonte>();
         Connection con = getConnection();
         Statement st;
         ResultSet rs;
@@ -388,7 +388,9 @@ public class DBget  extends DBconnect{
             st = con.createStatement();
             rs = st.executeQuery(query);
             while (rs.next()) {
-                Sources.add(rs.getString(1));
+                Fonte f;
+                f = new Fonte(rs.getString(1));
+                Sources.add(f);
             }
 
         } catch (Exception ex) {
