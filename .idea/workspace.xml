@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Naboo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Naboo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_18_0_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/ImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/ImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoggedInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoggedInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Commenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Commenti.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Utenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/Utenti.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/fonti.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/importa-esporta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/importa-esporta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/news.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/news.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/ImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/ImportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/LoggedInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/LoggedInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/fonti.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/importa-esporta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/importa-esporta.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/loggedin-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Fonte.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Fonte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/CommentiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/CommentiController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +300,8 @@
       <workItem from="1668271421218" duration="1764000" />
       <workItem from="1668276361123" duration="2427000" />
       <workItem from="1668278806111" duration="352000" />
-      <workItem from="1668279168177" duration="5457000" />
+      <workItem from="1668279168177" duration="6215000" />
+      <workItem from="1668328681885" duration="1549000" />
     </task>
     <servers />
   </component>

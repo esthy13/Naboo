@@ -4,12 +4,15 @@ import com.project.demo.model.Commento;
 import com.project.demo.model.DBget;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -28,6 +31,8 @@ public class CommentiController implements Initializable {
     private TableColumn<Commento, String> username;
     @FXML
     private TableColumn<Commento, Button> delete;
+    @FXML
+    private TextField search_txt;
     private ObservableList<Commento> list;
 
     public void logout(ActionEvent event){
@@ -73,6 +78,36 @@ public class CommentiController implements Initializable {
         delete.setCellValueFactory(new PropertyValueFactory<Commento, Button>("delete"));
 
         this.commenti.setItems(list);
+
+        FilteredList<Commento> filteredData = new FilteredList<>(list, b->true);
+        search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(commento -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
+                }
+                String searchWord = "" + newValue.toLowerCase();
+                if(("" + commento.getId_commento()).indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(("" + commento.getId_notizia()).indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(commento.getUsername().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(commento.getTesto().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else
+                    return false;
+            });
+        });
+        SortedList<Commento> sortedList = new SortedList<>(filteredData);
+        sortedList.comparatorProperty().bind(commenti.comparatorProperty());
+        commenti.setItems(sortedList);
+
+
+
     }
 
     public void visualizza() {
