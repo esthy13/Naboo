@@ -75,6 +75,4 @@ public class DBconnect {
         return pubblicazione;
     }
 
-    public static void deleteInteragiscono(){}
-
 }

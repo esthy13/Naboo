@@ -4,12 +4,12 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.List;
 
 
@@ -80,39 +80,6 @@ public class DBinsert extends DBconnect {
         }
     }
 
-    public void insertDataCSV(String Titolo, String Pubblicazione, String Descrizione,
-                              String Autore, String Fonte, String Link, String Immagine,
-                              int C_liked,int C_disliked,int C_reported,String rss){
-
-        String query = "INSERT INTO Notizia"
-                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine)"
-                +"SELECT * FROM (SELECT"
-                +"'"+Titolo+"',"
-                +"'"+Pubblicazione+"',"
-                +"'"+Descrizione+"',"
-                +"'"+Autore+"',"
-                +"'"+Fonte+"',"
-                +"'"+Link+"',"
-                +"'"+Immagine+"',"
-                +"'"+C_liked+"',"
-                +"'"+C_disliked+"',"
-                +"'"+C_reported+"') AS tmp WHERE NOT EXISTS ( SELECT titolo FROM Notizia WHERE titolo = "+"'"+Titolo+"' ) LIMIT 1;";;
-
-        try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
-            st = con.createStatement();
-            //st.executeUpdate(query);
-            executeSQLQuery(query,"Inserimento NOTIZIA completato");
-
-            insertFormata(getRss(rss),lastId_notizia());
-
-            con.close();
-            st.close();
-        }catch(Exception ex){
-            System.out.println("Error:"+ex);
-            //executeSQLQuery(query,"Inserimento non completato");
-        }
-    }
 
     /*6. Aggiunge profili degli utenti*/
     public void insertUser(String username, String password, String ruolo){
@@ -141,7 +108,7 @@ public class DBinsert extends DBconnect {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             //st.executeUpdate(query);
-            executeSQLQuery(query,"Inserimento notizia completato");
+            executeSQLQuery(query,"Inserimento utente completato");
             con.close();
             st.close();
         }catch(Exception ex){
@@ -249,7 +216,9 @@ public class DBinsert extends DBconnect {
                 C_liked = Integer.parseInt(row[8]);
                 C_disliked = Integer.parseInt(row[9]);
                 C_shared = Integer.parseInt(row[10]);
-                insertDataCSV(titolo, Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_shared,rss);
+                //insertDataCSV(titolo, Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_shared,rss);
+                InsertNews(titolo, Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_shared,rss);
+
             }
 
         }
@@ -462,6 +431,92 @@ public class DBinsert extends DBconnect {
             st = con.createStatement();
             //st.executeUpdate(query);
             executeSQLQuery(query,"c_shared aggiunto");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+
+
+
+    public void InsertNews(String Titolo, String Pubblicazione, String Descrizione,
+                                  String Autore, String Fonte, String Link, String Immagine,
+                                  int C_liked,int C_disliked,int C_reported,String rss){
+
+        PreparedStatement psinsert = null;
+        PreparedStatement pscheckNewsExists = null;
+        ResultSet resultSet = null;
+
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");;
+            pscheckNewsExists = con.prepareStatement("SELECT * FROM notizia WHERE titolo = ?");
+            pscheckNewsExists.setString(1, Titolo);
+            resultSet = pscheckNewsExists.executeQuery();
+
+            if (resultSet.isBeforeFirst()){
+                System.out.println("Notizia gia' presente nel database.");
+            }else {
+                psinsert = con.prepareStatement("INSERT INTO notizia(`titolo`, `pubblicazione`, `descrizione`, `autore`, `fonte`, `link`, `immagine`, `c_liked`, `c_disliked`, `c_reported`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                psinsert.setString(1, Titolo);
+                psinsert.setString(2, Pubblicazione);
+                psinsert.setString(3, Descrizione);
+                psinsert.setString(4, Autore);
+                psinsert.setString(5, Fonte);
+                psinsert.setString(6, Link);
+                psinsert.setString(7, Immagine);
+                psinsert.setInt(8, C_liked);
+                psinsert.setInt(9, C_disliked);
+                psinsert.setInt(10, C_reported);
+                psinsert.executeUpdate();
+                insertFormata(getRss(rss),lastId_notizia());
+
+                st = con.createStatement();
+                //st.executeUpdate(query);
+            }
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }finally {
+            if (resultSet != null){
+                try {
+                    resultSet.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if (pscheckNewsExists != null){
+                try {
+                    pscheckNewsExists.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if (psinsert != null){
+                try {
+                    psinsert.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if (con != null){
+                try {
+                    con.close();
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void modifyPassword(int id_utente){
+        String query = "UPDATE Utenti SET password = '"+null+"' WHERE id_utente = '" +id_utente+"';";
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"password aggiornata a null");
             con.close();
             st.close();
         }catch(Exception ex){

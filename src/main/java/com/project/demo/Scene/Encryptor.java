@@ -6,6 +6,8 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
 
+import java.util.Scanner;
+
 public class Encryptor {
     public static String encrypt(String key, String initVector, String value) {
         try {
@@ -44,4 +46,17 @@ public class Encryptor {
 
         return null;
     }
+
+    public static String getNewPassword(int passwordSize) {
+        String alphabet = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?!<>-*[]{}/";
+        int alphabetLength = alphabet.length();
+        String password = "";
+        for (int i = 0; i < passwordSize; i++) {
+            int randomIndexCharInAlphabet = (int)(Math.random()*alphabetLength);
+            password += alphabet.charAt(randomIndexCharInAlphabet);
+        }
+        return password;
+    }
+
+
 }
