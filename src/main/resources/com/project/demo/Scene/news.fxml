@@ -140,22 +140,30 @@
    </Text>
    <TableView fx:id="news" layoutX="194.0" layoutY="43.0" prefHeight="355.0" prefWidth="400.0">
       <columns>
-         <TableColumn fx:id="pubblicazione" minWidth="100.0" prefWidth="100.0" text="Data" />
-         <TableColumn fx:id="titolo" minWidth="130.0" prefWidth="130.0" text="Titolo" />
-         <TableColumn fx:id="fonte" minWidth="60.0" prefWidth="60.0" text="Fonte" />
-         <TableColumn fx:id="like" minWidth="30.0" prefWidth="30.0" text="">
+         <TableColumn fx:id="pubblicazione" minWidth="79.5" prefWidth="79.5" text="Data" />
+         <TableColumn fx:id="titolo" minWidth="140" prefWidth="140" text="Titolo" />
+         <TableColumn fx:id="fonte" minWidth="55" prefWidth="55" text="Fonte" />
+         <TableColumn fx:id="like" minWidth="25" prefWidth="25" text="">
             <graphic>
                <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_UP" glyphSize="20" />
             </graphic>
          </TableColumn>
-         <TableColumn fx:id="dislike" minWidth="30.0" prefWidth="30.0" text="">
+         <TableColumn fx:id="dislike" minWidth="25.0" prefWidth="25" text="">
             <graphic>
                <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_DOWN" glyphSize="20" />
             </graphic>
          </TableColumn>
-         <TableColumn fx:id="report" minWidth="30.0" prefWidth="30.0" text="">
+         <TableColumn fx:id="report" minWidth="25" prefWidth="25" text="">
             <graphic>
                <FontAwesomeIconView fill="#ab220d" glyphName="BAN" glyphSize="20" text="" />
+            </graphic>
+         </TableColumn>
+         <TableColumn fx:id="delete" minWidth="30" prefWidth="30" >
+            <graphic>
+               <FontAwesomeIconView fill="#ab220d" glyphName="MINUS" glyphSize="15" >
+                  <rotationAxis>
+                     <Point3D />
+                  </rotationAxis></FontAwesomeIconView>
             </graphic>
          </TableColumn>
       </columns>

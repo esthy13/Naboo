@@ -5,8 +5,9 @@ import com.project.demo.model.DBinsert;
 import com.project.demo.model.Utente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -37,6 +38,8 @@ public class UserController implements Initializable {
     private TableColumn<Utente, Button> modify;
     @FXML
     private TableColumn<Utente, Button> delete;
+    @FXML
+    public TextField search_txt;
     private ObservableList<Utente> list;
 
 
@@ -78,18 +81,39 @@ public class UserController implements Initializable {
         name.setFocusTraversable(false);    //true
         password.setFocusTraversable(false);
         role.setFocusTraversable(false);
-
         role.getItems().add("User");
         role.getItems().add("Amministratore");
-
         visualizza();
         id.setCellValueFactory(new PropertyValueFactory<Utente, Integer>("id"));
         username.setCellValueFactory(new PropertyValueFactory<Utente, String>("username"));
         ruolo.setCellValueFactory(new PropertyValueFactory<Utente, String>("ruolo"));
         modify.setCellValueFactory(new PropertyValueFactory<Utente, Button>("modify"));
         delete.setCellValueFactory(new PropertyValueFactory<Utente, Button>("delete"));
+        users.setItems(list);
 
-        this.users.setItems(list);
+        FilteredList<Utente> filteredData = new FilteredList<>(list, b->true);
+        search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(utente -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
+                }
+                String searchWord = "" + newValue.toLowerCase();
+                if(("" + utente.getId()).indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(utente.getUsername().toLowerCase().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(utente.getRuolo().toLowerCase().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else
+                    return false;
+            });
+        });
+        SortedList<Utente> sortedList = new SortedList<>(filteredData);
+        sortedList.comparatorProperty().bind(users.comparatorProperty());
+        users.setItems(sortedList);
     }
 
     public void visualizza() {

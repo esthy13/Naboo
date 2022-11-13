@@ -398,6 +398,27 @@ public class DBget  extends DBconnect{
         }
         return Sources;
     }
+    public ArrayList<String> getListFonti() {
+        ArrayList<String> Sources = new ArrayList<>();
+        Connection con = getConnection();
+        Statement st;
+        ResultSet rs;
+
+        try {
+            String query = "SELECT * FROM Fonti";
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                String f;
+                f = (rs.getString(1));
+                Sources.add(f);
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Error:" + ex);
+        }
+        return Sources;
+    }
 
     public ArrayList<Utente> getUserList() {
         ArrayList<Utente> users = new ArrayList<>();

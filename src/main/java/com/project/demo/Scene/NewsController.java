@@ -3,9 +3,12 @@ package com.project.demo.Scene;
 import com.project.demo.model.DBdelete;
 import com.project.demo.model.DBget;
 import com.project.demo.model.Notizia;
-import com.project.demo.model.Utente;
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,8 +18,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
+//TODO da sistemare questione cancellazione notizie
 
 public class NewsController implements Initializable {
     @FXML
@@ -33,6 +39,10 @@ public class NewsController implements Initializable {
     private TableColumn<Notizia, Integer> dislike;
     @FXML
     private TableColumn<Notizia, Integer> report;
+    @FXML
+    private TableColumn<Notizia, Button> delete;
+    @FXML
+    private TextField search_txt;
     private ObservableList<Notizia> list;
 
 
@@ -77,36 +87,50 @@ public class NewsController implements Initializable {
         like.setCellValueFactory(new PropertyValueFactory<Notizia, Integer>("like"));
         dislike.setCellValueFactory(new PropertyValueFactory<Notizia, Integer>("dislike"));
         report.setCellValueFactory(new PropertyValueFactory<Notizia, Integer>("report"));
+        delete.setCellValueFactory(new PropertyValueFactory<Notizia, Button>("delete"));
+        news.setItems(list);
+        news.setTableMenuButtonVisible(true);
 
-        this.news.setItems(list);
-        news.setEditable(true);
-        this.news.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.getDialogPane().setHeaderText("Eliminare definitivamente la notizia " + news.getSelectionModel().getSelectedItem().getId_notizia());
-                DialogPane dialog = alert.getDialogPane();
-                dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
-                dialog.getStyleClass().add("dialog");
-                Optional<ButtonType> result = alert.showAndWait();
-                if(!result.isPresent()){}
-                else if(result.get() == ButtonType.OK){
-                    DBdelete dBdelete = new DBdelete();
-                    dBdelete.deleteNotizia(news.getSelectionModel().getSelectedItem().getId_notizia());
-                    news.getItems().remove(news.getSelectionModel().getSelectedIndex());
+        FilteredList<Notizia> filteredData = new FilteredList<>(list, b->true);
+        search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(notizia -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
                 }
-                else if(result.get() == ButtonType.CANCEL) {}
-
-            }
+                String searchWord = "" + newValue.toLowerCase();
+                if(("" + notizia.getId_notizia()).indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(notizia.getPubblicazione().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(notizia.getTitolo().toLowerCase().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(notizia.getFonte().toLowerCase().indexOf(searchWord) > -1){
+                    return true;
+                }
+                /*else if(("" + notizia.getLike()).indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(("" + notizia.getDislike()).indexOf(searchWord) > -1){
+                    return true;
+                }
+                else if(("" + notizia.getReport()).indexOf(searchWord) > -1){
+                    return true;
+                }*/
+                else
+                    return false;
+            });
         });
+        SortedList<Notizia> sortedList = new SortedList<>(filteredData);
+        sortedList.comparatorProperty().bind(news.comparatorProperty());
+        news.setItems(sortedList);
+        news.refresh();
     }
 
     public void visualizza() {
         DBget dBget = new DBget();
         this.list = FXCollections.observableArrayList(dBget.getAllNews());
-    }
-
-    public void delete(ActionEvent event){
-
     }
 }

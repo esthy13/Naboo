@@ -1,8 +1,6 @@
 package com.project.demo.Scene;
 
-import com.project.demo.model.Commento;
-import com.project.demo.model.DBget;
-import com.project.demo.model.DBinsert;
+import com.project.demo.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,22 +12,23 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.util.Callback;
 
 import java.io.*;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ImportController{
-    @FXML
-    Button File_Chooser;
-    @FXML
-    Button Directory_Chooser;
-    @FXML
-    TextField File_Path;
-    @FXML
-    TextField Directory_Path;
+import static java.util.Objects.isNull;
 
+public class ImportController implements Initializable{
+    @FXML
+    private ComboBox<String> comboBox;
+    @FXML
+    private Button File_Chooser;
+    @FXML
+    private Button Directory_Chooser;
     public void logout(ActionEvent event){
         DBUtils.changeScene(event, "login-view.fxml", "Login", null);
     }
@@ -72,8 +71,7 @@ public class ImportController{
     }
 
    public void Importa() {
-       if(File_Path.getText().trim().isEmpty()) {
-           //String rss = File_Path.getText();
+       if(isNull(comboBox.getValue()) || comboBox.getValue().trim().isEmpty()) {
            Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setHeaderText("Link RSS mancante");
            alert.show();
@@ -81,12 +79,9 @@ public class ImportController{
        else {
            FileChooser fileChooser = new FileChooser();
            fileChooser.setTitle("Open Resource File");
-
-           fileChooser.getExtensionFilters().addAll(
-                   new FileChooser.ExtensionFilter("Text Files", "*.csv"));
+           fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.csv"));
            File selectedfile = fileChooser.showOpenDialog(Window.getWindows().get(0));
-           //System.out.println(selectedfile.getAbsolutePath());
-           DBinsert dBinsert = new DBinsert().readCSV(selectedfile.getAbsolutePath(),File_Path.getText());
+           DBinsert dBinsert = new DBinsert().readCSV(selectedfile.getAbsolutePath(),comboBox.getValue().trim());
            Alert alert = new Alert(Alert.AlertType.INFORMATION);
            alert.setHeaderText("Notizie caricate correttamente sul database");
            alert.show();
@@ -97,15 +92,17 @@ public class ImportController{
    public void Esporta(){
        DirectoryChooser chooser = new DirectoryChooser();
        chooser.setTitle("Scegli Cartella");
-
-       /*File defaultDirectory = new File("c:/dev/javafx");
-       chooser.setInitialDirectory(defaultDirectory);*/
-
        File selectedDirectory = chooser.showDialog( Window.getWindows().get(0));
-      DBinsert dBinsert = new DBinsert().DatabaseToCSV(selectedDirectory.getAbsolutePath());
+       DBinsert dBinsert = new DBinsert().DatabaseToCSV(selectedDirectory.getAbsolutePath());
        Alert alert = new Alert(Alert.AlertType.INFORMATION);
        alert.setHeaderText("Notizie scaricate correttamente dal database");
        alert.show();
    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        DBget dBget = new DBget();
+        comboBox.getItems().addAll(dBget.getListFonti());
+    }
 }
 
