@@ -66,7 +66,7 @@ public class LettoreRSS {
                         N.setAutore(entry.getAuthor().replaceAll("'", " "));
                         N.setFonte(feed.getTitle().replaceAll("'", " "));
                         N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("![CDATA[") + 5, entry.getDescription().getValue().indexOf("]]") - 2));
-                        //N.setImage()
+                        //N.setImage();
                         dBinsert.insertDataDefault(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),url.toString());
 
                         break;
