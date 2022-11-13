@@ -71,12 +71,17 @@ public class ImportController implements Initializable{
     }
 
    public void Importa() {
+       DBget dBget = new DBget();
        if(isNull(comboBox.getValue()) || comboBox.getValue().trim().isEmpty()) {
            Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setHeaderText("Link RSS mancante");
            alert.show();
        }
        else {
+           if(!dBget.getListFonti().contains(comboBox.getValue())){
+               DBinsert dBinsert = new DBinsert();
+               dBinsert.insertFonte(comboBox.getValue());
+           }
            FileChooser fileChooser = new FileChooser();
            fileChooser.setTitle("Open Resource File");
            fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.csv"));
