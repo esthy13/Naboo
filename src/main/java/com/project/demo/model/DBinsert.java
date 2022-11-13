@@ -19,9 +19,6 @@ public class DBinsert extends DBconnect {
                            String Autore, String Fonte, String Link, String Immagine,
                            int C_liked,int C_disliked,int C_reported,String rss){
 
-        /*INSERT INTO `Notizia`( `titolo`, `pubblicazione`, `descrizione`, `autore`, `fonte`, `link`, `immagine`, `c_liked`, `c_disliked`, `c_reported`)
-        VALUES ('[value-2]',CAST('20121128174512' AS DATETIME),'[value-4]','[value-5]','[value-6]','[value-7]','[value-8]',0,0,0)*/
-
         String query = "insert into Notizia"
                 +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_reported)"
                 +"values ("
@@ -52,23 +49,44 @@ public class DBinsert extends DBconnect {
         }
     }
 
-    /*Insert news, no dublicate, default: */
 
-    /*
-    INSERT INTO table_listnames (name, address, tele)
-SELECT * FROM (SELECT 'Rupert', 'Somewhere', '022') AS tmp
-WHERE NOT EXISTS (
-    SELECT name FROM table_listnames WHERE name = 'Rupert'
-) LIMIT 1;
-    */
     public void insertDataDefault(String Titolo, String Pubblicazione, String Descrizione,
-                           String Autore, String Fonte, String Link, String Immagine,
-                           int C_liked,int C_disliked,int C_reported,String rss){
+                                  String Autore, String Fonte, String Link, String Immagine,String rss){
 
-        
-        String query = "insert into Notizia"
-                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_reported)"
-                +"values ("
+        String query = "INSERT INTO Notizia"
+                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine)"
+                +"SELECT * FROM (SELECT"
+                +"'"+Titolo+"',"
+                +"'"+Pubblicazione+"',"
+                +"'"+Descrizione+"',"
+                +"'"+Autore+"',"
+                +"'"+Fonte+"',"
+                +"'"+Link+"',"
+                +"'"+Immagine+"') AS tmp WHERE NOT EXISTS ( SELECT titolo FROM Notizia WHERE titolo = "+"'"+Titolo+"' ) LIMIT 1;";;
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Inserimento NOTIZIA completato");
+
+            insertFormata(getRss(rss),lastId_notizia());
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+
+    public void insertDataCSV(String Titolo, String Pubblicazione, String Descrizione,
+                              String Autore, String Fonte, String Link, String Immagine,
+                              int C_liked,int C_disliked,int C_reported,String rss){
+
+        String query = "INSERT INTO Notizia"
+                +"(Titolo,Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine)"
+                +"SELECT * FROM (SELECT"
                 +"'"+Titolo+"',"
                 +"'"+Pubblicazione+"',"
                 +"'"+Descrizione+"',"
@@ -78,7 +96,7 @@ WHERE NOT EXISTS (
                 +"'"+Immagine+"',"
                 +"'"+C_liked+"',"
                 +"'"+C_disliked+"',"
-                +"'"+C_reported+"');";
+                +"'"+C_reported+"') AS tmp WHERE NOT EXISTS ( SELECT titolo FROM Notizia WHERE titolo = "+"'"+Titolo+"' ) LIMIT 1;";;
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
@@ -231,7 +249,7 @@ WHERE NOT EXISTS (
                 C_liked = Integer.parseInt(row[8]);
                 C_disliked = Integer.parseInt(row[9]);
                 C_shared = Integer.parseInt(row[10]);
-                insertData(titolo, Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_shared,rss);
+                insertDataCSV(titolo, Pubblicazione,Descrizione,Autore,Fonte,Link,Immagine,C_liked,C_disliked,C_shared,rss);
             }
 
         }

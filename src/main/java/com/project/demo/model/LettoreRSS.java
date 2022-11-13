@@ -4,6 +4,7 @@ import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
+import org.w3c.dom.NodeList;
 
 import java.net.URL;
 import java.text.ParseException;
@@ -22,10 +23,6 @@ public class LettoreRSS {
             DBinsert dBinsert = new DBinsert();
             DBconnect dBconnect = new DBconnect();
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            //DB.inspector prenderà il valore della fonte
-            Date secondDate = sdf.parse(dBconnect.inspector("Corriere"));
-
             reader = new XmlReader(url);
             SyndFeed feed = new SyndFeedInput().build(reader);
             for (SyndEntry entry : feed.getEntries()) {
@@ -34,6 +31,9 @@ public class LettoreRSS {
 
                 switch (url.toString()) {
                     case "http://xml2.corriereobjects.it/rss/homepage.xml":
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        //DB.inspector prenderà il valore della fonte
+                        Date secondDate = sdf.parse(dBconnect.inspector("Corriere"));
                         N.setTitolo(entry.getTitle().replaceAll("'", " "));
                         N.setPubblicazione(entry.getPublishedDate().toString());
                         N.setLink(entry.getLink().replaceAll("'", " "));
@@ -52,13 +52,23 @@ public class LettoreRSS {
                             dBinsert.insertData(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
 
                         }
-
                         break;
-                    case "https://www.ansa.it/sito/ansait_rss.xml":
-                        /*DA AGGIUNGERE*/
-                        //set fonte ANSA
-                        //set descrizione ANSA
-                        N.setImage(" ");
+                    case "https://www.ilsole24ore.com/rss/mondo.xml":
+                        N.setTitolo(entry.getTitle().replaceAll("'", " "));
+                        N.setPubblicazione(entry.getPublishedDate().toString());
+
+                        /*Conversione di data*/
+                        String dateStra = N.getPubblicazione();
+                        String date = parseDate(dateStra,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
+                        N.setPubblicazione(date);
+
+                        N.setLink(entry.getLink().replaceAll("'", " "));
+                        N.setAutore(entry.getAuthor().replaceAll("'", " "));
+                        N.setFonte(feed.getTitle().replaceAll("'", " "));
+                        N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("![CDATA[") + 5, entry.getDescription().getValue().indexOf("]]") - 2));
+                        //N.setImage()
+                        dBinsert.insertDataDefault(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),url.toString());
+
                         break;
                     default:
                         N.setImage("");
@@ -93,18 +103,6 @@ public class LettoreRSS {
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
 
-        /*Delete User IS WORKING */
-        //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-        //dBdelete.completeDeleteUser(1);  //Cancellazione dell'utente
 
-        /*Delete Comment IS WORKING */
-        //dBdelete.deleteComment(48,1);
-
-        /*Delete Notizia IS WORKING */
-        //dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
-        //dBdelete.deleteNotizia(381);  //errore con la chiave: errore inner join ;
-
-        /*Delete Fonte IS WORKING */
-        //DBdelate.deleteFonte("http://xml2.corriereobjects.it/rss/homepage.xml");  //errore con la chiave: errore inner join ;
     }
 }
