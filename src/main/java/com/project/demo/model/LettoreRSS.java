@@ -70,9 +70,9 @@ public class LettoreRSS {
                         N.setLink(entry.getLink());
                         N.setAutore(entry.getAuthor());
                         N.setFonte(feed.getTitle());
-                        N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf(" /><br />") + 5, entry.getDescription().getValue().indexOf(" /><br />") -1) );
+                        N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf(" /><br />")+9 , entry.getDescription().getValue().indexOf("<a") -6) );
                         N.setImage(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("src=") + 5, entry.getDescription().getValue().indexOf(" /><br />") -1) );
-                        System.out.println(N.getDescrizione());
+                        dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
                         break;
                     default:
                         N.setTitolo(entry.getTitle());
@@ -84,7 +84,7 @@ public class LettoreRSS {
                         N.setLink(entry.getLink());
                         N.setAutore(entry.getAuthor());
                         N.setFonte(feed.getTitle());
-                        N.setDescrizione(entry.getDescription().getValue().replaceAll("<br/>",""));
+                        N.setDescrizione(entry.getDescription().getValue().replaceAll("'",""));
                         N.setImage(null);
                         dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
 
@@ -118,8 +118,8 @@ public class LettoreRSS {
         //LettoreRSS rss = new LettoreRSS("https://www.fanpage.it/feed/");
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
-        DBinsert dBinsert = new DBinsert();
-        dBinsert.modifyPasswordCrypt(7,"Come va");
+        DBget dBget = new DBget();
+        System.out.println(dBget.getEncryptedPass("dan"));
 
 
     }

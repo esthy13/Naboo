@@ -90,7 +90,7 @@ public class DBinsert extends DBconnect {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             //st.executeUpdate(query);
-            executeSQLQuery(query,"Inserimento notizia completato");
+            executeSQLQuery(query,"InsertUser completato");
             con.close();
             st.close();
         }catch(Exception ex){
@@ -107,7 +107,7 @@ public class DBinsert extends DBconnect {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             //st.executeUpdate(query);
-            executeSQLQuery(query,"Inserimento utente completato");
+            executeSQLQuery(query,"InsertUser completato");
             con.close();
             st.close();
         }catch(Exception ex){
