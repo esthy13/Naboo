@@ -264,8 +264,8 @@ public class DBinsert extends DBconnect {
 
     /*17.Incrementare numero shared in base alla notizia */
 
-    public void addC_shared(int id_notizia){
-        String query = "UPDATE Notizia " +"SET c_shared = c_shared + 1 WHERE id_notizia = " +"'"+id_notizia+"';";
+    public void addC_reported(int id_notizia){
+        String query = "UPDATE Notizia " +"SET c_reported = c_reported + 1 WHERE id_notizia = " +"'"+id_notizia+"';";
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");

@@ -1,7 +1,5 @@
 package com.project.demo.model;
 
-import javafx.event.ActionEvent;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -55,26 +53,26 @@ public class DBget  extends DBconnect{
     }
 
     /*18.Visualizzaione numero c_shared in base alla notizia */
-    public int selectC_shared(int id_notizia){
-        String query = "SELECT c_shared FROM Notizia where id_notizia = " +"'"+id_notizia+"';";
-        int c_shared = 0;
+    public int selectC_reported(int id_notizia){
+        String query = "SELECT c_reported FROM Notizia where id_notizia = " +"'"+id_notizia+"';";
+        int c_reported = 0;
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             rs = st.executeQuery(query);
             while (rs.next()) {
-                c_shared = rs.getInt(1);
+                c_reported = rs.getInt(1);
 
                 //System.out.println("Pubblicazione: " + pubblicazione);
             }
             con.close();
             st.close();
-            return c_shared;
+            return c_reported;
         }catch(Exception ex){
             System.out.println("Error:"+ex);
             //executeSQLQuery(query,"Inserimento non completato");
         }
-        return c_shared;
+        return c_reported;
     }
 
     /*Resistuire l'id dell'ultimo commento inserito*/
@@ -514,6 +512,22 @@ public class DBget  extends DBconnect{
 
         return result;
 
+    }
+    public String getEncryptedPass(String username){
+        String query = "SELECT password,username FROM Utenti WHERE username = "+"'"+username+"';";
+        String pass = "";
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            pass = rs.getString("password");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+        return pass;
     }
 
 

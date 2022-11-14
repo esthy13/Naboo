@@ -10,6 +10,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.IOException;
+
 import static java.util.Objects.isNull;
 
 public class Naboo extends MyBot {
@@ -53,12 +55,32 @@ public class Naboo extends MyBot {
             searchNews(update,dBget.ricercaFonte(update.getMessage().getText()), 0, "fonte");
         }
         else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
-                && update.getMessage().getReplyToMessage().getText().equals("Scrivi la tua richiesta di aiuto allo sviluppatore del Bot")){
-            //TODO send reply to a developer
-            SendMessage sendMessage = new SendMessage();
-            //sendMessage.setChatId();
-            //sendMsg(chatId, update.getMessage().getText(), checkKeyboard("" +1));
+                && update.getMessage().getReplyToMessage().getText().equals("Scrivi la tua richiesta di aiuto agli sviluppatori del Bot. \nSe" +
+                " necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in privato")){
+            String text = update.getMessage().getText();
+            String username = update.getMessage().getFrom().getUserName();
+            try {
+                callHelp("0", text, username);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }
+        else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage()) &&
+            update.getMessage().getReplyToMessage().getText().contains("Scrivi la tua richiesta di aiuto inerente questa" +
+            " notizia agli sviluppatori del Bot. \nSe necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in privato")){
+            String id_notizia = update.getMessage().getReplyToMessage().getText();
+            id_notizia = id_notizia.substring(12,id_notizia.indexOf("S"));
+            System.out.println(id_notizia);
+            String text = update.getMessage().getText();
+            String username = update.getMessage().getFrom().getUserName();
+            try {
+                callHelp(id_notizia.trim(), text, username);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            }
+
         /*METODO DI MIRROR*/
         /*else if(update.hasMessage() && update.getMessage().hasText()) {
             SendMessage sendMessage = new SendMessage(); // Create a SendMessage object with mandatory fields
@@ -174,7 +196,7 @@ public class Naboo extends MyBot {
                 }
                     break;
                 case "profilo":
-                    profilo(update.getCallbackQuery(),id);
+                    profilo(update.getCallbackQuery(),Integer.parseInt(dBget.getId_user(update.getCallbackQuery().getFrom().getUserName())));
                     break;
                 case "help":
                     help(update.getCallbackQuery().getMessage().getChatId().toString(), ""+id);
@@ -207,15 +229,29 @@ public class Naboo extends MyBot {
                 case "close" :
                     close(update);
                     break;
-                case "reported" :
+                case "report" :
                     //TODO add report
+                    report(update,id);
                     break;
                 case "disreport" :
                     //TODO delete report
+                    disreport(update,id);
                     break;
                 case "callHelp" :
-                    sendForceReplyMsg(update.getCallbackQuery().getMessage().getChatId().toString(),
-                            "Scrivi la tua richiesta di aiuto allo sviluppatore del Bot");
+                    String IFph = "Problema riscontrato: ";
+                    if(id==0) {
+                        ricerca(update.getCallbackQuery(), "Scrivi la tua richiesta di aiuto agli sviluppatori del Bot\\. \nSe" +
+                                    " necessario  @esthy\\_13, @daaniel o @tanom02 ti contatteranno in privato", IFph);
+                    }
+                    else{
+                        ricerca(update.getCallbackQuery(), "notizia n \\= " + id + "\nScrivi la tua richiesta di aiuto inerente questa" +
+                                        " notizia agli sviluppatori del Bot\\. \nSe necessario  @esthy\\_13, @daaniel " +
+                                        "o @tanom02 ti contatteranno in privato", IFph);
+
+                    }
+                    break;
+                case "modificaPass" :
+                    //TODO
                     break;
             }
             try{

@@ -1,5 +1,6 @@
 package com.project.demo.controller;
 
+import com.project.demo.Scene.Encryptor;
 import com.project.demo.model.Commento;
 import com.project.demo.model.Notizia;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -40,13 +41,29 @@ public abstract class Buttons extends KeyboardsAndEmoji{
             commenti = " commento ";
         else
             commenti = " commenti ";
-        String ruolo = "" + dBget.getRuolo(""+ ID);
-        user.setText("Il tuo profilo: " + profile_emoji
+        String ruolo = "" + dBget.getRuolo("" + ID);
+        if(ruolo.equals("User")) {
+            user.setText("Il tuo profilo: " + profile_emoji
+                    + "\n*Username*: " + correctUsername(callbackQuery.getFrom().getUserName())
+                    + "\n*Ruolo*: " + ruolo
+                    + "\nHai scritto " + n_commenti + commenti + comment_emoji);
+            keyboardProfilo(user, "" + ID);
+            sendMsg(user);
+        }
+        else{
+            String key = "Bar12345Bar12345";
+            String initVector = "RandomInitVector";
+            String encrypted = dBget.getEncryptedPass(correctUsername(callbackQuery.getFrom().getUserName()));
+            System.out.println("encrypted");
+            String password = Encryptor.decrypt(key, initVector, encrypted);
+            user.setText("Il tuo profilo: " + profile_emoji
                 + "\n*Username*: " + correctUsername(callbackQuery.getFrom().getUserName())
                 + "\n*Ruolo*: " + ruolo
+                + "\n*Password*: ||" + password + "||"
                 + "\nHai scritto " + n_commenti + commenti + comment_emoji);
-        keyboardProfilo(user, "" + ID);
-        sendMsg(user);
+            keyboardAdmin(user, "" + ID);
+            sendMsg(user);
+        }
     }
 
     public void menu(Update update){
@@ -227,6 +244,25 @@ public abstract class Buttons extends KeyboardsAndEmoji{
             } catch (TelegramApiException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+    public void report(Update update, int id_notizia){
+        dBinsert.addC_reported(id_notizia);
+        EditMessageReplyMarkup addReport = oneButton(update, 5, report_emoji, "disreport", dBget.selectC_reported(id_notizia));
+        try {
+            execute(addReport);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void disreport(Update update, int id_notizia){
+        //System.out.println("disreport");
+        dBdelete.minusReported(id_notizia);
+        EditMessageReplyMarkup addReport = oneButton(update, 5, report_emoji, "report", dBget.selectC_reported(id_notizia));
+        try {
+            execute(addReport);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
         }
     }
 }
