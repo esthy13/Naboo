@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
-
-    //TODO sposta in cartella controller
     String like_emoji = EmojiParser.parseToUnicode(":thumbsup:");
     String dislike_emoji = EmojiParser.parseToUnicode(":thumbsdown:");
     String save_emoji = EmojiParser.parseToUnicode(":pushpin:");
@@ -111,7 +109,6 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         }
         return text;
     }
-    //TODO
     public String commentiToString(ArrayList<Commento> commenti, int first){
         String text = "";
         int y = 1;
