@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="" />
+    <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +104,7 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Telegram">
+  <component name="RunManager" selected="Application.LettoreRSS">
     <configuration name="Encryptor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Encryptor" />
       <module name="Naboo" />
@@ -176,9 +178,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.LettoreRSS" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.Encryptor" />
         <item itemvalue="Application.Main" />
       </list>
@@ -306,8 +308,7 @@
       <workItem from="1668421257525" duration="674000" />
       <workItem from="1668423518124" duration="3462000" />
       <workItem from="1668447334954" duration="8495000" />
-      <workItem from="1668458655425" duration="455000" />
-      <workItem from="1668459424062" duration="393000" />
+      <workItem from="1668458655425" duration="885000" />
     </task>
     <servers />
   </component>
