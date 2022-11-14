@@ -366,7 +366,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         fonte.setCallbackData("fonte-"+ id_utente);
         profilo.setCallbackData("profilo-"+ id_utente);
         close.setCallbackData("close-" + id_utente);
-        help.setCallbackData("help-" + id_utente);
+        help.setCallbackData("help-" + 0);
         inlineKeyboardButtonList1.add(titolo);
         inlineKeyboardButtonList1.add(data);
         inlineKeyboardButtonList1.add(fonte);
@@ -456,6 +456,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         InlineKeyboardButton share = new InlineKeyboardButton();
         InlineKeyboardButton comment = new InlineKeyboardButton();
         InlineKeyboardButton visualizza = new InlineKeyboardButton();
+        InlineKeyboardButton callHelp = new InlineKeyboardButton();
         InlineKeyboardButton whatsapp = new InlineKeyboardButton();
         InlineKeyboardButton twitter = new InlineKeyboardButton();
         InlineKeyboardButton facebook = new InlineKeyboardButton();
@@ -476,6 +477,8 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         save.setCallbackData("save-"+id_notizia);
         comment.setCallbackData("comment-" + id_notizia);
         visualizza.setCallbackData("visualizza-" + id_notizia);
+        callHelp.setCallbackData("callHelp-" + id_notizia);
+        callHelp.setText( call_emoji+ " " + help_emoji);
         share.setSwitchInlineQuery(sendMessage.getText());
         whatsapp.setUrl("https://api.whatsapp.com/send/?text=@GediNabooBot%20" + link.trim());
         facebook.setUrl("https://www.facebook.com/sharer/sharer.php?u=" + link);
@@ -486,6 +489,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         inlineKeyboardButtonList1.add(save);
         inlineKeyboardButtonList1.add(comment);
         inlineKeyboardButtonList1.add(visualizza);
+        inlineKeyboardButtonList1.add(callHelp);
         inlineKeyboardButtonList2.add(share);
         inlineKeyboardButtonList2.add(whatsapp);
         inlineKeyboardButtonList2.add(facebook);
@@ -496,16 +500,16 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         inlineKeyboardMarkup.setKeyboard(inlineButtons);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
     }
-    public InlineKeyboardMarkup keyboardHelp(String id_notizia) {
+    public InlineKeyboardMarkup keyboardHelp() {
         //for editing a button in the two row button menu
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> inlineButtons = new ArrayList();
         List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList();
         InlineKeyboardButton visualizza = new InlineKeyboardButton();
-        visualizza.setCallbackData("callHelp-" + id_notizia);
+        visualizza.setCallbackData("callHelp-" + 0);
         visualizza.setText( call_emoji+ " " + help_emoji);
         InlineKeyboardButton close = new InlineKeyboardButton();
-        close.setCallbackData("close-" + id_notizia);
+        close.setCallbackData("close-" + 0);
         close.setText(close_emoji);
         inlineKeyboardButtonList.add(visualizza);
         inlineKeyboardButtonList.add(close);

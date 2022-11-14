@@ -5,6 +5,10 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 import static java.util.Objects.isNull;
@@ -31,7 +35,7 @@ public abstract class MyBot extends Buttons{
                             "\n" + close_emoji +" per chiudere e cancellare un messaggio" +
                             "\n" + back_emoji + next_emoji + " per scorrere avanti e indietro notizie e commenti"
                             );
-        sendMessage.setReplyMarkup(keyboardHelp(id_notizia));
+        sendMessage.setReplyMarkup(keyboardHelp());
         sendMsg(sendMessage);
     }
     public void searchNews(Update update, ArrayList<Notizia> notizie, int first, String tipo){
@@ -73,9 +77,33 @@ public abstract class MyBot extends Buttons{
                     "di attualità prese da fonti controllate dagli amministratori del bot!" +
                     "\nSe hai bisogno di aiuto usa /help " + help_emoji +
                     "\nPer accedere al menù del bot usa /menu " + menu_emoji +
-                    "\n" + robot_emoji +" @GediNabooBot");
+                    "\n" + robot_emoji +" @GediNabooBot", menuKeyboard("0"));
             dBinsert.insertUser(update.getMessage().getFrom().getUserName(), "User");
         }
+    }
+
+    public void callHelp(String id_notizia, String text, String username) throws IOException {
+        //https://api.telegram.org/bot5782337102:AAEMwjHCFgJY8mod-K-spPjEkPEOBrILjnQ/sendMessage?chat_id=-1001834755647&text=Esempio%20messaggio%20richiesta%20help
+
+        String urlString = "https://api.telegram.org/bot5782337102:AAEMwjHCFgJY8mod-K-spPjEkPEOBrILjnQ/sendMessage?chat_id=-1001834755647&text=";
+        String botName = "%40GediNabooBot%3a%0a";
+        if(!id_notizia.equals("0")) {
+            id_notizia = "Problema%20associato%20alla%20notizia%20n%20" + id_notizia + "%0a";
+        }
+        else if(id_notizia.equals("0")){
+            id_notizia = "";
+        }
+        urlString = urlString + botName + id_notizia +text.trim().replaceAll(" ", "%20") + "%0a%40" + username;
+        URL url = new URL(urlString);
+        URLConnection conn = url.openConnection();
+        StringBuilder sb = new StringBuilder();
+        InputStream is = new BufferedInputStream(conn.getInputStream());
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String inputLine = "";
+        while ((inputLine = br.readLine()) != null) {
+            sb.append(inputLine);
+        }
+        System.out.println(sb.toString());
     }
 
 }
