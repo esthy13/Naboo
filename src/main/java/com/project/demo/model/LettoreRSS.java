@@ -1,5 +1,6 @@
 package com.project.demo.model;
 
+import com.rometools.rome.feed.module.DCModule;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
@@ -9,8 +10,7 @@ import org.w3c.dom.NodeList;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 public class LettoreRSS {
     public LettoreRSS(String linkRss)throws Exception{
@@ -53,7 +53,7 @@ public class LettoreRSS {
 
                         }
                         break;
-                    case "https://www.ilsole24ore.com/rss/mondo.xml":
+                    case "https://www.fanpage.it/feed/":
                         N.setTitolo(entry.getTitle().replaceAll("'", " "));
                         N.setPubblicazione(entry.getPublishedDate().toString());
 
@@ -61,13 +61,17 @@ public class LettoreRSS {
                         String dateStra = N.getPubblicazione();
                         String date = parseDate(dateStra,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
                         N.setPubblicazione(date);
-
                         N.setLink(entry.getLink().replaceAll("'", " "));
+
+                        /*Restituire Autori*/
                         N.setAutore(entry.getAuthor().replaceAll("'", " "));
+
+
                         N.setFonte(feed.getTitle().replaceAll("'", " "));
                         N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("![CDATA[") + 5, entry.getDescription().getValue().indexOf("]]") - 2));
-                        //N.setImage();
-                        dBinsert.insertDataDefault(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),url.toString());
+                        N.setImage(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("src=") + 5, entry.getDescription().getValue().indexOf("/><br") - 2));
+
+                        dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
 
                         break;
                     default:
