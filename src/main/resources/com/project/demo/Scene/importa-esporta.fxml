@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.ImportController">
+<AnchorPane fx:id="parent" prefHeight="381.0" prefWidth="598.0" styleClass="primary-color" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.ImportController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -137,11 +138,33 @@
          </LinearGradient>
       </fill>
    </Text>
-   <Button fx:id="File_Chooser" layoutX="224.0" layoutY="150.0" mnemonicParsing="false" onAction="#Importa" text="Scegli File" />
-   <Button fx:id="Directory_Chooser" layoutX="244.0" layoutY="245.0" mnemonicParsing="false" onAction="#Esporta" text="Scegli Cartella" />
+   <Button fx:id="File_Chooser" layoutX="224.0" layoutY="150.0" mnemonicParsing="false" onAction="#Importa" text="Scegli File">
+      <styleClass>
+         <String fx:value="secondary-color" />
+         <String fx:value="text-color" />
+         <String fx:value="round2-corner" />
+      </styleClass></Button>
+   <Button fx:id="Directory_Chooser" layoutX="244.0" layoutY="245.0" mnemonicParsing="false" onAction="#Esporta" text="Scegli Cartella">
+      <styleClass>
+         <String fx:value="secondary-color" />
+         <String fx:value="text-color" />
+         <String fx:value="round2-corner" />
+      </styleClass></Button>
    <Label layoutX="219.0" layoutY="56.0" />
-   <Label layoutX="222.0" layoutY="56.0" text="IMPORTA FILE"/>
-   <Label layoutX="222.0" layoutY="211.0" text="ESPORTA FILE" />
-   <ComboBox fx:id="comboBox" editable="true" layoutX="214.0" layoutY="102.0" prefHeight="26.0" prefWidth="333.0" promptText="Inserisci link rss" visibleRowCount="40" />
+   <Label layoutX="222.0" layoutY="56.0" styleClass="text-color" text="IMPORTA FILE" />
+   <Label layoutX="222.0" layoutY="211.0" styleClass="text-color" text="ESPORTA FILE" />
+   <ComboBox fx:id="comboBox" editable="true" layoutX="214.0" layoutY="102.0" prefHeight="26.0" prefWidth="333.0" promptText="Inserisci link rss" visibleRowCount="40">
+      <styleClass>
+         <String fx:value="secondary-color" />
+         <String fx:value="text-color" />
+         <String fx:value="round2-corner" />
+      </styleClass></ComboBox>
+   <Button fx:id="buttonMode" layoutX="528.0" layoutY="26.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="26.0" prefWidth="38.0" text="   L  ">
+      <styleClass>
+         <String fx:value="round-corner" />
+         <String fx:value="text-color" />
+         <String fx:value="secondary-color" />
+      </styleClass>
+   </Button>
 
 </AnchorPane>

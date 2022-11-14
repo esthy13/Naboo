@@ -15,7 +15,7 @@ module com.example.demo {
     requires transitive de.jensd.fx.glyphs.fontawesome;
     requires org.apache.commons.codec;
 
-    opens com.project.demo.Scene to javafx.fxml;
+    opens com.project.demo.Scene to javafx.fxml, javafx.controls, javafx.graphics;
     exports com.project.demo;
     exports com.project.demo.Scene;
     exports com.project.demo.model;

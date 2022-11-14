@@ -1,0 +1,16 @@
+.primary-color{
+    -fx-background-color: #313030;
+}
+.secondary-color{
+    -fx-background-color: #504d4d;
+}
+.text-color{
+    -fx-text-fill: #FFFFFF;
+}
+.round-corner{
+    -fx-background-radius: 100;
+}
+.round2-corner{
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}

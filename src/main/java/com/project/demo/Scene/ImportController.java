@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -29,6 +30,11 @@ public class ImportController implements Initializable{
     private Button File_Chooser;
     @FXML
     private Button Directory_Chooser;
+    @FXML
+    private Button buttonMode;
+    @FXML
+    private AnchorPane parent;
+    private Boolean LightMode=true;
     public void logout(ActionEvent event){
         DBUtils.changeScene(event, "login-view.fxml", "Login", null);
     }
@@ -108,6 +114,26 @@ public class ImportController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBget dBget = new DBget();
         comboBox.getItems().addAll(dBget.getListFonti());
+    }
+    public void changeMode(ActionEvent event){
+        if(LightMode==false){
+            setLightMode();
+            LightMode = true;
+        }
+        else{
+            setDarkMode();
+            LightMode = false;
+        }
+    }
+    public void setLightMode(){
+        parent.getStylesheets().remove(getClass().getResource("darkMode.css"));
+        parent.getStylesheets().add(getClass().getResource("lightMode.css").toString());
+        buttonMode.setText("L");
+    }
+    public void setDarkMode(){
+        parent.getStylesheets().remove(getClass().getResource("lightMode.css"));
+        parent.getStylesheets().add(getClass().getResource("darkMode.css").toString());
+        buttonMode.setText("D");
     }
 }
 
