@@ -25,15 +25,14 @@ public class LettoreRSS {
 
             reader = new XmlReader(url);
             SyndFeed feed = new SyndFeedInput().build(reader);
+
             for (SyndEntry entry : feed.getEntries()) {
-
+                //Attenzione: ogni RSS e' diverso, quindi può capitare che ci siano delle incongruenze
+                // --> sopratutto nella descrizione
                 Notizia N = new Notizia();
-
+                String dateStr;
                 switch (url.toString()) {
                     case "http://xml2.corriereobjects.it/rss/homepage.xml":
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                        //DB.inspector prenderà il valore della fonte
-                        Date secondDate = sdf.parse(dBconnect.inspector("Corriere"));
                         N.setTitolo(entry.getTitle().replaceAll("'", " "));
                         N.setPubblicazione(entry.getPublishedDate().toString());
                         N.setLink(entry.getLink().replaceAll("'", " "));
@@ -41,41 +40,54 @@ public class LettoreRSS {
                         N.setFonte(feed.getTitle().replaceAll(".it - Homepage", ""));
                         N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("/><p>") + 5, entry.getDescription().getValue().indexOf("</p>")).replaceAll("'", ""));
                         N.setImage(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("src=") + 5, entry.getDescription().getValue().indexOf("title") - 2));
-                        String dateStr = N.getPubblicazione();
-                        String date1 = parseDate(dateStr,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyy-MM-dd HH:mm:ss");
-                        Date firstDate = sdf.parse(date1);
-                        if(firstDate.after(secondDate)){
-                            System.out.println("firstDate >  secondDate");
-                            String date = parseDate(dateStr,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
-                            N.setPubblicazione(date);
-                            //Inserimento nel DB
-                            dBinsert.insertData(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
-
-                        }
+                        dateStr = N.getPubblicazione();
+                        String date = parseDate(dateStr,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
+                        N.setPubblicazione(date);
+                        //Inserimento nel DB
+                        dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
+                        break;
+                    case "https://www.gazzetta.it/rss/home.xml":
+                        N.setTitolo(entry.getTitle());
+                        N.setPubblicazione(entry.getPublishedDate().toString());
+                        /*Conversione di data*/
+                        dateStr = N.getPubblicazione();
+                        date = parseDate(dateStr,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
+                        N.setPubblicazione(date);
+                        N.setLink(entry.getLink());
+                        N.setAutore(entry.getAuthor());
+                        N.setFonte(feed.getTitle());
+                        N.setDescrizione(entry.getDescription().getValue().replaceAll("<br/>",""));
+                        N.setImage(null);
+                        dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
                         break;
                     case "https://www.fanpage.it/feed/":
-                        N.setTitolo(entry.getTitle().replaceAll("'", " "));
+                        N.setTitolo(entry.getTitle());
                         N.setPubblicazione(entry.getPublishedDate().toString());
-
                         /*Conversione di data*/
-                        String dateStra = N.getPubblicazione();
-                        String date = parseDate(dateStra,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
+                        dateStr = N.getPubblicazione();
+                        date = parseDate(dateStr,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
                         N.setPubblicazione(date);
-                        N.setLink(entry.getLink().replaceAll("'", " "));
-
-                        /*Restituire Autori*/
-                        N.setAutore(entry.getAuthor().replaceAll("'", " "));
-
-
-                        N.setFonte(feed.getTitle().replaceAll("'", " "));
-                        N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("![CDATA[") + 5, entry.getDescription().getValue().indexOf("]]") - 2));
-                        N.setImage(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("src=") + 5, entry.getDescription().getValue().indexOf("/><br") - 2));
-
-                        dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
-
+                        N.setLink(entry.getLink());
+                        N.setAutore(entry.getAuthor());
+                        N.setFonte(feed.getTitle());
+                        N.setDescrizione(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf(" /><br />") + 5, entry.getDescription().getValue().indexOf(" /><br />") -1) );
+                        N.setImage(entry.getDescription().getValue().substring(entry.getDescription().getValue().indexOf("src=") + 5, entry.getDescription().getValue().indexOf(" /><br />") -1) );
+                        System.out.println(N.getDescrizione());
                         break;
                     default:
-                        N.setImage("");
+                        N.setTitolo(entry.getTitle());
+                        N.setPubblicazione(entry.getPublishedDate().toString());
+                        /*Conversione di data*/
+                        dateStr = N.getPubblicazione();
+                        date = parseDate(dateStr,"EEE MMM dd HH:mm:ss zzz yyyy", "yyyyMMddHHmmss");
+                        N.setPubblicazione(date);
+                        N.setLink(entry.getLink());
+                        N.setAutore(entry.getAuthor());
+                        N.setFonte(feed.getTitle());
+                        N.setDescrizione(entry.getDescription().getValue().replaceAll("<br/>",""));
+                        N.setImage(null);
+                        dBinsert.InsertNews(N.getTitolo(),N.getPubblicazione(),N.getDescrizione(),N.getAutore(),N.getFonte(),N.getLink(),N.getImage(),0,0,0,url.toString());
+
                 }
 
 
@@ -103,9 +115,11 @@ public class LettoreRSS {
 
 
     public static void main(String args[])throws Exception{
-        LettoreRSS rss = new LettoreRSS("http://xml2.corriereobjects.it/rss/homepage.xml");
+        //LettoreRSS rss = new LettoreRSS("https://www.fanpage.it/feed/");
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
+        DBinsert dBinsert = new DBinsert();
+        dBinsert.modifyPasswordCrypt(7,"Come va");
 
 
     }

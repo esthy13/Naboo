@@ -4,6 +4,7 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.project.demo.Scene.Encryptor;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 
@@ -517,6 +518,26 @@ public class DBinsert extends DBconnect {
             st = con.createStatement();
             //st.executeUpdate(query);
             executeSQLQuery(query,"password aggiornata a null");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
+
+    public void modifyPasswordCrypt(int id_utente,String Password){
+        Encryptor En = new Encryptor();
+        String key = "Bar12345Bar12345"; // 128 bit key
+        String initVector = "RandomInitVector"; // 16 bytes IV
+        String encrypt_pass = En.encrypt(key, initVector, Password);
+        String query = "UPDATE Utenti SET password = '"+encrypt_pass+"' WHERE id_utente = '" +id_utente+"';";
+
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"password modificata con successo");
             con.close();
             st.close();
         }catch(Exception ex){
