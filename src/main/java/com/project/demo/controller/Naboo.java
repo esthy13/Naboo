@@ -7,6 +7,7 @@ import org.telegram.telegrambots.meta.api.methods.pinnedmessages.UnpinChatMessag
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import static java.util.Objects.isNull;
@@ -26,7 +27,7 @@ public class Naboo extends MyBot {
             menu(update);
         }
         else if(update.hasMessage() && update.getMessage().getText().equals("/help")){
-            help(update.getMessage().getChatId().toString());
+            help(update.getMessage().getChatId().toString(), "" + 1);
         }
 
         /* ANSWER TO USER */
@@ -50,6 +51,13 @@ public class Naboo extends MyBot {
                 && update.getMessage().getReplyToMessage().getText().equals("Scrivi il nome del giornale" +
                 " di cui vuoi leggere le ultime notizie, altrimenti schiaccia /close per tornare alle notizie")){
             searchNews(update,dBget.ricercaFonte(update.getMessage().getText()), 0, "fonte");
+        }
+        else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
+                && update.getMessage().getReplyToMessage().getText().equals("Scrivi la tua richiesta di aiuto allo sviluppatore del Bot")){
+            //TODO send reply to a developer
+            SendMessage sendMessage = new SendMessage();
+            //sendMessage.setChatId();
+            //sendMsg(chatId, update.getMessage().getText(), checkKeyboard("" +1));
         }
         /*METODO DI MIRROR*/
         /*else if(update.hasMessage() && update.getMessage().hasText()) {
@@ -169,7 +177,7 @@ public class Naboo extends MyBot {
                     profilo(update.getCallbackQuery(),id);
                     break;
                 case "help":
-                    help(update.getCallbackQuery().getMessage().getChatId().toString());
+                    help(update.getCallbackQuery().getMessage().getChatId().toString(), ""+id);
                     break;
                 case "comment": //inserInteragisce(int id, int id_utente)
                     dBinsert.inserInteragisce(id, Integer.parseInt(dBget.getId_user(update.getCallbackQuery().getFrom().getUserName())));
@@ -198,6 +206,16 @@ public class Naboo extends MyBot {
                     break;
                 case "close" :
                     close(update);
+                    break;
+                case "reported" :
+                    //TODO add report
+                    break;
+                case "disreport" :
+                    //TODO delete report
+                    break;
+                case "callHelp" :
+                    sendForceReplyMsg(update.getCallbackQuery().getMessage().getChatId().toString(),
+                            "Scrivi la tua richiesta di aiuto allo sviluppatore del Bot");
                     break;
             }
             try{

@@ -37,6 +37,8 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
     String wave_emoji = EmojiParser.parseToUnicode(":wave:");
     String robot_emoji = EmojiParser.parseToUnicode(":robot_face:");
     String menu_emoji = EmojiParser.parseToUnicode(":scroll:");
+    String call_emoji = EmojiParser.parseToUnicode(":telephone_receiver:");
+    String check_emoji = EmojiParser.parseToUnicode(":ballot_box_with_check:");
 
     //DBconnect dBconnect = new DBconnect();
     DBdelete dBdelete = new DBdelete();
@@ -493,5 +495,34 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         inlineButtons.add(inlineKeyboardButtonList2);//seconda riga
         inlineKeyboardMarkup.setKeyboard(inlineButtons);
         sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+    }
+    public InlineKeyboardMarkup keyboardHelp(String id_notizia) {
+        //for editing a button in the two row button menu
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> inlineButtons = new ArrayList();
+        List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList();
+        InlineKeyboardButton visualizza = new InlineKeyboardButton();
+        visualizza.setCallbackData("callHelp-" + id_notizia);
+        visualizza.setText( call_emoji+ " " + help_emoji);
+        InlineKeyboardButton close = new InlineKeyboardButton();
+        close.setCallbackData("close-" + id_notizia);
+        close.setText(close_emoji);
+        inlineKeyboardButtonList.add(visualizza);
+        inlineKeyboardButtonList.add(close);
+        inlineButtons.add(inlineKeyboardButtonList);
+        inlineKeyboardMarkup.setKeyboard(inlineButtons);
+        return inlineKeyboardMarkup;
+    }
+    public InlineKeyboardMarkup checkKeyboard(String id){
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> inlineButtons = new ArrayList();
+        List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList();
+        InlineKeyboardButton close = new InlineKeyboardButton();
+        close.setText(check_emoji);
+        close.setCallbackData("close-" + id);
+        inlineKeyboardButtonList.add(close);
+        inlineButtons.add(inlineKeyboardButtonList);
+        inlineKeyboardMarkup.setKeyboard(inlineButtons);
+        return inlineKeyboardMarkup;
     }
 }

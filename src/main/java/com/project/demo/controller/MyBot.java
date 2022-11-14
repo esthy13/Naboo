@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import static java.util.Objects.isNull;
 
 public abstract class MyBot extends Buttons{
-    public void help(String chatId){
+    public void help(String chatId, String id_notizia){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setParseMode("MarkdownV2");
@@ -31,6 +31,7 @@ public abstract class MyBot extends Buttons{
                             "\n" + close_emoji +" per chiudere e cancellare un messaggio" +
                             "\n" + back_emoji + next_emoji + " per scorrere avanti e indietro notizie e commenti"
                             );
+        sendMessage.setReplyMarkup(keyboardHelp(id_notizia));
         sendMsg(sendMessage);
     }
     public void searchNews(Update update, ArrayList<Notizia> notizie, int first, String tipo){
