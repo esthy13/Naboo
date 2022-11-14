@@ -556,4 +556,20 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         addViewDelete.setReplyMarkup(inlineKeyboardMarkup);
         return addViewDelete;
     }
+    public void keyboardAdmin(SendMessage sendMessage, String id_utente){
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> inlineButtons = new ArrayList();
+        List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList();
+        InlineKeyboardButton close = new InlineKeyboardButton();
+        InlineKeyboardButton modificaPass = new InlineKeyboardButton();
+        close.setText(close_emoji);
+        modificaPass.setText(comment_emoji + " password");
+        close.setCallbackData("close-" + id_utente);
+        modificaPass.setCallbackData("modificaPass-"+ id_utente);
+        inlineKeyboardButtonList.add(modificaPass);
+        inlineKeyboardButtonList.add(close);
+        inlineButtons.add(inlineKeyboardButtonList);
+        inlineKeyboardMarkup.setKeyboard(inlineButtons);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+    }
 }

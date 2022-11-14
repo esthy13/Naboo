@@ -196,7 +196,7 @@ public class Naboo extends MyBot {
                 }
                     break;
                 case "profilo":
-                    profilo(update.getCallbackQuery(),id);
+                    profilo(update.getCallbackQuery(),Integer.parseInt(dBget.getId_user(update.getCallbackQuery().getFrom().getUserName())));
                     break;
                 case "help":
                     help(update.getCallbackQuery().getMessage().getChatId().toString(), ""+id);
@@ -249,6 +249,9 @@ public class Naboo extends MyBot {
                                         "o @tanom02 ti contatteranno in privato", IFph);
 
                     }
+                    break;
+                case "modificaPass" :
+                    //TODO
                     break;
             }
             try{

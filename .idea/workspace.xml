@@ -9,9 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/Buttons.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/KeyboardsAndEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/KeyboardsAndEmoji.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/Naboo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/Naboo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBdelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBdelete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +109,7 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Telegram">
+  <component name="RunManager">
     <configuration name="Encryptor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Encryptor" />
       <module name="Naboo" />
@@ -185,8 +183,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.Encryptor" />
         <item itemvalue="Application.LettoreRSS" />
         <item itemvalue="Application.Main" />
@@ -314,7 +312,7 @@
       <workItem from="1668415890795" duration="560000" />
       <workItem from="1668421257525" duration="674000" />
       <workItem from="1668423518124" duration="3462000" />
-      <workItem from="1668441501410" duration="9347000" />
+      <workItem from="1668441501410" duration="12201000" />
     </task>
     <servers />
   </component>
