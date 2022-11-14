@@ -205,6 +205,20 @@ AND  possiede.id_commento = "11";
             //executeSQLQuery(query,"Inserimento non completato");
         }
     }
+    public void minusReported(int id_notizia){
+        String query = "UPDATE Notizia " + "SET c_reported = c_reported - 1 WHERE id_notizia = " +"'"+id_notizia+"';";
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            //st.executeUpdate(query);
+            executeSQLQuery(query,"Like diminuito");
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+    }
 
     /* Rimuovere fonte */
     public static void deleteFonte(String rss){

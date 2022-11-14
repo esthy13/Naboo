@@ -229,11 +229,13 @@ public class Naboo extends MyBot {
                 case "close" :
                     close(update);
                     break;
-                case "reported" :
+                case "report" :
                     //TODO add report
+                    report(update,id);
                     break;
                 case "disreport" :
                     //TODO delete report
+                    disreport(update,id);
                     break;
                 case "callHelp" :
                     String IFph = "Problema riscontrato: ";

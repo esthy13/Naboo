@@ -39,6 +39,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
     String menu_emoji = EmojiParser.parseToUnicode(":scroll:");
     String call_emoji = EmojiParser.parseToUnicode(":telephone_receiver:");
     String check_emoji = EmojiParser.parseToUnicode(":ballot_box_with_check:");
+    String report_emoji = EmojiParser.parseToUnicode(":no_entry_sign:");
 
     //DBconnect dBconnect = new DBconnect();
     DBdelete dBdelete = new DBdelete();
@@ -457,6 +458,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         InlineKeyboardButton comment = new InlineKeyboardButton();
         InlineKeyboardButton visualizza = new InlineKeyboardButton();
         InlineKeyboardButton callHelp = new InlineKeyboardButton();
+        InlineKeyboardButton report = new InlineKeyboardButton();
         InlineKeyboardButton whatsapp = new InlineKeyboardButton();
         InlineKeyboardButton twitter = new InlineKeyboardButton();
         InlineKeyboardButton facebook = new InlineKeyboardButton();
@@ -467,6 +469,8 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         save.setText(save_emoji);
         comment.setText(comment_emoji);
         visualizza.setText(occhio_emoji + comment_emoji);
+        callHelp.setText( call_emoji+ " " + help_emoji);
+        report.setText(report_emoji);
         share.setText("share");
         menu.setText("MENÙ");
         whatsapp.setText("whatsapp");
@@ -478,7 +482,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         comment.setCallbackData("comment-" + id_notizia);
         visualizza.setCallbackData("visualizza-" + id_notizia);
         callHelp.setCallbackData("callHelp-" + id_notizia);
-        callHelp.setText( call_emoji+ " " + help_emoji);
+        report.setCallbackData("report-"+id_notizia);
         share.setSwitchInlineQuery(sendMessage.getText());
         whatsapp.setUrl("https://api.whatsapp.com/send/?text=@GediNabooBot%20" + link.trim());
         facebook.setUrl("https://www.facebook.com/sharer/sharer.php?u=" + link);
@@ -489,12 +493,12 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         inlineKeyboardButtonList1.add(save);
         inlineKeyboardButtonList1.add(comment);
         inlineKeyboardButtonList1.add(visualizza);
-        inlineKeyboardButtonList1.add(callHelp);
+        inlineKeyboardButtonList1.add(report);
         inlineKeyboardButtonList2.add(share);
         inlineKeyboardButtonList2.add(whatsapp);
         inlineKeyboardButtonList2.add(facebook);
         inlineKeyboardButtonList2.add(twitter);
-        inlineKeyboardButtonList2.add(menu);
+        inlineKeyboardButtonList2.add(callHelp);
         inlineButtons.add(inlineKeyboardButtonList1);//prima riga
         inlineButtons.add(inlineKeyboardButtonList2);//seconda riga
         inlineKeyboardMarkup.setKeyboard(inlineButtons);
@@ -528,5 +532,28 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
         inlineButtons.add(inlineKeyboardButtonList);
         inlineKeyboardMarkup.setKeyboard(inlineButtons);
         return inlineKeyboardMarkup;
+    }
+    public EditMessageReplyMarkup oneButton(Update update, int buttonIndex, String emoji, String callbackData, int numTot) {
+        //for editing a button in the two row button menu
+        EditMessageReplyMarkup addViewDelete = new EditMessageReplyMarkup();
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> inlineButtons = new ArrayList();
+        List<InlineKeyboardButton> inlineKeyboardButtonList1 = new ArrayList();
+        List<InlineKeyboardButton> inlineKeyboardButtonList2 = new ArrayList();
+        String id_notizia = update.getCallbackQuery().getMessage().getReplyMarkup().getKeyboard().get(0).get(buttonIndex).getCallbackData();
+        id_notizia = id_notizia.substring(id_notizia.indexOf('-')+1);
+        InlineKeyboardButton modificato = new InlineKeyboardButton();
+        modificato.setCallbackData(callbackData + "-" + id_notizia);
+        modificato.setText(EmojiParser.parseToUnicode(emoji) + numTot);
+        inlineKeyboardButtonList1.addAll(update.getCallbackQuery().getMessage().getReplyMarkup().getKeyboard().get(0));
+        inlineKeyboardButtonList1.set(buttonIndex, modificato);
+        inlineKeyboardButtonList2.addAll(update.getCallbackQuery().getMessage().getReplyMarkup().getKeyboard().get(1));
+        inlineButtons.add(inlineKeyboardButtonList1);
+        inlineButtons.add(inlineKeyboardButtonList2);
+        inlineKeyboardMarkup.setKeyboard(inlineButtons);
+        addViewDelete.setMessageId(update.getCallbackQuery().getMessage().getMessageId());
+        addViewDelete.setChatId(update.getCallbackQuery().getMessage().getChatId());
+        addViewDelete.setReplyMarkup(inlineKeyboardMarkup);
+        return addViewDelete;
     }
 }

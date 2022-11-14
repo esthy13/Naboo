@@ -229,4 +229,23 @@ public abstract class Buttons extends KeyboardsAndEmoji{
             }
         }
     }
+    public void report(Update update, int id_notizia){
+        dBinsert.addC_reported(id_notizia);
+        EditMessageReplyMarkup addReport = oneButton(update, 5, report_emoji, "disreport", dBget.selectC_reported(id_notizia));
+        try {
+            execute(addReport);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void disreport(Update update, int id_notizia){
+        //System.out.println("disreport");
+        dBdelete.minusReported(id_notizia);
+        EditMessageReplyMarkup addReport = oneButton(update, 5, report_emoji, "report", dBget.selectC_reported(id_notizia));
+        try {
+            execute(addReport);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
