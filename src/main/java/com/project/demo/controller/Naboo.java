@@ -80,6 +80,15 @@ public class Naboo extends MyBot {
                 throw new RuntimeException(e);
             }
             }
+        else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
+                && update.getMessage().getReplyToMessage().getText().equals("Per confermare l'azione di modifica password inserisci la password " +
+                "corrente, altrimenti scrivi /close.")){
+            //TODO verifica password corrente
+            //TODO invia messaggio all'utente per modificare password
+            //TODO cattura nuova password in un altro caso else if()
+            //TODO salva la nuova password sul database e invia messaggio di salvataggio
+
+        }
 
         /*METODO DI MIRROR*/
         /*else if(update.hasMessage() && update.getMessage().hasText()) {
@@ -251,7 +260,9 @@ public class Naboo extends MyBot {
                     }
                     break;
                 case "modificaPass" :
-                    //TODO
+                    IFph = "Password corrente:";
+                    ricerca(update.getCallbackQuery(), "Per confermare l'azione di modifica password inserisci la password " +
+                            "corrente, altrimenti scrivi /close\\.", IFph);
                     break;
             }
             try{
