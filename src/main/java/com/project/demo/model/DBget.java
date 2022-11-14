@@ -514,14 +514,16 @@ public class DBget  extends DBconnect{
 
     }
     public String getEncryptedPass(String username){
-        String query = "SELECT password,username FROM Utenti WHERE username = "+"'"+username+"';";
+        String query = "SELECT password FROM Utenti WHERE username = "+"'"+username+"';";
         String pass = "";
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             rs = st.executeQuery(query);
-            pass = rs.getString("password");
-            System.out.println(pass);
+            while (rs.next()) {
+                pass = rs.getString(1);
+            }
+
             con.close();
             st.close();
         }catch(Exception ex){

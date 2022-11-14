@@ -115,9 +115,11 @@ public class LettoreRSS {
 
 
     public static void main(String args[])throws Exception{
-        LettoreRSS rss = new LettoreRSS("https://www.fanpage.it/feed/");
+        //LettoreRSS rss = new LettoreRSS("https://www.fanpage.it/feed/");
         DBconnect dBconnect = new DBconnect();
         DBdelete dBdelete = new DBdelete();
+        DBget dBget = new DBget();
+        System.out.println(dBget.getEncryptedPass("dan"));
 
 
     }
