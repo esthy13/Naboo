@@ -53,7 +53,9 @@ public abstract class Buttons extends KeyboardsAndEmoji{
         else{
             String key = "Bar12345Bar12345";
             String initVector = "RandomInitVector";
-            String encrypted = dBget.getEncryptedPass(correctUsername(callbackQuery.getFrom().getUserName()));
+            System.out.println(callbackQuery.getFrom().getUserName());
+            String encrypted = dBget.getEncryptedPass(callbackQuery.getFrom().getUserName());
+            System.out.println(encrypted);
             System.out.println("encrypted");
             String password = Encryptor.decrypt(key, initVector, encrypted);
             user.setText("Il tuo profilo: " + profile_emoji

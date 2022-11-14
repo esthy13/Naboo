@@ -521,6 +521,7 @@ public class DBget  extends DBconnect{
             st = con.createStatement();
             rs = st.executeQuery(query);
             pass = rs.getString("password");
+            System.out.println(pass);
             con.close();
             st.close();
         }catch(Exception ex){

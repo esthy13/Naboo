@@ -5,8 +5,6 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.project.demo.Scene.Encryptor;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
 
 import java.io.FileReader;
 import java.io.FileWriter;
