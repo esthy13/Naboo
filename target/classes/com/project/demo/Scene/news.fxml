@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.NewsController">
+<AnchorPane prefHeight="381.0" prefWidth="598.0" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.NewsController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -158,9 +158,9 @@
                <FontAwesomeIconView fill="#ab220d" glyphName="BAN" glyphSize="20" text="" />
             </graphic>
          </TableColumn>
-         <TableColumn fx:id="delete" minWidth="30" prefWidth="30" >
+         <TableColumn fx:id="delete" minWidth="30" prefWidth="30">
             <graphic>
-               <FontAwesomeIconView fill="#ab220d" glyphName="MINUS" glyphSize="15" >
+               <FontAwesomeIconView fill="#ab220d" glyphName="MINUS" glyphSize="15">
                   <rotationAxis>
                      <Point3D />
                   </rotationAxis></FontAwesomeIconView>
