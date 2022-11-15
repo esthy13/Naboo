@@ -134,7 +134,7 @@ public class DBget  extends DBconnect{
         ResultSet rs;
 
         try {
-            String query = "SELECT * FROM `Notizia` WHERE fonte = "+ "'"+fonte+"';";
+            String query = "SELECT * FROM `Notizia` WHERE fonte LIKE"+ "'%"+fonte+"%';";
             st = con.createStatement();
             rs = st.executeQuery(query);
             Notizia n;
