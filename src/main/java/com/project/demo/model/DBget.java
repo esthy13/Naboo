@@ -315,7 +315,7 @@ public class DBget  extends DBconnect{
         try {
             //2)String titolo, 3)String pubblicazione, 4)String descrizione,
             //5)String autore, 6)String fonte, 7)String link, 8)String image
-            String query = "SELECT * FROM Notizia ORDER BY pubblicazione DESC LIMIT 10;";
+            String query = "SELECT * FROM Notizia ORDER BY pubblicazione DESC LIMIT 5;";
             st = con.createStatement();
             rs = st.executeQuery(query);
             Notizia n;

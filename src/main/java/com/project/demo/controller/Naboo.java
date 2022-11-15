@@ -11,6 +11,7 @@ import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static java.util.Objects.isNull;
 
@@ -29,7 +30,18 @@ public class Naboo extends MyBot {
             menu(update);
         }
         else if(update.hasMessage() && update.getMessage().getText().equals("/help")){
-            help(update.getMessage().getChatId().toString(), "" + 1);
+            help(update.getMessage().getChatId().toString(), "" + 0);
+        }
+        else if(update.hasMessage() && update.getMessage().getText().equals("/news")){
+            ArrayList<Notizia> notizie = dBget.lastNews();
+            for(Notizia n : notizie) {
+                SendMessage sendMessage = new SendMessage();
+                sendMessage.setText(n.toString());
+                sendMessage.setChatId(update.getMessage().getChatId());
+                System.out.println("last news - " + n.getId_notizia());
+                keyboardNotizia("" + n.getId_notizia(), n.getLink().trim(), sendMessage);
+                sendMsg(sendMessage);
+            }
         }
 
         /* ANSWER TO USER */
