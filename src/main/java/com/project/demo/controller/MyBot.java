@@ -1,8 +1,10 @@
 package com.project.demo.controller;
 
+import com.project.demo.Scene.Encryptor;
 import com.project.demo.model.Notizia;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ForceReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.*;
@@ -104,6 +106,25 @@ public abstract class MyBot extends Buttons{
             sb.append(inputLine);
         }
         System.out.println(sb.toString());
+    }
+    public void verifyPassword(Update update){
+        String key = "Bar12345Bar12345";
+        String initVector = "RandomInitVector";
+        String encrypted = dBget.getEncryptedPass(update.getMessage().getFrom().getUserName());
+        String password = Encryptor.decrypt(key, initVector, encrypted);
+        if(update.getMessage().getText().trim().equals(password)){
+            ricerca(update.getMessage(),"Password corrente corretta, scrivere una nuova password " +
+                    "per modificarla, altrimenti digita /close\\.", "Nuova password:");
+        }
+        else if(update.getMessage().isReply() && update.getMessage().getReplyToMessage().getText().equals("Password corrente" +
+                " sbagliata, prova a ridigitare la password corrente, altrimenti per uscire dalla modifica password digita /close.")) {
+            sendMsg("" + update.getMessage().getChatId(),"Spiacenti, non è possibile modificare la password, perché  quella inserita" +
+                    " non corrisponde a quella salvata sul database. " + sad_emoji);
+        }
+        else{
+            ricerca(update.getMessage(),"Password corrente sbagliata, prova a ridigitare la password " +
+                    "corrente, altrimenti per uscire dalla modifica password digita /close\\.", "Password corrente:");
+        }
     }
 
 }

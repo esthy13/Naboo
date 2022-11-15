@@ -8,6 +8,7 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -55,8 +56,6 @@ public abstract class Buttons extends KeyboardsAndEmoji{
             String initVector = "RandomInitVector";
             System.out.println(callbackQuery.getFrom().getUserName());
             String encrypted = dBget.getEncryptedPass(callbackQuery.getFrom().getUserName());
-            System.out.println(encrypted);
-            System.out.println("encrypted");
             String password = Encryptor.decrypt(key, initVector, encrypted);
             user.setText("Il tuo profilo: " + profile_emoji
                 + "\n*Username*: " + correctUsername(callbackQuery.getFrom().getUserName())
@@ -173,12 +172,12 @@ public abstract class Buttons extends KeyboardsAndEmoji{
     public void visualizzaCommenti(ArrayList<Commento> commenti, CallbackQuery callbackQuery, int first){
         sendCommenti(commenti, callbackQuery, first);
     }
-    public void ricerca(CallbackQuery callbackQuery, String sms, String IFPh) {
+    public void ricerca(Message message, String sms, String IFPh) {
         SendMessage notizia = new SendMessage();
-        notizia.setChatId(callbackQuery.getMessage().getChatId());
+        notizia.setChatId(message.getChatId());
         notizia.setParseMode("MarkdownV2");
         notizia.setText(sms);
-        notizia.setReplyToMessageId(callbackQuery.getMessage().getMessageId());
+        notizia.setReplyToMessageId(message.getMessageId());
         forceReplyKeyboard.setInputFieldPlaceholder(IFPh);
         notizia.setReplyMarkup(forceReplyKeyboard);
         try {

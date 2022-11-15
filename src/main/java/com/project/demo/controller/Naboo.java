@@ -56,7 +56,7 @@ public class Naboo extends MyBot {
         }
         else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
                 && update.getMessage().getReplyToMessage().getText().equals("Scrivi la tua richiesta di aiuto agli sviluppatori del Bot. \nSe" +
-                " necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in privato")){
+                " necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in privato. Oppure digita /close")){
             String text = update.getMessage().getText();
             String username = update.getMessage().getFrom().getUserName();
             try {
@@ -68,7 +68,7 @@ public class Naboo extends MyBot {
         }
         else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage()) &&
             update.getMessage().getReplyToMessage().getText().contains("Scrivi la tua richiesta di aiuto inerente questa" +
-            " notizia agli sviluppatori del Bot. \nSe necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in privato")){
+            " notizia agli sviluppatori del Bot. \nSe necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in . Oppure digita /close")){
             String id_notizia = update.getMessage().getReplyToMessage().getText();
             id_notizia = id_notizia.substring(12,id_notizia.indexOf("S"));
             System.out.println(id_notizia);
@@ -79,15 +79,23 @@ public class Naboo extends MyBot {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            }
+        }
         else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
                 && update.getMessage().getReplyToMessage().getText().equals("Per confermare l'azione di modifica password inserisci la password " +
                 "corrente, altrimenti scrivi /close.")){
-            //TODO verifica password corrente
-            //TODO invia messaggio all'utente per modificare password
-            //TODO cattura nuova password in un altro caso else if()
-            //TODO salva la nuova password sul database e invia messaggio di salvataggio
+            verifyPassword(update);
 
+        }
+        else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
+                && update.getMessage().getReplyToMessage().getText().equals("Password corrente corretta, " +
+                        "scrivere una nuova password per modificarla, altrimenti digita /close.")){
+            dBinsert.modifyPasswordCrypt(Integer.parseInt(dBget.getId_user(update.getMessage().getFrom().getUserName())),update.getMessage().getText().trim());
+            sendMsg("" + update.getMessage().getChatId(),"Password aggiornata con successo!");
+        }
+        else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
+                && update.getMessage().getReplyToMessage().getText().equals("Password corrente sbagliata, " +
+                "prova a ridigitare la password corrente, altrimenti per uscire dalla modifica password digita /close.")){
+            verifyPassword(update);
         }
 
         /*METODO DI MIRROR*/
@@ -188,20 +196,20 @@ public class Naboo extends MyBot {
                     String sms = "Scrivi alcune parole per cercare la notizia che ti interessa, altrimenti schiaccia"
                             + " /close per tornare alle notizie";
                     String IFPh = "Titolo:";
-                    ricerca(update.getCallbackQuery(),sms, IFPh);
+                    ricerca(update.getCallbackQuery().getMessage(),sms, IFPh);
                     break; }
                 case "data": {
                     String sms = "Scrivi la data nel formato *yyyy\\-mm\\-dd hh* per cercare le notizie della " +
                             "giornata che ti interessa, altrimenti schiaccia /close per tornare alle notizie";
                     String IFPh = "yyyy-mm-dd hh";
-                    ricerca(update.getCallbackQuery(), sms, IFPh);
+                    ricerca(update.getCallbackQuery().getMessage(), sms, IFPh);
                 }
                     break;
                 case "fonte": {
                     String sms = "Scrivi il nome del giornale di cui vuoi leggere le ultime notizie"
                             + ", altrimenti schiaccia /close per tornare alle notizie";
                     String IFPh = "Giornale:";
-                    ricerca(update.getCallbackQuery(),sms,IFPh);
+                    ricerca(update.getCallbackQuery().getMessage(),sms,IFPh);
                 }
                     break;
                 case "profilo":
@@ -249,19 +257,19 @@ public class Naboo extends MyBot {
                 case "callHelp" :
                     String IFph = "Problema riscontrato: ";
                     if(id==0) {
-                        ricerca(update.getCallbackQuery(), "Scrivi la tua richiesta di aiuto agli sviluppatori del Bot\\. \nSe" +
-                                    " necessario  @esthy\\_13, @daaniel o @tanom02 ti contatteranno in privato", IFph);
+                        ricerca(update.getCallbackQuery().getMessage(), "Scrivi la tua richiesta di aiuto agli sviluppatori del Bot\\. \nSe" +
+                                    " necessario  @esthy\\_13, @daaniel o @tanom02 ti contatteranno in privato\\. Oppure digita /close", IFph);
                     }
                     else{
-                        ricerca(update.getCallbackQuery(), "notizia n \\= " + id + "\nScrivi la tua richiesta di aiuto inerente questa" +
+                        ricerca(update.getCallbackQuery().getMessage(), "notizia n \\= " + id + "\nScrivi la tua richiesta di aiuto inerente questa" +
                                         " notizia agli sviluppatori del Bot\\. \nSe necessario  @esthy\\_13, @daaniel " +
-                                        "o @tanom02 ti contatteranno in privato", IFph);
+                                        "o @tanom02 ti contatteranno in privato\\. Oppure digita /close", IFph);
 
                     }
                     break;
                 case "modificaPass" :
                     IFph = "Password corrente:";
-                    ricerca(update.getCallbackQuery(), "Per confermare l'azione di modifica password inserisci la password " +
+                    ricerca(update.getCallbackQuery().getMessage(), "Per confermare l'azione di modifica password inserisci la password " +
                             "corrente, altrimenti scrivi /close\\.", IFph);
                     break;
             }
