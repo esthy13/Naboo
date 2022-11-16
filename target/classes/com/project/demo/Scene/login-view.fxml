@@ -36,60 +36,60 @@
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="301.0" style="-fx-background-color: #000000#000000;">
          <children>
-            <Label layoutX="39.0" layoutY="110.0" text="Username" textFill="WHITE">
+            <Label layoutX="80.0" layoutY="110.0" text="Username" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="39.0" layoutY="207.0" text="Password" textFill="WHITE">
+            <Label layoutX="80.0" layoutY="207.0" text="Password" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txt_username" layoutX="39.0" layoutY="145.0">
+            <TextField fx:id="txt_username" layoutX="80.0" layoutY="145.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Button fx:id="btn_login" layoutX="93.0" layoutY="298.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="117.0" style="-fx-background-color: #0088cc; -fx-cursor: hand;" text="Login">
+            <Button fx:id="btn_login" layoutX="134.0" layoutY="298.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="117.0" style="-fx-background-color: #0088cc; -fx-cursor: hand;" text="Login">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="39.0" layoutY="367.0" text="Non sei registrato?" textFill="WHITE">
+            <Label layoutX="80.0" layoutY="367.0" text="Non sei registrato?" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="12.0" />
                </font></Label>
-            <Button fx:id="btn_signup" layoutX="151.0" layoutY="363.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Registrati" textFill="#0088cc">
+            <Button fx:id="btn_signup" layoutX="192.0" layoutY="363.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Registrati" textFill="#0088cc">
                <font>
                   <Font name="Arial Rounded MT Bold" size="12.0" />
                </font>
             </Button>
-            <PasswordField fx:id="txt_password" layoutX="39.0" layoutY="241.0">
+            <PasswordField fx:id="txt_password" layoutX="80.0" layoutY="241.0">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-      <Label layoutX="106.0" layoutY="45.0" text="LOGIN">
-         <font>
-            <Font name="Futura Medium" size="26.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.6018518805503845" green="0.8088043928146362" blue="0.8552631735801697" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.621345043182373" green="0.2850877046585083" blue="0.7894737124443054" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Label>
-   </children></AnchorPane>
+            <Label layoutX="150.0" layoutY="45.0" text="LOGIN">
+               <font>
+                  <Font name="Futura Medium" size="26.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.6018518805503845" green="0.8088043928146362" blue="0.8552631735801697" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.621345043182373" green="0.2850877046585083" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children></AnchorPane>
    </children>
 </HBox>
