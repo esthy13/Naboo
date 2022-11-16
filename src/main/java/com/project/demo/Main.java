@@ -1,6 +1,7 @@
 package com.project.demo;
 
 import com.project.demo.Scene.Encryptor;
+import com.project.demo.model.DBget;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/signup-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/signup-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/signup-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +108,7 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Encryptor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Encryptor" />
       <module name="Naboo" />
@@ -178,7 +174,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.Test" />
+      <module name="Naboo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Test" />
       <item itemvalue="Application.Encryptor" />
       <item itemvalue="Application.LettoreRSS" />
       <item itemvalue="Application.Main" />
@@ -186,11 +196,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.LettoreRSS" />
+        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.Encryptor" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +334,7 @@
       <workItem from="1668536837042" duration="7961000" />
       <workItem from="1668585678942" duration="1651000" />
       <workItem from="1668593112450" duration="2507000" />
-      <workItem from="1668621708015" duration="1070000" />
+      <workItem from="1668621708015" duration="3178000" />
     </task>
     <servers />
   </component>

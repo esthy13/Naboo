@@ -2,6 +2,8 @@ package com.project.demo.model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class DBget  extends DBconnect{
@@ -531,6 +533,37 @@ public class DBget  extends DBconnect{
             //executeSQLQuery(query,"Inserimento non completato");
         }
         return pass;
+    }
+
+    public int getNrss(String rss){
+        String query = "SELECT COUNT(rss) FROM formata WHERE rss =  "+"'"+rss+"';";
+        int c=0;
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                c = rs.getInt(1);
+            }
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+        return c;
+    }
+
+    public Map<String, Integer> getCount(){
+        Map<String, Integer> valori = new HashMap<String, Integer>();
+        ArrayList<String> Sources = getListFonti();
+        int c;
+         for(int i=0; i<Sources.size(); i++ ){
+             c =getNrss(Sources.get(i).toString());
+             valori.put(Sources.get(i).toString(),c);
+         }
+        return valori;
     }
 
 
