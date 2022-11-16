@@ -7,7 +7,7 @@ public class Test {
         //DBinsert dBinsert = new DBinsert();
         //dBinsert.modifyPasswordCrypt(18,"top13");
         DBget dBget = new DBget();
-        System.out.println(dBget.getEncryptedPass("esthy_13"));
-
+        //System.out.println(dBget.getListFonti());
+        System.out.println(dBget.getCount());
     }
 }
