@@ -22,12 +22,18 @@
     -fx-border-radius: 5;
 }
 
+.text-field {
+    -fx-prompt-text-fill: black;
+}
+
 /*Table view styling*/
 .table-view{
     -fx-background-color: transparent;
     -fx-background-radius: 15;
+    -fx-context-menu-enabled: magenta;
 
 }
+
 .table-view:focused{
     -fx-background-color: transparent;
 }
@@ -60,6 +66,7 @@
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
+
 .table-view > .virtual-flow > .scroll-bar:vertical,
 .table-view > .virtual-flow > .scroll-bar:vertical > .track,
 .table-view > .virtual-flow > .scroll-bar:vertical > .track-background,

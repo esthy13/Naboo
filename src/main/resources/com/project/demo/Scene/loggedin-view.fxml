@@ -179,6 +179,7 @@
             <styleClass>
                <String fx:value="round2-corner" />
                <String fx:value="secondary-color" />
+               <String fx:value="text-field" />
             </styleClass>
          </TextField>
          <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" styleClass="secondary-color" text="">
@@ -194,7 +195,7 @@
                <Insets left="5.0" top="-31.0" />
             </VBox.margin>
          </Button>
-          <TableView fx:id="fonti" editable="true" prefHeight="323.0" prefWidth="531.0" styleClass="primary-color">
+          <TableView fx:id="fonti" editable="true" prefHeight="323.0" prefWidth="531.0" styleClass="primary-color" tableMenuButtonVisible="true">
             <columns>
                <TableColumn fx:id="rss" minWidth="100.0" prefWidth="415.0" text="link rss" />
                <TableColumn fx:id="update" minWidth="0.0" prefWidth="52.5999755859375" text="Update" />
@@ -228,6 +229,7 @@
             <styleClass>
                <String fx:value="round2-corner" />
                <String fx:value="secondary-color" />
+               <String fx:value="prompt-text" />
             </styleClass>
          </TextField>
       </children>
