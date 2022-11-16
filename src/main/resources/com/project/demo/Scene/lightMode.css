@@ -50,6 +50,9 @@
     -fx-border-color: #c1c1c4;
     -fx-border-width: 0.4;
 }
+.table-view .filler{
+    -fx-background-color: transparent;
+}
 .table-view .table-cell{
     -fx-font-family: System;
     -fx-text-fill: black;
