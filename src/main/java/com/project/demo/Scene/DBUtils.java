@@ -23,7 +23,6 @@ public class DBUtils {
         if ((userName != null)){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
-                //System.out.println(DBUtils.class.getResource(fxmlFile).toString());
                 root = fxmlLoader.load();
                 LoggedInController loggedInController = fxmlLoader.getController();
             }catch (Exception exception){

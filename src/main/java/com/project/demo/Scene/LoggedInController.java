@@ -10,12 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable {
-
+    @FXML
+    public static Text myusername = new Text();
     @FXML
     private TableView<Fonte> fonti;
     @FXML
@@ -102,6 +104,14 @@ public class LoggedInController implements Initializable {
             dialog.getStyleClass().add("dialog");
             alert.show();
         }
+    }
+
+    public Text getMyusername() {
+        return myusername;
+    }
+
+    public void setMyusername(Text myusername) {
+        this.myusername = myusername;
     }
 }
 

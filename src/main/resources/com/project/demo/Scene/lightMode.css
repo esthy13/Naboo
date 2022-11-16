@@ -1,3 +1,4 @@
+/*selezionati in base alla classe scelta nell'fxml*/
 .primary-color{
     -fx-background-color: #eeeeee;
 }
@@ -22,14 +23,16 @@
     -fx-border-radius: 5;
 }
 
+/*pescaggio elementi di default*/
 .text-field {
-    -fx-prompt-text-fill: black;
+    -fx-prompt-text-fill: #504c4c;
 }
 
 /*Table view styling*/
 .table-view{
     -fx-background-color: transparent;
-    -fx-background-radius: 15;
+    -fx-border-radius: 5;
+    -fx-border-color: #c1c1c4 ;
 }
 
 .table-view:focused{
@@ -45,28 +48,25 @@
 }
 .table-view .column-header{
     -fx-background-color: transparent;
-    -fx-border-color: #c1c1c4;
+    -fx-border-color: transparent #c1c1c4 #c1c1c4 transparent;
     -fx-border-width: 0.4;
 }
 .table-view .filler{
     -fx-background-color: transparent;
+ /*up right down left*/
 }
 .table-view .table-cell{
     -fx-font-family: System;
     -fx-text-fill: black;
-    -fx-border-color: #c1c1c4;
+    -fx-border-color: #c1c1c4 #c1c1c4 #c1c1c4 transparent;
+    -fx-padding: 5 10 0 10;
     -fx-border-width: 0.3;
 }
+
 .table-row-cell{
     -fx-background-color: #eeeeee;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em;
 }
-.table-row-cell:odd{
-    -fx-background-color: #eeeeee;
-    -fx-background-insets: 0;
-    -fx-background-radius: 1;
-}
+
 
 .table-view > .virtual-flow > .scroll-bar:vertical,
 .table-view > .virtual-flow > .scroll-bar:vertical > .track,

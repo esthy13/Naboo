@@ -18,7 +18,7 @@ public class Main extends Application {
         Parent root = fxmlLoader.load();
         stage.setTitle("Login");
         stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
-        stage.setScene(new Scene(root));
+        stage.setScene(new Scene(root, 716, 408));
         stage.show();
     }
 

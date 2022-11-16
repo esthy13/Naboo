@@ -169,11 +169,14 @@
                <String fx:value="round2-corner" />
             </styleClass>
             <children>
-               <Label maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="User" textAlignment="RIGHT">
+               <Text fx:id="myusername" text="User" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="305.0" top="5.0" />
+                     <Insets left="372.0" top="10.0" />
                   </HBox.margin>
-               </Label>
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Text>
                <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="primary-color">
                   <graphic>
                      <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" />
@@ -200,12 +203,11 @@
                <Cursor fx:constant="TEXT" />
             </cursor>
             <VBox.margin>
-               <Insets left="45.0" right="5.0" />
+               <Insets left="45.0" right="8.0" />
             </VBox.margin>
             <styleClass>
                <String fx:value="round2-corner" />
                <String fx:value="secondary-color" />
-               <String fx:value="text-field" />
             </styleClass>
          </TextField>
          <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" styleClass="secondary-color" text="">
@@ -215,7 +217,6 @@
                      <Point3D />
                   </rotationAxis>
                </FontAwesomeIconView>
-
             </graphic>
             <VBox.margin>
                <Insets left="5.0" top="-31.0" />
@@ -223,7 +224,7 @@
          </Button>
           <TableView fx:id="fonti" editable="true" prefHeight="323.0" prefWidth="531.0" styleClass="primary-color">
             <columns>
-               <TableColumn fx:id="rss" minWidth="100.0" prefWidth="415.0" text="link rss" />
+               <TableColumn fx:id="rss" maxWidth="405.0" minWidth="405.0" prefWidth="405.0" text="link rss" />
                <TableColumn fx:id="update" minWidth="0.0" prefWidth="52.5999755859375" text="Update" />
                <TableColumn fx:id="delete" prefWidth="50.0" text="Elimina" />
             </columns>
@@ -231,6 +232,9 @@
                <String fx:value="primary-color" />
                <String fx:value="text-color" />
             </styleClass>
+            <VBox.margin>
+               <Insets left="5.0" right="8.0" />
+            </VBox.margin>
          </TableView>
          <Button fx:id="addRss_btn" alignment="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#addRss" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #a44ed0; -fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" text="">
             <graphic>
@@ -245,7 +249,7 @@
                <Insets bottom="-30.0" left="495.0" />
             </VBox.margin>
          </Button>
-         <TextField fx:id="linkRss" opacity="0.78" prefHeight="27.0" prefWidth="547.0" promptText="Link feed rss" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-opacity: 1;">
+         <TextField fx:id="linkRss" prefHeight="27.0" prefWidth="547.0" promptText="https://www.example.it/rss" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9);">
             <cursor>
                <Cursor fx:constant="TEXT" />
             </cursor>
