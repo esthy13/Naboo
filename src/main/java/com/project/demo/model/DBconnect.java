@@ -43,7 +43,7 @@ public class DBconnect {
 
 
 
-    /*3. Aggiorna la base di dati, invocando News Collector per controllare eventuali aggiornamenti dalle fonti JAVA FX */
+    /*3. Aggiorna la base di dati, invocando News Collector per controllare eventuali aggiornamenti dalle Fonti JAVA FX */
 
 
 

@@ -7,10 +7,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -23,8 +27,27 @@ public class DBUtils {
         if ((userName != null)){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
-                root = fxmlLoader.load();
-                LoggedInController loggedInController = fxmlLoader.getController();
+
+                switch(fxmlFile) {
+                    case "commenti.fxml":
+                        //TODO
+                        break;
+                    case "Fonti.fxml":
+                        root = fxmlLoader.load();
+                        FontiController fontiController = fxmlLoader.getController();
+                        fontiController.text.setText("@" + userName);
+                        break;
+                    case "Home.fxml":
+                        //TODO
+                        break;
+                    case "news.fxml":
+                        //TODO
+                        break;
+                    case "utenti.fxml":
+                        //TODO
+                        break;
+                }
+
             }catch (Exception exception){
                 exception.printStackTrace();
             }
@@ -37,6 +60,7 @@ public class DBUtils {
             }
         }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         stage.setTitle(title);
         stage.setScene(new Scene(root, 716, 408));
         stage.show();
@@ -69,7 +93,7 @@ public class DBUtils {
                 alert.setContentText("User Registration Successful!");
                 alert.show();
 
-                changeScene(event, "loggedin-view.fxml", "Welcome!", username);
+                changeScene(event, "Fonti.fxml", "Welcome!", username);
             }
         }catch (Exception exception){
             exception.printStackTrace();
@@ -131,7 +155,7 @@ public class DBUtils {
                     String decrypt_pass = En.decrypt(key, initVector,retrievedPassword);
 
                     if (decrypt_pass.equals(password)){
-                        changeScene(event, "loggedin-view.fxml", "Welcome!", username);
+                        changeScene(event, "Fonti.fxml", "Welcome!", username);
                     }else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

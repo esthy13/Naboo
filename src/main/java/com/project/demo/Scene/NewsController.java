@@ -51,7 +51,7 @@ public class NewsController implements Initializable {
     }
 
     public void Home(ActionEvent event) {
-        DBUtils.changeScene(event, "loggedin-view.fxml", "Home!", null);
+        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null);
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
@@ -60,18 +60,18 @@ public class NewsController implements Initializable {
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "Utenti.fxml", "Manage user!", null);
+        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null);
         //TODO add getUsername from previous fxml scene
         //visualizza();
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "Commenti.fxml", "Manage comments!", null);
+        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void importaEsporta(ActionEvent event){
-        DBUtils.changeScene(event, "importa-esporta.fxml", "Manage Import-Export!", null);
+        DBUtils.changeScene(event, "Home.fxml", "Manage Import-Export!", null);
         //TODO add getUsername from previous fxml scene
     }
 

@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoggedInController">
+<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.FontiController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -17,7 +17,7 @@
     </Label>
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
-         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
@@ -31,7 +31,21 @@
                <Insets />
             </opaqueInsets>
          </Button>
-         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="News" textFill="#fcfcfc">
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Fonti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Fonti" textFill="#fcfcfc">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="CLOUD_DOWNLOAD" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Notizie" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
@@ -68,20 +82,6 @@
             </cursor>
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="COMMENTING_ALT" />
-            </graphic>
-            <opaqueInsets>
-               <Insets />
-            </opaqueInsets>
-         </Button>
-         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#importaEsporta" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Importa/esporta" textFill="#fcfcfc">
-            <font>
-               <Font size="18.0" />
-            </font>
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="CLOUD_DOWNLOAD" />
             </graphic>
             <opaqueInsets>
                <Insets />
@@ -158,7 +158,7 @@
          </LinearGradient>
       </fill>
    </Text>
-   <VBox layoutX="188.0" layoutY="-1.0" prefHeight="411.0" prefWidth="531.0" spacing="5.0" stylesheets="@lightMode.css">
+   <VBox layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0" spacing="5.0" stylesheets="@lightMode.css">
       <children>
          <HBox prefHeight="50.0" prefWidth="200.0" spacing="5.0">
             <VBox.margin>
@@ -169,9 +169,9 @@
                <String fx:value="round2-corner" />
             </styleClass>
             <children>
-               <Text fx:id="myusername" text="User" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
+               <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="372.0" top="10.0" />
+                     <Insets left="365.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />
@@ -224,7 +224,7 @@
          </Button>
           <TableView fx:id="fonti" editable="true" prefHeight="323.0" prefWidth="531.0" styleClass="primary-color">
             <columns>
-               <TableColumn fx:id="rss" maxWidth="405.0" minWidth="405.0" prefWidth="405.0" text="link rss" />
+               <TableColumn fx:id="rss" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" text="link rss" />
                <TableColumn fx:id="update" minWidth="0.0" prefWidth="52.5999755859375" text="Update" />
                <TableColumn fx:id="delete" prefWidth="50.0" text="Elimina" />
             </columns>
@@ -246,7 +246,7 @@
 
             </graphic>
             <VBox.margin>
-               <Insets bottom="-30.0" left="495.0" />
+               <Insets bottom="-30.0" left="487.0" />
             </VBox.margin>
          </Button>
          <TextField fx:id="linkRss" prefHeight="27.0" prefWidth="547.0" promptText="https://www.example.it/rss" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9);">

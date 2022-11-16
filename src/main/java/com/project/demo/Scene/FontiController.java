@@ -15,9 +15,10 @@ import javafx.scene.text.Text;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoggedInController implements Initializable {
+public class FontiController implements Initializable {
     @FXML
-    public static Text myusername = new Text();
+    private Text myusername;
+    public static Text text;
     @FXML
     private TableView<Fonte> fonti;
     @FXML
@@ -38,12 +39,14 @@ public class LoggedInController implements Initializable {
     private TextField linkRss;
     private ObservableList<Fonte> list;
 
+    private FontiController fontiController;
+
     public void logout(ActionEvent event){
         DBUtils.changeScene(event, "login-view.fxml", "Login", null);
     }
 
-    public void Home(ActionEvent event) {
-        DBUtils.changeScene(event, "loggedin-view.fxml", "Home!", null);
+    public void Fonti(ActionEvent event) {
+        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null);
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
@@ -52,26 +55,27 @@ public class LoggedInController implements Initializable {
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "Utenti.fxml", "Manage user!", null);
+        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "Commenti.fxml", "Manage comments!", null);
+        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null);
         //TODO add getUsername from previous fxml scene
     }
 
-    public void importaEsporta(ActionEvent event){
-        DBUtils.changeScene(event, "importa-esporta.fxml", "Manage Import-Export!", null);
+    public void Home(ActionEvent event){
+        DBUtils.changeScene(event, "Home.fxml", "Manage Import-Export!", null);
         //TODO add getUsername from previous fxml scene
     }
 
-    public void setUserInfoForWelcome(String username){
+    /*public void setUserInfoForWelcome(String username){
         label_welcome.setText("Welcome " + username +  "!");
-    }
+    }*/
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        text = myusername;
         visualizza();
         rss.setCellValueFactory(new PropertyValueFactory<Fonte, String>("link_rss"));
         update.setCellValueFactory(new PropertyValueFactory<Fonte, Button>("update"));
@@ -96,7 +100,7 @@ public class LoggedInController implements Initializable {
         else {
             DBinsert dBinsert = new DBinsert();
             dBinsert.insertFonte(linkRss.getText());
-            DBUtils.changeScene(event, "loggedin-view.fxml", "Manage user!", null);
+            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", null);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.getDialogPane().setHeaderText("Feed RSS aggiunto!");
             DialogPane dialog = alert.getDialogPane();
@@ -104,14 +108,6 @@ public class LoggedInController implements Initializable {
             dialog.getStyleClass().add("dialog");
             alert.show();
         }
-    }
-
-    public Text getMyusername() {
-        return myusername;
-    }
-
-    public void setMyusername(Text myusername) {
-        this.myusername = myusername;
     }
 }
 

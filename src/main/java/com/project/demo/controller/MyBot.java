@@ -76,7 +76,7 @@ public abstract class MyBot extends Buttons{
         else {
             sendMsg(update.getMessage().getChatId().toString(), "Benvenuto! " + wave_emoji +
                     "\nOra puoi cercare, leggere, commentare e condividere con i tuoi amici le notizie" +
-                    "di attualità prese da fonti controllate dagli amministratori del bot!" +
+                    "di attualità prese da Fonti controllate dagli amministratori del bot!" +
                     "\nSe hai bisogno di aiuto usa /help " + help_emoji +
                     "\nPer accedere al menù del bot usa /menu " + menu_emoji +
                     "\n" + robot_emoji +" @GediNabooBot", menuKeyboard("0"));

@@ -223,7 +223,7 @@ AND  possiede.id_commento = "11";
     /* Rimuovere fonte */
     public static void deleteFonte(String rss){
 
-        String query = "DELETE FROM fonti WHERE rss = "+"'"+rss+"'";
+        String query = "DELETE FROM Fonti WHERE rss = "+"'"+rss+"'";
 
         try{
             deleteFormata(rss);

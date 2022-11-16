@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="381.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.CommentiController">
+<AnchorPane prefHeight="450.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.CommentiController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -28,6 +28,20 @@
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
             </graphic>
+         </Button>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Fonti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Fonti" textFill="#fcfcfc">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="CLOUD_DOWNLOAD" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
          </Button>
          <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="News" textAlignment="RIGHT" textFill="#fcfcfc">
             <font>
@@ -60,17 +74,6 @@
             </cursor>
             <graphic>
                <FontAwesomeIconView fill="WHITE" glyphName="COMMENTING_ALT" />
-            </graphic>
-         </Button>
-         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#importaEsporta" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #1F1F1F;" text="Importa/esporta" textAlignment="RIGHT" textFill="#fcfcfc">
-            <font>
-               <Font size="18.0" />
-            </font>
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="CLOUD_DOWNLOAD" />
             </graphic>
          </Button>
          <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="222.0" style="-fx-background-color: #1F1F1F;" text="Logout" textAlignment="RIGHT" textFill="WHITE">

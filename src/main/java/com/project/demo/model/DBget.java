@@ -374,7 +374,7 @@ public class DBget  extends DBconnect{
         return id_notizia;
     }
 
-    /* Restituisce le fonti  */
+    /* Restituisce le Fonti  */
     public ArrayList<Fonte> getFonti() {
         ArrayList<Fonte> Sources = new ArrayList<Fonte>();
         Connection con = getConnection();
