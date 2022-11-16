@@ -30,8 +30,6 @@
 .table-view{
     -fx-background-color: transparent;
     -fx-background-radius: 15;
-    -fx-context-menu-enabled: magenta;
-
 }
 
 .table-view:focused{

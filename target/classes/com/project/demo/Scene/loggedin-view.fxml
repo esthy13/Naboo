@@ -160,7 +160,7 @@
    </Text>
    <VBox layoutX="188.0" layoutY="-1.0" prefHeight="411.0" prefWidth="531.0" spacing="5.0" stylesheets="@lightMode.css">
       <children>
-         <HBox prefHeight="50.0" prefWidth="200.0">
+         <HBox prefHeight="50.0" prefWidth="200.0" spacing="5.0">
             <VBox.margin>
                <Insets top="-10.0" />
             </VBox.margin>
@@ -168,6 +168,32 @@
                <String fx:value="primary-color" />
                <String fx:value="round2-corner" />
             </styleClass>
+            <children>
+               <Label maxHeight="25.0" maxWidth="150.0" minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="User" textAlignment="RIGHT">
+                  <HBox.margin>
+                     <Insets left="305.0" top="5.0" />
+                  </HBox.margin>
+               </Label>
+               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="primary-color">
+                  <graphic>
+                     <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" />
+                  </graphic>
+                  <HBox.margin>
+                     <Insets top="3.0" />
+                  </HBox.margin>
+               </Button>
+               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+                  <graphic>
+                     <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
+                  </graphic>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <HBox.margin>
+                     <Insets top="3.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
          </HBox>
          <TextField fx:id="search_txt" prefHeight="27.0" prefWidth="338.0" promptText="Cerca ...">
             <cursor>
