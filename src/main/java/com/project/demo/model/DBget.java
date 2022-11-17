@@ -575,5 +575,68 @@ public class DBget  extends DBconnect{
         return string;
     }
 
+    public int getCountNews(){
+        String query = "SELECT COUNT(*) FROM notizia;";
+        int c=0;
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                c = rs.getInt(1);
+            }
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+        return c;
+    }
+
+    //restituisce il numero di notizie riportate
+    //c'è un metodo giù per i reported totali
+    public int getCountReported(){
+        String query = "SELECT COUNT(c_reported) FROM notizia WHERE c_reported > 0;";
+        int c=0;
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                c = rs.getInt(1);
+            }
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+        return c;
+    }
+
+    //restituisce i reported totali su tutte le notizie
+    public int getSumReported(){
+        String query = "SELECT SUM(c_reported) FROM notizia;";
+        int c=0;
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                c = rs.getInt(1);
+            }
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+        return c;
+    }
+
 
 }
