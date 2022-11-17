@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
+<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
          <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
@@ -192,36 +200,36 @@
          </HBox>
          <VBox maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="5.0">
             <children>
-               <Pane prefHeight="100.0" prefWidth="200.0">
+               <Pane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #99dac3, #40a9f3);">
                   <styleClass>
                      <String fx:value="primary-color" />
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fill="#4e4d4d" layoutX="63.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="Utenti">
+                     <Text fx:id="utenti" fill="#ac1cc9" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
-                           <Font name="System Bold" size="25.0" />
+                           <Font size="30.0" />
                         </font>
                      </Text>
-                     <Text fx:id="utenti" fill="#ac1cc9" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="utenti1" layoutX="-1.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utenti" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
                            <Font size="30.0" />
                         </font>
                      </Text>
                   </children>
                </Pane>
-               <Pane prefHeight="100.0" prefWidth="200.0">
+               <Pane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #dabc99, #f3cf40);">
                   <styleClass>
                      <String fx:value="primary-color" />
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fill="#4e4d4d" layoutX="58.0" layoutY="41.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Notizie">
+                     <Text fx:id="notizie" fill="#1680cc" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
-                           <Font name="System Bold" size="25.0" />
+                           <Font size="30.0" />
                         </font>
                      </Text>
-                     <Text fx:id="notizie" fill="#1680cc" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="notizie1" layoutX="-1.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notizie" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
                            <Font size="30.0" />
                         </font>

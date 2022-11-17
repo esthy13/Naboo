@@ -4,8 +4,6 @@ import javafx.scene.chart.PieChart;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class DBget  extends DBconnect{
@@ -575,15 +573,15 @@ public class DBget  extends DBconnect{
         return string;
     }
 
-    public int getCountNews(){
+    public String getCountNews(){
         String query = "SELECT COUNT(*) FROM notizia;";
-        int c=0;
+        String c="";
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             rs = st.executeQuery(query);
             while (rs.next()) {
-                c = rs.getInt(1);
+                c = rs.getString(1);
             }
 
             con.close();
@@ -627,6 +625,27 @@ public class DBget  extends DBconnect{
             rs = st.executeQuery(query);
             while (rs.next()) {
                 c = rs.getInt(1);
+            }
+
+            con.close();
+            st.close();
+        }catch(Exception ex){
+            System.out.println("Error:"+ex);
+            //executeSQLQuery(query,"Inserimento non completato");
+        }
+        return c;
+    }
+
+    //restituisce i numeri totali di utenti iscritti al bot
+    public String getCountUser(){
+        String query = "SELECT COUNT(username) FROM utenti WHERE ruolo='User'";
+        String c="";
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                c = rs.getString(1);
             }
 
             con.close();

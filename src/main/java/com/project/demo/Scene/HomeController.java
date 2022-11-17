@@ -106,8 +106,8 @@ public class HomeController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
        DBget dBget = new DBget();
         text = myusername;
-        utenti.setText("");
-        notizie.setText("");
+        utenti.setText(dBget.getCountUser());
+        notizie.setText(dBget.getCountNews());
         initPieChart();
         chartFonti.setLabelsVisible(true);
         chartFonti.setLegendVisible(false);
