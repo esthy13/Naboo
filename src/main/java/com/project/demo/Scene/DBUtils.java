@@ -21,7 +21,7 @@ import javafx.stage.StageStyle;
 import java.sql.*;
 
 public class DBUtils {
-    public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName) {
+    public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName, String search) {
         Parent root = new AnchorPane();
 
         if ((userName != null)){
@@ -32,10 +32,12 @@ public class DBUtils {
                     case "commenti.fxml":
                         CommentiController commentiController = fxmlLoader.getController();
                         commentiController.text.setText(userName);
+                        commentiController.search.setText(search);
                         break;
                     case "Fonti.fxml":
                         FontiController fontiController = fxmlLoader.getController();
                         fontiController.text.setText(userName);
+                        fontiController.search.setText(search);
                         break;
                     case "Home.fxml":
                         HomeController homeController = fxmlLoader.getController();
@@ -43,7 +45,8 @@ public class DBUtils {
                         break;
                     case "news.fxml":
                         NewsController newsController = fxmlLoader.getController();
-                        //TODO
+                        newsController.text.setText(userName);
+                        newsController.search.setText(search);
                         break;
                     case "utenti.fxml":
                         UserController userController = fxmlLoader.getController();
@@ -96,7 +99,7 @@ public class DBUtils {
                 alert.setContentText("User Registration Successful!");
                 alert.show();
 
-                changeScene(event, "Fonti.fxml", "Welcome!", username);
+                changeScene(event, "Fonti.fxml", "Welcome!", username, null);
             }
         }catch (Exception exception){
             exception.printStackTrace();
@@ -158,7 +161,7 @@ public class DBUtils {
                     String decrypt_pass = En.decrypt(key, initVector,retrievedPassword);
 
                     if (decrypt_pass.equals(password)){
-                        changeScene(event, "Fonti.fxml", "Welcome!", username);
+                        changeScene(event, "Fonti.fxml", "Welcome!", username, null);
                     }else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

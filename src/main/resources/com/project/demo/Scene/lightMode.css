@@ -55,6 +55,12 @@
     -fx-background-color: transparent;
  /*up right down left*/
 }
+.table-view .show-hide-columns-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: transparent;
+}
+
 .table-view .table-cell{
     -fx-font-family: System;
     -fx-text-fill: black;
@@ -62,7 +68,6 @@
     -fx-padding: 5 10 0 10;
     -fx-border-width: 0.3;
 }
-
 .table-row-cell{
     -fx-background-color: #eeeeee;
 }

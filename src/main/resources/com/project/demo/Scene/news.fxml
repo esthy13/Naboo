@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.NewsController">
+   <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
+        <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+        </font>
+    </Label>
+   <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
+      <children>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Fonti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
+            <font>
+               <Font name="Fasthand" size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="HOME" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Fonti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Fonti" textFill="#fcfcfc">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="CLOUD_DOWNLOAD" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9);  -fx-background-radius: 0;" text="Notizie" textFill="#fcfcfc">
+            <font>
+               <Font name="Fasthand" size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="NEWSPAPER_ALT" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Utenti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Utenti" textFill="WHITE">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="USER_CIRCLE" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Commenti" prefHeight="35.0" prefWidth="226.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Commenti" textFill="WHITE">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="COMMENTING_ALT" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Button>
+          <Button alignment="CENTER" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #0088CCFF; -fx-background-radius: 50; -fx-max-height: 10;" text="Logout" textFill="WHITE">
+              <font>
+                  <Font size="18.0" />
+              </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+            <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="WINDOW_CLOSE_ALT" />
+            </graphic>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+               <Insets bottom="20.0" left="20.0" right="20.0" />
+            </VBox.margin>
+          </Button>
+      </children>
+   </VBox>
+   <Text layoutX="9.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NABOO" textAlignment="CENTER" wrappingWidth="165.43792724609375">
+      <font>
+         <Font name="Futura Medium" size="29.0" />
+      </font>
+      <fill>
+         <LinearGradient endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
+                  </color>
+               </Stop>
+               <Stop offset="0.006711409395973154">
+                  <color>
+                     <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.6196078658103943" green="0.2862745225429535" blue="0.7882353067398071" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </fill>
+   </Text>
+   <Text layoutX="44.0" layoutY="80.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeWidth="0.0" text="ADMIN MENU">
+      <font>
+         <Font name="Futura Medium" size="15.0" />
+      </font>
+      <fill>
+         <LinearGradient endX="1.0" endY="1.0">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
+                  </color>
+               </Stop>
+               <Stop offset="0.006711409395973154">
+                  <color>
+                     <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="0.6196078658103943" green="0.2862745225429535" blue="0.7882353067398071" />
+                  </color>
+               </Stop>
+            </stops>
+         </LinearGradient>
+      </fill>
+   </Text>
+   <VBox layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0" spacing="5.0" stylesheets="@lightMode.css">
+      <children>
+         <HBox prefHeight="50.0" prefWidth="200.0" spacing="5.0">
+            <VBox.margin>
+               <Insets top="-10.0" />
+            </VBox.margin>
+            <styleClass>
+               <String fx:value="primary-color" />
+               <String fx:value="round2-corner" />
+            </styleClass>
+            <children>
+               <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
+                  <HBox.margin>
+                     <Insets left="365.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Text>
+               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="primary-color">
+                  <graphic>
+                     <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" />
+                  </graphic>
+                  <HBox.margin>
+                     <Insets top="3.0" />
+                  </HBox.margin>
+               </Button>
+               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+                  <graphic>
+                     <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
+                  </graphic>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <HBox.margin>
+                     <Insets top="3.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+         </HBox>
+         <TextField fx:id="search_txt" prefHeight="27.0" prefWidth="338.0" promptText="Cerca ...">
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor>
+            <VBox.margin>
+               <Insets left="45.0" right="8.0" />
+            </VBox.margin>
+            <styleClass>
+               <String fx:value="round2-corner" />
+               <String fx:value="secondary-color" />
+            </styleClass>
+         </TextField>
+         <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" styleClass="secondary-color" text="">
+            <graphic>
+               <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="SEARCH" size="15" strokeLineCap="ROUND" strokeLineJoin="ROUND" textOrigin="CENTER">
+                  <rotationAxis>
+                     <Point3D />
+                  </rotationAxis>
+               </FontAwesomeIconView>
+            </graphic>
+            <VBox.margin>
+               <Insets left="5.0" top="-31.0" />
+            </VBox.margin>
+         </Button>
+          <TableView fx:id="news" editable="true" prefHeight="352.0" prefWidth="511.0" styleClass="primary-color" tableMenuButtonVisible="false">
+            <columns>
+               <TableColumn fx:id="pubblicazione" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Data" />
+               <TableColumn fx:id="titolo" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" text="Titolo" />
+               <TableColumn fx:id="fonte" maxWidth="80.0" minWidth="80.0" text="Fonte" />
+               <TableColumn fx:id="like" maxWidth="30.0" minWidth="30.0" prefWidth="30.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_UP" glyphSize="20" />
+               </graphic>
+               </TableColumn>
+               <TableColumn fx:id="dislike" maxWidth="30.0" minWidth="30.0" prefWidth="30.0">
+                  <graphic>
+                     <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_DOWN" glyphSize="20" />
+                  </graphic>
+               </TableColumn>
+               <TableColumn fx:id="report" maxWidth="30.0" minWidth="30.0" prefWidth="30.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#ab220d" glyphName="BAN" glyphSize="20" text="" />
+               </graphic>
+               </TableColumn>
+               <TableColumn fx:id="delete" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Elimina" />
+            </columns>
+            <styleClass>
+               <String fx:value="primary-color" />
+               <String fx:value="text-color" />
+            </styleClass>
+            <VBox.margin>
+               <Insets left="5.0" right="8.0" />
+            </VBox.margin>
+         </TableView>
+      </children>
+      <styleClass>
+         <String fx:value="primary-color" />
+         <String fx:value="round-corner-background" />
+      </styleClass>
+      <padding>
+         <Insets bottom="10.0" top="10.0" />
+      </padding>
+      <opaqueInsets>
+         <Insets bottom="10.0" />
+      </opaqueInsets>
+   </VBox>
+</AnchorPane>

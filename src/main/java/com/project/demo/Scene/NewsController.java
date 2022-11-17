@@ -1,30 +1,27 @@
 package com.project.demo.Scene;
 
-import com.project.demo.model.DBdelete;
 import com.project.demo.model.DBget;
 import com.project.demo.model.Notizia;
-import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 //TODO da sistemare questione cancellazione notizie
 
 public class NewsController implements Initializable {
+    @FXML
+    private Text myusername;
+    public static Text text;
     @FXML
     private TableView<Notizia> news;
     @FXML
@@ -43,35 +40,36 @@ public class NewsController implements Initializable {
     private TableColumn<Notizia, Button> delete;
     @FXML
     private TextField search_txt;
+    public static TextField search;
     private ObservableList<Notizia> list;
 
 
     public void logout(ActionEvent event){
-        DBUtils.changeScene(event, "login-view.fxml", "Login", null);
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
     public void Home(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null);
+        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null);
+        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
         //visualizza();
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null);
+        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
     }
 
-    public void importaEsporta(ActionEvent event){
-        DBUtils.changeScene(event, "Home.fxml", "Manage Import-Export!", null);
+    public void Fonti(ActionEvent event){
+        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
     }
 
@@ -80,6 +78,8 @@ public class NewsController implements Initializable {
     //}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        search = search_txt;
+        text = myusername;
         visualizza();
         titolo.setCellValueFactory(new PropertyValueFactory<Notizia, String>("titolo"));
         pubblicazione.setCellValueFactory(new PropertyValueFactory<Notizia, String>("pubblicazione"));
@@ -94,7 +94,7 @@ public class NewsController implements Initializable {
         FilteredList<Notizia> filteredData = new FilteredList<>(list, b->true);
         search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(notizia -> {
-                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                if (newValue == null || newValue.isEmpty() || newValue.isBlank()) {
                     return true;
                 }
                 String searchWord = "" + newValue.toLowerCase();
@@ -132,5 +132,13 @@ public class NewsController implements Initializable {
     public void visualizza() {
         DBget dBget = new DBget();
         this.list = FXCollections.observableArrayList(dBget.getAllNews());
+    }
+
+    public String getMyusername() {
+        return myusername.getText();
+    }
+
+    public String getSearch_txt() {
+        return search_txt.getText();
     }
 }

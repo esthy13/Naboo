@@ -38,6 +38,7 @@ public class FontiController implements Initializable {
     private Button addRss_btn;
     @FXML
     private TextField search_txt;
+    public static TextField search;
     @FXML
     private TextField linkRss;
     private ObservableList<Fonte> list;
@@ -45,35 +46,36 @@ public class FontiController implements Initializable {
     private FontiController fontiController;
 
     public void logout(ActionEvent event){
-        DBUtils.changeScene(event, "login-view.fxml", "Login", null);
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername());
+        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername());
+        DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername());
+        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername());
+        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "Home.fxml", "Benvenuto!", getMyusername());
+        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        search = search_txt;
         text = myusername;
         visualizza();
         rss.setCellValueFactory(new PropertyValueFactory<Fonte, String>("link_rss"));
@@ -84,7 +86,7 @@ public class FontiController implements Initializable {
         FilteredList<Fonte> filteredData = new FilteredList<>(list, b->true);
         search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(fonte -> {
-                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                if (newValue == null || newValue.isEmpty() || newValue.isBlank()) {
                     return true;
                 }
                 String searchWord = "" + newValue.toLowerCase();
@@ -117,7 +119,7 @@ public class FontiController implements Initializable {
         else {
             DBinsert dBinsert = new DBinsert();
             dBinsert.insertFonte(linkRss.getText());
-            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername());
+            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername(), null);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.getDialogPane().setHeaderText("Feed RSS aggiunto!");
             DialogPane dialog = alert.getDialogPane();
@@ -129,6 +131,10 @@ public class FontiController implements Initializable {
 
     public String getMyusername() {
         return myusername.getText();
+    }
+
+    public String getSearch_txt() {
+        return search_txt.getText();
     }
 }
 

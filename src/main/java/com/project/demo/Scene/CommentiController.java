@@ -37,39 +37,41 @@ public class CommentiController implements Initializable {
     private TableColumn<Commento, Button> delete;
     @FXML
     private TextField search_txt;
+    public static TextField search;
     private ObservableList<Commento> list;
 
     public void logout(ActionEvent event){
-        DBUtils.changeScene(event, "login-view.fxml", "Login", null);
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername());
+        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Gestisci le notzie", getMyusername());
+        DBUtils.changeScene(event, "news.fxml", "Gestisci le notzie", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername());
+        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
         visualizza();
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername());
+        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "Home.fxml", "Benvenuto!", getMyusername());
+        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        search = search_txt;
         text = myusername;
         visualizza();
         id_commento.setCellValueFactory(new PropertyValueFactory<Commento, Integer>("id_commento"));
@@ -83,7 +85,7 @@ public class CommentiController implements Initializable {
         FilteredList<Commento> filteredData = new FilteredList<>(list, b->true);
         search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(commento -> {
-                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                if (newValue == null  || newValue.isEmpty() || newValue.isBlank()) {
                     return true;
                 }
                 String searchWord = "" + newValue.toLowerCase();
@@ -118,5 +120,9 @@ public class CommentiController implements Initializable {
 
     public String getMyusername() {
         return myusername.getText();
+    }
+
+    public String getSearch_txt() {
+        return search_txt.getText();
     }
 }

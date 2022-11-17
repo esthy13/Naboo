@@ -2,6 +2,7 @@ package com.project.demo.model;
 
 import com.project.demo.Main;
 import com.project.demo.Scene.DBUtils;
+import com.project.demo.Scene.NewsController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -211,7 +212,7 @@ public class Notizia {
                 } else if (result.get() == ButtonType.OK) {
                     DBdelete dBdelete = new DBdelete();
                     dBdelete.deleteNotizia(getId_notizia());
-                    DBUtils.changeScene(actionEvent, "news.fxml", "Manage Import-Export!", null);
+                    DBUtils.changeScene(actionEvent, "news.fxml", "Manage Import-Export!", NewsController.text.getText(), NewsController.search.getText());
                 } else if (result.get() == ButtonType.CANCEL) {
                 }
             }

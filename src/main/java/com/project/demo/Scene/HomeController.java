@@ -30,31 +30,31 @@ public class HomeController implements Initializable{
     private AnchorPane parent;
     private Boolean LightMode=true;
     public void logout(ActionEvent event){
-        DBUtils.changeScene(event, "login-view.fxml", "Login", null);
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
     public void Home(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null);
+        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null, null);
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", null, null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null);
+        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null, null);
         //TODO add getUsername from previous fxml scene
 
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null);
+        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null, null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void importaEsporta(ActionEvent event){
-        DBUtils.changeScene(event, "Home.fxml", "Manage Import-Export!", null);
+        DBUtils.changeScene(event, "Fonti.fxml", "Manage Import-Export!", null, null);
         //TODO add getUsername from previous fxml scene
     }
 

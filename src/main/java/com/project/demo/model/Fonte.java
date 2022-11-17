@@ -139,7 +139,7 @@ public class Fonte {
                 else if(result.get() == ButtonType.OK){
                     DBdelete dBdelete = new DBdelete();
                     dBdelete.deleteFonte(getRss());  //Cancellazione dell'RSS
-                    DBUtils.changeScene(actionEvent, "Fonti.fxml", "Gestisci le fonti", FontiController.text.getText());
+                    DBUtils.changeScene(actionEvent, "Fonti.fxml", "Gestisci le fonti", FontiController.text.getText(), FontiController.search.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                 }
