@@ -27,6 +27,10 @@ public class HomeController implements Initializable{
     private Text myusername;
     public static Text text;
     @FXML
+    private Text utenti;
+    @FXML
+    private Text notizie;
+    @FXML
     private PieChart chartFonti;
     @FXML
     private ComboBox<String> comboBox;
@@ -100,11 +104,13 @@ public class HomeController implements Initializable{
    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+       DBget dBget = new DBget();
         text = myusername;
+        utenti.setText("");
+        notizie.setText("");
         initPieChart();
         chartFonti.setLabelsVisible(true);
-        chartFonti.setLegendVisible(true);
-        chartFonti.setLegendSide(Side.LEFT);
+        chartFonti.setLegendVisible(false);
     }
 
    /*TODO DA RIPRISTINARE

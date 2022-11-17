@@ -1,6 +1,6 @@
 /*selezionati in base alla classe scelta nell'fxml*/
 .primary-color{
-    -fx-background-color: #eeeeee;
+    -fx-background-color: #f1f1f1;
 }
 .secondary-color{
     -fx-background-color: #dbdade;
@@ -22,16 +22,19 @@
     -fx-background-radius: 5;
     -fx-border-radius: 5;
 }
-.axis{
-    -fx-stroke: #fff;
-    -fx-fill: #fff;
-    -fx-font-size: 12;
-    -fx-tick-label-fill: #fff;
-}
 
+.text-dashboard{
+    -fx-text-inner-color:  #4e4d4d;
+}
 /*pescaggio elementi di default*/
 .text-field {
     -fx-prompt-text-fill: #504c4c;
+}
+
+.chart{
+    -fx-background-color: #f1f1f1;
+    -fx-background-radius: 5;
+    -fx-text-fill: #4e4d4d;
 }
 
 /*Table view styling*/
@@ -45,7 +48,7 @@
     -fx-background-color: transparent;
 }
 .table-view .column-header-background{
-    -fx-background-color: #eeeeee;
+    -fx-background-color: #f1f1f1;
 }
 .table-view .column-header-background .label{
     -fx-font-family: System;
@@ -75,7 +78,7 @@
     -fx-border-width: 0.3;
 }
 .table-row-cell{
-    -fx-background-color: #eeeeee;
+    -fx-background-color: #f1f1f1;
 }
 
 

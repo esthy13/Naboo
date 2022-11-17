@@ -92,11 +92,6 @@ public class LettoreRSS {
 
 
             }
-
-            //messaggio telegram da inviare agli utenti
-            /**SendMessage sendMessage = new SendMessage();
-             sendMessage.setText(N.toString());
-             execute(sendMessage);**/
         } finally {
             //Chiudiamo lo stream precedentemente aperto.
             if (reader != null) reader.close();

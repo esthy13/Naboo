@@ -563,10 +563,16 @@ public class DBget  extends DBconnect{
         //int c;
          for(int i=0; i<Sources.size(); i++ ){
              //c =getNrss(Sources.get(i).toString());
-             valori.add(new PieChart.Data(Sources.get(i),getNrss(Sources.get(i))));
+             valori.add(new PieChart.Data(cutURL(Sources.get(i)),getNrss(Sources.get(i))));
              //valori.put(Sources.get(i).toString(),c);
          }
         return valori;
+    }
+
+    private String cutURL(String string){
+        string = string.substring(string.indexOf(".")+1);
+        string = string.substring(0,string.indexOf("."));
+        return string;
     }
 
 

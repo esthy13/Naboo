@@ -10,6 +10,9 @@ public class Test {
         //dBinsert.modifyPasswordCrypt(18,"top13");
         DBget dBget = new DBget();
         //Map<String, Integer> map = dBget.getCount();
-        System.out.println(dBget.getCount());
+        String string = "https://www.fanpage.it/feed/";
+        string = string.substring(string.indexOf(".")+1);
+        string = string.substring(0,string.indexOf("."));
+        System.out.println(string);
     }
 }

@@ -11,11 +11,6 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
-   <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
-        <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-        </font>
-    </Label>
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
          <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
@@ -165,10 +160,6 @@
             <VBox.margin>
                <Insets top="-10.0" />
             </VBox.margin>
-            <styleClass>
-               <String fx:value="primary-color" />
-               <String fx:value="round2-corner" />
-            </styleClass>
             <children>
                <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
@@ -186,7 +177,7 @@
                      <Insets top="3.0" />
                   </HBox.margin>
                </Button>
-               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="primary-color">
                   <graphic>
                      <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
                   </graphic>
@@ -199,16 +190,89 @@
                </Button>
             </children>
          </HBox>
-         <VBox prefHeight="182.0" prefWidth="217.0" />
-         <PieChart fx:id="chartFonti" prefHeight="245.0" prefWidth="296.0" title="Fonti">
-            <styleClass>
-               <String fx:value="secondary-color" />
-               <String fx:value="round2-corner" />
-            </styleClass></PieChart>
-         <HBox prefHeight="79.0" prefWidth="516.0" />
+         <VBox maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="5.0">
+            <children>
+               <Pane prefHeight="100.0" prefWidth="200.0">
+                  <styleClass>
+                     <String fx:value="primary-color" />
+                     <String fx:value="round-corner-background" />
+                  </styleClass>
+                  <children>
+                     <Text fill="#4e4d4d" layoutX="63.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="Utenti">
+                        <font>
+                           <Font name="System Bold" size="25.0" />
+                        </font>
+                     </Text>
+                     <Text fx:id="utenti" fill="#ac1cc9" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </Pane>
+               <Pane prefHeight="100.0" prefWidth="200.0">
+                  <styleClass>
+                     <String fx:value="primary-color" />
+                     <String fx:value="round-corner-background" />
+                  </styleClass>
+                  <children>
+                     <Text fill="#4e4d4d" layoutX="58.0" layoutY="41.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Notizie">
+                        <font>
+                           <Font name="System Bold" size="25.0" />
+                        </font>
+                     </Text>
+                     <Text fx:id="notizie" fill="#1680cc" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </Pane>
+            </children>
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" />
+            </FlowPane.margin>
+         </VBox>
+         <PieChart fx:id="chartFonti" maxHeight="200.0" minHeight="132.0" prefHeight="200.0" prefWidth="305.0" styleClass="primary-color" title="Fonti" />
+         <HBox prefHeight="136.0" prefWidth="510.0" spacing="5.0">
+            <children>
+               <Pane prefHeight="150.0" prefWidth="300.0">
+                  <styleClass>
+                     <String fx:value="primary-color" />
+                     <String fx:value="round-corner-background" />
+                  </styleClass>
+                  <children>
+                     <ComboBox layoutX="11.0" layoutY="56.0" prefHeight="25.0" prefWidth="278.0" />
+                     <Text fill="#4e4d4d" layoutX="67.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Importa notizie">
+                        <font>
+                           <Font name="System Bold" size="25.0" />
+                        </font>
+                     </Text>
+                     <Button layoutX="124.0" layoutY="97.0" mnemonicParsing="false" text="Button" />
+                  </children>
+               </Pane>
+               <Pane prefHeight="136.0" prefWidth="206.0">
+                  <styleClass>
+                     <String fx:value="primary-color" />
+                     <String fx:value="round-corner-background" />
+                  </styleClass>
+                  <children>
+                     <Text fill="#4e4d4d" layoutX="15.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esporta notizie">
+                        <font>
+                           <Font name="System Bold" size="25.0" />
+                        </font>
+                     </Text>
+                     <Button layoutX="76.0" layoutY="56.0" mnemonicParsing="false" text="Button" />
+                  </children>
+               </Pane>
+            </children>
+            <FlowPane.margin>
+               <Insets left="5.0" right="5.0" top="5.0" />
+            </FlowPane.margin>
+         </HBox>
       </children>
       <styleClass>
-         <String fx:value="primary-color" />
+         <String fx:value="secondary-color" />
          <String fx:value="round-corner-background" />
       </styleClass>
       <padding>
