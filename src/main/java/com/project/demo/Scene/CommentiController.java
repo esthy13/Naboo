@@ -65,7 +65,7 @@ public class CommentiController implements Initializable {
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), null);
+        DBUtils.changeScene(event, "home.fxml", "Benvenuto!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 

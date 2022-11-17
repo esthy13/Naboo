@@ -4,12 +4,13 @@
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.NewsController">
+<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
    <Label fx:id="label_welcome" alignment="CENTER" layoutX="213.0" layoutY="152.0" textAlignment="CENTER">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -17,7 +18,7 @@
     </Label>
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
-         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
@@ -45,7 +46,7 @@
                <Insets />
             </opaqueInsets>
          </Button>
-         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9);  -fx-background-radius: 0;" text="Notizie" textFill="#fcfcfc">
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#News" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Notizie" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
@@ -158,7 +159,7 @@
          </LinearGradient>
       </fill>
    </Text>
-   <VBox layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0" spacing="5.0" stylesheets="@lightMode.css">
+   <FlowPane layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0" stylesheets="@lightMode.css">
       <children>
          <HBox prefHeight="50.0" prefWidth="200.0" spacing="5.0">
             <VBox.margin>
@@ -198,60 +199,9 @@
                </Button>
             </children>
          </HBox>
-         <TextField fx:id="search_txt" prefHeight="27.0" prefWidth="338.0" promptText="Cerca ...">
-            <cursor>
-               <Cursor fx:constant="TEXT" />
-            </cursor>
-            <VBox.margin>
-               <Insets left="45.0" right="8.0" />
-            </VBox.margin>
-            <styleClass>
-               <String fx:value="round2-corner" />
-               <String fx:value="secondary-color" />
-            </styleClass>
-         </TextField>
-         <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" styleClass="secondary-color" text="">
-            <graphic>
-               <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="SEARCH" size="15" strokeLineCap="ROUND" strokeLineJoin="ROUND" textOrigin="CENTER">
-                  <rotationAxis>
-                     <Point3D />
-                  </rotationAxis>
-               </FontAwesomeIconView>
-            </graphic>
-            <VBox.margin>
-               <Insets left="5.0" top="-31.0" />
-            </VBox.margin>
-         </Button>
-          <TableView fx:id="news" editable="true" prefHeight="352.0" prefWidth="511.0" styleClass="primary-color" tableMenuButtonVisible="false">
-            <columns>
-               <TableColumn fx:id="pubblicazione" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Data" />
-               <TableColumn fx:id="titolo" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" text="Titolo" />
-               <TableColumn fx:id="fonte" maxWidth="80.0" minWidth="80.0" text="Fonte" />
-               <TableColumn fx:id="like" maxWidth="30.0" minWidth="30.0" prefWidth="30.0">
-               <graphic>
-                  <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_UP" glyphSize="20" />
-               </graphic>
-               </TableColumn>
-               <TableColumn fx:id="dislike" maxWidth="30.0" minWidth="30.0" prefWidth="30.0">
-                  <graphic>
-                     <FontAwesomeIconView fill="#dcc338" glyphName="THUMBS_DOWN" glyphSize="20" />
-                  </graphic>
-               </TableColumn>
-               <TableColumn fx:id="report" maxWidth="30.0" minWidth="30.0" prefWidth="30.0">
-               <graphic>
-                  <FontAwesomeIconView fill="#ab220d" glyphName="BAN" glyphSize="20" text="" />
-               </graphic>
-               </TableColumn>
-               <TableColumn fx:id="delete" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Elimina" />
-            </columns>
-            <styleClass>
-               <String fx:value="primary-color" />
-               <String fx:value="text-color" />
-            </styleClass>
-            <VBox.margin>
-               <Insets left="5.0" right="8.0" />
-            </VBox.margin>
-         </TableView>
+         <VBox prefHeight="182.0" prefWidth="217.0" />
+         <PieChart prefHeight="140.0" prefWidth="250.0" />
+         <HBox prefHeight="155.0" prefWidth="516.0" />
       </children>
       <styleClass>
          <String fx:value="primary-color" />
@@ -263,5 +213,5 @@
       <opaqueInsets>
          <Insets bottom="10.0" />
       </opaqueInsets>
-   </VBox>
+   </FlowPane>
 </AnchorPane>

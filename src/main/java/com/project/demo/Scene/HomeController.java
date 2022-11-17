@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 import static java.util.Objects.isNull;
 
-public class HomeController implements Initializable{
+public class HomeController{
     @FXML
     private ComboBox<String> comboBox;
     @FXML
@@ -33,7 +33,7 @@ public class HomeController implements Initializable{
         DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
-    public void Home(ActionEvent event) {
+    public void Fonti(ActionEvent event) {
         DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null, null);
         //TODO add getUsername from previous fxml scene
     }
@@ -53,8 +53,8 @@ public class HomeController implements Initializable{
         //TODO add getUsername from previous fxml scene
     }
 
-    public void importaEsporta(ActionEvent event){
-        DBUtils.changeScene(event, "Fonti.fxml", "Manage Import-Export!", null, null);
+    public void Home(ActionEvent event){
+        DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", null, null);
         //TODO add getUsername from previous fxml scene
     }
 
@@ -104,6 +104,7 @@ public class HomeController implements Initializable{
        alert.show();
    }
 
+   /*TODO DA RIPRISTINARE
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBget dBget = new DBget();
@@ -128,6 +129,6 @@ public class HomeController implements Initializable{
         parent.getStylesheets().remove(getClass().getResource("lightMode.css"));
         parent.getStylesheets().add(getClass().getResource("darkMode.css").toString());
         buttonMode.setText("D");
-    }
+    }*/
 }
 

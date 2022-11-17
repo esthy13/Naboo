@@ -48,7 +48,7 @@ public class NewsController implements Initializable {
         DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
-    public void Home(ActionEvent event) {
+    public void Fonti(ActionEvent event) {
         DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
@@ -68,8 +68,8 @@ public class NewsController implements Initializable {
         //TODO add getUsername from previous fxml scene
     }
 
-    public void Fonti(ActionEvent event){
-        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), null);
+    public void Home(ActionEvent event){
+        DBUtils.changeScene(event, "home.fxml", "Gestisci le fonti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 

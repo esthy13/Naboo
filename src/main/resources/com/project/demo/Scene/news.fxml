@@ -17,7 +17,7 @@
     </Label>
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
-         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Fonti" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
+         <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: #282828; -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
             <font>
                <Font name="Fasthand" size="18.0" />
             </font>
