@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/commenti_new.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/CommentiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/CommentiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/FontiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/FontiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/ImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Commento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Commento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/commenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/commenti.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/commenti_new.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/news.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/utenti.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/Commenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/Commenti.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/CommentiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/CommentiController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/ImportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/Utenti.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/news.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +122,7 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Encryptor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Encryptor" />
       <module name="Naboo" />
@@ -193,8 +210,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.LettoreRSS" />
         <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.Encryptor" />
@@ -333,7 +350,8 @@
       <workItem from="1668593112450" duration="2507000" />
       <workItem from="1668621708015" duration="3178000" />
       <workItem from="1668630659980" duration="119000" />
-      <workItem from="1668630788764" duration="330000" />
+      <workItem from="1668630788764" duration="540000" />
+      <workItem from="1668673781741" duration="1911000" />
     </task>
     <servers />
   </component>

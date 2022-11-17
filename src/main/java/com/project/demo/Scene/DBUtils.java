@@ -27,23 +27,26 @@ public class DBUtils {
         if ((userName != null)){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
-
+                root = fxmlLoader.load();
                 switch(fxmlFile) {
                     case "commenti.fxml":
-                        //TODO
+                        CommentiController commentiController = fxmlLoader.getController();
+                        commentiController.text.setText(userName);
                         break;
                     case "Fonti.fxml":
-                        root = fxmlLoader.load();
                         FontiController fontiController = fxmlLoader.getController();
-                        fontiController.text.setText("@" + userName);
+                        fontiController.text.setText(userName);
                         break;
                     case "Home.fxml":
+                        HomeController homeController = fxmlLoader.getController();
                         //TODO
                         break;
                     case "news.fxml":
+                        NewsController newsController = fxmlLoader.getController();
                         //TODO
                         break;
                     case "utenti.fxml":
+                        UserController userController = fxmlLoader.getController();
                         //TODO
                         break;
                 }
@@ -59,8 +62,8 @@ public class DBUtils {
                 exception.printStackTrace();
             }
         }
+        //root.getStylesheets(); per dark mode
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
         stage.setTitle(title);
         stage.setScene(new Scene(root, 716, 408));
         stage.show();

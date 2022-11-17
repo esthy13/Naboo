@@ -1,10 +1,13 @@
 package com.project.demo.Scene;
 
+import com.project.demo.model.Commento;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
 import com.project.demo.model.Fonte;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,32 +49,28 @@ public class FontiController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null);
+        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername());
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", null);
+        DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername());
         //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null);
+        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername());
         //TODO add getUsername from previous fxml scene
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null);
+        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername());
         //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "Home.fxml", "Manage Import-Export!", null);
+        DBUtils.changeScene(event, "Home.fxml", "Benvenuto!", getMyusername());
         //TODO add getUsername from previous fxml scene
     }
-
-    /*public void setUserInfoForWelcome(String username){
-        label_welcome.setText("Welcome " + username +  "!");
-    }*/
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -81,6 +80,24 @@ public class FontiController implements Initializable {
         update.setCellValueFactory(new PropertyValueFactory<Fonte, Button>("update"));
         delete.setCellValueFactory(new PropertyValueFactory<Fonte, Button>("delete"));
         this.fonti.setItems(list);
+        //TODO AGGIUNGI FUNZIONALITA' DI RICERCA
+        FilteredList<Fonte> filteredData = new FilteredList<>(list, b->true);
+        search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(fonte -> {
+                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                    return true;
+                }
+                String searchWord = "" + newValue.toLowerCase();
+                if( fonte.getRss().indexOf(searchWord) > -1){
+                    return true;
+                }
+                else
+                    return false;
+            });
+        });
+        SortedList<Fonte> sortedList = new SortedList<>(filteredData);
+        sortedList.comparatorProperty().bind(fonti.comparatorProperty());
+        fonti.setItems(sortedList);
     }
 
     public void visualizza() {
@@ -100,7 +117,7 @@ public class FontiController implements Initializable {
         else {
             DBinsert dBinsert = new DBinsert();
             dBinsert.insertFonte(linkRss.getText());
-            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", null);
+            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.getDialogPane().setHeaderText("Feed RSS aggiunto!");
             DialogPane dialog = alert.getDialogPane();
@@ -108,6 +125,10 @@ public class FontiController implements Initializable {
             dialog.getStyleClass().add("dialog");
             alert.show();
         }
+    }
+
+    public String getMyusername() {
+        return myusername.getText();
     }
 }
 

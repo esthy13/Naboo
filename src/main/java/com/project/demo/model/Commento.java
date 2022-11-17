@@ -1,5 +1,6 @@
 package com.project.demo.model;
 
+import com.project.demo.Scene.CommentiController;
 import com.project.demo.Scene.DBUtils;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
@@ -102,7 +103,7 @@ public class Commento {
                     DBget dBget = new DBget();
                     dBdelete.deleteOneComment(getId_commento(), getId_notizia());  //Cancellazione dell'utente
                     System.out.println("delete " + getId_commento());
-                    DBUtils.changeScene(actionEvent, "commenti.fxml", "Manage user!", null);
+                    DBUtils.changeScene(actionEvent, "commenti.fxml", "Gestisci i commenti", CommentiController.text.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                     // cancel button is pressed

@@ -1,6 +1,7 @@
 package com.project.demo.model;
 
 import com.project.demo.Scene.DBUtils;
+import com.project.demo.Scene.FontiController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.layout.Background;
+import javafx.stage.Window;
 
 import java.util.Optional;
 
@@ -137,7 +139,7 @@ public class Fonte {
                 else if(result.get() == ButtonType.OK){
                     DBdelete dBdelete = new DBdelete();
                     dBdelete.deleteFonte(getRss());  //Cancellazione dell'RSS
-                    DBUtils.changeScene(actionEvent, "Fonti.fxml", "Manage user!", null);
+                    DBUtils.changeScene(actionEvent, "Fonti.fxml", "Gestisci le fonti", FontiController.text.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                 }
