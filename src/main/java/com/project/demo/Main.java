@@ -15,7 +15,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-view.fxml"));
-        //FXMLLoader fxmlLoader = new FXMLLoader(Encryptor.class.getResource("Fonti.fxml"));
         Parent root = fxmlLoader.load();
         stage.setTitle("Login");
         stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));

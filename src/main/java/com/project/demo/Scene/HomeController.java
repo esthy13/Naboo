@@ -1,11 +1,16 @@
 package com.project.demo.Scene;
 
 import com.project.demo.model.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Side;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
@@ -17,7 +22,12 @@ import java.util.ResourceBundle;
 
 import static java.util.Objects.isNull;
 
-public class HomeController{
+public class HomeController implements Initializable{
+    @FXML
+    private Text myusername;
+    public static Text text;
+    @FXML
+    private PieChart chartFonti;
     @FXML
     private ComboBox<String> comboBox;
     @FXML
@@ -28,47 +38,32 @@ public class HomeController{
     private Button buttonMode;
     @FXML
     private AnchorPane parent;
-    private Boolean LightMode=true;
     public void logout(ActionEvent event){
         DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null, null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti!", getMyusername(), null);
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", null, null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", getMyusername(), null);
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null, null);
-        //TODO add getUsername from previous fxml scene
-
+        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", getMyusername(), null);
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null, null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", getMyusername(), null);
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", null, null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", getMyusername(), null);
     }
-
-    //public void setUserInfoForWelcome(String username){
-    //label_welcome.setText("Welcome " + username +  "!");
-    //}
 
   /*  public void ForFilePath(){
         File_Path.getText();
     }*/
-
-    public void ForDirectoryPath(){
-
-    }
 
    public void Importa() {
        DBget dBget = new DBget();
@@ -103,6 +98,14 @@ public class HomeController{
        alert.setHeaderText("Notizie scaricate correttamente dal database");
        alert.show();
    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        text = myusername;
+        initPieChart();
+        chartFonti.setLabelsVisible(true);
+        chartFonti.setLegendVisible(true);
+        chartFonti.setLegendSide(Side.LEFT);
+    }
 
    /*TODO DA RIPRISTINARE
     @Override
@@ -130,5 +133,15 @@ public class HomeController{
         parent.getStylesheets().add(getClass().getResource("darkMode.css").toString());
         buttonMode.setText("D");
     }*/
+
+    public String getMyusername() {
+        return myusername.getText();
+    }
+
+    public void initPieChart(){
+        DBget dBget = new DBget();
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(dBget.getCount());
+        chartFonti.setData(pieChartData);
+    }
 }
 

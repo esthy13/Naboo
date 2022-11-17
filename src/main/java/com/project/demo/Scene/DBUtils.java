@@ -34,14 +34,14 @@ public class DBUtils {
                         commentiController.text.setText(userName);
                         commentiController.search.setText(search);
                         break;
-                    case "Fonti.fxml":
+                    case "fonti.fxml":
                         FontiController fontiController = fxmlLoader.getController();
                         fontiController.text.setText(userName);
                         fontiController.search.setText(search);
                         break;
-                    case "Home.fxml":
+                    case "home.fxml":
                         HomeController homeController = fxmlLoader.getController();
-                        //TODO
+                        homeController.text.setText(userName);
                         break;
                     case "news.fxml":
                         NewsController newsController = fxmlLoader.getController();
@@ -100,7 +100,7 @@ public class DBUtils {
                 alert.setContentText("User Registration Successful!");
                 alert.show();
 
-                changeScene(event, "Fonti.fxml", "Welcome!", username, null);
+                changeScene(event, "home.fxml", "Welcome!", username, null);
             }
         }catch (Exception exception){
             exception.printStackTrace();
@@ -162,7 +162,7 @@ public class DBUtils {
                     String decrypt_pass = En.decrypt(key, initVector,retrievedPassword);
 
                     if (decrypt_pass.equals(password)){
-                        changeScene(event, "Fonti.fxml", "Welcome!", username, null);
+                        changeScene(event, "home.fxml", "Welcome!", username, null);
                     }else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

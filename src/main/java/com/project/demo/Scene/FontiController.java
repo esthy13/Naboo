@@ -50,27 +50,22 @@ public class FontiController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), getSearch_txt());
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "fonti.fxml", "Gestisci le fonti", getMyusername(), getSearch_txt());
     }
     public void News(ActionEvent event) {
         DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
         DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Commenti(ActionEvent event){
         DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
         DBUtils.changeScene(event, "home.fxml", "Benvenuto!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     @Override
@@ -82,7 +77,7 @@ public class FontiController implements Initializable {
         update.setCellValueFactory(new PropertyValueFactory<Fonte, Button>("update"));
         delete.setCellValueFactory(new PropertyValueFactory<Fonte, Button>("delete"));
         this.fonti.setItems(list);
-        //TODO AGGIUNGI FUNZIONALITA' DI RICERCA
+
         FilteredList<Fonte> filteredData = new FilteredList<>(list, b->true);
         search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(fonte -> {

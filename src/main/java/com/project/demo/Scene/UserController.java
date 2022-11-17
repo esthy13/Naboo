@@ -52,33 +52,23 @@ public class UserController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti!", getMyusername(), null);
     }
     public void News(ActionEvent event) {
         DBUtils.changeScene(event, "news.fxml", "Manage news!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
         DBUtils.changeScene(event, "utenti.fxml", "Manage user!", getMyusername(), getSearch_txt());
-        //TODO add getUsername from previous fxml scene
-        visualizza();
     }
 
     public void Commenti(ActionEvent event){
         DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
         DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
-
-    //public void setUserInfoForWelcome(String username){
-        //label_welcome.setText("Welcome " + username +  "!");
-    //}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

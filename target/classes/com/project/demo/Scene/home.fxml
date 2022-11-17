@@ -200,8 +200,12 @@
             </children>
          </HBox>
          <VBox prefHeight="182.0" prefWidth="217.0" />
-         <PieChart prefHeight="140.0" prefWidth="250.0" />
-         <HBox prefHeight="155.0" prefWidth="516.0" />
+         <PieChart fx:id="chartFonti" prefHeight="245.0" prefWidth="296.0" title="Fonti">
+            <styleClass>
+               <String fx:value="secondary-color" />
+               <String fx:value="round2-corner" />
+            </styleClass></PieChart>
+         <HBox prefHeight="79.0" prefWidth="516.0" />
       </children>
       <styleClass>
          <String fx:value="primary-color" />

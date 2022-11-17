@@ -16,8 +16,6 @@ import javafx.scene.text.Text;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-//TODO da sistemare questione cancellazione notizie
-
 public class NewsController implements Initializable {
     @FXML
     private Text myusername;
@@ -49,33 +47,24 @@ public class NewsController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "fonti.fxml", "Benvenuto!", getMyusername(), null);
     }
     public void News(ActionEvent event) {
         DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername(), getSearch_txt());
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
         DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
-        //visualizza();
     }
 
     public void Commenti(ActionEvent event){
         DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
         DBUtils.changeScene(event, "home.fxml", "Gestisci le fonti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
-    //public void setUserInfoForWelcome(String username){
-    //label_welcome.setText("Welcome " + username +  "!");
-    //}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         search = search_txt;

@@ -1,5 +1,7 @@
 package com.project.demo.model;
 
+import javafx.scene.chart.PieChart;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -555,13 +557,14 @@ public class DBget  extends DBconnect{
         return c;
     }
 
-    public Map<String, Integer> getCount(){
-        Map<String, Integer> valori = new HashMap<String, Integer>();
+    public ArrayList<PieChart.Data> getCount(){
+        ArrayList<PieChart.Data> valori = new ArrayList<>();
         ArrayList<String> Sources = getListFonti();
-        int c;
+        //int c;
          for(int i=0; i<Sources.size(); i++ ){
-             c =getNrss(Sources.get(i).toString());
-             valori.put(Sources.get(i).toString(),c);
+             //c =getNrss(Sources.get(i).toString());
+             valori.add(new PieChart.Data(Sources.get(i),getNrss(Sources.get(i))));
+             //valori.put(Sources.get(i).toString(),c);
          }
         return valori;
     }

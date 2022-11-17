@@ -45,28 +45,22 @@ public class CommentiController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
+        DBUtils.changeScene(event, "fonti.fxml", "Gestisci le fonti", getMyusername(), null);
     }
     public void News(ActionEvent event) {
         DBUtils.changeScene(event, "news.fxml", "Gestisci le notzie", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
         DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
-        visualizza();
     }
 
     public void Commenti(ActionEvent event){
         DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), getSearch_txt());
-        //TODO add getUsername from previous fxml scene
     }
 
     public void Home(ActionEvent event){
         DBUtils.changeScene(event, "home.fxml", "Benvenuto!", getMyusername(), null);
-        //TODO add getUsername from previous fxml scene
     }
 
     @Override

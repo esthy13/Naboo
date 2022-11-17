@@ -6,8 +6,6 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
 
-import java.util.Scanner;
-
 public class Encryptor {
     public static String encrypt(String key, String initVector, String value) {
         try {
