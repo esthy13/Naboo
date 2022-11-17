@@ -50,7 +50,8 @@ public class DBUtils {
                         break;
                     case "utenti.fxml":
                         UserController userController = fxmlLoader.getController();
-                        //TODO
+                        userController.text.setText(userName);
+                        userController.search.setText(search);
                         break;
                 }
 

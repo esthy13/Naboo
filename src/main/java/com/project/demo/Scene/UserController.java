@@ -12,12 +12,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
-
+    @FXML
+    private Text myusername;
+    public static Text text;
     @FXML
     private TextField name;
     @FXML
@@ -39,7 +42,8 @@ public class UserController implements Initializable {
     @FXML
     private TableColumn<Utente, Button> delete;
     @FXML
-    public TextField search_txt;
+    private TextField search_txt;
+    public static TextField search;
     private ObservableList<Utente> list;
 
 
@@ -47,28 +51,28 @@ public class UserController implements Initializable {
         DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
     }
 
-    public void Home(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", null, null);
+    public void Fonti(ActionEvent event) {
+        DBUtils.changeScene(event, "Fonti.fxml", "Fonti!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", null, null);
+        DBUtils.changeScene(event, "news.fxml", "Manage news!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", null, null);
+        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", getMyusername(), getSearch_txt());
         //TODO add getUsername from previous fxml scene
         visualizza();
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", null, null);
+        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
-    public void importaEsporta(ActionEvent event){
-        DBUtils.changeScene(event, "Fonti.fxml", "Manage Import-Export!", null, null);
+    public void Home(ActionEvent event){
+        DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
@@ -78,6 +82,8 @@ public class UserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        text = myusername;
+        search = search_txt;
         name.setFocusTraversable(false);    //true
         password.setFocusTraversable(false);
         role.setFocusTraversable(false);
@@ -94,7 +100,7 @@ public class UserController implements Initializable {
         FilteredList<Utente> filteredData = new FilteredList<>(list, b->true);
         search_txt.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(utente -> {
-                if (newValue.isEmpty() || newValue.isBlank() || newValue == null) {
+                if (newValue == null || newValue.isEmpty() || newValue.isBlank()) {
                     return true;
                 }
                 String searchWord = "" + newValue.toLowerCase();
@@ -149,7 +155,7 @@ public class UserController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Utente inserito correttamente");
             alert.show();
-            DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage Import-Export!", null, null);
+            DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage Import-Export!", getMyusername(), getSearch_txt());
         }
         else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
                 && (password.getText().trim().isEmpty()) ) {
@@ -168,8 +174,16 @@ public class UserController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Utente inserito correttamente");
             alert.show();
-            DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage Import-Export!", null, null);
+            DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage Import-Export!", getMyusername(), getSearch_txt());
 
         }
+    }
+
+    public String getMyusername() {
+        return myusername.getText();
+    }
+
+    public String getSearch_txt() {
+        return search_txt.getText();
     }
 }

@@ -49,7 +49,7 @@ public class NewsController implements Initializable {
     }
 
     public void Home(ActionEvent event) {
-        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "Fonti.fxml", "Benvenuto!", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
     public void News(ActionEvent event) {
@@ -58,18 +58,18 @@ public class NewsController implements Initializable {
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
         //visualizza();
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 
     public void Fonti(ActionEvent event){
-        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "Fonti.fxml", "Gestisci le fonti", getMyusername(), null);
         //TODO add getUsername from previous fxml scene
     }
 

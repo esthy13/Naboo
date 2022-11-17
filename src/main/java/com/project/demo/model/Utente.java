@@ -2,6 +2,8 @@ package com.project.demo.model;
 
 import com.project.demo.Main;
 import com.project.demo.Scene.DBUtils;
+import com.project.demo.Scene.Encryptor;
+import com.project.demo.Scene.UserController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -87,10 +89,13 @@ public class Utente {
             @Override
             public void handle(ActionEvent actionEvent) {
                 String ruolo = getRuolo();
+                DBinsert dBinsert = new DBinsert();
                 if(ruolo.equals("User")){ //cambio il valore attuale con quello da inserire nel DB
                     ruolo = "Amministratore";
                 }
-                else ruolo = "User";
+                else {
+                    ruolo = "User";
+                }
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.getDialogPane().setHeaderText("Rendere l'utente @" + getUsername()+ " " +ruolo);
                 DialogPane dialog = alert.getDialogPane();
@@ -100,12 +105,15 @@ public class Utente {
                     if(!result.isPresent()){}
                     // alert is exited, no button has been pressed
                     else if(result.get() == ButtonType.OK){
-                        //ok button is pressed
-                        //System.out.println("ok");
-                        DBinsert dBinsert= new DBinsert();
+                        if(ruolo.equals("User")){ //cambio il valore attuale con quello da inserire nel DB
+                            dBinsert.modifyPassword(getId());
+                        }
+                        else {
+                            dBinsert.modifyPasswordCrypt(getId(),Encryptor.getNewPassword(8));
+                        }
                         dBinsert.modifyRole(getId(),ruolo);  //Cancellazione dell'utente
                         System.out.println("delete " + getId());
-                        DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage user!", null, null);
+                        DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage user!", UserController.text.getText(), UserController.search.getText());
                 }
                     else if(result.get() == ButtonType.CANCEL) {
                         // cancel button is pressed
@@ -147,7 +155,7 @@ public class Utente {
                     dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
                     dBdelete.completeDeleteUser(getId());  //Cancellazione dell'utente
                     System.out.println("delete " + getId());
-                    DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage user!", null, null);
+                    DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage user!", UserController.text.getText(), UserController.search.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                     // cancel button is pressed
