@@ -508,8 +508,8 @@ public class DBinsert extends DBconnect {
         }
     }
 
-    public void modifyPassword(int id_utente){
-        String query = "UPDATE Utenti SET password = '"+null+"' WHERE id_utente = '" +id_utente+"';";
+    public  void modifyPassword(int id_utente){
+        String query = "UPDATE `utenti` SET `password` = NULL WHERE `utenti`.`id_utente` = '" +id_utente+"';";
 
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
@@ -544,9 +544,6 @@ public class DBinsert extends DBconnect {
         }
     }
 
-
-
-
-
+    
 
 }
