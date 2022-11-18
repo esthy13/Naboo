@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.media.Media?>
-<?import javafx.scene.media.MediaPlayer?>
-<?import javafx.scene.media.MediaView?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405" prefWidth="720" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoginController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405" prefWidth="720" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.LoginController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="305.0" style="-fx-background-color: #000000#000000;">
          <children>
@@ -34,8 +26,9 @@
             </MediaView>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="301.0" style="-fx-background-color: #000000#000000;">
+      <AnchorPane prefHeight="406.0" prefWidth="343.0" style="-fx-background-color: #000000#000000;">
          <children>
+            <Pane layoutX="45.0" layoutY="12.0" prefHeight="380.0" prefWidth="290.0" style="-fx-background-color: #232323; -fx-background-radius: 15;" />
             <Label layoutX="80.0" layoutY="110.0" text="Username" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -46,7 +39,7 @@
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txt_username" layoutX="80.0" layoutY="145.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" >
+            <TextField fx:id="txt_username" layoutX="80.0" layoutY="145.0" style="-fx-background-radius: 50; -fx-border-radius: 50;">
                <font>
                   <Font size="18.0" />
                </font>

@@ -1,5 +1,6 @@
 package com.project.demo.Scene;
 
+import com.project.demo.Main;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
 import com.project.demo.model.Utente;
@@ -13,7 +14,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -124,18 +127,36 @@ public class UserController implements Initializable {
         System.out.println(role.getValue().toString());
         if (name.getText().trim().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Errore");
             alert.setHeaderText("Username necessario");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
         else if(dBget.userExists(name.getText().trim())){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Utente già registrato");
+            alert.setTitle("Errore");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
         else if (role.getValue().toString().trim().equals("Ruolo")) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText("Ruolo necessario");
-                alert.show();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Ruolo necessario");
+            alert.setTitle("Errore");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
+            alert.show();
         } else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
                 && (!password.getText().trim().isEmpty()) ) {
             Encryptor En = new Encryptor();
@@ -145,25 +166,49 @@ public class UserController implements Initializable {
             dBinsert.insertUser(name.getText(), encrypt_pass, role.getValue().toString());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Utente inserito correttamente");
+            alert.setTitle("Info");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
             DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
         }
         else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
                 && (password.getText().trim().isEmpty()) ) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Errore");
             alert.setHeaderText("Password necessaria");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
         else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("User"))
                 && (!password.getText().trim().isEmpty()) ) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Password non richiesta per utente user");
+            alert.setTitle("Errore");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
         else {
             dBinsert.insertUser(name.getText(), role.getValue().toString());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Info");
             alert.setHeaderText("Utente inserito correttamente");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
             DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
 

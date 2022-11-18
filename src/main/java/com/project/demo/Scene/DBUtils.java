@@ -1,24 +1,18 @@
 package com.project.demo.Scene;
 
+import com.project.demo.Main;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.sql.*;
 
@@ -81,6 +75,12 @@ public class DBUtils {
         if(dBget.userExists(username) && dBget.getRuolo(dBget.getId_user(username)).equals("Amministratore")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.getDialogPane().setHeaderText("Utente già registrato");
+            alert.setTitle("Errore");
+            DialogPane dialog = alert.getDialogPane();
+            dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane").toString());
+            dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(DBUtils.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
         else if(dBget.userExists(username) && dBget.getRuolo(dBget.getId_user(username)).equals("User")){
@@ -111,9 +111,13 @@ public class DBUtils {
             if (!resultSet.isBeforeFirst()){
                 System.out.println("User not found in the database!");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.initStyle(StageStyle.DECORATED);
-                //alert.setBackground(Background.fill(Paint.valueOf("#FFB3A8")));
                 alert.setContentText("Provided credentials are incorrect!");
+                alert.setTitle("Errore");
+                DialogPane dialog = alert.getDialogPane();
+                dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane").toString());
+                dialog.getStyleClass().add("dialog");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(DBUtils.class.getResource("TelegramProgetto.png").toString()));
                 alert.show();
             }else {
                 while (resultSet.next()){
@@ -122,10 +126,16 @@ public class DBUtils {
                     String initVector = "RandomInitVector"; // 16 bytes IV
                     String decrypt_pass = Encryptor.decrypt(key, initVector,retrievedPassword);
                     DBget dBget = new DBget();
-                    
+
                     if(dBget.getRuolo(dBget.getId_user(username)).equals("User")){
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText("Utente non autorizzato all'accesso");
+                        alert.setTitle("Errore");
+                        DialogPane dialog = alert.getDialogPane();
+                        dialog.getStylesheets().add(UserController.class.getResource("StyleDialogPane").toString());
+                        dialog.getStyleClass().add("dialog");
+                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                        stage.getIcons().add(new Image(UserController.class.getResource("TelegramProgetto.png").toString()));
                         alert.show();
                     }
                     else if (decrypt_pass.equals(password)){
@@ -134,6 +144,12 @@ public class DBUtils {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setContentText("Provided credentials are incorrect!");
+                        alert.setTitle("Errore");
+                        DialogPane dialog = alert.getDialogPane();
+                        dialog.getStylesheets().add(UserController.class.getResource("StyleDialogPane").toString());
+                        dialog.getStyleClass().add("dialog");
+                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                        stage.getIcons().add(new Image(UserController.class.getResource("TelegramProgetto.png").toString()));
                         alert.show();
                     }
                 }

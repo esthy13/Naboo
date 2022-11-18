@@ -1,5 +1,6 @@
 package com.project.demo.Scene;
 
+import com.project.demo.Main;
 import com.project.demo.model.Commento;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
@@ -13,7 +14,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -106,9 +109,12 @@ public class FontiController implements Initializable {
         if(linkRss.getText().trim().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.getDialogPane().setHeaderText("Link feed RSS mancante");
+            alert.setTitle("Errore");
             DialogPane dialog = alert.getDialogPane();
             dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
             dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
         else {
@@ -116,10 +122,13 @@ public class FontiController implements Initializable {
             dBinsert.insertFonte(linkRss.getText());
             DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername(), null);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Info");
             alert.getDialogPane().setHeaderText("Feed RSS aggiunto!");
             DialogPane dialog = alert.getDialogPane();
             dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
             dialog.getStyleClass().add("dialog");
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
     }

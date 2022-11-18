@@ -1,5 +1,6 @@
 package com.project.demo.Scene;
 
+import com.project.demo.Main;
 import com.project.demo.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,10 +10,12 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Side;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.*;
@@ -65,15 +68,17 @@ public class HomeController implements Initializable{
         DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null);
     }
 
-  /*  public void ForFilePath(){
-        File_Path.getText();
-    }*/
-
    public void Importa() {
        DBget dBget = new DBget();
        if(isNull(comboBox.getValue()) || comboBox.getValue().trim().isEmpty()) {
            Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setHeaderText("Link RSS mancante");
+           alert.setTitle("Errore");
+           DialogPane dialog = alert.getDialogPane();
+           dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+           dialog.getStyleClass().add("dialog");
+           Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+           stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
            alert.show();
        }
        else {
@@ -89,6 +94,12 @@ public class HomeController implements Initializable{
                DBinsert dBinsert = new DBinsert().readCSV(selectedfile.getAbsolutePath(), comboBox.getValue().trim());
                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                alert.setHeaderText("Notizie caricate correttamente sul database");
+               alert.setTitle("Info");
+               DialogPane dialog = alert.getDialogPane();
+               dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+               dialog.getStyleClass().add("dialog");
+               Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+               stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                alert.show();
            }
            catch( NullPointerException ignore){
@@ -106,6 +117,12 @@ public class HomeController implements Initializable{
            DBinsert dBinsert = new DBinsert().DatabaseToCSV(selectedDirectory.getAbsolutePath());
            Alert alert = new Alert(Alert.AlertType.INFORMATION);
            alert.setHeaderText("Notizie scaricate correttamente dal database");
+           alert.setTitle("Info");
+           DialogPane dialog = alert.getDialogPane();
+           dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
+           dialog.getStyleClass().add("dialog");
+           Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+           stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
            alert.show();
        }
        catch( NullPointerException ignore){
