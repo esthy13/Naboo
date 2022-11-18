@@ -11,6 +11,8 @@ import java.io.FileWriter;
 import java.sql.*;
 import java.util.List;
 
+import static java.lang.constant.ConstantDescs.NULL;
+
 
 /*4. Inserire notizie nella base di dati*/
 public class DBinsert extends DBconnect {
@@ -429,7 +431,7 @@ public class DBinsert extends DBconnect {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
             st = con.createStatement();
             //st.executeUpdate(query);
-            executeSQLQuery(query,"c_shared aggiunto");
+            executeSQLQuery(query,"aggiornato a " + ruolo);
             con.close();
             st.close();
         }catch(Exception ex){
@@ -525,10 +527,9 @@ public class DBinsert extends DBconnect {
     }
 
     public void modifyPasswordCrypt(int id_utente,String Password){
-        Encryptor En = new Encryptor();
         String key = "Bar12345Bar12345"; // 128 bit key
         String initVector = "RandomInitVector"; // 16 bytes IV
-        String encrypt_pass = En.encrypt(key, initVector, Password);
+        String encrypt_pass = Encryptor.encrypt(key, initVector, Password);
         String query = "UPDATE Utenti SET password = '"+encrypt_pass+"' WHERE id_utente = '" +id_utente+"';";
 
         try{

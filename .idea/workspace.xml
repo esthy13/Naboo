@@ -6,40 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/CommentiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/CommentiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/FontiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/FontiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/NewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Commento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Commento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Notizia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Notizia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/lightMode.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/lightMode.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/model/StyleDialogPane.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/model/StyleDialogPane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/CommentiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/CommentiController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/FontiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/FontiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/LoginController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/LoginController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/NewsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/SignUpController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/SignUpController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/lightMode.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/lightMode.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Commento$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Commento$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Fonte$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Fonte$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Notizia$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Notizia$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,8 +198,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Telegram" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.LettoreRSS" />
         <item itemvalue="Application.Encryptor" />
       </list>
@@ -380,6 +351,7 @@
       <workItem from="1668778904451" duration="3296000" />
       <workItem from="1668784799533" duration="743000" />
       <workItem from="1668785556332" duration="6188000" />
+      <workItem from="1668797996554" duration="3584000" />
     </task>
     <servers />
   </component>

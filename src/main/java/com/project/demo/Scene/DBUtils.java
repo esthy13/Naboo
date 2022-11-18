@@ -1,5 +1,7 @@
 package com.project.demo.Scene;
 
+import com.project.demo.model.DBget;
+import com.project.demo.model.DBinsert;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -74,65 +76,25 @@ public class DBUtils {
     }
 
     public static void signUpUser(ActionEvent event, String username, String password){
-        Connection connection = null;
-        PreparedStatement psinsert = null;
-        PreparedStatement pscheckUserExists = null;
-        ResultSet resultSet = null;
-
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");
-            pscheckUserExists = connection.prepareStatement("SELECT * FROM Utenti WHERE username = ?");
-            pscheckUserExists.setString(1, username);
-            resultSet = pscheckUserExists.executeQuery();
-
-            if (resultSet.isBeforeFirst()){
-                System.out.println("Username already taken.");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("This username is taken!");
-                alert.show();
-            }else {
-                psinsert = connection.prepareStatement("INSERT INTO Utenti (username, password, ruolo) VALUES (?, ?, ?)");
-                psinsert.setString(1, username);
-                psinsert.setString(2, password);
-                psinsert.setString(3, "Amministratore");
-                psinsert.executeUpdate();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("User Registration Successful!");
-                alert.show();
-
-                changeScene(event, "home.fxml", "Home", username, null);
-            }
-        }catch (Exception exception){
-            exception.printStackTrace();
-        }finally {
-            if (resultSet != null){
-                try {
-                    resultSet.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-            if (pscheckUserExists != null){
-                try {
-                    pscheckUserExists.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-            if (psinsert != null){
-                try {
-                    psinsert.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
+        DBinsert dBinsert = new DBinsert();
+        DBget dBget = new DBget();
+        if(dBget.userExists(username) && dBget.getRuolo(dBget.getId_user(username)).equals("Amministratore")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.getDialogPane().setHeaderText("Utente già registrato");
+            alert.show();
+        }
+        else if(dBget.userExists(username) && dBget.getRuolo(dBget.getId_user(username)).equals("User")){
+            dBinsert.modifyRole(Integer.parseInt(dBget.getId_user(username)),"Amministratore");
+            dBinsert.modifyPasswordCrypt(Integer.parseInt(dBget.getId_user(username)),password);
+            changeScene(event, "home.fxml", "Home", username, null);
+        }
+        else{
+            Encryptor En = new Encryptor();
+            String key = "Bar12345Bar12345"; // 128-bit key
+            String initVector = "RandomInitVector"; // 16 bytes IV
+            String encrypt_pass = En.encrypt(key, initVector, password);
+            dBinsert.insertUser(username, encrypt_pass, "Amministratore");
+            changeScene(event, "home.fxml", "Home", username, null);
         }
     }
 
@@ -156,12 +118,17 @@ public class DBUtils {
             }else {
                 while (resultSet.next()){
                     String retrievedPassword = resultSet.getString("password");
-                    Encryptor En = new Encryptor();
                     String key = "Bar12345Bar12345"; // 128 bit key
                     String initVector = "RandomInitVector"; // 16 bytes IV
-                    String decrypt_pass = En.decrypt(key, initVector,retrievedPassword);
-
-                    if (decrypt_pass.equals(password)){
+                    String decrypt_pass = Encryptor.decrypt(key, initVector,retrievedPassword);
+                    DBget dBget = new DBget();
+                    
+                    if(dBget.getRuolo(dBget.getId_user(username)).equals("User")){
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setHeaderText("Utente non autorizzato all'accesso");
+                        alert.show();
+                    }
+                    else if (decrypt_pass.equals(password)){
                         changeScene(event, "home.fxml", "Home", username, null);
                     }else {
                         System.out.println("Password did not match!");

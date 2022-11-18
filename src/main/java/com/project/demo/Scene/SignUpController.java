@@ -35,12 +35,7 @@ public class SignUpController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if (!txt_username.getText().trim().isEmpty() && (!txt_password.getText().trim().isEmpty())){
-                    Encryptor En = new Encryptor();
-                    String key = "Bar12345Bar12345"; // 128 bit key
-                    String initVector = "RandomInitVector"; // 16 bytes IV
-                    String encrypt_pass = En.encrypt(key, initVector, txt_password.getText());
-
-                    DBUtils.signUpUser(event, txt_username.getText(), encrypt_pass);
+                    DBUtils.signUpUser(event, txt_username.getText(), txt_password.getText());
                 }else {
                     System.out.println("Please fill in all information");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
