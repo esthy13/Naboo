@@ -200,9 +200,9 @@
                <Insets right="5.0" top="3.0" />
             </padding>
          </HBox>
-         <VBox maxHeight="200.0" maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" spacing="5.0">
+         <VBox maxHeight="222.0" maxWidth="200.0" minHeight="222.0" minWidth="200.0" prefHeight="222.0" prefWidth="200.0" spacing="5.0">
             <children>
-               <Pane prefHeight="100.0" prefWidth="200.0">
+               <Pane prefHeight="111.0" prefWidth="200.0">
                   <styleClass>
                      <String fx:value="primary-color" />
                      <String fx:value="round-corner-background" />
@@ -220,7 +220,7 @@
                      </Text>
                   </children>
                </Pane>
-               <Pane prefHeight="100.0" prefWidth="200.0">
+               <Pane prefHeight="111.0" prefWidth="200.0">
                   <styleClass>
                      <String fx:value="primary-color" />
                      <String fx:value="round-corner-background" />
@@ -245,7 +245,7 @@
          </VBox>
          <Pane prefHeight="200.0" prefWidth="306.0">
             <children>
-               <PieChart fx:id="chartFonti" layoutX="-1.0" layoutY="19.0" maxHeight="200.0" minHeight="132.0" prefHeight="181.0" prefWidth="306.0" styleClass="primary-color" />
+               <PieChart fx:id="chartFonti" layoutX="-1.0" layoutY="19.0" maxHeight="203.0" minHeight="132.0" prefHeight="203.0" prefWidth="306.0" styleClass="primary-color" />
                <Text layoutX="122.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="FONTI">
                   <font>
                      <Font size="22.0" />
@@ -257,73 +257,36 @@
                <String fx:value="round-corner-background" />
             </styleClass>
          </Pane>
-         <HBox prefHeight="136.0" prefWidth="510.0" spacing="5.0">
+         <HBox prefHeight="112.0" prefWidth="510.0" spacing="5.0">
             <children>
-               <Pane prefHeight="150.0" prefWidth="300.0">
+               <Pane prefHeight="136.0" prefWidth="322.0">
                   <styleClass>
                      <String fx:value="primary-color" />
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <ComboBox fx:id="comboBox" editable="true" layoutX="11.0" layoutY="56.0" prefHeight="25.0" prefWidth="278.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" styleClass="secondary-color" />
-                     <Text fill="#4e4d4d" layoutX="60.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="IMPORTA NOTIZIE">
+                     <ComboBox fx:id="comboBox" editable="true" layoutX="12.0" layoutY="56.0" prefHeight="29.0" prefWidth="256.0" promptText="www.example.com" style="-fx-background-radius: 50; -fx-border-radius: 50;" styleClass="secondary-color" />
+                     <Button fx:id="File_Chooser" layoutX="286.0" layoutY="75.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#Importa" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 100; -fx-background-color: transparent;" text="" />
+                     <Text layoutX="86.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="IMPORTA NOTIZIE">
                         <font>
-                           <Font size="22.0" />
+                           <Font size="18.0" />
                         </font>
                      </Text>
-                     <Button fx:id="File_Chooser" layoutX="130.0" layoutY="89.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#Importa" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 100; -fx-background-color: transparent;" text="">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CLOUD_UPLOAD" glyphSize="40">
-                              <fill>
-                                 <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                       <Stop>
-                                          <color>
-                                             <Color red="0.6196078658103943" green="0.2862745225429535" blue="0.7882353067398071" />
-                                          </color>
-                                       </Stop>
-                                       <Stop offset="1.0">
-                                          <color>
-                                             <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
-                                          </color>
-                                       </Stop>
-                                    </stops>
-                                 </LinearGradient>
-                              </fill></FontAwesomeIconView>
-                     </graphic>
-                     </Button>
+                     <Button layoutX="271.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="+" />
                   </children>
                </Pane>
-               <Pane prefHeight="136.0" prefWidth="206.0">
+               <Pane prefHeight="200.0" prefWidth="200.0">
                   <styleClass>
-                     <String fx:value="primary-color" />
                      <String fx:value="round-corner-background" />
+                     <String fx:value="primary-color" />
                   </styleClass>
                   <children>
-                     <Text fill="#4e4d4d" layoutX="15.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="ESPORTA NOTIZIE">
+                     <Text fill="#4e4d4d" layoutX="24.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="ESPORTA NOTIZIE">
                         <font>
-                           <Font size="22.0" />
+                           <Font size="18.0" />
                         </font>
                      </Text>
-                     <Button fx:id="Directory_Chooser" layoutX="77.0" layoutY="57.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#Esporta" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 100; -fx-background-color: transparent;" text="" />
-                     <FontAwesomeIconView glyphName="CLOUD_DOWNLOAD" glyphSize="40" layoutX="87.0" layoutY="91.0">
-                        <fill>
-                           <LinearGradient endY="0.011363621914025401" startX="1.0" startY="1.0">
-                              <stops>
-                                 <Stop>
-                                    <color>
-                                       <Color red="0.6196078658103943" green="0.2862745225429535" blue="0.7882353067398071" />
-                                    </color>
-                                 </Stop>
-                                 <Stop offset="1.0">
-                                    <color>
-                                       <Color red="0.6000000238418579" green="0.8078431487083435" blue="0.8549019694328308" />
-                                    </color>
-                                 </Stop>
-                              </stops>
-                           </LinearGradient>
-                        </fill>
-                     </FontAwesomeIconView>
+                     <Button layoutX="14.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Scegli cartella" />
                   </children>
                </Pane>
             </children>

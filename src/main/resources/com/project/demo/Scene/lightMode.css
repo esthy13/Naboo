@@ -30,6 +30,12 @@
     -fx-fill:  #4e4d4d;
 }
 /*pescaggio elementi di default*/
+.combo-box .arrow{
+    -fx-background-color: black;
+}
+.combo-box .arrow-button{
+    -fx-background-color: magenta;
+}
 .text-field {
     -fx-prompt-text-fill: #504c4c;
 }

@@ -104,14 +104,16 @@ public class HomeController implements Initializable{
    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       DBget dBget = new DBget();
+        DBget dBget = new DBget();
         text = myusername;
         utenti.setText(dBget.getCountUser());
         notizie.setText(dBget.getCountNews());
         initPieChart();
         chartFonti.setLabelsVisible(true);
         chartFonti.setLegendVisible(false);
-        comboBox.getItems().addAll(dBget.getListFonti());
+        //comboBox.getItems().addAll(dBget.getListFonti());
+        System.out.println(reportedpercent());
+        //reported.setProgress(reportedpercent());
     }
 
    /*TODO DA RIPRISTINARE
@@ -136,7 +138,10 @@ public class HomeController implements Initializable{
         parent.getStylesheets().add(getClass().getResource("darkMode.css").toString());
         buttonMode.setText("D");
     }*/
-
+    private double reportedpercent(){
+        DBget dBget = new DBget();
+        return (dBget.getCountReported()/Double.parseDouble(dBget.getCountNews()));
+    }
     public String getMyusername() {
         return myusername.getText();
     }
