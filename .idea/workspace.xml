@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/DBinsert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/SignUpController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/SignUpController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/model/Utente$1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,12 +111,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Encryptor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.Scene.Encryptor" />
+    <configuration name="DBinsert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.DBinsert" />
       <module name="Naboo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.project.demo.Scene.*" />
+          <option name="PATTERN" value="com.project.demo.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -189,8 +190,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.DBinsert" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.Encryptor" />
       <item itemvalue="Application.LettoreRSS" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Telegram" />
@@ -198,10 +199,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Telegram" />
+        <item itemvalue="Application.DBinsert" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Telegram" />
         <item itemvalue="Application.LettoreRSS" />
-        <item itemvalue="Application.Encryptor" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +352,7 @@
       <workItem from="1668778904451" duration="3296000" />
       <workItem from="1668784799533" duration="743000" />
       <workItem from="1668785556332" duration="6188000" />
-      <workItem from="1668797996554" duration="3584000" />
+      <workItem from="1668802969258" duration="1733000" />
     </task>
     <servers />
   </component>
