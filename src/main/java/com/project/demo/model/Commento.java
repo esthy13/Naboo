@@ -1,5 +1,6 @@
 package com.project.demo.model;
 
+import com.project.demo.Main;
 import com.project.demo.Scene.CommentiController;
 import com.project.demo.Scene.DBUtils;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -10,7 +11,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
+import javafx.stage.Stage;
 
 import java.util.Optional;
 
@@ -90,9 +93,14 @@ public class Commento {
             public void handle(ActionEvent actionEvent) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.getDialogPane().setHeaderText("Eliminare definitivamente il commento" + getId_commento());
+                alert.setTitle("Conferma");
+                Button cancel = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
+                cancel.setText("Annulla");
                 DialogPane dialog = alert.getDialogPane();
                 dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
                 dialog.getStyleClass().add("dialog");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                 Optional<ButtonType> result = alert.showAndWait();
                 if(!result.isPresent()){}
                 // alert is exited, no button has been pressed
@@ -103,7 +111,7 @@ public class Commento {
                     DBget dBget = new DBget();
                     dBdelete.deleteOneComment(getId_commento(), getId_notizia());  //Cancellazione dell'utente
                     System.out.println("delete " + getId_commento());
-                    DBUtils.changeScene(actionEvent, "commenti.fxml", "Gestisci i commenti", CommentiController.text.getText(), CommentiController.search.getText());
+                    DBUtils.changeScene(actionEvent, "commenti.fxml", "Commenti", CommentiController.text.getText(), CommentiController.search.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                     // cancel button is pressed

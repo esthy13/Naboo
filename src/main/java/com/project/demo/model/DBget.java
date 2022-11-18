@@ -638,7 +638,8 @@ public class DBget  extends DBconnect{
 
     //restituisce i numeri totali di utenti iscritti al bot
     public String getCountUser(){
-        String query = "SELECT COUNT(username) FROM utenti WHERE ruolo='User'";
+        String query = "SELECT COUNT(username) FROM utenti";
+        //String query = "SELECT COUNT(username) FROM utenti WHERE ruolo='User'"; alternativa
         String c="";
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naboo", "root", "");

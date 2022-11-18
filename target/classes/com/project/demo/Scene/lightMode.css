@@ -22,19 +22,33 @@
     -fx-background-radius: 5;
     -fx-border-radius: 5;
 }
-.dashboard-background{
-    -fx-background-color: linear-gradient(to right, #f4fbff, #ffffff);
-}
 
 .text-dashboard{
     -fx-fill:  #4e4d4d;
 }
+
+
 /*pescaggio elementi di default*/
-.combo-box .arrow{
-    -fx-background-color: black;
+
+
+.combo-box-base{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.combo-box .text-field{
+    -fx-background-color: #a0c3ee;
+    -fx-background-radius: 50 0 0 50;
+    -fx-border-color: transparent;
+}
+.combo-box{
+    -fx-background-radius: 50;
+    -fx-border-color: transparent;
 }
 .combo-box .arrow-button{
-    -fx-background-color: magenta;
+    -fx-background-color: #a0c3ee;
+    -fx-background-radius: 0 50 50 0;
+    -fx-border-color: transparent;
 }
 .text-field {
     -fx-prompt-text-fill: #504c4c;

@@ -204,15 +204,20 @@ public class Notizia {
             public void handle(ActionEvent actionEvent) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.getDialogPane().setHeaderText("Eliminare definitivamente la notizia " + getTitolo());
+                alert.setTitle("Conferma");
+                Button cancel = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
+                cancel.setText("Annulla");
                 DialogPane dialog = alert.getDialogPane();
                 dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
                 dialog.getStyleClass().add("dialog");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                 Optional<ButtonType> result = alert.showAndWait();
                 if (!result.isPresent()) {
                 } else if (result.get() == ButtonType.OK) {
                     DBdelete dBdelete = new DBdelete();
                     dBdelete.deleteNotizia(getId_notizia());
-                    DBUtils.changeScene(actionEvent, "news.fxml", "Manage Import-Export!", NewsController.text.getText(), NewsController.search.getText());
+                    DBUtils.changeScene(actionEvent, "news.fxml", "Notizie", NewsController.text.getText(), NewsController.search.getText());
                 } else if (result.get() == ButtonType.CANCEL) {
                 }
             }

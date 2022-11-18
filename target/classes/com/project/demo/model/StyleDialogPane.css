@@ -1,8 +1,15 @@
 .dialog{
     -fx-background-color: #e5f5fc;
-    -fx-border-radius: 25px;
+    -fx-font-size: 12;
+    /*-fx-border-radius: 25px;*/
 }
 
 .dialog *.header-panel{
     -fx-background-color: #e5f5fc;
+    -fx-font-size: 12;
+}
+
+.dialog .button{
+    -fx-background-radius: 50;
+    -fx-border-color: transparent;
 }

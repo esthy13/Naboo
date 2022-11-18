@@ -50,22 +50,22 @@ public class FontiController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "fonti.fxml", "Gestisci le fonti", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), getSearch_txt());
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Gestisci le notizie", getMyusername(), null);
+        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null);
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Gestisci gli utenti", getMyusername(), null);
+        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), null);
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Gestisci i commenti", getMyusername(), null);
+        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null);
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "home.fxml", "Benvenuto!", getMyusername(), null);
+        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null);
     }
 
     @Override

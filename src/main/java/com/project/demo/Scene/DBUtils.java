@@ -100,7 +100,7 @@ public class DBUtils {
                 alert.setContentText("User Registration Successful!");
                 alert.show();
 
-                changeScene(event, "home.fxml", "Welcome!", username, null);
+                changeScene(event, "home.fxml", "Home", username, null);
             }
         }catch (Exception exception){
             exception.printStackTrace();
@@ -162,7 +162,7 @@ public class DBUtils {
                     String decrypt_pass = En.decrypt(key, initVector,retrievedPassword);
 
                     if (decrypt_pass.equals(password)){
-                        changeScene(event, "home.fxml", "Welcome!", username, null);
+                        changeScene(event, "home.fxml", "Home", username, null);
                     }else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -47,22 +47,22 @@ public class HomeController implements Initializable{
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "fonti.fxml", "Fonti!", getMyusername(), null);
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), null);
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", getMyusername(), null);
+        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null);
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", getMyusername(), null);
+        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), null);
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", getMyusername(), null);
+        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null);
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", getMyusername(), null);
+        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null);
     }
 
   /*  public void ForFilePath(){
@@ -81,26 +81,36 @@ public class HomeController implements Initializable{
                DBinsert dBinsert = new DBinsert();
                dBinsert.insertFonte(comboBox.getValue());
            }
-           FileChooser fileChooser = new FileChooser();
-           fileChooser.setTitle("Open Resource File");
-           fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.csv"));
-           File selectedfile = fileChooser.showOpenDialog(Window.getWindows().get(0));
-           DBinsert dBinsert = new DBinsert().readCSV(selectedfile.getAbsolutePath(),comboBox.getValue().trim());
-           Alert alert = new Alert(Alert.AlertType.INFORMATION);
-           alert.setHeaderText("Notizie caricate correttamente sul database");
-           alert.show();
+           try {
+               FileChooser fileChooser = new FileChooser();
+               fileChooser.setTitle("Open Resource File");
+               fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.csv"));
+               File selectedfile = fileChooser.showOpenDialog(Window.getWindows().get(0));
+               DBinsert dBinsert = new DBinsert().readCSV(selectedfile.getAbsolutePath(), comboBox.getValue().trim());
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setHeaderText("Notizie caricate correttamente sul database");
+               alert.show();
+           }
+           catch( NullPointerException ignore){
+               // ... No action is required, just ignore.
+           }
        }
 
    }
 
    public void Esporta(){
-       DirectoryChooser chooser = new DirectoryChooser();
-       chooser.setTitle("Scegli Cartella");
-       File selectedDirectory = chooser.showDialog( Window.getWindows().get(0));
-       DBinsert dBinsert = new DBinsert().DatabaseToCSV(selectedDirectory.getAbsolutePath());
-       Alert alert = new Alert(Alert.AlertType.INFORMATION);
-       alert.setHeaderText("Notizie scaricate correttamente dal database");
-       alert.show();
+       try {
+           DirectoryChooser chooser = new DirectoryChooser();
+           chooser.setTitle("Scegli Cartella");
+           File selectedDirectory = chooser.showDialog(Window.getWindows().get(0));
+           DBinsert dBinsert = new DBinsert().DatabaseToCSV(selectedDirectory.getAbsolutePath());
+           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+           alert.setHeaderText("Notizie scaricate correttamente dal database");
+           alert.show();
+       }
+       catch( NullPointerException ignore){
+           // ... No action is required, just ignore.
+       }
    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -111,9 +121,7 @@ public class HomeController implements Initializable{
         initPieChart();
         chartFonti.setLabelsVisible(true);
         chartFonti.setLegendVisible(false);
-        //comboBox.getItems().addAll(dBget.getListFonti());
-        System.out.println(reportedpercent());
-        //reported.setProgress(reportedpercent());
+        comboBox.getItems().addAll(dBget.getListFonti());
     }
 
    /*TODO DA RIPRISTINARE
@@ -138,10 +146,6 @@ public class HomeController implements Initializable{
         parent.getStylesheets().add(getClass().getResource("darkMode.css").toString());
         buttonMode.setText("D");
     }*/
-    private double reportedpercent(){
-        DBget dBget = new DBget();
-        return (dBget.getCountReported()/Double.parseDouble(dBget.getCountNews()));
-    }
     public String getMyusername() {
         return myusername.getText();
     }

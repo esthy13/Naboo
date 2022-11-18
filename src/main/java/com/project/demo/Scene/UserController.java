@@ -53,22 +53,22 @@ public class UserController implements Initializable {
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "fonti.fxml", "Fonti!", getMyusername(), null);
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), null);
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Manage news!", getMyusername(), null);
+        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null);
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Manage user!", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Manage comments!", getMyusername(), null);
+        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null);
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "home.fxml", "Manage Import-Export!", getMyusername(), null);
+        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null);
     }
 
     @Override
@@ -146,7 +146,7 @@ public class UserController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Utente inserito correttamente");
             alert.show();
-            DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage Import-Export!", getMyusername(), getSearch_txt());
+            DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
         }
         else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
                 && (password.getText().trim().isEmpty()) ) {
@@ -165,7 +165,7 @@ public class UserController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Utente inserito correttamente");
             alert.show();
-            DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage Import-Export!", getMyusername(), getSearch_txt());
+            DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
 
         }
 

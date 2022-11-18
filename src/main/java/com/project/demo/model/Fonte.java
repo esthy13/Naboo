@@ -1,5 +1,6 @@
 package com.project.demo.model;
 
+import com.project.demo.Main;
 import com.project.demo.Scene.DBUtils;
 import com.project.demo.Scene.FontiController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -10,7 +11,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.util.Optional;
@@ -79,11 +82,14 @@ public class Fonte {
             public void handle(ActionEvent actionEvent) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.getDialogPane().setHeaderText("Aggiornare le notizie provenienti da: " + getRss());
+                alert.setTitle("Conferma");
                 Button cancel = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
                 cancel.setText("Annulla");
                 DialogPane dialog = alert.getDialogPane();
                 dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
                 dialog.getStyleClass().add("dialog");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                 Optional<ButtonType> result = alert.showAndWait();
                 if(!result.isPresent()){}
                 else if(result.get() == ButtonType.OK){
@@ -123,23 +129,21 @@ public class Fonte {
             @Override
             public void handle(ActionEvent actionEvent) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.getDialogPane().setHeaderText("Eliminare definitivamente " + getRss());
+                alert.getDialogPane().setHeaderText("Eliminare definitivamente " + (getRss()));
+                alert.setTitle("Conferma");
                 Button cancel = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
                 cancel.setText("Annulla");
-                cancel.setStyle("-fx-border-radius: 50");
-                cancel.setStyle("-fx-background-radius: 50");
-                Button ok = (Button) alert.getDialogPane().lookupButton( ButtonType.OK);
-                ok.setStyle("-fx-border-radius: 50");
-                ok.setStyle("-fx-background-radius: 50");
                 DialogPane dialog = alert.getDialogPane();
                 dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
                 dialog.getStyleClass().add("dialog");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                 Optional<ButtonType> result = alert.showAndWait();
                 if(!result.isPresent()){}
                 else if(result.get() == ButtonType.OK){
                     DBdelete dBdelete = new DBdelete();
                     dBdelete.deleteFonte(getRss());  //Cancellazione dell'RSS
-                    DBUtils.changeScene(actionEvent, "Fonti.fxml", "Gestisci le fonti", FontiController.text.getText(), FontiController.search.getText());
+                    DBUtils.changeScene(actionEvent, "Fonti.fxml", "Fonti", FontiController.text.getText(), FontiController.search.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                 }

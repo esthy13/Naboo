@@ -98,9 +98,14 @@ public class Utente {
                 }
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.getDialogPane().setHeaderText("Rendere l'utente @" + getUsername()+ " " +ruolo);
+                alert.setTitle("Conferma");
+                Button cancel = (Button) alert.getDialogPane().lookupButton( ButtonType.CANCEL);
+                cancel.setText("Annulla");
                 DialogPane dialog = alert.getDialogPane();
                 dialog.getStylesheets().add(getClass().getResource("StyleDialogPane.css").toString());
                 dialog.getStyleClass().add("dialog");
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
                 Optional<ButtonType> result = alert.showAndWait();
                     if(!result.isPresent()){}
                     // alert is exited, no button has been pressed
@@ -113,7 +118,7 @@ public class Utente {
                         }
                         dBinsert.modifyRole(getId(),ruolo);  //Cancellazione dell'utente
                         System.out.println("delete " + getId());
-                        DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage user!", UserController.text.getText(), UserController.search.getText());
+                        DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", UserController.text.getText(), UserController.search.getText());
                 }
                     else if(result.get() == ButtonType.CANCEL) {
                         // cancel button is pressed
@@ -155,7 +160,7 @@ public class Utente {
                     dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
                     dBdelete.completeDeleteUser(getId());  //Cancellazione dell'utente
                     System.out.println("delete " + getId());
-                    DBUtils.changeScene(actionEvent, "utenti.fxml", "Manage user!", UserController.text.getText(), UserController.search.getText());
+                    DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", UserController.text.getText(), UserController.search.getText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                     // cancel button is pressed
@@ -163,6 +168,5 @@ public class Utente {
                 }
             }
         });
-
     }
 }
