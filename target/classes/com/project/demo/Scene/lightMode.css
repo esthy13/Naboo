@@ -24,7 +24,7 @@
 }
 
 .text-dashboard{
-    -fx-text-inner-color:  #4e4d4d;
+    -fx-fill:  #4e4d4d;
 }
 /*pescaggio elementi di default*/
 .text-field {

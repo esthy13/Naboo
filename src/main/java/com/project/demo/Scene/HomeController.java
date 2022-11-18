@@ -111,14 +111,11 @@ public class HomeController implements Initializable{
         initPieChart();
         chartFonti.setLabelsVisible(true);
         chartFonti.setLegendVisible(false);
+        comboBox.getItems().addAll(dBget.getListFonti());
     }
 
    /*TODO DA RIPRISTINARE
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        DBget dBget = new DBget();
-        comboBox.getItems().addAll(dBget.getListFonti());
-    }
+
     public void changeMode(ActionEvent event){
         if(LightMode==false){
             setLightMode();
