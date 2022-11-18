@@ -266,7 +266,7 @@
                   </styleClass>
                   <children>
                      <ComboBox fx:id="comboBox" editable="true" layoutX="11.0" layoutY="56.0" prefHeight="25.0" prefWidth="278.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" styleClass="secondary-color" />
-                     <Text fill="#4e4d4d" layoutX="48.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="IMPORTA NOTIZIE">
+                     <Text fill="#4e4d4d" layoutX="60.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="IMPORTA NOTIZIE">
                         <font>
                            <Font size="22.0" />
                         </font>
