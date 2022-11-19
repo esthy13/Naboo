@@ -13,14 +13,14 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.util.Optional;
 
 import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.*;
-import static javafx.scene.paint.Color.BLUE;
-import static javafx.scene.paint.Color.RED;
+import static javafx.scene.paint.Color.*;
 
 public class Fonte {
     private String link_rss;
@@ -69,7 +69,7 @@ public class Fonte {
 
     public void setUpdateFonti(){
         FontAwesomeIconView icon = new FontAwesomeIconView(ROTATE_RIGHT);
-        icon.fillProperty().set(BLUE);
+        icon.setFill(Paint.valueOf("#018EE5"));
         icon.setSize("15");
         Node updateIcon = icon;
         this.update = new Button();

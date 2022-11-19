@@ -1,4 +1,13 @@
 /*selezionati in base alla classe scelta nell'fxml*/
+.dashboard-background{
+    -fx-background-color: #dbdade;
+}
+.dashboard-cards{
+    -fx-background-color: #f1f1f1;
+}
+.dash-button{
+    -fx-background-color: #dbdade;
+}
 .primary-color{
     -fx-background-color: #f1f1f1;
 }

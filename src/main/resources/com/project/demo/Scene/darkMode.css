@@ -1,15 +1,25 @@
 /*selezionati in base alla classe scelta nell'fxml*/
+.dashboard-background{
+    -fx-background-color: #333333;
+}
+.dashboard-cards{
+    -fx-background-color: #454545;
+}
+.dash-button{
+    -fx-background-color: #666666;
+}
 .primary-color{
-    -fx-background-color: #423f3f;
+    -fx-background-color: #333333;
 }
 .secondary-color{
-    -fx-background-color: #2c2929;
+    -fx-background-color: #454545;
 }
 .text-color{
     -fx-text-fill: #ffffff;
+    -fx-fill: #ffffff;
 }
 .border{
-    -fx-border-color: #868484;
+    -fx-border-color: #454545;
 }
 .round-corner{
     -fx-background-radius: 100;
@@ -55,52 +65,56 @@
 }
 
 .chart{
-    -fx-background-color: #494747;
+    -fx-background-color: #454545;
     -fx-background-radius: 5;
+    -fx-tick-label-fill: #ffffff;
+}
+.chart-pie-label{
+    -fx-fill: #ffffff;
 }
 
 /*Table view styling*/
 .table-view{
-    -fx-background-color: transparent;
+    -fx-background-color: #333333;
     -fx-border-radius: 5;
-    -fx-border-color: #c1c1c4 ;
+    -fx-border-color: #454545;
 }
 
 .table-view:focused{
     -fx-background-color: transparent;
 }
 .table-view .column-header-background{
-    -fx-background-color: #262525;
+    -fx-background-color: #333333;
 }
 .table-view .column-header-background .label{
     -fx-font-family: System;
-    -fx-background-color: transparent;
+    -fx-background-color: #333333;
     -fx-text-fill: #ffffff;
 }
 .table-view .column-header{
-    -fx-background-color: transparent;
-    -fx-border-color: transparent #c1c1c4 #c1c1c4 transparent;
+    -fx-background-color: #333333;
+    -fx-border-color: transparent #454545 #454545 transparent;
     -fx-border-width: 0.4;
 }
 .table-view .filler{
-    -fx-background-color: transparent;
+    -fx-background-color: #333333;
     /*up right down left*/
 }
 .table-view .show-hide-columns-button {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
+    -fx-background-color: #333333;
+    -fx-border-color: #333333;
     -fx-prompt-text-fill: transparent;
 }
 
 .table-view .table-cell{
     -fx-font-family: System;
     -fx-text-fill: #ffffff;
-    -fx-border-color: #c1c1c4 #c1c1c4 #c1c1c4 transparent;
+    -fx-border-color: #454545 #454545 #454545 transparent;
     -fx-padding: 5 10 0 10;
     -fx-border-width: 0.3;
 }
 .table-row-cell{
-    -fx-background-color: #f1f1f1;
+    -fx-background-color: #333333;
 }
 
 

@@ -169,7 +169,7 @@
                      <Insets left="10.0" />
                   </HBox.margin>
                </Text>
-               <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
+               <Text fx:id="myusername" styleClass="text-color" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
                      <Insets left="205.0" top="10.0" />
                   </HBox.margin>
@@ -177,17 +177,17 @@
                      <Font size="14.0" />
                   </font>
                </Text>
-               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100; -fx-background-color: transparent;">
                   <graphic>
-                     <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" />
+                     <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" styleClass="text-color" />
                   </graphic>
                   <HBox.margin>
                      <Insets top="3.0" />
                   </HBox.margin>
                </Button>
-               <Button fx:id="buttonMode" accessibleText="light" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+               <Button fx:id="buttonMode" accessibleText="light" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="dash-button">
                   <graphic>
-                     <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
+                     <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" styleClass="text-color" />
                   </graphic>
                   <opaqueInsets>
                      <Insets />
@@ -198,7 +198,7 @@
                </Button>
             </children>
             <styleClass>
-               <String fx:value="primary-color" />
+               <String fx:value="dashboard-cards" />
                <String fx:value="round-corner-background" />
             </styleClass>
             <FlowPane.margin>
@@ -212,7 +212,7 @@
             <children>
                <Pane prefHeight="111.0" prefWidth="200.0">
                   <styleClass>
-                     <String fx:value="primary-color" />
+                     <String fx:value="dashboard-cards" />
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
@@ -246,7 +246,7 @@
                </Pane>
                <Pane prefHeight="111.0" prefWidth="200.0">
                   <styleClass>
-                     <String fx:value="primary-color" />
+                     <String fx:value="dashboard-cards" />
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
@@ -285,7 +285,7 @@
          </VBox>
          <Pane prefHeight="200.0" prefWidth="306.0">
             <children>
-               <PieChart fx:id="chartFonti" layoutX="-1.0" layoutY="19.0" maxHeight="203.0" minHeight="132.0" prefHeight="203.0" prefWidth="306.0" styleClass="primary-color" />
+               <PieChart fx:id="chartFonti" layoutX="-1.0" layoutY="27.0" maxHeight="203.0" minHeight="132.0" prefHeight="195.0" prefWidth="306.0" styleClass="primary-color" />
                <Text layoutX="122.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="FONTI">
                   <font>
                      <Font size="22.0" />
@@ -293,7 +293,7 @@
                </Text>
             </children>
             <styleClass>
-               <String fx:value="primary-color" />
+               <String fx:value="dashboard-cards" />
                <String fx:value="round-corner-background" />
             </styleClass>
          </Pane>
@@ -301,7 +301,7 @@
             <children>
                <Pane prefHeight="136.0" prefWidth="322.0">
                   <styleClass>
-                     <String fx:value="primary-color" />
+                     <String fx:value="dashboard-cards" />
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
@@ -321,7 +321,7 @@
                <Pane prefHeight="200.0" prefWidth="200.0">
                   <styleClass>
                      <String fx:value="round-corner-background" />
-                     <String fx:value="primary-color" />
+                     <String fx:value="dashboard-cards" />
                   </styleClass>
                   <children>
                      <Text fill="#4e4d4d" layoutX="24.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-dashboard" text="ESPORTA NOTIZIE">
@@ -329,7 +329,7 @@
                            <Font size="18.0" />
                         </font>
                      </Text>
-                     <Button fx:id="Directory_Chooser" layoutX="8.0" layoutY="56.0" mnemonicParsing="false" onAction="#Esporta" prefHeight="30.0" prefWidth="177.0" style="-fx-background-radius: 50; -fx-background-color: D7B6FAFF;" text="Scegli cartella">
+                     <Button fx:id="Directory_Chooser" layoutX="8.0" layoutY="56.0" mnemonicParsing="false" onAction="#Esporta" prefHeight="30.0" prefWidth="177.0" style="-fx-background-radius: 50; -fx-background-color: D7B6FAFF;" styleClass="text-color" text="Scegli cartella">
                         <graphic>
                            <FontAwesomeIconView fill="WHITE" glyphName="FOLDER_OPEN" size="15" />
                         </graphic>
@@ -344,7 +344,7 @@
          </HBox>
       </children>
       <styleClass>
-         <String fx:value="secondary-color" />
+         <String fx:value="dashboard-background" />
          <String fx:value="round-corner-background" />
       </styleClass>
       <padding>

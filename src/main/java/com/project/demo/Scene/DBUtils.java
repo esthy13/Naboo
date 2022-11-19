@@ -3,6 +3,8 @@ package com.project.demo.Scene;
 import com.project.demo.Main;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,12 +19,21 @@ import javafx.stage.Stage;
 import java.sql.*;
 
 import static java.util.Objects.isNull;
+import static javafx.scene.paint.Color.*;
 
 public class DBUtils {
     public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName, String search, String mode) {
         Parent root = new AnchorPane();
-        String newMode = mode;
-
+        FontAwesomeIconView icon = new FontAwesomeIconView();
+        if(mode.equals("light")) {
+            icon = new FontAwesomeIconView(FontAwesomeIcon.MOON_ALT);
+            icon.fillProperty().set(BLACK);
+            icon.setSize("20");
+        }else {
+            icon = new FontAwesomeIconView(FontAwesomeIcon.SUN_ALT);
+            icon.fillProperty().set(WHITE);
+            icon.setSize("20");
+        }
         if ((userName != null)){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
@@ -32,31 +43,36 @@ public class DBUtils {
                         CommentiController commentiController = fxmlLoader.getController();
                         commentiController.text.setText(userName);
                         commentiController.search.setText(search);
-                        commentiController.mode.setAccessibleText(newMode);
+                        commentiController.mode.setAccessibleText(mode);
+                        commentiController.mode.setGraphic(icon);
                         break;
                     case "fonti.fxml":
                         FontiController fontiController = fxmlLoader.getController();
                         fontiController.text.setText(userName);
                         fontiController.search.setText(search);
-                        fontiController.mode.setAccessibleText(newMode);
+                        fontiController.mode.setAccessibleText(mode);
+                        fontiController.mode.setGraphic(icon);
                         break;
                     case "home.fxml":
                         HomeController homeController = fxmlLoader.getController();
                         homeController.text.setText(userName);
-                        homeController.mode.setAccessibleText(newMode);
+                        homeController.mode.setAccessibleText(mode);
+                        homeController.mode.setGraphic(icon);
 
                         break;
                     case "news.fxml":
                         NewsController newsController = fxmlLoader.getController();
                         newsController.text.setText(userName);
                         newsController.search.setText(search);
-                        newsController.mode.setAccessibleText(newMode);
+                        newsController.mode.setAccessibleText(mode);
+                        newsController.mode.setGraphic(icon);
                         break;
                     case "utenti.fxml":
                         UserController userController = fxmlLoader.getController();
                         userController.text.setText(userName);
                         userController.search.setText(search);
-                        userController.mode.setAccessibleText(newMode);
+                        userController.mode.setAccessibleText(mode);
+                        userController.mode.setGraphic(icon);
                         break;
                 }
 
@@ -75,20 +91,17 @@ public class DBUtils {
         if(!isNull(mode) && mode.equals("dark")){
             if(root.getStylesheets().size()==0){
                 root.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
-                newMode = "dark";
             }else{
                 root.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
-                newMode = "dark";}
+            }
         } else if (!isNull(mode) && mode.equals("light")) {
             if(root.getStylesheets().size()==0){
                 root.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
-                newMode = "light";
             }else {
                 root.getStylesheets().set(0, DBUtils.class.getResource("lightMode.css").toString());
-                newMode = "light";
             }
-        }
 
+        }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle(title);
         System.out.println(root.getStylesheets());

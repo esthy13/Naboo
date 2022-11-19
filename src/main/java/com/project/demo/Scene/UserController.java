@@ -5,6 +5,7 @@ import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
 import com.project.demo.model.Utente;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -21,6 +22,9 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static javafx.scene.paint.Color.BLACK;
+import static javafx.scene.paint.Color.WHITE;
 
 public class UserController implements Initializable {
     @FXML
@@ -224,15 +228,24 @@ public class UserController implements Initializable {
     }
 
     public void changeMode(ActionEvent event){
+        FontAwesomeIconView icon = new FontAwesomeIconView();
         if(getButtonMode().equals("light")){
             parent.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
             System.out.println(parent.getStylesheets());
             setButtonMode("dark");
+            icon = new FontAwesomeIconView(FontAwesomeIcon.SUN_ALT);
+            icon.fillProperty().set(WHITE);
+            icon.setSize("20");
+            buttonMode.setGraphic(icon);
         }
         else if(getButtonMode().equals("dark")){
             parent.getStylesheets().set(0,DBUtils.class.getResource("lightMode.css").toString());
             System.out.println(parent.getStylesheets());
             setButtonMode("light");
+            icon = new FontAwesomeIconView(FontAwesomeIcon.MOON_ALT);
+            icon.fillProperty().set(BLACK);
+            icon.setSize("20");
+            buttonMode.setGraphic(icon);
         }
     }
     public String getButtonMode() {

@@ -169,7 +169,7 @@
                <String fx:value="round2-corner" />
             </styleClass>
             <children>
-               <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
+               <Text fx:id="myusername" styleClass="text-color" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
                      <Insets left="365.0" top="10.0" />
                   </HBox.margin>
@@ -179,7 +179,7 @@
                </Text>
                <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="primary-color">
                   <graphic>
-                     <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" />
+                     <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="USER" glyphSize="20" styleClass="text-color" />
                   </graphic>
                   <HBox.margin>
                      <Insets top="3.0" />
@@ -187,7 +187,7 @@
                </Button>
                <Button fx:id="buttonMode" accessibleText="light" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
                   <graphic>
-                     <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
+                     <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" styleClass="text-color" />
                   </graphic>
                   <opaqueInsets>
                      <Insets />
@@ -212,7 +212,7 @@
          </TextField>
          <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 100; -fx-border-radius: 100; -fx-text-alignment: center;" styleClass="secondary-color" text="">
             <graphic>
-               <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="SEARCH" size="15" strokeLineCap="ROUND" strokeLineJoin="ROUND" textOrigin="CENTER">
+               <FontAwesomeIconView boundsType="LOGICAL_VERTICAL_CENTER" fill="#141712" glyphName="SEARCH" size="15" strokeLineCap="ROUND" strokeLineJoin="ROUND" styleClass="text-color" textOrigin="CENTER">
                   <rotationAxis>
                      <Point3D />
                   </rotationAxis>
