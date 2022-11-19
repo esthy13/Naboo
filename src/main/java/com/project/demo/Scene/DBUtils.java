@@ -77,7 +77,7 @@ public class DBUtils {
             alert.getDialogPane().setHeaderText("Utente già registrato");
             alert.setTitle("Errore");
             DialogPane dialog = alert.getDialogPane();
-            dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane").toString());
+            dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane.css").toString());
             dialog.getStyleClass().add("dialog");
             Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
             stage.getIcons().add(new Image(DBUtils.class.getResource("TelegramProgetto.png").toString()));
@@ -114,7 +114,7 @@ public class DBUtils {
                 alert.setContentText("Provided credentials are incorrect!");
                 alert.setTitle("Errore");
                 DialogPane dialog = alert.getDialogPane();
-                dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane").toString());
+                dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane.css").toString());
                 dialog.getStyleClass().add("dialog");
                 Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
                 stage.getIcons().add(new Image(DBUtils.class.getResource("TelegramProgetto.png").toString()));
@@ -132,10 +132,10 @@ public class DBUtils {
                         alert.setHeaderText("Utente non autorizzato all'accesso");
                         alert.setTitle("Errore");
                         DialogPane dialog = alert.getDialogPane();
-                        dialog.getStylesheets().add(UserController.class.getResource("StyleDialogPane").toString());
+                        dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane.css").toString());
                         dialog.getStyleClass().add("dialog");
                         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image(UserController.class.getResource("TelegramProgetto.png").toString()));
+                        stage.getIcons().add(new Image(DBUtils.class.getResource("TelegramProgetto.png").toString()));
                         alert.show();
                     }
                     else if (decrypt_pass.equals(password)){
@@ -146,10 +146,10 @@ public class DBUtils {
                         alert.setContentText("Provided credentials are incorrect!");
                         alert.setTitle("Errore");
                         DialogPane dialog = alert.getDialogPane();
-                        dialog.getStylesheets().add(UserController.class.getResource("StyleDialogPane").toString());
+                        dialog.getStylesheets().add(DBUtils.class.getResource("StyleDialogPane.css").toString());
                         dialog.getStyleClass().add("dialog");
                         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image(UserController.class.getResource("TelegramProgetto.png").toString()));
+                        stage.getIcons().add(new Image(DBUtils.class.getResource("TelegramProgetto.png").toString()));
                         alert.show();
                     }
                 }
