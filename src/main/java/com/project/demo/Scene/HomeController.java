@@ -175,18 +175,19 @@ public class HomeController implements Initializable{
         chartFonti.setData(pieChartData);
     }
     public void changeMode(ActionEvent event){
-        //DBUtils.changeSceneMode(event,"home.fxml","Home", getMyusername(), null,getButtonMode());(
+        //DBUtils.changeSceneMode(event,"home.fxml","Home", getMyusername(), null,getButtonMode());
+
         if(getButtonMode().equals("dark")){
-            parent.getStylesheets().removeAll("lightMode.css");
-            parent.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
+            //parent.getStylesheets().removeAll("lightMode.css");
+            parent.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
             System.out.println(parent.getStylesheets());
             setButtonMode("light");
             System.out.println(getButtonMode());
             //System.out.println("dark");
         }
         else if(getButtonMode().equals("light")){
-            parent.getStylesheets().removeAll("darkMode.css");
-            parent.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
+            //parent.getStylesheets().removeAll("darkMode.css");
+            parent.getStylesheets().set(0,DBUtils.class.getResource("lightMode.css").toString());
             System.out.println(parent.getStylesheets());
             setButtonMode("dark");
             //System.out.println("light");

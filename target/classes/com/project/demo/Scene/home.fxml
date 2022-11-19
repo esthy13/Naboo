@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
+<AnchorPane fx:id="parent" prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
          <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
@@ -154,7 +154,7 @@
          </LinearGradient>
       </fill>
    </Text>
-   <FlowPane layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0" stylesheets="@lightMode.css">
+   <FlowPane layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0">
       <children>
          <HBox prefHeight="46.0" prefWidth="486.0" spacing="5.0">
             <VBox.margin>
@@ -171,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="210.0" top="10.0" />
+                     <Insets left="205.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />

@@ -154,7 +154,7 @@
          </LinearGradient>
       </fill>
    </Text>
-   <FlowPane layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0" stylesheets="@lightMode.css">
+   <FlowPane layoutX="196.0" layoutY="-1.0" prefHeight="411.0" prefWidth="523.0">
       <children>
          <HBox prefHeight="46.0" prefWidth="486.0" spacing="5.0">
             <VBox.margin>
@@ -171,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="210.0" top="10.0" />
+                     <Insets left="205.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />

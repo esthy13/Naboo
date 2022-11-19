@@ -92,7 +92,7 @@ public class DBUtils {
         //root.getStylesheets(); per dark mode
         if(mode.equals("dark")){
             root.getStylesheets().remove("lightMode.css");
-            root.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
+            root.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
             homeController.mode.setAccessibleText("light");
         }
         else{
