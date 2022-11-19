@@ -25,11 +25,11 @@ public class DBUtils {
     public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName, String search, String mode) {
         Parent root = new AnchorPane();
         FontAwesomeIconView icon = new FontAwesomeIconView();
-        if(mode.equals("light")) {
+        if(!isNull(mode) && mode.equals("light")) {
             icon = new FontAwesomeIconView(FontAwesomeIcon.MOON_ALT);
             icon.fillProperty().set(BLACK);
             icon.setSize("20");
-        }else {
+        }else if (!isNull(mode) &&  mode.equals("dark")){
             icon = new FontAwesomeIconView(FontAwesomeIcon.SUN_ALT);
             icon.fillProperty().set(WHITE);
             icon.setSize("20");

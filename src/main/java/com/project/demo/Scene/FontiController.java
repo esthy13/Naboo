@@ -148,7 +148,6 @@ public class FontiController implements Initializable {
         FontAwesomeIconView icon = new FontAwesomeIconView();
         if(getButtonMode().equals("light")){
             parent.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
-            System.out.println(parent.getStylesheets());
             setButtonMode("dark");
             icon = new FontAwesomeIconView(FontAwesomeIcon.SUN_ALT);
             icon.fillProperty().set(WHITE);
@@ -157,7 +156,6 @@ public class FontiController implements Initializable {
         }
         else if(getButtonMode().equals("dark")){
             parent.getStylesheets().set(0,DBUtils.class.getResource("lightMode.css").toString());
-            System.out.println(parent.getStylesheets());
             setButtonMode("light");
             icon = new FontAwesomeIconView(FontAwesomeIcon.MOON_ALT);
             icon.fillProperty().set(BLACK);
