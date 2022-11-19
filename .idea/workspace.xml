@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d85dba2b-2c83-4e56-b806-40c11fc641d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/TelegramProgetto.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/signup-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +87,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\Scene" />
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\target\classes\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo\Scene" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo.Scene" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
@@ -349,6 +353,7 @@
       <workItem from="1668784799533" duration="743000" />
       <workItem from="1668785556332" duration="6188000" />
       <workItem from="1668802969258" duration="1733000" />
+      <workItem from="1668851036829" duration="384000" />
     </task>
     <servers />
   </component>
