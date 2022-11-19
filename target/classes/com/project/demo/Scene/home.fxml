@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
+<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
          <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
@@ -185,7 +185,7 @@
                      <Insets top="3.0" />
                   </HBox.margin>
                </Button>
-               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+               <Button fx:id="buttonMode" accessibleText="dark" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
                   <graphic>
                      <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
                   </graphic>

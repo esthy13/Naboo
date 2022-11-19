@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b57a8d7f-b276-4dfd-a24d-b28cabfae0dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Naboo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Naboo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_18_0_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/project/demo/Scene/home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" afterDir="false" />
     </list>
