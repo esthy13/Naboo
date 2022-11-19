@@ -68,6 +68,43 @@ public class DBUtils {
         stage.setScene(new Scene(root, 716, 408));
         stage.show();
     }
+    public static void changeSceneMode(ActionEvent event, String fxmlFile, String title, String userName, String search, String mode) {
+        Parent root = new AnchorPane();
+        HomeController homeController = new HomeController();
+        if ((userName != null)){
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
+                root = fxmlLoader.load();
+                homeController = fxmlLoader.getController();
+                homeController.text.setText(userName);
+
+            }catch (Exception exception){
+                exception.printStackTrace();
+            }
+        }else {
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
+                root = fxmlLoader.load();
+            }catch (Exception exception){
+                exception.printStackTrace();
+            }
+        }
+        //root.getStylesheets(); per dark mode
+        if(mode.equals("dark")){
+            root.getStylesheets().remove("lightMode.css");
+            root.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
+            homeController.mode.setAccessibleText("light");
+        }
+        else{
+            root.getStylesheets().remove("darkMode.css");
+            root.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
+            homeController.mode.setAccessibleText("light");
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root, 716, 408));
+        stage.show();
+    }
 
     public static void signUpUser(ActionEvent event, String username, String password){
         DBinsert dBinsert = new DBinsert();

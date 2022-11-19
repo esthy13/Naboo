@@ -1,11 +1,15 @@
+/*selezionati in base alla classe scelta nell'fxml*/
 .primary-color{
-    -fx-background-color: #313030;
+    -fx-background-color: #423f3f;
 }
 .secondary-color{
-    -fx-background-color: #504d4d;
+    -fx-background-color: #2c2929;
 }
 .text-color{
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: #ffffff;
+}
+.border{
+    -fx-border-color: #868484;
 }
 .round-corner{
     -fx-background-radius: 100;
@@ -13,4 +17,103 @@
 .round2-corner{
     -fx-background-radius: 50;
     -fx-border-radius: 50;
+}
+.round-corner-background{
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.text-dashboard{
+    -fx-fill: #ffffff;
+}
+
+
+/*pescaggio elementi di default*/
+
+
+.combo-box-base{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.combo-box .text-field{
+    -fx-background-color: #a0c3ee;
+    -fx-background-radius: 50 0 0 50;
+    -fx-border-color: transparent;
+}
+.combo-box{
+    -fx-background-radius: 50;
+    -fx-border-color: transparent;
+}
+.combo-box .arrow-button{
+    -fx-background-color: #a0c3ee;
+    -fx-background-radius: 0 50 50 0;
+    -fx-border-color: transparent;
+}
+.text-field {
+    -fx-prompt-text-fill: #ffffff;
+}
+
+.chart{
+    -fx-background-color: #494747;
+    -fx-background-radius: 5;
+}
+
+/*Table view styling*/
+.table-view{
+    -fx-background-color: transparent;
+    -fx-border-radius: 5;
+    -fx-border-color: #c1c1c4 ;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: #262525;
+}
+.table-view .column-header-background .label{
+    -fx-font-family: System;
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+.table-view .column-header{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent #c1c1c4 #c1c1c4 transparent;
+    -fx-border-width: 0.4;
+}
+.table-view .filler{
+    -fx-background-color: transparent;
+    /*up right down left*/
+}
+.table-view .show-hide-columns-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: transparent;
+}
+
+.table-view .table-cell{
+    -fx-font-family: System;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #c1c1c4 #c1c1c4 #c1c1c4 transparent;
+    -fx-padding: 5 10 0 10;
+    -fx-border-width: 0.3;
+}
+.table-row-cell{
+    -fx-background-color: #f1f1f1;
+}
+
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical> .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background{
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button{
+    -fx-opacity: 0;
 }

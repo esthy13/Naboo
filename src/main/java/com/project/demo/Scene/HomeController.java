@@ -43,6 +43,7 @@ public class HomeController implements Initializable{
     private Button Directory_Chooser;
     @FXML
     private Button buttonMode;
+    public static Button mode;
     @FXML
     private AnchorPane parent;
     public void logout(ActionEvent event){
@@ -133,6 +134,7 @@ public class HomeController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBget dBget = new DBget();
         text = myusername;
+        //mode = buttonMode;
         utenti.setText(dBget.getCountUser());
         notizie.setText(dBget.getCountNews());
         initPieChart();
@@ -171,6 +173,30 @@ public class HomeController implements Initializable{
         DBget dBget = new DBget();
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(dBget.getCount());
         chartFonti.setData(pieChartData);
+    }
+    public void changeMode(ActionEvent event){
+        //DBUtils.changeSceneMode(event,"home.fxml","Home", getMyusername(), null,getButtonMode());(
+        if(getButtonMode().equals("dark")){
+            parent.getStylesheets().removeAll("lightMode.css");
+            parent.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
+            setButtonMode("light");
+            System.out.println(getButtonMode());
+            //System.out.println("dark");
+        }
+        else{
+            parent.getStylesheets().removeAll("darkMode.css");
+            parent.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
+            setButtonMode("dark");
+            //System.out.println("light");
+            System.out.println(getButtonMode());
+        }
+    }
+    public String getButtonMode() {
+        return buttonMode.getAccessibleText();
+    }
+
+    public void setButtonMode(String buttonMode) {
+        this.buttonMode.setAccessibleText(buttonMode);
     }
 }
 
