@@ -179,13 +179,15 @@ public class HomeController implements Initializable{
         if(getButtonMode().equals("dark")){
             parent.getStylesheets().removeAll("lightMode.css");
             parent.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
+            System.out.println(parent.getStylesheets());
             setButtonMode("light");
             System.out.println(getButtonMode());
             //System.out.println("dark");
         }
-        else{
+        else if(getButtonMode().equals("light")){
             parent.getStylesheets().removeAll("darkMode.css");
             parent.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
+            System.out.println(parent.getStylesheets());
             setButtonMode("dark");
             //System.out.println("light");
             System.out.println(getButtonMode());

@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
+<AnchorPane prefHeight="405" prefWidth="720 " style="-fx-background-color: #282828;" stylesheets="@lightMode.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.demo.Scene.HomeController">
    <VBox alignment="TOP_RIGHT" layoutY="99.0" prefHeight="172.0" prefWidth="196.0" spacing="10.0">
       <children>
          <Button alignment="BASELINE_LEFT" ellipsisString="0" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Home" prefHeight="35.0" prefWidth="206.0" style="-fx-background-color: linear-gradient(to right, #99ceda, #9e49c9); -fx-background-radius: 0;" text="Home" textFill="#fcfcfc">
@@ -171,7 +163,7 @@
             <children>
                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc);" text="Benvenuto ">
                   <font>
-                     <Font name="Monaco" size="25.75" />
+                     <Font name="System Bold Italic" size="25.75" />
                   </font>
                   <HBox.margin>
                      <Insets left="10.0" />
@@ -179,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="185.0" top="10.0" />
+                     <Insets left="210.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />
@@ -193,7 +185,7 @@
                      <Insets top="3.0" />
                   </HBox.margin>
                </Button>
-               <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
+               <Button fx:id="buttonMode" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 100;" styleClass="secondary-color">
                   <graphic>
                      <FontAwesomeIconView boundsType="LOGICAL" fill="#141712" glyphName="MOON_ALT" glyphSize="20" />
                   </graphic>
