@@ -118,7 +118,7 @@ public class Utente {
                         }
                         dBinsert.modifyRole(getId(),ruolo);  //Cancellazione dell'utente
                         System.out.println("delete " + getId());
-                        DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", UserController.text.getText(), UserController.search.getText());
+                        DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", UserController.text.getText(), UserController.search.getText(), UserController.mode.getAccessibleText());
                 }
                     else if(result.get() == ButtonType.CANCEL) {
                         // cancel button is pressed
@@ -160,7 +160,7 @@ public class Utente {
                     dBdelete.InteragisconoCheck(); //prima cancello righe di interagiscono se dovessero esserci
                     dBdelete.completeDeleteUser(getId());  //Cancellazione dell'utente
                     System.out.println("delete " + getId());
-                    DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", UserController.text.getText(), UserController.search.getText());
+                    DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", UserController.text.getText(), UserController.search.getText(), UserController.mode.getAccessibleText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                     // cancel button is pressed

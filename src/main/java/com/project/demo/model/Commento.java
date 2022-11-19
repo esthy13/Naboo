@@ -111,7 +111,7 @@ public class Commento {
                     DBget dBget = new DBget();
                     dBdelete.deleteOneComment(getId_commento(), getId_notizia());  //Cancellazione dell'utente
                     System.out.println("delete " + getId_commento());
-                    DBUtils.changeScene(actionEvent, "commenti.fxml", "Commenti", CommentiController.text.getText(), CommentiController.search.getText());
+                    DBUtils.changeScene(actionEvent, "commenti.fxml", "Commenti", CommentiController.text.getText(), CommentiController.search.getText(), CommentiController.mode.getAccessibleText());
                 }
                 else if(result.get() == ButtonType.CANCEL) {
                     // cancel button is pressed

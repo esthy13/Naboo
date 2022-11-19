@@ -217,7 +217,7 @@ public class Notizia {
                 } else if (result.get() == ButtonType.OK) {
                     DBdelete dBdelete = new DBdelete();
                     dBdelete.deleteNotizia(getId_notizia());
-                    DBUtils.changeScene(actionEvent, "news.fxml", "Notizie", NewsController.text.getText(), NewsController.search.getText());
+                    DBUtils.changeScene(actionEvent, "news.fxml", "Notizie", NewsController.text.getText(), NewsController.search.getText(), NewsController.mode.getAccessibleText());
                 } else if (result.get() == ButtonType.CANCEL) {
                 }
             }

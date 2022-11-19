@@ -16,9 +16,12 @@ import javafx.stage.Stage;
 
 import java.sql.*;
 
+import static java.util.Objects.isNull;
+
 public class DBUtils {
-    public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName, String search) {
+    public static void changeScene(ActionEvent event, String fxmlFile, String title, String userName, String search, String mode) {
         Parent root = new AnchorPane();
+        String newMode = mode;
 
         if ((userName != null)){
             try {
@@ -29,32 +32,39 @@ public class DBUtils {
                         CommentiController commentiController = fxmlLoader.getController();
                         commentiController.text.setText(userName);
                         commentiController.search.setText(search);
+                        commentiController.mode.setAccessibleText(newMode);
                         break;
                     case "fonti.fxml":
                         FontiController fontiController = fxmlLoader.getController();
                         fontiController.text.setText(userName);
                         fontiController.search.setText(search);
+                        fontiController.mode.setAccessibleText(newMode);
                         break;
                     case "home.fxml":
                         HomeController homeController = fxmlLoader.getController();
                         homeController.text.setText(userName);
+                        homeController.mode.setAccessibleText(newMode);
+
                         break;
                     case "news.fxml":
                         NewsController newsController = fxmlLoader.getController();
                         newsController.text.setText(userName);
                         newsController.search.setText(search);
+                        newsController.mode.setAccessibleText(newMode);
                         break;
                     case "utenti.fxml":
                         UserController userController = fxmlLoader.getController();
                         userController.text.setText(userName);
                         userController.search.setText(search);
+                        userController.mode.setAccessibleText(newMode);
                         break;
                 }
 
             }catch (Exception exception){
                 exception.printStackTrace();
             }
-        }else {
+        }
+        else {
             try{
                 FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
                 root = fxmlLoader.load();
@@ -62,46 +72,26 @@ public class DBUtils {
                 exception.printStackTrace();
             }
         }
-        //root.getStylesheets(); per dark mode
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle(title);
-        stage.setScene(new Scene(root, 716, 408));
-        stage.show();
-    }
-    public static void changeSceneMode(ActionEvent event, String fxmlFile, String title, String userName, String search, String mode) {
-        Parent root = new AnchorPane();
-        HomeController homeController = new HomeController();
-        if ((userName != null)){
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
-                root = fxmlLoader.load();
-                homeController = fxmlLoader.getController();
-                homeController.text.setText(userName);
+        if(!isNull(mode) && mode.equals("dark")){
+            if(root.getStylesheets().size()==0){
+                root.getStylesheets().add(DBUtils.class.getResource("darkMode.css").toString());
+                newMode = "dark";
+            }else{
+                root.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
+                newMode = "dark";}
+        } else if (!isNull(mode) && mode.equals("light")) {
+            if(root.getStylesheets().size()==0){
+                root.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
+                newMode = "light";
+            }else {
+                root.getStylesheets().set(0, DBUtils.class.getResource("lightMode.css").toString());
+                newMode = "light";
+            }
+        }
 
-            }catch (Exception exception){
-                exception.printStackTrace();
-            }
-        }else {
-            try{
-                FXMLLoader fxmlLoader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
-                root = fxmlLoader.load();
-            }catch (Exception exception){
-                exception.printStackTrace();
-            }
-        }
-        //root.getStylesheets(); per dark mode
-        if(mode.equals("dark")){
-            root.getStylesheets().remove("lightMode.css");
-            root.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
-            homeController.mode.setAccessibleText("light");
-        }
-        else{
-            root.getStylesheets().remove("darkMode.css");
-            root.getStylesheets().add(DBUtils.class.getResource("lightMode.css").toString());
-            homeController.mode.setAccessibleText("light");
-        }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle(title);
+        System.out.println(root.getStylesheets());
         stage.setScene(new Scene(root, 716, 408));
         stage.show();
     }
@@ -123,7 +113,7 @@ public class DBUtils {
         else if(dBget.userExists(username) && dBget.getRuolo(dBget.getId_user(username)).equals("User")){
             dBinsert.modifyRole(Integer.parseInt(dBget.getId_user(username)),"Amministratore");
             dBinsert.modifyPasswordCrypt(Integer.parseInt(dBget.getId_user(username)),password);
-            changeScene(event, "home.fxml", "Home", username, null);
+            changeScene(event, "home.fxml", "Home", username, null, "light");
         }
         else{
             Encryptor En = new Encryptor();
@@ -131,7 +121,7 @@ public class DBUtils {
             String initVector = "RandomInitVector"; // 16 bytes IV
             String encrypt_pass = En.encrypt(key, initVector, password);
             dBinsert.insertUser(username, encrypt_pass, "Amministratore");
-            changeScene(event, "home.fxml", "Home", username, null);
+            changeScene(event, "home.fxml", "Home", username, null, "light");
         }
     }
 
@@ -176,7 +166,7 @@ public class DBUtils {
                         alert.show();
                     }
                     else if (decrypt_pass.equals(password)){
-                        changeScene(event, "home.fxml", "Home", username, null);
+                        changeScene(event, "home.fxml", "Home", username, null, "light");
                     }else {
                         System.out.println("Password did not match!");
                         Alert alert = new Alert(Alert.AlertType.ERROR);

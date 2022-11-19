@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -44,37 +45,43 @@ public class FontiController implements Initializable {
     public static TextField search;
     @FXML
     private TextField linkRss;
+    @FXML
+    private AnchorPane parent;
+    @FXML
+    private  Button buttonMode;
+    public static Button mode;
     private ObservableList<Fonte> list;
 
     private FontiController fontiController;
 
     public void logout(ActionEvent event){
-        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null, null);
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), getSearch_txt(), getButtonMode());
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null);
+        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null, getButtonMode());
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), null);
+        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), null, getButtonMode());
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null);
+        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null, getButtonMode());
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null);
+        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null, getButtonMode());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         search = search_txt;
         text = myusername;
+        mode = buttonMode;
         visualizza();
         rss.setCellValueFactory(new PropertyValueFactory<Fonte, String>("link_rss"));
         update.setCellValueFactory(new PropertyValueFactory<Fonte, Button>("update"));
@@ -120,7 +127,7 @@ public class FontiController implements Initializable {
         else {
             DBinsert dBinsert = new DBinsert();
             dBinsert.insertFonte(linkRss.getText());
-            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername(), null);
+            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername(), null, getButtonMode());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Info");
             alert.getDialogPane().setHeaderText("Feed RSS aggiunto!");
@@ -131,6 +138,25 @@ public class FontiController implements Initializable {
             stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
         }
+    }
+    public void changeMode(ActionEvent event){
+        if(getButtonMode().equals("light")){
+            parent.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
+            System.out.println(parent.getStylesheets());
+            setButtonMode("dark");
+        }
+        else if(getButtonMode().equals("dark")){
+            parent.getStylesheets().set(0,DBUtils.class.getResource("lightMode.css").toString());
+            System.out.println(parent.getStylesheets());
+            setButtonMode("light");
+        }
+    }
+    public String getButtonMode() {
+        return buttonMode.getAccessibleText();
+    }
+
+    public void setButtonMode(String buttonMode) {
+        this.buttonMode.setAccessibleText(buttonMode);
     }
 
     public String getMyusername() {

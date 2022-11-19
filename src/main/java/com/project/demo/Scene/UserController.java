@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -48,36 +49,42 @@ public class UserController implements Initializable {
     @FXML
     private TextField search_txt;
     public static TextField search;
+    @FXML
+    private  Button buttonMode;
+    public static Button mode;
+    @FXML
+    private AnchorPane parent;
     private ObservableList<Utente> list;
 
 
     public void logout(ActionEvent event){
-        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null);
+        DBUtils.changeScene(event, "login-view.fxml", "Login", null, null, null);
     }
 
     public void Fonti(ActionEvent event) {
-        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), null);
+        DBUtils.changeScene(event, "fonti.fxml", "Fonti", getMyusername(), null, getButtonMode());
     }
     public void News(ActionEvent event) {
-        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null);
+        DBUtils.changeScene(event, "news.fxml", "Notizie", getMyusername(), null, getButtonMode());
     }
 
     public void Utenti(ActionEvent event){
-        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
+        DBUtils.changeScene(event, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt(), getButtonMode());
     }
 
     public void Commenti(ActionEvent event){
-        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null);
+        DBUtils.changeScene(event, "commenti.fxml", "Commenti", getMyusername(), null, getButtonMode());
     }
 
     public void Home(ActionEvent event){
-        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null);
+        DBUtils.changeScene(event, "home.fxml", "Home", getMyusername(), null, getButtonMode());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         text = myusername;
         search = search_txt;
+        mode = buttonMode;
         name.setFocusTraversable(false);    //true
         password.setFocusTraversable(false);
         role.setFocusTraversable(false);
@@ -173,7 +180,7 @@ public class UserController implements Initializable {
             Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
             stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
-            DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
+            DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt(), getButtonMode());
         }
         else if (!name.getText().trim().isEmpty() && (role.getValue().toString().equals("Amministratore"))
                 && (password.getText().trim().isEmpty()) ) {
@@ -210,12 +217,31 @@ public class UserController implements Initializable {
             Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
             stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
             alert.show();
-            DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt());
+            DBUtils.changeScene(actionEvent, "utenti.fxml", "Utenti", getMyusername(), getSearch_txt(), getButtonMode());
 
         }
 
     }
 
+    public void changeMode(ActionEvent event){
+        if(getButtonMode().equals("light")){
+            parent.getStylesheets().set(0,DBUtils.class.getResource("darkMode.css").toString());
+            System.out.println(parent.getStylesheets());
+            setButtonMode("dark");
+        }
+        else if(getButtonMode().equals("dark")){
+            parent.getStylesheets().set(0,DBUtils.class.getResource("lightMode.css").toString());
+            System.out.println(parent.getStylesheets());
+            setButtonMode("light");
+        }
+    }
+    public String getButtonMode() {
+        return buttonMode.getAccessibleText();
+    }
+
+    public void setButtonMode(String buttonMode) {
+        this.buttonMode.setAccessibleText(buttonMode);
+    }
     public String getMyusername() {
         return myusername.getText();
     }
