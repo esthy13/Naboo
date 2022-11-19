@@ -38,7 +38,7 @@
                         <Font name="Arial Rounded MT Bold" size="18.0" />
                     </font>
                 </Label>
-                <TextField fx:id="txt_username" layoutX="44.0" layoutY="111.0" promptText="Inserisci username" style="-fx-background-radius: 50; -fx-border-radius: 50;">
+                <TextField fx:id="txt_username" layoutX="44.0" layoutY="111.0" promptText="Username telegram" style="-fx-background-radius: 50; -fx-border-radius: 50;">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -57,11 +57,11 @@
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                     </font>
                 </Button>
-                <PasswordField fx:id="txt_password" layoutX="44.0" layoutY="207.0" promptText="Inserisci password" style="-fx-background-radius: 50; -fx-border-radius: 50;">
+                <PasswordField fx:id="txt_password" layoutX="44.0" layoutY="207.0" promptText="Scegli password" style="-fx-background-radius: 50; -fx-border-radius: 50;">
                     <font>
                         <Font size="18.0" />
                     </font></PasswordField>
-                <Label layoutX="114.0" layoutY="11.0" text="SIGNUP">
+                <Label layoutX="113.0" layoutY="11.0" text="SIGNUP">
                     <font>
                         <Font name="Futura Medium" size="26.0" />
                     </font>
