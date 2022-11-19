@@ -20,6 +20,7 @@ public class Main extends Application {
         stage.setTitle("Login");
         stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
         stage.setScene(new Scene(root, 716, 408));
+        stage.setResizable(false);
         stage.show();
     }
 
