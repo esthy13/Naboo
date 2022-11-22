@@ -28,14 +28,16 @@ public abstract class MyBot extends Buttons{
                             "\n" + save_emoji + " per salvarti le notizie tra i messaggi fissati" +
                             "\n" + comment_emoji + " per scrivere un commento alla notizia" +
                             "\n" + occhio_emoji + comment_emoji + " per visualizzare i commenti di una notizia" +
-
                             "\n" + "*share* per inviare la notizia ad altri tuoi contatti telegram " +
-                            "\n" + "*whatsapp facebook* e *twitter* per condividere le notizie sui tuoi social preferiti"+
+                            "\n" + "*whatsapp*, *facebook* e *twitter* per condividere le notizie sui social"+
                             "\n" + search_emoji +"*notizia* per cercare notizie in base a parole chiave del titolo" +
                             "\n" + search_emoji +"*data* per cercare notizie in base alla data di pubblicazione" +
-                            "\n" + search_emoji +"*fonte* per cercare notizie in base al giornale online di provenienza" +
+                            "\n" + search_emoji +"*fonte* per cercare notizie in base al giornale online" +
                             "\n" + close_emoji +" per chiudere e cancellare un messaggio" +
-                            "\n" + back_emoji + next_emoji + " per scorrere avanti e indietro notizie e commenti"
+                            "\n" + back_emoji + next_emoji + " per scorrere avanti e indietro notizie e commenti" +
+                            "\n" + comment_emoji + " *password*: per modificare la tua password se sei un amministratore" +
+                            "\n" + report_emoji + " per segnalare notizie con contenuti inappropriati" +
+                            "\n" + call_emoji + help_emoji + " per ricevere supporto tecnico da uno sviluppatore "
                             );
         sendMessage.setReplyMarkup(keyboardHelp());
         sendMsg(sendMessage);
@@ -75,7 +77,7 @@ public abstract class MyBot extends Buttons{
         }
         else {
             sendMsg(update.getMessage().getChatId().toString(), "Benvenuto! " + wave_emoji +
-                    "\nOra puoi cercare, leggere, commentare e condividere con i tuoi amici le notizie" +
+                    "\nOra puoi cercare, leggere, commentare e condividere con i tuoi amici le notizie " +
                     "di attualità prese da Fonti controllate dagli amministratori del bot!" +
                     "\nSe hai bisogno di aiuto usa /help " + help_emoji +
                     "\nPer accedere al menù del bot usa /menu " + menu_emoji +

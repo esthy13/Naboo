@@ -80,7 +80,8 @@ public class Naboo extends MyBot {
         }
         else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage()) &&
             update.getMessage().getReplyToMessage().getText().contains("Scrivi la tua richiesta di aiuto inerente questa" +
-            " notizia agli sviluppatori del Bot. \nSe necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in . Oppure digita /close")){
+            " notizia agli sviluppatori del Bot. \nSe necessario  @esthy_13, @daaniel o @tanom02 ti contatteranno in privato." +
+                    " Oppure digita /close")){
             String id_notizia = update.getMessage().getReplyToMessage().getText();
             id_notizia = id_notizia.substring(12,id_notizia.indexOf("S"));
             System.out.println(id_notizia);
@@ -92,6 +93,7 @@ public class Naboo extends MyBot {
                 throw new RuntimeException(e);
             }
         }
+
         else if(update.hasMessage() && !isNull(update.getMessage().getReplyToMessage())
                 && update.getMessage().getReplyToMessage().getText().equals("Per confermare l'azione di modifica password inserisci la password " +
                 "corrente, altrimenti scrivi /close.")){
@@ -110,21 +112,17 @@ public class Naboo extends MyBot {
             verifyPassword(update);
         }
 
-        /*METODO DI MIRROR*/
-        /*else if(update.hasMessage() && update.getMessage().hasText()) {
-            SendMessage sendMessage = new SendMessage(); // Create a SendMessage object with mandatory fields
+        /*COMANDI NON RICONOSCIUTI*/
+        else if(update.hasMessage() && update.getMessage().hasText()) {
+            SendMessage sendMessage = new SendMessage();
             sendMessage.setChatId(update.getMessage().getChatId().toString());
-            sendMessage.setText(update.getMessage().getText());
-            sendMessage.setAllowSendingWithoutReply(true);
-            String ids = "43" ;
-            String link = "www.google.com";
-            MessageInlineKeyboards notizia = new MessageInlineKeyboards(ids,link, sendMessage);
+            sendMessage.setText("Comando non riconosciuto");
             try {
                 execute(sendMessage); // Call method to send the message
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
-        }*/
+        }
 
         /* ON BUTTON PRESSED*/
         else if(update.hasCallbackQuery()){
