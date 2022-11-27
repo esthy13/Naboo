@@ -3,7 +3,9 @@ package com.project.demo.controller;
 import com.project.demo.Scene.Encryptor;
 import com.project.demo.model.Notizia;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendVideo;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.inlinequery.result.InlineQueryResultVideo;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ForceReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -68,7 +70,8 @@ public abstract class MyBot extends Buttons{
             sendMessage.setParseMode("MarkdownV2");
             sendMessage.setText("Per poter usufruire dei servizi offerti dal bot devi aggiungere uno username al" +
                     " tuo profilo\\. Semplicemente vai nelle impostazioni di telegram per aggiungere uno" +
-                    " username al tuo account\\. Una volta aggiunto lo username fai /start\\.");
+                    " username al tuo account\\. Una volta aggiunto lo username fai /start\\." +
+                    "\nhttps://youtu.be/Ftrt7hv9x38");
             try{
                 execute(sendMessage);
             } catch (TelegramApiException e) {
@@ -81,7 +84,8 @@ public abstract class MyBot extends Buttons{
                     "di attualità prese da fonti controllate dagli amministratori del bot!" +
                     "\nSe hai bisogno di aiuto usa /help " + help_emoji +
                     "\nPer accedere al menù del bot usa /menu " + menu_emoji +
-                    "\n" + robot_emoji +" @GediNabooBot", menuKeyboard("0"));
+                    "\n" + robot_emoji +" @GediNabooBot" +
+                    "\nhttps://youtu.be/Ftrt7hv9x38", menuKeyboard("0"));
             dBinsert.insertUser(update.getMessage().getFrom().getUserName(), "User");
         }
     }

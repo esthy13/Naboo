@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57a8d7f-b276-4dfd-a24d-b28cabfae0dd" name="Changes" comment="" />
+    <list default="true" id="b57a8d7f-b276-4dfd-a24d-b28cabfae0dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Naboo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Naboo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_18_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_18_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_18_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/MyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/MyBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/controller/MyBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/controller/MyBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,13 +70,13 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/com/project/demo/Scene&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/com/project/demo/controller&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -78,11 +89,11 @@
       <recent name="com.project.demo.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\controller" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\target\classes\com\project\demo\Scene" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo\Scene" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
@@ -102,7 +113,7 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Telegram">
     <configuration name="DBinsert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.model.DBinsert" />
       <module name="Naboo" />
@@ -190,8 +201,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Telegram" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DBinsert" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.LettoreRSS" />
@@ -354,6 +365,7 @@
       <workItem from="1669146387541" duration="1059000" />
       <workItem from="1669235017365" duration="1608000" />
       <workItem from="1669283489602" duration="824000" />
+      <workItem from="1669543019635" duration="1770000" />
     </task>
     <servers />
   </component>
