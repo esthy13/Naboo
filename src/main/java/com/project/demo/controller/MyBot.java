@@ -71,7 +71,7 @@ public abstract class MyBot extends Buttons{
             sendMessage.setText("Per poter usufruire dei servizi offerti dal bot devi aggiungere uno username al" +
                     " tuo profilo\\. Semplicemente vai nelle impostazioni di telegram per aggiungere uno" +
                     " username al tuo account\\. Una volta aggiunto lo username fai /start\\." +
-                    "\nhttps://youtu.be/Ftrt7hv9x38");
+                    "\nhttps://youtu.be/pEqKj56vAh0");
             try{
                 execute(sendMessage);
             } catch (TelegramApiException e) {
@@ -85,7 +85,7 @@ public abstract class MyBot extends Buttons{
                     "\nSe hai bisogno di aiuto usa /help " + help_emoji +
                     "\nPer accedere al menù del bot usa /menu " + menu_emoji +
                     "\n" + robot_emoji +" @GediNabooBot" +
-                    "\nhttps://youtu.be/Ftrt7hv9x38", menuKeyboard("0"));
+                    "\nhttps://youtu.be/pEqKj56vAh0", menuKeyboard("0"));
             dBinsert.insertUser(update.getMessage().getFrom().getUserName(), "User");
         }
     }
