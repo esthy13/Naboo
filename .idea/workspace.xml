@@ -102,7 +102,7 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Telegram">
     <configuration name="DBinsert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.model.DBinsert" />
       <module name="Naboo" />
@@ -190,8 +190,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Telegram" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DBinsert" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.LettoreRSS" />
@@ -354,6 +354,8 @@
       <workItem from="1669146387541" duration="1059000" />
       <workItem from="1669235017365" duration="1608000" />
       <workItem from="1669283489602" duration="824000" />
+      <workItem from="1669321706724" duration="695000" />
+      <workItem from="1669994310616" duration="5000" />
     </task>
     <servers />
   </component>

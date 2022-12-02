@@ -8,7 +8,8 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 /**
  * Telegram
  */
-public class Telegram {
+public class
+Telegram {
 
     public static void main(String[] args) {
         TelegramBotsApi botsApi;
