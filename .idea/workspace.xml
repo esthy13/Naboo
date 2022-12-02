@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57a8d7f-b276-4dfd-a24d-b28cabfae0dd" name="Changes" comment="" />
+    <list default="true" id="b57a8d7f-b276-4dfd-a24d-b28cabfae0dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/MyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/MyBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/controller/GediNabooBot_video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/controller/MyBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/controller/MyBot.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,13 +65,13 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/com/project/demo/Scene&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/com/project/demo/controller&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -78,11 +84,11 @@
       <recent name="com.project.demo.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\controller" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\target\classes\com\project\demo\Scene" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo\Scene" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
@@ -354,8 +360,13 @@
       <workItem from="1669146387541" duration="1059000" />
       <workItem from="1669235017365" duration="1608000" />
       <workItem from="1669283489602" duration="824000" />
+<<<<<<< HEAD
       <workItem from="1669321706724" duration="695000" />
       <workItem from="1669994310616" duration="5000" />
+=======
+      <workItem from="1669543019635" duration="2169000" />
+      <workItem from="1669546141429" duration="148000" />
+>>>>>>> e06cf93bbf2c0137a531d0ec888b06ed00ac5996
     </task>
     <servers />
   </component>
