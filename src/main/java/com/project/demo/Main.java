@@ -1,7 +1,6 @@
 package com.project.demo;
 
 import com.project.demo.Scene.Encryptor;
-import com.project.demo.controller.Naboo;
 import com.project.demo.model.DBget;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 import java.io.IOException;
 
@@ -29,14 +25,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        TelegramBotsApi botsApi;
-        try {
-            botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new Naboo());
-        } catch (TelegramApiException e) {
 
-            e.printStackTrace();
-        }
         launch();
 
     }
