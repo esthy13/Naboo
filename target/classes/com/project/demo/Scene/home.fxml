@@ -171,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" styleClass="text-color" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="205.0" top="10.0" />
+                     <Insets left="202.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />
@@ -250,7 +250,7 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" style="-fx-font-weight: bold;" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
                            <Font name="System" size="30.0" />
                         </font>
