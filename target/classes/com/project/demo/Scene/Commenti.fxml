@@ -108,7 +108,7 @@
    </VBox>
    <Text layoutX="9.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NABOO" textAlignment="CENTER" wrappingWidth="165.43792724609375">
       <font>
-         <Font name="Futura Medium" size="29.0" />
+         <Font name="Futura" size="29.0" />
       </font>
       <fill>
          <LinearGradient endX="1.0" endY="1.0">
@@ -134,7 +134,7 @@
    </Text>
    <Text layoutX="44.0" layoutY="80.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeWidth="0.0" text="ADMIN MENU">
       <font>
-         <Font name="Futura Medium" size="15.0" />
+         <Font name="Futura" size="15.0" />
       </font>
       <fill>
          <LinearGradient endX="1.0" endY="1.0">
