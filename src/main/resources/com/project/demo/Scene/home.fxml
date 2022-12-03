@@ -163,7 +163,7 @@
             <children>
                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc);" text="Benvenuto ">
                   <font>
-                     <Font name="System Bold Italic" size="25.75" />
+                     <Font name="System Bold" size="25.75" />
                   </font>
                   <HBox.margin>
                      <Insets left="10.0" />
