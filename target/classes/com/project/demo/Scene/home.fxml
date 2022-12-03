@@ -161,7 +161,7 @@
                <Insets top="-10.0" />
             </VBox.margin>
             <children>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc); -fx-font-weight: bold;" text="Benvenuto ">
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc); -fx-font-weight: 700;  -fx-font-style: ITALIC" text="Benvenuto ">
                   <font>
                      <Font name="System" size="25.75" />
                   </font>
@@ -171,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" styleClass="text-color" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="202.0" top="10.0" />
+                     <Insets left="205.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />
@@ -216,7 +216,7 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
                            <Font name="System" size="30.0" />
                         </font>
