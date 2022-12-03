@@ -1,4 +1,4 @@
-module com.example.demo {
+module com.project.demo {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.google.gson;
