@@ -250,7 +250,7 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
                            <Font name="System" size="30.0" />
                         </font>
