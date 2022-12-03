@@ -104,7 +104,7 @@
    </VBox>
    <Text layoutX="9.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NABOO" textAlignment="CENTER" wrappingWidth="165.43792724609375">
       <font>
-         <Font name="Futura Medium" size="29.0" />
+         <Font name="Futura" size="29.0" />
       </font>
       <fill>
          <LinearGradient endX="1.0" endY="1.0">
@@ -130,7 +130,7 @@
    </Text>
    <Text layoutX="44.0" layoutY="80.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeWidth="0.0" text="ADMIN MENU">
       <font>
-         <Font name="Futura Medium" size="15.0" />
+         <Font name="Futura" size="15.0" />
       </font>
       <fill>
          <LinearGradient endX="1.0" endY="1.0">
@@ -161,9 +161,9 @@
                <Insets top="-10.0" />
             </VBox.margin>
             <children>
-               <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc);" text="Benvenuto ">
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc); -fx-font-weight: bold;" text="Benvenuto ">
                   <font>
-                     <Font name="System Bold Italic" size="25.75" />
+                     <Font name="System" size="25.75" />
                   </font>
                   <HBox.margin>
                      <Insets left="10.0" />
@@ -171,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" styleClass="text-color" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="205.0" top="10.0" />
+                     <Insets left="202.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />
@@ -216,9 +216,9 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
-                           <Font name="System Bold" size="30.0" />
+                           <Font name="System" size="30.0" />
                         </font>
                         <fill>
                            <LinearGradient endX="1.0" endY="1.0" startY="1.0">
@@ -250,9 +250,9 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
-                           <Font name="System Bold" size="30.0" />
+                           <Font name="System" size="30.0" />
                         </font>
                         <fill>
                            <LinearGradient endY="1.0">

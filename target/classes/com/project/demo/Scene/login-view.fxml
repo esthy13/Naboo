@@ -63,7 +63,7 @@
                </font></PasswordField>
       <Label layoutX="114.0" layoutY="11.0" text="LOGIN">
          <font>
-            <Font name="Futura Medium" size="26.0" />
+            <Font name="Futura" size="26.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
