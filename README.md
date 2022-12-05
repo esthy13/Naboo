@@ -1,9 +1,10 @@
-#NABOO
-News Aggregator and Bot Observer
-Indice
-Che cos'è Naboo?
-Installazione
-Utilizzo
+# NABOO
+###News Aggregator and Bot Observer
+
+##Indice
+1. Che cos'è Naboo?
+2. Installazione
+3  Utilizzo
 Problema riscontrato 
 Il nostro team
 Licenza (e badges)
