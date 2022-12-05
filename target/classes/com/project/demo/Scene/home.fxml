@@ -216,7 +216,7 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0"  text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
                            <Font name="Arial Black" size="30.0" />
                         </font>
