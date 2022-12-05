@@ -163,7 +163,7 @@
             <children>
                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right, #9e49c9, #1680cc);" text="Benvenuto ">
                   <font>
-                     <Font name="Berlin Sans FB Demi Bold" size="32.0" />
+                     <Font name="Arial Black" size="32.0" />
                   </font>
                   <HBox.margin>
                      <Insets left="10.0" />
@@ -171,7 +171,7 @@
                </Text>
                <Text fx:id="myusername" styleClass="text-color" text="ciao" textAlignment="RIGHT" wrappingWidth="80.74707174301147">
                   <HBox.margin>
-                     <Insets left="178.0" top="10.0" />
+                     <Insets left="142.0" top="10.0" />
                   </HBox.margin>
                   <font>
                      <Font size="14.0" />
@@ -216,9 +216,9 @@
                      <String fx:value="round-corner-background" />
                   </styleClass>
                   <children>
-                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0"  text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
+                     <Text fx:id="utenti" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
-                           <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                           <Font name="Arial Black" size="30.0" />
                         </font>
                         <fill>
                            <LinearGradient endX="1.0" endY="1.0" startY="1.0">
@@ -252,7 +252,7 @@
                   <children>
                      <Text fx:id="notizie" layoutX="-1.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="200.00000000000006">
                         <font>
-                           <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+                           <Font name="Arial Black" size="30.0" />
                         </font>
                         <fill>
                            <LinearGradient endY="1.0">
