@@ -8,8 +8,9 @@
 ### 4. Problema riscontrato
 ### 5. Il nostro team
 ### 6. Licenza
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XnC91s3tqrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe>
+    width="560" height="315" src="https://www.youtube.com/embed/XnC91s3tqrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+</iframe>
 
 ## 1. Che cos’è Naboo?
 NABOO è un’ambiente per cercare, leggere e commentare notizie provenienti da feed RSS ed è formato da tre parti: un database, il bot Telegram @GediNabooBot e un’applicazione grafica. Nel database sono immagazzinate tutte le informazioni relative alle interazioni degli utenti con le notizie e dei loro feed RSS di provenienza. @GediNabooBot, invece, permette a tutti gli utenti di cercare, leggere, commentare e condividere le notizie ai propri amici e contatti tramite WhatsApp, Facebook, Twitter o Telegram stesso. Infine, l’applicazione grafica è accessibile solo agli utenti registrati come amministratori, o da utenti Telegram che sono stati promossi a loro volta ad amministratori e possono così modificare ed eliminare i dati presenti sul database, aggiungendo o cancellando le fonti di provenienza delle notizie, o eliminando commenti, notizie ed utenti indesiderati. 
