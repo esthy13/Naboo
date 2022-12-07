@@ -85,6 +85,3 @@ Immagine esplicativa
 Dan Cernei, Esther Giuliano e Gaetano Muscarello
 
 ## 6. Licenza del progetto : https://choosealicense.com/ e badges shields.io.
-
-
-
