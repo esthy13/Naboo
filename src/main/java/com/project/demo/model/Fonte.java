@@ -15,7 +15,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.util.Optional;
 

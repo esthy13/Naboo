@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="NabooMac:jar" />
+      <artifact name="Naboo:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96e664c-63eb-45bb-999e-05421d1627c1" name="Changes" comment="" />
+    <list default="true" id="f96e664c-63eb-45bb-999e-05421d1627c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/DBUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/FontiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/FontiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/Scene/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/MyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/MyBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/Naboo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/Naboo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Fonte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/LettoreRSS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Notizia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Notizia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/model/Utente.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -354,7 +366,7 @@
       <workItem from="1670167802993" duration="1229000" />
       <workItem from="1670229475771" duration="1874000" />
       <workItem from="1670406893699" duration="1138000" />
-      <workItem from="1670440815441" duration="1378000" />
+      <workItem from="1670440815441" duration="2200000" />
     </task>
     <servers />
   </component>

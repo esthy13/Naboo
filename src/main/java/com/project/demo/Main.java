@@ -1,8 +1,6 @@
 package com.project.demo;
 
-import com.project.demo.Scene.Encryptor;
 import com.project.demo.controller.Naboo;
-import com.project.demo.model.DBget;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
