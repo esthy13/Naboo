@@ -10,17 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96e664c-63eb-45bb-999e-05421d1627c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Naboo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Naboo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_aarch64_18_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_18_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Registrazione schermo 2022-12-04 alle 16.50.19.mov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/presentazione.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/NabooMac_jar/Naboo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/NabooMac_jar/Naboo.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Naboo_jar/Naboo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Naboo_jar/Naboo.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/demo/Scene/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "extract.method.default.visibility": "private",
-    "last_opened_file_path": "C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/com/project/demo/controller",
+    "last_opened_file_path": "C:/Users/giuli/OneDrive/Documenti/Esame/Naboo/src/main/resources/images",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,11 +95,11 @@
       <recent name="com.project.demo.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\images" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\controller" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\Scene" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\resources\com\project\demo" />
-      <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\demo\target\classes\com\project\demo\Scene" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\giuli\OneDrive\Documenti\Esame\Naboo\src\main\resources\com\project\demo\model" />
@@ -362,7 +357,8 @@
       <workItem from="1670088664901" duration="77000" />
       <workItem from="1670166431457" duration="654000" />
       <workItem from="1670167802993" duration="1229000" />
-      <workItem from="1670229475771" duration="1874000" />
+      <workItem from="1670229475771" duration="2470000" />
+      <workItem from="1670328236832" duration="2977000" />
     </task>
     <servers />
   </component>
