@@ -42,8 +42,8 @@ Si procede aprendo il prompt dei comandi e selezionando la directory in cui è p
 ```
 java -jar nomeFile.jar
 ```
-Per interrompere l’esecuzione del programma digitare Ctrl+C su Window e ……su Mac. 
-Attenzione: se viene chiusa l’interfaccia dell’applicazione grafica il bot telegram rimane in esecuzione. È possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc per eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
+Per interrompere l’esecuzione del programma basta chiudere l'applicazione grafica. 
+Attenzione: È possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc per eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
 ## 3. Avvertenze per l’utilizzo
 Esempi di utilizzo del progetto,  screenshots, video, spiegare come accedere con le credenziali
 ## 4. Problema riscontrato
