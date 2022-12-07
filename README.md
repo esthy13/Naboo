@@ -78,7 +78,7 @@ Il principale problema riscontrato nella realizzazione di questo bot, è stato p
 
 Un'altro problema che ha bloccato il nostro lavoro, soprattutto nelle fasi iniziali del progetto, era dovuto all'utilizzo di librerie javafx diverse a seconda che si trattasse di un dispositivo mac o windows. Questo perché all'interno del gruppo usavamo due dispositivi mac e uno windows. La soluzione al problema è abbastanza semplice in realtà: basta eseguire un reload del progetto ogni qual volta viene eseguito un pull da github.
 
-![Presentazione senza titolo (1)](https://user-images.githubusercontent.com/107881742/206217552-66cc306e-d884-4c93-95cf-eba794567f93.svg)
+![Presentazione senza titolo (2)](https://user-images.githubusercontent.com/107881742/206218881-bfd1a1d9-9611-4f9f-bf6e-b06b66ee3731.svg)
 
 ## 5. Il nostro team
 
