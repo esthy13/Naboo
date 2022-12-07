@@ -40,7 +40,7 @@ L’utente può cercare gli elementi digitando delle parole chiave nella barra d
 
 ## Come installare il progetto
 
-Innanzitutto installare JDK 17 o successiva. In seguito, installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo database naboo e importare il file MySQL. Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file _.jar_ dell’applicazione per eseguire il comando:
+Innanzitutto installare [JDK 17 o successiva](https://www.oracle.com/java/technologies/downloads/). In seguito, installare [XAMPP](https://www.apachefriends.org/download.html) e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo database naboo e importare il file MySQL. Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file _.jar_ dell’applicazione per eseguire il comando:
 
 ```
 
