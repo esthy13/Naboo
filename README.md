@@ -36,7 +36,7 @@ Per la struttura generale del nostro progetto ci siamo basati sul pattern di pro
 
 ![Presentazione senza titolo](https://user-images.githubusercontent.com/107881742/206129496-e00f0475-4f92-4ffe-b6c2-0f802f30549a.jpg)
 
-Nel package model si trovano le classi che definiscono le proprietà e i metodi dei principali oggetti di Naboo: _Commento.java, Fonte.java, Notizia.java e Utente.java_. Nello stesso package si trovano anche le classi che permettono di gestire il database MySQL e il LettoreRss.java. Questo si occupa della raccolta delle notizie dai feed rss scelti dagli utenti amministratori dell’applicazione per inviarle al database, da cui poi saranno inviate agli utenti in base alle loro richieste. Questo lettore rss è stato realizzato attraverso l’utilizzo della libreria rome, che permette di leggere file xml e selezionarne i vari elementi, consentendoci così di creare degli oggetti java Notizia. Per quanto riguarda invece la sezione dei controller li abbiamo divisi in due package: _controller_ per il bot telegram e _Scene_ per l’applicazione grafica javafx. 
+Nel package model si trovano le classi che definiscono le proprietà e i metodi dei principali oggetti di Naboo: _Commento.java, Fonte.java, Notizia.java e Utente.java_. Nello stesso package si trovano anche le classi che permettono di gestire il database MySQL e il LettoreRss.java. Questo si occupa della raccolta delle notizie dai feed rss scelti dagli utenti amministratori dell’applicazione per inviarle al database, da cui poi saranno inviate agli utenti in base alle loro richieste. Questo lettore rss è stato realizzato attraverso l’utilizzo della libreria rome, che permette di leggere file .xml e selezionarne i vari elementi, consentendoci così di creare degli oggetti java Notizia. Per quanto riguarda invece la sezione dei controller li abbiamo divisi in due package: _controller_ per il bot telegram e _Scene_ per l’applicazione grafica javafx. 
 
 Il bot telegram da noi realizzato implementa l’interfaccia TelegramLongPollingBot, ovvero un bot che una volta avviato continua a fare richieste al server telegram per avere notifiche di un’eventuale update (messaggio o azione dell’utente). Nel caso la risposta sia positiva, il server telegram invia al bot un file .json contenente tutte le informazioni relative all’update organizzate in maniera gerarchica (per esempio l’id della chat, e il testo del messaggio). Per meglio organizzare i metodi del bot, sono state creati delle sottoclassi alla superclasse che implementa l’interfaccia, cercando di raggruppare i metodi per similarità: nella classe _Buttons.java_ sono presenti tutti i principali metodi associati ai bottoni e nel file _Keyboards.java_ tutte le tastiere associate ai diversi tipi di messaggi e in MyBot i comandi principali utilizzabili nel bot. Infine, nella classe Naboo si può capire, in modo quasi immediato, come vengono gestiti i vari casi di update, distinguendo tra update contenenti una callback query, e quindi derivate dalla pressione di un pulsante da parte dell’utente, da quelle dovute all’invio di un messaggio di testo all’utente. Quest’ultime sono a loro volta suddivise in comandi del bot, come /start, e risposte dell’utente. 
 
@@ -48,15 +48,15 @@ L’accesso all’applicazione è gestito dalle classi DButils ed Encryptor: nel
 
 [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBKE9yaWdpbmFsIE1lc3NhZ2UpIC0tPnxDb252ZXJ0IHRvIEhleHwgQihTcGxpdCBpbnRvIEJsb2NrcylcbiAgICBCIC0tPkQoNGMgNmYgNzIgNjUpXG4gICAgQiAtLT5FKDZkIDIwIDY5IDcwKVxuICAgIEIgLS0-Rig3MyA3NSA2ZCAyMClcbiAgICBEIC0tPiBHXG4gICAgRSAtLT4gR1xuICAgIEYgLS0-IEcoRWFjaCBibG9jaylcbiAgICBHIC0tPiBIKEJsZW5kZXIpXG4gICAgSShLZXkpIC0tPiBIXG4gICAgSCAtLT58QWVzIEFsZ29yaXRobXxKKENpcGhlcmVkIEJsb2NrKVxuICAgIEogLS0-fG5ldyBjb21wdXRlZCBrZXl8IEhcbiAgICBKIC0tPiBLKHdob2xlIG1lc3NhZ2UgY2lwaGVyZWQpXG4gICAgICAgICIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)](https://mermaid-js.github.io/docs/mermaid-live-editor-beta/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBKE9yaWdpbmFsIE1lc3NhZ2UpIC0tPnxDb252ZXJ0IHRvIEhleHwgQihTcGxpdCBpbnRvIEJsb2NrcylcbiAgICBCIC0tPkQoNGMgNmYgNzIgNjUpXG4gICAgQiAtLT5FKDZkIDIwIDY5IDcwKVxuICAgIEIgLS0-Rig3MyA3NSA2ZCAyMClcbiAgICBEIC0tPiBHXG4gICAgRSAtLT4gR1xuICAgIEYgLS0-IEcoRWFjaCBibG9jaylcbiAgICBHIC0tPiBIKEJsZW5kZXIpXG4gICAgSShLZXkpIC0tPiBIXG4gICAgSCAtLT58QWVzIEFsZ29yaXRobXxKKENpcGhlcmVkIEJsb2NrKVxuICAgIEogLS0-fG5ldyBjb21wdXRlZCBrZXl8IEhcbiAgICBKIC0tPiBLKHdob2xlIG1lc3NhZ2UgY2lwaGVyZWQpXG4gICAgICAgICIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
 
-L’algoritmo inizialmente trasforma il testo in codice hex, e successivamente lo divide in blocchi. Poi ogni blocco viene trasformato combinandolo insieme alla chiave. Solo per il primo blocco la chiave utilizzata sarà quella scelta da noi, mentre nei blocchi successivi la chiave utilizzata sarà calcolata direttamente dal computer. Ogni blocco di testo viene mescolato nove volte attraverso lo scambio, la moltiplicazione e lo spostamento dei bit del blocco. In questo modo si ottengono dei blocchi di testo cifrati. 
+L’algoritmo inizialmente trasforma il testo in codice hex, e successivamente lo divide in blocchi. Poi, ogni blocco viene trasformato combinandolo insieme alla chiave. Solo per il primo blocco la chiave utilizzata sarà quella scelta da noi, mentre nei blocchi successivi la chiave utilizzata sarà calcolata direttamente dal computer. Ogni blocco di testo viene mescolato nove volte attraverso lo scambio, la moltiplicazione e lo spostamento dei bit del blocco. In questo modo si ottengono dei blocchi di testo cifrati. 
 
 In DBUtils, inoltre, è presente il metodo che permette di cambiare schermata, _changeScene_, mantenendo nella nuova scena le impostazioni dell’utente relative alla modalità dark o light. Per la presentazione dei dati relativi alle scene 4, 5, 6 e 7 abbiamo scelto di rappresentare i dati estrapolati dal database in tabelle, per consentirne all’utente una lettura organizzata ed immediata. Per realizzarle ci siamo serviti della classe TableView di javafx, che necessita di un’ObservableList per presentare i dati nelle varie righe e colonne della tabella. ObservableList è una lista che implementa l'interfaccia Observable, permettendo di osservare se un oggetto della lista viene modificato o meno.
 
-L’utente può cercare gli elementi digitando delle parole chiave nella barra di ricerca.Un listener percepisce, quindi, l’inserimento o la modifica del testo da parte dell’utente  tramite l’utilizzo di due funzioni lambda annidate: la prima verifica se il nuovo testo inserito sia differente da quello precedentemente inserito, e di conseguenza vengono filtrati gli elementi della tabella attraverso una FilteredList, mostrando gli elementi con _predicate_ = _true_, ovvero elementi corrispondenti alla ricerca dell’utente, mentre vengono tolti dalla lista quelli con  _predicate_ = _false_.
+L’utente può cercare gli elementi digitando delle parole chiave nella barra di ricerca. Un listener percepisce, quindi, l’inserimento o la modifica del testo da parte dell’utente  tramite l’utilizzo di due funzioni lambda annidate: la prima verifica se il nuovo testo inserito sia differente da quello precedentemente inserito, e di conseguenza vengono filtrati gli elementi della tabella attraverso una FilteredList, mostrando gli elementi con _predicate_ = _true_, ovvero elementi corrispondenti alla ricerca dell’utente, mentre vengono tolti dalla lista quelli con  _predicate_ = _false_.
 
 ## 2. Come installare il progetto
 
-Innanzitutto installare JDK 17 o successiva. In seguito installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo data-base naboo e importare il file MySQL. Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file _.jar_ dell’applicazione per eseguire il comando:
+Innanzitutto installare JDK 17 o successiva. In seguito, installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo database naboo e importare il file MySQL. Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file _.jar_ dell’applicazione per eseguire il comando:
 
 ```
 
@@ -70,13 +70,13 @@ Attenzione: è possibile eseguire una sola istanza del bot alla volta, pertanto 
 
 ## 3. Avvertenze per l’utilizzo
 
-Esempi di utilizzo del progetto,  screenshots, video, spiegare come accedere con le credenziali
+Per accedere all'applicazione grafica di gestione del database è vivamente consigliato utilizzare il proprio username Telegram in modo da poter recuperare e/o modificare la password in futuro direttamente attraverso [@GediNabooBot](http://t.me/GediNabooBot) schiacciando su |👤 profilo| dal menù del bot. Attenzione, però: se siete già utenti del bot telegram non potrete accedere all'applicazione grafica di gestione del database per motivi di sicurezza, dovrete perciò chiedere ad un altro amministratore dell'applicazione di essere promossi ad amministratori. Altrimenti, è possibile registrarsi con uno username qualunque, ma in questo caso non sarà possibile in alcun modo recuperare la propria password o il proprio username.
 
 ## 4. Problemi riscontrati
 
-Il principale problema riscontrato nella realizzazione di questo bot, è stato per noi l’ideazione del lettore RSS. Infatti, gli RSS dei giornali online sono molto diversi tra loro: non in tutti è presente la data di pubblicazione della notizia, o il link dell’immagine presente nell’articolo. Per questo, abbiamo creato 3 casi specifici, relativi agli rss provenienti da corriere, gazzetta e fanpage. In quanto non è possibile creare un caso specifico per ogni feed rss, oltre ad essere una tecnica poco efficiente e molto ridondante abbiamo creato un caso default cercando di renderlo applicabile a qualunque altro feed rss. 
+Il principale problema riscontrato nella realizzazione di questo bot, è stato per noi l’ideazione del lettore RSS. Infatti, gli RSS dei giornali online sono molto diversi tra loro: non in tutti è presente la data di pubblicazione della notizia, o il link dell’immagine presente nell’articolo. Per questo, abbiamo creato 3 casi specifici, relativi agli rss provenienti da corriere, gazzetta e fanpage. In quanto non è possibile creare un caso specifico per ogni feed rss, oltre ad essere una tecnica poco efficiente e molto ridondante, abbiamo creato un caso default cercando di renderlo applicabile a qualunque altro feed rss. 
 
-Un'altro problema che ha bloccato il nostro lavoro soprattutto nelle fasi iniziali del progetto era dovuto all'utilizzo di librerie javafx diverse a seconda che si trattasse di un dispositivo mac o windows. Questo perché all'interno del gruppo usavamo due dispositivi mac e uno windows. La soluzione al problema è abbastanza semplice in realtà: basta eseguire un reload del progetto ogni qual volta viene eseguito un pull dal progetto github.
+Un'altro problema che ha bloccato il nostro lavoro, soprattutto nelle fasi iniziali del progetto, era dovuto all'utilizzo di librerie javafx diverse a seconda che si trattasse di un dispositivo mac o windows. Questo perché all'interno del gruppo usavamo due dispositivi mac e uno windows. La soluzione al problema è abbastanza semplice in realtà: basta eseguire un reload del progetto ogni qual volta viene eseguito un pull da github.
 
 Immagine esplicativa
 
@@ -85,6 +85,7 @@ Immagine esplicativa
 Dan Cernei, Esther Giuliano e Gaetano Muscarello
 
 ## 6. Licenza del progetto:
+
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
@@ -98,7 +99,3 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
-
-
-
-
