@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Naboo:jar">
+  <artifact type="jar" name="Naboo:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Naboo_jar</output-path>
     <root id="archive" name="Naboo.jar">
       <element id="module-output" name="Naboo" />
