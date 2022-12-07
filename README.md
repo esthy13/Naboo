@@ -63,7 +63,7 @@ Innanzitutto installare JDK 17 o successiva. In seguito, installare XAMPP e avvi
 java -jar nomeFile.jar
 
 ```
-
+Sia il file MySQL che i file jar eseguibili si trovano all'interno della seguente directory: 
 Per interrompere l’esecuzione del programma basta chiudere l'applicazione grafica. 
 
 Attenzione: è possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc, ed eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
