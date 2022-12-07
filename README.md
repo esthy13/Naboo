@@ -38,7 +38,11 @@ In DButils, inoltre, è presente il metodo che permette di cambiare schermata, �
 L’utente può cercare gli elementi digitando delle parole chiave nella barra di ricerca.Un listener percepisce, quindi, l’inserimento o la modifica del testo da parte dell’utente  tramite l’utilizzo di due funzioni lambda annidate: la prima verifica se il nuovo testo inserito sia differente da quello precedentemente inserito, e di conseguenza vengono filtrati gli elementi della tabella attraverso una FilteredList, mostrando gli elementi con predicate = true, ovvero elementi corrispondenti alla ricerca dell’utente, mentre vengono tolti dalla lista quelli con  predicate = false.
 ## 2. Come installare il progetto
 Innanzitutto installare JDK 17 o successiva. In seguito installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo data-base naboo e importare il file MySQL …..
-Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file.jar dell’applicazione per eseguire il comando java -jar nome File.jar. Per interrompere l’esecuzione del programma digitare Ctrl+C su Window e ……su Mac. 
+Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file.jar dell’applicazione per eseguire il comando:
+```
+java -jar nomeFile.jar
+```
+Per interrompere l’esecuzione del programma digitare Ctrl+C su Window e ……su Mac. 
 Attenzione: se viene chiusa l’interfaccia dell’applicazione grafica il bot telegram rimane in esecuzione. È possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc per eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
 ## 3. Avvertenze per l’utilizzo
 Esempi di utilizzo del progetto,  screenshots, video, spiegare come accedere con le credenziali
