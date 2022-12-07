@@ -1,6 +1,5 @@
 package com.project.demo.Scene;
 
-import com.project.demo.Main;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;

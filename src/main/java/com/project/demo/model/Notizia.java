@@ -6,7 +6,6 @@ import com.project.demo.Scene.NewsController;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -20,7 +19,6 @@ import javafx.stage.Stage;
 import java.util.Optional;
 
 import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.CLOSE;
-import static de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon.MINUS;
 import static javafx.scene.paint.Color.RED;
 
 public class Notizia {

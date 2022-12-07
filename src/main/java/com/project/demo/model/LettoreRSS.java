@@ -1,11 +1,9 @@
 package com.project.demo.model;
 
-import com.rometools.rome.feed.module.DCModule;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
-import org.w3c.dom.NodeList;
 
 import java.net.URL;
 import java.text.ParseException;

@@ -1,7 +1,6 @@
 package com.project.demo.Scene;
 
 import com.project.demo.Main;
-import com.project.demo.model.Commento;
 import com.project.demo.model.DBget;
 import com.project.demo.model.DBinsert;
 import com.project.demo.model.Fonte;
