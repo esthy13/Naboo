@@ -48,7 +48,7 @@ java -jar nomeFile.jar
 ```
 - per mac:
 ```
-/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin/java -Dfile.encoding=UTF-8 -jar NomeFile.jar?
+/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin/java -Dfile.encoding=UTF-8 -jar nomeFile.jar
 ```
 Sia il file MySQL che i file jar eseguibili si trovano all'interno della seguente [Directory](https://github.com/esthy13/Naboo/tree/main/src/main/resources/Directory).
 Per interrompere l’esecuzione del programma basta chiudere l'applicazione grafica. 
