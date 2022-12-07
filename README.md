@@ -1,6 +1,6 @@
 # NABOO 
 **News Aggregator and Bot Observer**
-
+    
 ## Indice
 ### 1. Che cos'è Naboo?
 ### 2. Installazione
@@ -8,12 +8,13 @@
 ### 4. Problema riscontrato
 ### 5. Il nostro team
 ### 6. Licenza
+
 <iframe>
     width="560" height="315" src="https://www.youtube.com/embed/XnC91s3tqrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
 </iframe>
 
 ## 1. Che cos’è Naboo?
-NABOO è un’ambiente per cercare, leggere e commentare notizie provenienti da feed RSS ed è formato da tre parti: un database, il bot Telegram @GediNabooBot e un’applicazione grafica. Nel database sono immagazzinate tutte le informazioni relative alle interazioni degli utenti con le notizie e dei loro feed RSS di provenienza. @GediNabooBot, invece, permette a tutti gli utenti di cercare, leggere, commentare e condividere le notizie ai propri amici e contatti tramite WhatsApp, Facebook, Twitter o Telegram stesso. Infine, l’applicazione grafica è accessibile solo agli utenti registrati come amministratori, o da utenti Telegram che sono stati promossi a loro volta ad amministratori e possono così modificare ed eliminare i dati presenti sul database, aggiungendo o cancellando le fonti di provenienza delle notizie, o eliminando commenti, notizie ed utenti indesiderati. 
+NABOO è un’ambiente per cercare, leggere e commentare notizie provenienti da feed RSS ed è formato da tre parti: un database, il bot Telegram @GediNabooBot e un’applicazione grafica. Nel database sono immagazzinate tutte le informazioni relative alle interazioni degli utenti con leie e dei loro feed RSS di provenienza. @GediNabooBot, invece, permette a tutti gli utenti di cercare, leggere, commentare e condividere le notizie ai propri amici e contatti tramite WhatsApp, Facebook, Twitter o Telegram stesso. Infine, l’applicazione grafica è accessibile solo agli utenti registrati come amministratori, o da utenti Telegram che sono stati promossi a loro volta ad amministratori e possono così modificare ed eliminare i dati presenti sul database, aggiungendo o cancellando le fonti di provenienza delle notizie, o eliminando commenti, notizie ed utenti indesiderati. 
 Per implementare tutte le principali funzioni di NABOO abbiamo utilizzato Java, un linguaggio di programmazione ad alto livello. Il principale vantaggio derivante dal suo utilizzo è la possibilità di eseguire il codice su qualunque piattaforma: da linux a windows a mac ed android perché l’obiettivo del suo fondatore James Gosling era “Write once, run everywhere”. Inoltre, il codice java viene convertito in bytecode, meccanismo che lo rende illeggibile agli esseri umani e di conseguenza offre una maggiore protezione da virus. Per realizzare l’interfaccia grafica della nostra applicazione ci siamo serviti di javafx, ovvero una libreria di pacchetti grafici e media che permettono di creare e distribuire un’applicazione client multi-platform, e consente l’utilizzo di file css, che abbiamo utilizzato per definire uno stile grafico uniforme a tutte le schermate dell’applicazione. CSS, infatti, sta per Cascading Style Sheet, ovvero un foglio di testo che a cascata attribuisce le regole di stile a tutti gli elementi, selezionati in base alla loro classe di appartenenza attraverso dei selectors. Infine, per la realizzazione del database ci siamo serviti di MySQL uno dei sistemi più popolari di gestione di un database. Anche in questo caso si tratta di un sistema multi-platform, compatibile per esempio con mac, linux e windows. Si tratta di un database relazionale, in quanto è possibile creare relazioni fra le tabelle che rappresentano diverse entità. 
 
 ![image](https://user-images.githubusercontent.com/107881742/205910691-33735230-deea-4f3a-954a-287099eae9e9.png)
@@ -37,13 +38,12 @@ L’algoritmo inizialmente trasforma il testo in codice hex, e successivamente l
 In DButils, inoltre, è presente il metodo che permette di cambiare schermata, “changeScene”, mantenendo nella nuova scena le impostazioni dell’utente relative alla modalità dark o light. Per la presentazione dei dati relativi alle scene 4, 5, 6 e 7 abbiamo scelto di rappresentare i dati estrapolati dal database in tabelle, per consentirne all’utente una lettura organizzata ed immediata. Per realizzarle ci siamo serviti della classe TableView di javafx, che necessita di un’ObservableList per presentare i dati nelle varie righe e colonne della tabella. ObservableList è una lista che implementa l'interfaccia Observable, permettendo di osservare se un oggetto della lista viene modificato o meno.
 L’utente può cercare gli elementi digitando delle parole chiave nella barra di ricerca.Un listener percepisce, quindi, l’inserimento o la modifica del testo da parte dell’utente  tramite l’utilizzo di due funzioni lambda annidate: la prima verifica se il nuovo testo inserito sia differente da quello precedentemente inserito, e di conseguenza vengono filtrati gli elementi della tabella attraverso una FilteredList, mostrando gli elementi con predicate = true, ovvero elementi corrispondenti alla ricerca dell’utente, mentre vengono tolti dalla lista quelli con  predicate = false.
 ## 2. Come installare il progetto
-Innanzitutto installare JDK 17 o successiva. In seguito installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo data-base naboo e importare il file MySQL …..
-Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file.jar dell’applicazione per eseguire il comando:
+Innanzitutto installare JDK 17 o successiva. In seguito installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo data-base naboo e importare il file MySQL. Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file _.jar_ dell’applicazione per eseguire il comando:
 ```
 java -jar nomeFile.jar
 ```
 Per interrompere l’esecuzione del programma basta chiudere l'applicazione grafica. 
-Attenzione: È possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc per eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
+Attenzione: È possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc, ed eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
 ## 3. Avvertenze per l’utilizzo
 Esempi di utilizzo del progetto,  screenshots, video, spiegare come accedere con le credenziali
 ## 4. Problema riscontrato
