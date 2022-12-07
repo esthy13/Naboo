@@ -28,13 +28,13 @@ Per implementare tutte le principali funzioni di NABOO abbiamo utilizzato Java, 
 
 Si tratta di un database relazionale, in quanto è possibile creare relazioni fra le tabelle che rappresentano diverse entità. 
 
-![image](https://user-images.githubusercontent.com/107881742/205910691-33735230-deea-4f3a-954a-287099eae9e9.png)
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBKFVURU5URSkgLS0tIEJ7SU5URVJBR0lTQ0V9XG4gICAgQiAtLS0gQyhOT1RJWklBKVxuICAgIEMgLS0tIER7Rk9STUFUQX1cbiAgICBDIC0tLSBFe1BPU1NJRURFfVxuICAgIEQgLS0tIEYoRk9OVEkpXG4gICAgRSAtLS0gRyhDT01NRU5UTykiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/docs/mermaid-live-editor-beta/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBKFVURU5URSkgLS0tIEJ7SU5URVJBR0lTQ0V9XG4gICAgQiAtLS0gQyhOT1RJWklBKVxuICAgIEMgLS0tIER7Rk9STUFUQX1cbiAgICBDIC0tLSBFe1BPU1NJRURFfVxuICAgIEQgLS0tIEYoRk9OVEkpXG4gICAgRSAtLS0gRyhDT01NRU5UTykiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
 
 Le entità che formano il nostro database sono utente, notizia commento e fonti. In particolare gli utenti sono formati dalle seguenti proprietà: username, ruolo e password (presente solo per gli utenti amministratori). Infatti, abbiamo distinto gli utenti tra user e amministratori: gli user sono gli utenti del bot, mentre gli amministratori sono utenti autorizzati ad accedere all'applicazione grafica per gestire il database. Gli utenti del bot possono essere a loro volta promossi ad amministratori, e in questo modo possono recuperare e/o modificare la loro password per accedere all'interfaccia grafica direttamente dal bot telegram. Al momento della creazione di un commento da parte di un utente viene creata una relazione interagisce tra l’utente e la notizia. In seguito, a quella notizia viene assegnato il commento scritto dall’utente attraverso la relazione possiede. Inoltre, ogni notizia è formata da una fonte, relazione che unisce la tabella delle notizie con quella delle fonti.
 
 Per la struttura generale del nostro progetto ci siamo basati sul pattern di progettazione MVC Model-View-Controller, anche per cercare di dividere in maniera più efficiente il lavoro all’interno del gruppo.
 
-![Presentazione senza titolo](https://user-images.githubusercontent.com/107881742/206129496-e00f0475-4f92-4ffe-b6c2-0f802f30549a.jpg)
+![Presentazione senza titolo](https://user-images.githubusercontent.com/107881742/206216265-f32e0a0b-24c0-46fd-9d54-337513838068.svg)
 
 Nel package model si trovano le classi che definiscono le proprietà e i metodi dei principali oggetti di Naboo: _Commento.java, Fonte.java, Notizia.java e Utente.java_. Nello stesso package si trovano anche le classi che permettono di gestire il database MySQL e il LettoreRss.java. Questo si occupa della raccolta delle notizie dai feed rss scelti dagli utenti amministratori dell’applicazione per inviarle al database, da cui poi saranno inviate agli utenti in base alle loro richieste. Questo lettore rss è stato realizzato attraverso l’utilizzo della libreria rome, che permette di leggere file .xml e selezionarne i vari elementi, consentendoci così di creare degli oggetti java Notizia. Per quanto riguarda invece la sezione dei controller li abbiamo divisi in due package: _controller_ per il bot telegram e _Scene_ per l’applicazione grafica javafx. 
 
@@ -70,7 +70,7 @@ Attenzione: è possibile eseguire una sola istanza del bot alla volta, pertanto 
 
 ## 3. Avvertenze per l’utilizzo
 
-Per accedere all'applicazione grafica di gestione del database è vivamente consigliato utilizzare il proprio username Telegram in modo da poter recuperare e/o modificare la password in futuro direttamente attraverso [@GediNabooBot](http://t.me/GediNabooBot) schiacciando su |👤 profilo| dal menù del bot. Attenzione, però: se siete già utenti del bot telegram non potrete accedere all'applicazione grafica di gestione del database per motivi di sicurezza, dovrete perciò chiedere ad un altro amministratore dell'applicazione di essere promossi ad amministratori. Altrimenti, è possibile registrarsi con uno username qualunque, ma in questo caso non sarà possibile in alcun modo recuperare la propria password o il proprio username.
+Per accedere all'applicazione grafica di gestione del database è vivamente consigliato utilizzare il proprio username Telegram in modo da poter recuperare e/o modificare la password in futuro direttamente attraverso [@GediNabooBot](http://t.me/GediNabooBot) schiacciando su ``` 👤 profilo ``` dal menù del bot. Attenzione, però: se siete già utenti del bot telegram non potrete accedere all'applicazione grafica di gestione del database per motivi di sicurezza, dovrete perciò chiedere ad un altro amministratore dell'applicazione di essere promossi ad amministratori. Altrimenti, è possibile registrarsi con uno username qualunque, ma in questo caso non sarà possibile in alcun modo recuperare la propria password o il proprio username.
 
 ## 4. Problemi riscontrati
 
@@ -78,9 +78,9 @@ Il principale problema riscontrato nella realizzazione di questo bot, è stato p
 
 Un'altro problema che ha bloccato il nostro lavoro, soprattutto nelle fasi iniziali del progetto, era dovuto all'utilizzo di librerie javafx diverse a seconda che si trattasse di un dispositivo mac o windows. Questo perché all'interno del gruppo usavamo due dispositivi mac e uno windows. La soluzione al problema è abbastanza semplice in realtà: basta eseguire un reload del progetto ogni qual volta viene eseguito un pull da github.
 
-Immagine esplicativa
+![Presentazione senza titolo (1)](https://user-images.githubusercontent.com/107881742/206217552-66cc306e-d884-4c93-95cf-eba794567f93.svg)
 
-## 5. Team members
+## 5. Il nostro team
 
 Dan Cernei, Esther Giuliano e Gaetano Muscarello
 
