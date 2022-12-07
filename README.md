@@ -2,25 +2,9 @@
 
 **News Aggregator and Bot Observer**
 
-    
-
-## Indice
-
-### 1. Che cos'è Naboo?
-
-### 2. Installazione
-
-### 3. Utilizzo
-
-### 4. Problemi riscontrati
-
-### 5. Il nostro team
-
-### 6. Licenza
-
 https://user-images.githubusercontent.com/107881742/206179369-f27a659f-2db4-4f0a-8e77-2c3f36ce69de.mp4
 
-## 1. Che cos’è Naboo?
+## Che cos’è Naboo?
 
 NABOO è un’ambiente per cercare, leggere e commentare notizie provenienti da feed RSS ed è formato da tre parti: un database, il bot Telegram [@GediNabooBot](http://t.me/GediNabooBot) e un’applicazione grafica. Nel database sono immagazzinate tutte le informazioni relative alle interazioni degli utenti con le notizie e dei loro feed RSS di provenienza. [@GediNabooBot](http://t.me/GediNabooBot), invece, permette a tutti gli utenti di cercare, leggere, commentare e condividere le notizie ai propri amici e contatti tramite WhatsApp, Facebook, Twitter o Telegram stesso. Infine, l’applicazione grafica è accessibile solo agli utenti registrati come amministratori, o da utenti Telegram che sono stati promossi a loro volta ad amministratori e possono così modificare ed eliminare i dati presenti sul database, aggiungendo o cancellando le fonti di provenienza delle notizie, o eliminando commenti, notizie ed utenti indesiderati. 
 
@@ -54,7 +38,7 @@ In DBUtils, inoltre, è presente il metodo che permette di cambiare schermata, _
 
 L’utente può cercare gli elementi digitando delle parole chiave nella barra di ricerca. Un listener percepisce, quindi, l’inserimento o la modifica del testo da parte dell’utente  tramite l’utilizzo di due funzioni lambda annidate: la prima verifica se il nuovo testo inserito sia differente da quello precedentemente inserito, e di conseguenza vengono filtrati gli elementi della tabella attraverso una FilteredList, mostrando gli elementi con _predicate_ = _true_, ovvero elementi corrispondenti alla ricerca dell’utente, mentre vengono tolti dalla lista quelli con  _predicate_ = _false_.
 
-## 2. Come installare il progetto
+## Come installare il progetto
 
 Innanzitutto installare JDK 17 o successiva. In seguito, installare XAMPP e avviarlo, quindi schiacciare Start di fianco ai moduli Apache e MySQL. Successivamente accedere a http://localhost/phpmyadmin/, creare un nuovo database naboo e importare il file MySQL. Si procede aprendo il prompt dei comandi e selezionando la directory in cui è presente il file _.jar_ dell’applicazione per eseguire il comando:
 
@@ -68,11 +52,11 @@ Per interrompere l’esecuzione del programma basta chiudere l'applicazione graf
 
 Attenzione: è possibile eseguire una sola istanza del bot alla volta, pertanto se lo stesso è già in esecuzione su un altro dispositivo, è necessario modificare il codice sorgente cambiando l’indirizzo http api del bot con uno nuovo creato ad hoc, ed eseguire il programma dall’editor di codice (consigliamo l’utilizzo intellijIdea) senza usare il jar fornito.
 
-## 3. Avvertenze per l’utilizzo
+## Avvertenze per l’utilizzo
 
 Per accedere all'applicazione grafica di gestione del database è vivamente consigliato utilizzare il proprio username Telegram in modo da poter recuperare e/o modificare la password in futuro direttamente attraverso [@GediNabooBot](http://t.me/GediNabooBot) schiacciando su ``` 👤 profilo ``` dal menù del bot. Attenzione, però: se siete già utenti del bot telegram non potrete accedere all'applicazione grafica di gestione del database per motivi di sicurezza, dovrete perciò chiedere ad un altro amministratore dell'applicazione di essere promossi ad amministratori. Altrimenti, è possibile registrarsi con uno username qualunque, ma in questo caso non sarà possibile in alcun modo recuperare la propria password o il proprio username.
 
-## 4. Problemi riscontrati
+## Problemi riscontrati
 
 Il principale problema riscontrato nella realizzazione di questo bot, è stato per noi l’ideazione del lettore RSS. Infatti, gli RSS dei giornali online sono molto diversi tra loro: non in tutti è presente la data di pubblicazione della notizia, o il link dell’immagine presente nell’articolo. Per questo, abbiamo creato 3 casi specifici, relativi agli RSS provenienti da corriere, gazzetta e fanpage. Visto che non è possibile creare un caso specifico per ogni feed RSS, oltre ad essere una tecnica poco efficiente e molto ridondante, abbiamo creato un caso default cercando di renderlo applicabile a qualunque altro feed RSS. 
 
@@ -80,11 +64,11 @@ Un'altro problema che ha bloccato il nostro lavoro, soprattutto nelle fasi inizi
 
 ![Presentazione senza titolo (2)](https://user-images.githubusercontent.com/107881742/206218881-bfd1a1d9-9611-4f9f-bf6e-b06b66ee3731.svg)
 
-## 5. Il nostro team
+## Il nostro team
 
 Dan Cernei, Esther Giuliano e Gaetano Muscarello
 
-## 6. Licenza del progetto:
+## Licenza del progetto:
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
