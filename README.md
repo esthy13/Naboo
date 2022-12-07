@@ -68,7 +68,7 @@ Un'altro problema che ha bloccato il nostro lavoro, soprattutto nelle fasi inizi
 
 Dan Cernei, Esther Giuliano e Gaetano Muscarello
 
-## Licenza del progetto:
+## Licenza del progetto
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
