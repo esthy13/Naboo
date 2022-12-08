@@ -50,7 +50,9 @@ java -jar nomeFile.jar
 ```
 /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin/java -Dfile.encoding=UTF-8 -jar nomeFile.jar
 ```
-Sia il file MySQL che i file jar eseguibili si trovano all'interno della seguente [Directory](https://github.com/esthy13/Naboo/tree/main/src/main/resources/Directory).
+Sia il file MySQL che i file jar eseguibili si trovano all'interno della seguente [Directory](https://github.com/esthy13/Naboo/tree/main/src/main/resources/Directory). È possibile eseguire un primo accesso all'applicazione grafica tramite la schermata login utilizzando le seguenti credenziali:
+- *username*: tano02
+- *password*: ciao
 
 Per interrompere l’esecuzione del programma basta chiudere l'applicazione grafica. 
 
