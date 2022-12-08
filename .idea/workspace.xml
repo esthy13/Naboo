@@ -10,12 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96e664c-63eb-45bb-999e-05421d1627c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Naboo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Naboo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_aarch64_18_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_aarch64_18_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_aarch64_18_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_aarch64_18_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_aarch64_18_0_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +116,20 @@
       <recent name="com.project.demo.Scene" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JAR Application.NabooWindows.jar">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.demo.Launcher" />
+      <module name="Naboo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.project.demo.Main" />
       <module name="Naboo" />
@@ -149,18 +156,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Telegram" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.demo.model.Telegram" />
-      <module name="Naboo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="NabooWindows.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/resources/Directory/NabooWindows.jar" />
+      <method v="2" />
     </configuration>
     <configuration name="Naboo.jar (1)" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/NabooMac_jar/Naboo.jar" />
@@ -170,24 +168,20 @@
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Naboo_jar/Naboo.jar" />
       <method v="2" />
     </configuration>
-    <configuration name="demo-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/demo-1.0-SNAPSHOT.jar" />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Telegram" />
+      <item itemvalue="JAR Application.NabooWindows.jar" />
       <item itemvalue="JAR Application.Naboo.jar" />
       <item itemvalue="JAR Application.Naboo.jar (1)" />
-      <item itemvalue="JAR Application.demo-1.0-SNAPSHOT.jar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.NabooWindows.jar" />
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JAR Application.Naboo.jar" />
         <item itemvalue="JAR Application.Naboo.jar (1)" />
-        <item itemvalue="JAR Application.demo-1.0-SNAPSHOT.jar" />
-        <item itemvalue="Application.Telegram" />
       </list>
     </recent_temporary>
   </component>
@@ -364,6 +358,7 @@
       <workItem from="1670406893699" duration="1138000" />
       <workItem from="1670440815441" duration="2200000" />
       <workItem from="1670448220396" duration="1054000" />
+      <workItem from="1670484876603" duration="322000" />
     </task>
     <servers />
   </component>
