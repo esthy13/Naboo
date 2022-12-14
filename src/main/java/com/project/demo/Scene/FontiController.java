@@ -83,8 +83,8 @@ public class FontiController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        search = search_txt;
         text = myusername;
+        search = search_txt;
         mode = buttonMode;
         visualizza();
         rss.setCellValueFactory(new PropertyValueFactory<Fonte, String>("link_rss"));
@@ -131,7 +131,7 @@ public class FontiController implements Initializable {
         else {
             DBinsert dBinsert = new DBinsert();
             dBinsert.insertFonte(linkRss.getText());
-            DBUtils.changeScene(event, "Fonti.fxml", "Manage user!", getMyusername(), null, getButtonMode());
+            DBUtils.changeScene(event, "fonti.fxml", "Manage user!", getMyusername(), null, getButtonMode());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Info");
             alert.getDialogPane().setHeaderText("Feed RSS aggiunto!");

@@ -130,7 +130,7 @@ public class HomeController implements Initializable{
            stage.getIcons().add(new Image(Main.class.getResource("TelegramProgetto.png").toString()));
            alert.show();
        }
-       catch( NullPointerException ignore){
+       catch(NullPointerException ignore){
            // ... No action is required, just ignore.
        }
    }
