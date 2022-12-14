@@ -62,6 +62,7 @@
 }
 .text-field {
     -fx-prompt-text-fill: #ffffff;
+    -fx-text-fill: #ffffff;
 }
 
 .chart{
