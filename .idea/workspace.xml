@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f96e664c-63eb-45bb-999e-05421d1627c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/KeyboardsAndEmoji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/demo/controller/KeyboardsAndEmoji.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +359,8 @@
       <workItem from="1670406893699" duration="1138000" />
       <workItem from="1670440815441" duration="2200000" />
       <workItem from="1670448220396" duration="1054000" />
-      <workItem from="1670484876603" duration="322000" />
+      <workItem from="1670484876603" duration="510000" />
+      <workItem from="1670947627510" duration="3486000" />
     </task>
     <servers />
   </component>

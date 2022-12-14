@@ -52,8 +52,7 @@ public abstract class KeyboardsAndEmoji extends TelegramLongPollingBot {
     }
 
     @Override
-    public String getBotToken() {
-        return "5782337102:AAEMwjHCFgJY8mod-K-spPjEkPEOBrILjnQ";
+    public String getBotToken() { return "5782337102:AAEMwjHCFgJY8mod-K-spPjEkPEOBrILjnQ";//HTTPS API
     }
 
     public void sendNotizie(ArrayList<Notizia> notizie, Update update, int first, String tipo){
